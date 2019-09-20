@@ -1,5 +1,6 @@
 module.exports = {
   siteMetadata: {
+    title: 'clave',
     description: 'Lorem ipsum',
     author: '',
   },
