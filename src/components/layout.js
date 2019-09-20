@@ -19,7 +19,7 @@ const Wrapper = styled.div`
 const Layout = ({ children }) => {
   return (
     <>
-      <Header>velac</Header>
+      <Header>Clave</Header>
       <Wrapper>
         <div
           style={{
