@@ -14,29 +14,15 @@ const IndexPage = () => (
       <Image />
     </BackgroundImage>
     <Overlay />
-    <Grid>
-      <LeftPanel>
-        <Title>Vi brenner for de beste løsningene.</Title>
-      </LeftPanel>
-      <RightPanel />
-    </Grid>
-    <ClaveLink to="/page-2/">Bli bedre kjent med oss</ClaveLink>
+    <TextPanel>
+      <Title>Vi brenner for de beste løsningene.</Title>
+      <ClaveLink to="/page-2/">Bli bedre kjent med oss</ClaveLink>
+    </TextPanel>
   </Layout>
 )
 
-
-const Grid = styled.div`
-  display: flex;
-  justify-content: end;
-`
-
-const LeftPanel = styled.div`
-  width: 60%;
+const TextPanel = styled.div`
   padding-top: 10rem;
-`
-
-const RightPanel = styled.div`
-  width: 40%;
 `
 
 const BackgroundImage = styled.div`
@@ -52,6 +38,7 @@ const BackgroundImage = styled.div`
 
 const Overlay = styled.div`
   position: absolute;
+  overflow-x: hidden;
   top: 0;
   left: 0;
   height: 100vh;
