@@ -12,6 +12,10 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
             test: /ScrollMagic/,
             use: loaders.null(),
           },
+          {
+            test: /scrollmagic/,
+            use: loaders.null(),
+          },
         ],
       },
     })
