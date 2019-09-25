@@ -21,6 +21,7 @@ const Layout = ({ children }) => {
 
 const Wrapper = styled.div`
   max-width: 1366px;
+  margin: auto;
 `
 
 Layout.propTypes = {
