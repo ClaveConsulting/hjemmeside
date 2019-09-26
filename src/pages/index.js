@@ -52,7 +52,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Forside" />
-      <section id="frontpage" style={{ height: '100%', width: '100%', padding: '0rem 4rem' }}>
+      <section id="frontpage" style={{ height: '100vh', width: '100%', padding: '0rem 4rem' }}>
         <Header />
         <StyledBackgroundImage>
           <Image />
