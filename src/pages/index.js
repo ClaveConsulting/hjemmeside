@@ -63,7 +63,7 @@ const IndexPage = () => {
           <ClaveLink to="/page-2/">Bli bedre kjent med oss</ClaveLink>
         </StyledTextPanel>
       </section>
-      <section id="frontpage-lower" style={{ height: '100%', padding: '0 4rem', backgroundColor: COLOR_CLAVE_SKIN }}>
+      <section id="frontpage-lower" style={{ height: '100vh', padding: '0 4rem', backgroundColor: COLOR_CLAVE_SKIN }}>
         <StyledFlexWrapper>
           <StyledTextPanel>
             <Title color={COLOR_CLAVE_GREEN}>Her står det forklarende hva Clave gjør</Title>
