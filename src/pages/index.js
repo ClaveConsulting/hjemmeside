@@ -52,7 +52,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Forside" />
-      <section id="frontpage" style={{ height: '100vh', width: '100%', padding: '0rem 4rem' }}>
+      <section id="frontpage" style={{ height: '100%', width: '100%', padding: '0rem 4rem' }}>
         <Header />
         <StyledBackgroundImage>
           <Image />
@@ -63,7 +63,7 @@ const IndexPage = () => {
           <ClaveLink to="/page-2/">Bli bedre kjent med oss</ClaveLink>
         </StyledTextPanel>
       </section>
-      <section id="frontpage-lower" style={{ height: '100vh', padding: '0 4rem', backgroundColor: COLOR_CLAVE_SKIN }}>
+      <section id="frontpage-lower" style={{ height: '100%', padding: '0 4rem', backgroundColor: COLOR_CLAVE_SKIN }}>
         <StyledFlexWrapper>
           <StyledTextPanel>
             <Title color={COLOR_CLAVE_GREEN}>Her står det forklarende hva Clave gjør</Title>
