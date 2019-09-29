@@ -17,7 +17,6 @@ import Layout from '../components/Layout';
 
 import 'scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap';
 import './index.css';
-import isDesktop from '../services/isDesktop';
 
 TweenMax.defaultEase = TweenMax.Linear.easeNone;
 
@@ -27,29 +26,27 @@ const IndexPage = () => {
   const timeLineMax = useRef();
 
   useLayoutEffect(() => {
-    if (isDesktop()) {
-      controller.current = new ScrollMagic.Controller();
-      timeLineMax.current = new TimelineMax({ paused: true });
+    controller.current = new ScrollMagic.Controller();
+    timeLineMax.current = new TimelineMax({ paused: true });
 
-      // Css er lagt ut i ekstern fil (index.css) for å kunne bruke pseudo selector på klasse herfra
-      const rule = CSSRulePlugin.getRule('.overlayWithCircle:after');
+    // Css er lagt ut i ekstern fil (index.css) for å kunne bruke pseudo selector på klasse herfra
+    const rule = CSSRulePlugin.getRule('.overlayWithCircle:after');
 
-      const tween = TweenMax.to(rule, 100, {
-        cssRule: {
-          width: '360%',
-          paddingBottom: '360%',
-          right: '-165%',
-          top: '-50%',
-        },
-      });
+    const tween = TweenMax.to(rule, 100, {
+      cssRule: {
+        width: '360%',
+        paddingBottom: '360%',
+        right: '-165%',
+        top: '-50%',
+      },
+    });
 
-      new ScrollMagic.Scene({
-        duration: 150,
-      })
-        .setTween(tween)
-        .setPin('#frontpage')
-        .addTo(controller.current);
-    }
+    new ScrollMagic.Scene({
+      duration: 150,
+    })
+      .setTween(tween)
+      .setPin('#frontpage')
+      .addTo(controller.current);
   }, []);
 
   return (
@@ -60,7 +57,7 @@ const IndexPage = () => {
         <StyledBackgroundImage>
           <Image />
         </StyledBackgroundImage>
-        <div className={isDesktop() ? 'overlayWithCircle' : 'overlay'} />
+        <div className="overlayWithCircle" />
         <StyledTextPanel>
           <Title color={COLOR_CLAVE_SKIN} bla="noe">Vi brenner for de beste løsningene.</Title>
           <ClaveLink to="/page-2/">Bli bedre kjent med oss</ClaveLink>

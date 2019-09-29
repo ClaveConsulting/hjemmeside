@@ -3,5 +3,8 @@
  *
  * See: https://www.gatsbyjs.org/docs/ssr-apis/
  */
+import React from 'react';
+import WindowDimensionsProvider from './src/components/WindowDimensionProvider';
 
-// You can delete this file if you're not using it
+export const wrapRootElement = ({ element }) =>
+  <WindowDimensionsProvider>{element}</WindowDimensionsProvider>;
