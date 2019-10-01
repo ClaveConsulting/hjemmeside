@@ -1,9 +1,9 @@
-const path = require('path')
+const path = require('path');
 
 module.exports = {
   siteMetadata: {
     title: 'clave',
-    description: 'Lorem ipsum',
+    description: 'Clave Consulting hjemmeside',
     author: '',
   },
   plugins: [
@@ -34,18 +34,18 @@ module.exports = {
       resolve: `gatsby-plugin-alias-imports`,
       options: {
         alias: {
-          "TweenLite": path.resolve('node_modules', 'gsap/src/minified/TweenLite.min.js'),
-          "TweenMax": path.resolve('node_modules', 'gsap/src/minified/TweenMax.min.js'),
-          "TimelineMax": path.resolve('node_modules', 'gsap/src/minified/TimelineMax.min.js'),
-          "CSSRulePlugin": path.resolve('node_modules', 'gsap/src/minified/plugins/CSSRulePlugin.min.js'),
-          "ScrollMagic": path.resolve('node_modules', 'scrollmagic/scrollmagic/minified/ScrollMagic.min.js'),
-          "animation.gsap": path.resolve('node_modules', 'scrollmagic/scrollmagic/minified/plugins/animation.gsap.min.js'),
+          'TweenLite': path.resolve('node_modules', 'gsap/src/minified/TweenLite.min.js'),
+          'TweenMax': path.resolve('node_modules', 'gsap/src/minified/TweenMax.min.js'),
+          'TimelineMax': path.resolve('node_modules', 'gsap/src/minified/TimelineMax.min.js'),
+          'CSSRulePlugin': path.resolve('node_modules', 'gsap/src/minified/plugins/CSSRulePlugin.min.js'),
+          'ScrollMagic': path.resolve('node_modules', 'scrollmagic/scrollmagic/minified/ScrollMagic.min.js'),
+          'animation.gsap': path.resolve('node_modules', 'scrollmagic/scrollmagic/minified/plugins/animation.gsap.min.js'),
         },
-        extensions: []
-      }
-    }
+        extensions: [],
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-}
+};
