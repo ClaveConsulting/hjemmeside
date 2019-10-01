@@ -60,7 +60,9 @@ const IndexPage = () => {
         <div className="overlayWithCircle" />
         <StyledTextPanel>
           <Title color={COLOR_CLAVE_SKIN} bla="noe">Vi brenner for de beste løsningene.</Title>
-          <ClaveLink to="/page-2/">Bli bedre kjent med oss</ClaveLink>
+          <div>
+            <ClaveLink to="/page-2/">Bli bedre kjent med oss</ClaveLink>
+          </div>
         </StyledTextPanel>
       </StyledFirstSection>
       <StyledSecondSection>
@@ -69,9 +71,10 @@ const IndexPage = () => {
             <Title color={COLOR_CLAVE_GREEN}>Her står det forklarende hva Clave gjør</Title>
           </StyledTextPanel>
         </StyledFlexWrapper>
-      </StyledSecondSection>
+      </StyledSecondSection>;
     </Layout>
-  );
+  )
+    ;
 };
 
 const StyledFirstSection = styled.section`
@@ -87,7 +90,12 @@ const StyledSecondSection = styled.section`
 `;
 
 const StyledTextPanel = styled.div`
-  padding-top: 10rem;
+  padding-top: 10%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 40%;
 `;
 
 const StyledFlexWrapper = styled.div`
