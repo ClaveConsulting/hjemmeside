@@ -45,14 +45,14 @@ const IndexPage = () => {
       duration: 150,
     })
       .setTween(tween)
-      .setPin('#frontpage')
+      .setPin('#frontpage-first-section')
       .addTo(controller.current);
   }, []);
 
   return (
     <Layout>
       <SEO title="Forside" />
-      <section id="frontpage" style={{ height: '100vh', width: '100%', padding: '0rem 4rem' }}>
+      <StyledFirstSection id="frontpage-first-section">
         <Header />
         <StyledBackgroundImage>
           <Image />
@@ -62,17 +62,29 @@ const IndexPage = () => {
           <Title color={COLOR_CLAVE_SKIN} bla="noe">Vi brenner for de beste løsningene.</Title>
           <ClaveLink to="/page-2/">Bli bedre kjent med oss</ClaveLink>
         </StyledTextPanel>
-      </section>
-      <section id="frontpage-lower" style={{ height: '100vh', padding: '0 4rem', backgroundColor: COLOR_CLAVE_SKIN }}>
+      </StyledFirstSection>
+      <StyledSecondSection>
         <StyledFlexWrapper>
           <StyledTextPanel>
             <Title color={COLOR_CLAVE_GREEN}>Her står det forklarende hva Clave gjør</Title>
           </StyledTextPanel>
         </StyledFlexWrapper>
-      </section>
+      </StyledSecondSection>
     </Layout>
   );
 };
+
+const StyledFirstSection = styled.section`
+  height: 100vh; 
+  width: 100%; 
+  padding: 0 4rem;
+`;
+
+const StyledSecondSection = styled.section`
+  height: 100vh; 
+  padding: 0 4rem; 
+  background-color: ${COLOR_CLAVE_SKIN};
+`;
 
 const StyledTextPanel = styled.div`
   padding-top: 10rem;
