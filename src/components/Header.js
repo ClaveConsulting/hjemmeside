@@ -4,12 +4,12 @@ import { COLOR_CLAVE_SKIN } from '../colors';
 import styled from 'styled-components';
 import ClaveLink from './ClaveLink';
 
-const Header = () => (
+const Header = ({textClassName}) => (
   <header>
     <Wrapper>
-      <span>Clave</span>
-      <ClaveLink>Se hva vi gjør</ClaveLink>
-      <ClaveLink>Bli en av oss</ClaveLink>
+      <span className={textClassName}>Clave</span>
+      <ClaveLink className={textClassName}>Se hva vi gjør</ClaveLink>
+      <ClaveLink className={textClassName}>Bli en av oss</ClaveLink>
     </Wrapper>
   </header>
 );

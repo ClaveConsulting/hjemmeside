@@ -23,16 +23,15 @@ TweenMax.defaultEase = TweenMax.Linear.easeNone;
 // TODO: Kan CSSRulePlugin bruke id (med pseudo)?
 const IndexPage = () => {
   const controller = useRef();
-  const timeLineMax = useRef();
 
   useLayoutEffect(() => {
     controller.current = new ScrollMagic.Controller();
-    timeLineMax.current = new TimelineMax({ paused: true });
+    const timelineMax = new TimelineMax();
 
     // Css er lagt ut i ekstern fil (index.css) for å kunne bruke pseudo selector på klasse herfra
     const rule = CSSRulePlugin.getRule('.overlayWithCircle:after');
 
-    const tween = TweenMax.to(rule, 100, {
+    const tweenScroll = TweenMax.to(rule, 100, {
       cssRule: {
         width: '360%',
         paddingBottom: '360%',
@@ -40,11 +39,17 @@ const IndexPage = () => {
         top: '-50%',
       },
     });
+    const tweenColor = TweenMax.to('.animateSkinToGreenText', 50, {
+      color: COLOR_CLAVE_GREEN
+    });
+
+    timelineMax.add(tweenColor, 'use-same-label-to-run-at-same-time');
+    timelineMax.add(tweenScroll, 'use-same-label-to-run-at-same-time');
 
     new ScrollMagic.Scene({
       duration: 150,
     })
-      .setTween(tween)
+      .setTween(timelineMax)
       .setPin('#frontpage-first-section')
       .addTo(controller.current);
   }, []);
@@ -53,15 +58,19 @@ const IndexPage = () => {
     <Layout>
       <SEO title="Forside" />
       <StyledFirstSection id="frontpage-first-section">
-        <Header />
+        <Header textClassName="animateSkinToGreenText" />
         <StyledBackgroundImage>
           <Image />
         </StyledBackgroundImage>
         <div className="overlayWithCircle" />
         <StyledTextPanel>
-          <Title color={COLOR_CLAVE_SKIN} bla="noe">Vi brenner for de beste løsningene.</Title>
+          <Title color={COLOR_CLAVE_SKIN} className="animateSkinToGreenText">
+            Vi brenner for de beste løsningene.
+          </Title>
           <div>
-            <ClaveLink to="/page-2/">Bli bedre kjent med oss</ClaveLink>
+            <ClaveLink className="animateSkinToGreenText" to="/page-2/">
+              Bli bedre kjent med oss
+            </ClaveLink>
           </div>
         </StyledTextPanel>
       </StyledFirstSection>

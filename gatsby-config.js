@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
   siteMetadata: {
     title: 'clave',
-    description: 'Clave Consulting hjemmeside',
+    description: 'Clave Consulting - hjemmeside',
     author: '',
   },
   plugins: [
