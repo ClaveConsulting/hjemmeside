@@ -5,26 +5,27 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from 'react'
-import PropTypes from 'prop-types'
-import styled from 'styled-components'
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-import './layout.css'
+import './layout.css';
 
 const Layout = ({ children }) => {
   return (
     <Wrapper>
       <main>{children}</main>
     </Wrapper>
-  )
-}
+  );
+};
 
 const Wrapper = styled.div`
-  max-width: 1366px;
-`
+  width: 100%;
+  margin: auto;
+`;
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-}
+};
 
-export default Layout
+export default Layout;
