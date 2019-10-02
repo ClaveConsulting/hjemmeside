@@ -46,7 +46,7 @@ const IndexPage = () => {
     timelineMax.add(tweenScroll, 'use-same-label-to-run-at-same-time');
 
     new ScrollMagic.Scene({
-      duration: 150,
+      duration: 300,
     })
       .setTween(timelineMax)
       .setPin('#frontpage-first-section')
