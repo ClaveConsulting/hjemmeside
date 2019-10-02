@@ -8,8 +8,8 @@ const Header = ({textClassName}) => (
   <header>
     <Wrapper>
       <span className={textClassName}>Clave</span>
-      <ClaveLink className={textClassName}>Se hva vi gjør</ClaveLink>
-      <ClaveLink className={textClassName}>Bli en av oss</ClaveLink>
+      <ClaveLink to="/hva-vi-gjor" className={textClassName}>Se hva vi gjør</ClaveLink>
+      <ClaveLink to="/bli-en-av-oss" className={textClassName}>Bli en av oss</ClaveLink>
     </Wrapper>
   </header>
 );

@@ -20,7 +20,6 @@ import './index.css';
 
 TweenMax.defaultEase = TweenMax.Linear.easeNone;
 
-// TODO: Kan CSSRulePlugin bruke id (med pseudo)?
 const IndexPage = () => {
   const controller = useRef();
 
