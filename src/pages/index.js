@@ -30,7 +30,7 @@ const IndexPage = () => {
     // Css er lagt ut i ekstern fil (index.css) for å kunne bruke pseudo selector på klasse herfra
     const rule = CSSRulePlugin.getRule('.overlayWithCircle:after');
 
-    const tweenScroll = TweenMax.to(rule, 100, {
+    const tweenScroll = TweenMax.to(rule, 1, {
       cssRule: {
         width: '360%',
         paddingBottom: '360%',
@@ -38,7 +38,7 @@ const IndexPage = () => {
         top: '-50%',
       },
     });
-    const tweenColor = TweenMax.to('.animateSkinToGreenText', 50, {
+    const tweenColor = TweenMax.to('.animateSkinToGreenText', 1, {
       color: COLOR_CLAVE_GREEN
     });
 
