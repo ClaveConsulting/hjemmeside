@@ -5,7 +5,7 @@ import { COLOR_CLAVE_GREEN } from '../colors';
 
 
 const StyledWrapper = styled.h1`
-  color: ${props => props.color}
+  color: ${props => props.color};
 `;
 const Title = ({ children, color = COLOR_CLAVE_GREEN, className }) => (
   <StyledWrapper className={className} color={color}>{children}</StyledWrapper>
