@@ -25,7 +25,6 @@ const IndexPage = () => {
 
   useLayoutEffect(() => {
     controller.current = new ScrollMagic.Controller();
-    const timelineMax = new TimelineMax();
 
     // Css er lagt ut i ekstern fil (index.css) for å kunne bruke pseudo selector på klasse herfra
     const rule = CSSRulePlugin.getRule('.overlayWithCircle:after');
@@ -42,6 +41,7 @@ const IndexPage = () => {
       color: COLOR_CLAVE_GREEN
     });
 
+    const timelineMax = new TimelineMax();
     timelineMax.add(tweenColor, 'use-same-label-to-run-at-same-time');
     timelineMax.add(tweenScroll, 'use-same-label-to-run-at-same-time');
 
