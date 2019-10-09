@@ -8,7 +8,7 @@ import ClaveLogo from './clave-logo.svg';
 const Header = ({textClassName}) => (
   <header>
     <Wrapper>
-      <ClaveLogo width="5rem" height="5rem" />
+      <ClaveLogo width="5rem" />
       <ClaveLink to="/hva-vi-gjor" className={textClassName}>Se hva vi gjør</ClaveLink>
       <ClaveLink to="/bli-en-av-oss" className={textClassName}>Bli en av oss</ClaveLink>
     </Wrapper>
