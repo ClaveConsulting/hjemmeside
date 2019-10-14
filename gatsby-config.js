@@ -7,6 +7,14 @@ module.exports = {
     author: '',
   },
   plugins: [
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: path.resolve('src', 'components')
+        }
+      }
+    },
     'gatsby-plugin-styled-components',
     `gatsby-plugin-react-helmet`,
     {
