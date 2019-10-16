@@ -53,6 +53,13 @@ const IndexPage = () => {
       .addTo(controller.current);
   }, []);
 
+  const frontPageTextFirstParagraph = <>Vi har ulik bakgrunn og erfaring. Når vi kombinerer det vi kan, og tenker sammen
+    blir de beste løsningene
+    til.</>;
+
+  const frontPageTextSecondParagraph = <>Vi jobber i prosjekter og initiativer innen teknologi og innovasjon ute hos kunder. Her sitter
+    vi gjerne over tid. Av og til har vi også med oss utviklere og testere fra selskapet vi har etablert i Polen.</>;
+
   return (
     <Layout>
       <SEO title="Forside" />
@@ -64,7 +71,7 @@ const IndexPage = () => {
         <div className="overlayWithCircle" />
         <StyledTextPanel>
           <Title color={COLOR_CLAVE_SKIN} className="animateSkinToGreenText">
-            Vi brenner for de beste løsningene.
+            {frontPageTextFirstParagraph}
           </Title>
           <div>
             <ClaveLink className="animateSkinToGreenText" to="/page-2/">
@@ -76,7 +83,7 @@ const IndexPage = () => {
       <StyledSecondSection>
         <StyledFlexWrapper>
           <StyledTextPanel>
-            <Title color={COLOR_CLAVE_GREEN}>Her står det forklarende hva Clave gjør</Title>
+            <Title color={COLOR_CLAVE_GREEN}>{frontPageTextSecondParagraph}</Title>
           </StyledTextPanel>
         </StyledFlexWrapper>
       </StyledSecondSection>;
