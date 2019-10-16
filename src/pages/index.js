@@ -121,6 +121,7 @@ const StyledBackgroundImage = styled.div`
   top: 0;
   left: 0;
   height: 100vh;
+  padding-top: 100%;
   padding-left: 30%;
   width: 100%;
   z-index: -2;
