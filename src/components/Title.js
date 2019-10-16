@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { COLOR_CLAVE_GREEN } from '../colors';
 
 
-const StyledWrapper = styled.h1`
+const StyledWrapper = styled.h4`
   color: ${props => props.color};
 `;
 const Title = ({ children, color = COLOR_CLAVE_GREEN, className }) => (
