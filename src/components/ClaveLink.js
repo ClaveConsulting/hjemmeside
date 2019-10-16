@@ -8,6 +8,7 @@ const ClaveLink = ({ to, children, className }) => (
 );
 
 const StyledLink = styled(Link)`
+  display: none;
   color: ${COLOR_CLAVE_SKIN};
   text-decoration: none;
   padding-bottom: 5px;
