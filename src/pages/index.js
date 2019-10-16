@@ -57,8 +57,8 @@ const IndexPage = () => {
     blir de beste løsningene
     til.</>;
 
-  const frontPageTextSecondParagraph = <>Vi jobber i prosjekter og initiativer innen teknologi og innovasjon ute hos kunder. Her sitter
-    vi gjerne over tid. Av og til har vi også med oss utviklere og testere fra selskapet vi har etablert i Polen.</>;
+  const frontPageTextSecondParagraph = <>Vi jobber i prosjekter og initiativer innen teknologi og innovasjon ute hos kunder. Her sitter vi gjerne over tid. </>;
+  const frontPageTextThirdParagraph = <>Av og til har vi også med oss utviklere og testere fra selskapet vi har etablert i Polen. </>;
 
   return (
     <Layout>
@@ -84,6 +84,7 @@ const IndexPage = () => {
         <StyledFlexWrapper>
           <StyledTextPanel>
             <Title color={COLOR_CLAVE_GREEN}>{frontPageTextSecondParagraph}</Title>
+            <Title color={COLOR_CLAVE_GREEN}>{frontPageTextThirdParagraph}</Title>
           </StyledTextPanel>
         </StyledFlexWrapper>
       </StyledSecondSection>;
@@ -95,12 +96,12 @@ const IndexPage = () => {
 const StyledFirstSection = styled.section`
   height: 100vh; 
   width: 100%; 
-  padding: 0 4rem;
+  padding: 0 1.5rem;
 `;
 
 const StyledSecondSection = styled.section`
   height: 100vh; 
-  padding: 0 4rem; 
+  padding: 0 1.5rem; 
   background-color: ${COLOR_CLAVE_SKIN};
 `;
 
@@ -110,7 +111,7 @@ const StyledTextPanel = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 40%;
+  width: 80%;
 `;
 
 const StyledFlexWrapper = styled.div`

@@ -18,7 +18,7 @@ const Header = ({textClassName}) => (
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 1.45rem 1.0875rem;
+  padding: 1.45rem 0rem;
   color: ${COLOR_CLAVE_SKIN};
 `;
 
