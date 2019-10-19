@@ -10,7 +10,8 @@ const Header = ({textClassName}) => (
     <Wrapper>
       <ClaveLogo width="5rem" />
       <ClaveLink to="/hva-vi-gjor" className={textClassName}>Se hva vi gjør</ClaveLink>
-      <ClaveLink to="/bli-en-av-oss" className={textClassName}>Bli en av oss</ClaveLink>
+      <ClaveLink to="/bli-en-av-oss" className={textClassName}>Se hvem vi er</ClaveLink>
+      <ClaveLink to="/bli-en-av-oss" className={textClassName}>Kontakt oss</ClaveLink>
     </Wrapper>
   </header>
 );
