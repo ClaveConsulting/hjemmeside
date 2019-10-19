@@ -53,9 +53,9 @@ const IndexPage = () => {
       .addTo(controller.current);
   }, []);
 
-  const frontPageTextFirstParagraph = <>Vi har ulik bakgrunn og erfaring. Når vi kombinerer det vi kan, og tenker sammen blir de beste løsningene til.</>;
-  const frontPageTextSecondParagraph = <>Vi jobber i prosjekter og initiativer innen teknologi og innovasjon ute hos kunder. Her sitter vi gjerne over tid. </>;
-  const frontPageTextThirdParagraph = <>Av og til har vi også med oss utviklere og testere fra selskapet vi har etablert i Polen. </>;
+  const frontPageTextFirstParagraph = "Vi har ulik bakgrunn og erfaring. Når vi kombinerer det vi kan, og tenker sammen blir de beste løsningene til.";
+  const frontPageTextSecondParagraph = "Vi jobber i prosjekter og initiativer innen teknologi og innovasjon ute hos kunder. Her sitter vi gjerne over tid.";
+  const frontPageTextThirdParagraph = "Av og til har vi også med oss utviklere og testere fra selskapet vi har etablert i Polen.";
 
   return (
     <Layout>
