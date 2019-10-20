@@ -13,10 +13,12 @@ import { COLOR_CLAVE_GREEN, COLOR_CLAVE_SKIN } from '../colors';
 import ClaveLink from '../components/ClaveLink';
 import Header from '../components/Header';
 import Title from '../components/Title';
-import Layout from '../components/Layout';
+import Layout, { onDesktop } from '../components/Layout';
 
 import 'scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap';
 import './index.css';
+import JoinBanner from '../components/JoinBanner';
+import CtaLink from '../components/CtaLink';
 
 TweenMax.defaultEase = TweenMax.Linear.easeNone;
 
@@ -38,7 +40,7 @@ const IndexPage = () => {
       },
     });
     const tweenColor = TweenMax.to('.animateSkinToGreenText', 1, {
-      color: COLOR_CLAVE_GREEN
+      color: COLOR_CLAVE_GREEN,
     });
 
     const timelineMax = new TimelineMax();
@@ -54,12 +56,12 @@ const IndexPage = () => {
   }, []);
 
   return (
-    <Layout>
+    <main>
       <SEO title="Forside" />
       <StyledFirstSection id="frontpage-first-section">
         <Header textClassName="animateSkinToGreenText" />
         <StyledBackgroundImage>
-          <Image />
+          <FrontpageImage />
         </StyledBackgroundImage>
         <div className="overlayWithCircle" />
         <StyledTextPanel>
@@ -73,28 +75,35 @@ const IndexPage = () => {
           </div>
         </StyledTextPanel>
       </StyledFirstSection>
-      <StyledSecondSection>
-        <StyledFlexWrapper>
-          <StyledTextPanel>
-            <Title color={COLOR_CLAVE_GREEN}>Her står det forklarende hva Clave gjør</Title>
-          </StyledTextPanel>
-        </StyledFlexWrapper>
-      </StyledSecondSection>;
-    </Layout>
-  )
-    ;
+      <Layout>
+        <p>
+          Vi jobber i prosjekter og initiativer innen teknologi og innovasjon og
+          ute hos kunder. Her sitter vi gjerne over tid.
+        </p>
+        <p>
+          Av og til får vi også med oss utviklere og testere i selskapet vi har
+          etablert i Polen.
+        </p>
+        <CtaLink to="/hva-vi-gjor">Se mer om hva vi gjør</CtaLink>
+      </Layout>
+      <JoinBanner />
+    </main>
+  );
 };
 
-const StyledFirstSection = styled.section`
-  height: 100vh; 
-  width: 100%; 
-  padding: 0 4rem;
+const FrontpageImage = styled(Image)`
+  display: block;
 `;
 
-const StyledSecondSection = styled.section`
-  height: 100vh; 
-  padding: 0 4rem; 
-  background-color: ${COLOR_CLAVE_SKIN};
+const StyledFirstSection = styled.section`
+  height: 100vh;
+  width: 100%;
+
+  padding: 0 1rem;
+
+  ${onDesktop(`
+    padding: 0 4rem;
+  `)}
 `;
 
 const StyledTextPanel = styled.div`
@@ -104,11 +113,6 @@ const StyledTextPanel = styled.div`
   flex-direction: column;
   justify-content: space-around;
   width: 40%;
-`;
-
-const StyledFlexWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
 `;
 
 const StyledBackgroundImage = styled.div`
