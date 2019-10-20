@@ -5,12 +5,16 @@ import styled from 'styled-components';
 import ClaveLink from './ClaveLink';
 import ClaveLogo from './clave-logo.svg';
 
-const Header = ({textClassName}) => (
+const Header = ({ textClassName }) => (
   <header>
     <Wrapper>
       <ClaveLogo width="5rem" />
-      <ClaveLink to="/hva-vi-gjor" className={textClassName}>Se hva vi gjør</ClaveLink>
-      <ClaveLink to="/bli-en-av-oss" className={textClassName}>Bli en av oss</ClaveLink>
+      <ClaveLink to="/hva-vi-gjor" className={textClassName}>
+        Se hva vi gjør
+      </ClaveLink>
+      <ClaveLink to="/bli-en-av-oss" className={textClassName}>
+        Bli en av oss
+      </ClaveLink>
     </Wrapper>
   </header>
 );
@@ -18,7 +22,7 @@ const Header = ({textClassName}) => (
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 1.45rem 1.0875rem;
+  padding: 1.45rem 0;
   color: ${COLOR_CLAVE_SKIN};
 `;
 
