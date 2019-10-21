@@ -59,7 +59,7 @@ const IndexPage = () => {
     <main>
       <SEO title="Forside" />
       <StyledFirstSection id="frontpage-first-section">
-        <Header textClassName="animateSkinToGreenText" />
+        <Header textClassName="animateSkinToGreenText" frontPage />
         <StyledBackgroundImage>
           <FrontpageImage />
         </StyledBackgroundImage>
