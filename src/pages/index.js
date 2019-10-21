@@ -108,7 +108,10 @@ const StyledTextPanel = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 80%;
+  width: 40%;
+  @media only screen and (max-width: 480px) {
+    width: 80%
+    }
 `;
 
 const StyledFlexWrapper = styled.div`
@@ -121,11 +124,13 @@ const StyledBackgroundImage = styled.div`
   top: 0;
   left: 0;
   height: 100vh;
-  padding-top: 100%;
   padding-left: 30%;
   width: 100%;
   z-index: -2;
   background-color: ${COLOR_CLAVE_SKIN};
+  @media only screen and (max-width: 480px) {
+    padding-top: 100%;
+    }
 `;
 
 export default IndexPage;
