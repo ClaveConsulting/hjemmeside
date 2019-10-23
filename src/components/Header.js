@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { COLOR_CLAVE_SKIN, COLOR_CLAVE_GREEN } from '../colors';
+import { COLOR_CLAVE_SKIN } from '../colors';
 import styled from 'styled-components';
 import ClaveLink from './ClaveLink';
 import ClaveLogo from './clave-logo.svg';
@@ -8,7 +8,7 @@ import ClaveLogo from './clave-logo.svg';
 const Header = ({ textClassName, frontPage = false }) => {
   const WrapperComponent = frontPage ? FrontPageWrapper : Wrapper;
   const LinkComponent = styled(ClaveLink)`
-    ${frontPage ? '' : `color: ${COLOR_CLAVE_GREEN};`}
+    ${frontPage ? `color: ${COLOR_CLAVE_SKIN};` : ''}
     display: block;
     margin-left: 0.5em;
     margin-right: 0.5em;

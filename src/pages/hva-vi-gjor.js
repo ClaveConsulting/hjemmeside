@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 
 import Layout, { MOBILE_PADDING } from '../components/Layout';
@@ -7,6 +7,9 @@ import Header from '../components/Header';
 import PageHeader from '../components/PageHeader';
 import CtaLink from '../components/CtaLink';
 import { GalleryImage, Gallery } from '../components/Gallery';
+import { Link } from 'gatsby';
+import { COLOR_CLAVE_SKIN } from '../colors';
+import ClaveLink from '../components/ClaveLink';
 
 const SecondPage = () => (
   <main>
@@ -80,8 +83,138 @@ const SecondPage = () => (
         />
       </Gallery>
     </Layout>
+    <Layout>
+      <h2>Sjekk ut hva vi gjør hos kundene våre</h2>
+      <p>
+        Det er stort sett alltid flere Clavere hos en kunde, og gjerne en
+        blanding av UX-designere, rådgivere og utviklere. Spa, post, nettbutikk,
+        bil, offentlifg forvaltning, humanitært arbeid. Vi jobber innen mange
+        ulike domener!
+      </p>
+    </Layout>
+    <Projects>
+      <Project
+        image={{
+          src: 'https://placehold.it/305x247/f00/fff',
+          alt: 'Pia',
+          width: 305,
+          height: 247,
+        }}
+        title="Posten"
+        ingress="Henning og Pia jobber hos Posten i innovasjonsavdeingen. Begge jobber etter metodikk innen Sercice design i team sammen med Posten sine egne ansatte."
+        link="/prosjekter/posten"
+      />
+      <Project
+        image={{
+          src: 'https://placehold.it/305x337/000/fff',
+          alt: 'Karine',
+          width: 305,
+          height: 337,
+        }}
+        title="Røde Kors"
+        ingress="Karine og Samson jobber for Rødekors. De skal lage et internt system for..... Da må hun snakke med …. og brukervennlighetsteste hyppig underveis."
+        link="/prosjekter/rode-kors"
+      />
+      <Project
+        image={{
+          src: 'https://placehold.it/305x239/ff0/fff',
+          alt: 'Anniken',
+          width: 305,
+          height: 239,
+        }}
+        title="The Well"
+        ingress="Anniken og Lars Petter jobber for The Well. The Well er Nordens største spa- og velværesenter. De må faktisk litt på spa av og til, for å forstå brukeren."
+        link="/prosjekter/the-well"
+      />
+    </Projects>
   </main>
 );
+
+const ProjectsListContext = React.createContext({ maxHeight: 0 });
+
+const Projects = ({ children }) => {
+  const maxImageHeight = React.useMemo(
+    () =>
+      Math.max.apply(
+        null,
+        children
+          .map(child => child.props.image)
+          .filter(image => image.height)
+          .map(image => parseFloat(image.height))
+      ),
+    [children]
+  );
+
+  return (
+    <ProjectsListContext.Provider value={{ maxImageHeight }}>
+      <ProjectsList>{children}</ProjectsList>
+    </ProjectsListContext.Provider>
+  );
+};
+
+const ProjectsList = styled.ul`
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  justify-content: flex-end;
+  padding: 0;
+  background-color: ${COLOR_CLAVE_SKIN};
+  margin: 0;
+  width: 100%;
+  overflow-x: auto;
+`;
+
+const ProjectItem = styled.li`
+  flex: 0 0 auto;
+  padding: 0 1em;
+`;
+
+const ProjectImg = styled.img`
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: auto;
+`;
+
+const ProjectImgWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-bottom: 1em;
+`;
+
+const Project = ({
+  image: { src, alt, width, height },
+  title,
+  ingress,
+  link,
+}) => {
+  const { maxImageHeight } = useContext(ProjectsListContext);
+
+  const [imgWrapperHeight, setImgWrapperHeight] = useState(null);
+
+  console.log('imgWrapperHeight', imgWrapperHeight);
+
+  return (
+    <ProjectItem style={{ flexBasis: `${width}px` }}>
+      <ProjectImgWrapper
+        ref={div => {
+          if (!div) return;
+
+          setImgWrapperHeight(
+            `${(maxImageHeight * (div ? div.offsetWidth : width)) / width}px`
+          );
+        }}
+        style={{ height: imgWrapperHeight }}
+      >
+        <ProjectImg src={src} alt={alt} width={width} height={height} />
+      </ProjectImgWrapper>
+      <h3>{title}</h3>
+      <p>{ingress}</p>
+      <ClaveLink to={link}>Mer om {title}</ClaveLink>
+    </ProjectItem>
+  );
+};
 
 const AsideContent = styled.div`
   padding-left: ${MOBILE_PADDING};
