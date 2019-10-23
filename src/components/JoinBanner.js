@@ -8,6 +8,7 @@ import {
 import Layout, { onDesktop } from './Layout';
 import CtaLink from './CtaLink';
 import { Link } from 'gatsby';
+import { Gallery, GalleryImage } from './Gallery';
 
 const PaddedLayout = styled(Layout)`
   padding-top: 2em;
@@ -16,23 +17,6 @@ const PaddedLayout = styled(Layout)`
     padding-top: 3em;
   `)}
 `;
-
-const JoinGallery = () => (
-  <Gallery>
-    <GalleryImage
-      alt="Anniken"
-      width="406"
-      height="206"
-      src="https://placehold.it/406x266/000/fff"
-    />
-    <Karine
-      alt="Karine"
-      width="192"
-      height="261"
-      src="https://placehold.it/192x261/aa3/fff"
-    />
-  </Gallery>
-);
 
 const JoinContent = () => (
   <div>
@@ -58,9 +42,20 @@ const JoinBanner = () => (
   <PaddedLayout
     backgroundColor={COLOR_CLAVE_LIGHTBLUE}
     asideContent={
-      <GalleryContainer>
-        <JoinGallery />
-      </GalleryContainer>
+      <Gallery>
+        <GalleryImage
+          alt="Anniken"
+          width="406"
+          height="206"
+          src="https://placehold.it/406x266/000/fff"
+        />
+        <GalleryImage
+          alt="Karine"
+          width="192"
+          height="261"
+          src="https://placehold.it/192x261/aa3/fff"
+        />
+      </Gallery>
     }
   >
     <JoinContent />
@@ -122,38 +117,6 @@ const PositionLinkInner = styled(Link)`
   &:visited {
     color: ${COLOR_CLAVE_BLAA};
   }
-`;
-
-const GalleryContainer = styled.div`
-  display: flex;
-  flex: 1;
-  overflow: hidden;
-`;
-
-const Gallery = styled.div`
-  flex: 1 0 auto;
-  margin-top: 1em;
-  position: relative;
-  left: 1em;
-
-  ${onDesktop(`
-    width: 100%;
-    position: static;
-  `)}
-`;
-
-const GalleryImage = styled.img`
-  display: block;
-  margin: 0;
-  width: 100%;
-  height: auto;
-`;
-
-const Karine = styled(GalleryImage)`
-  margin-right: 11%;
-  margin-left: auto;
-  margin-top: -20%;
-  width: ${(100 * 192) / 406}%;
 `;
 
 export default JoinBanner;

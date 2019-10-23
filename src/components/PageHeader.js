@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { COLOR_CLAVE_SKIN } from '../colors';
+import { onDesktop, MOBILE_PADDING } from './Layout';
 
 const PageHeader = ({ title, imageProps }) => {
   return (
@@ -14,7 +15,16 @@ const PageHeader = ({ title, imageProps }) => {
 
 const PageHeaderWrapper = styled.div`
   background-color: ${COLOR_CLAVE_SKIN};
-  text-align: center;
+
+  ${onDesktop(`
+    text-align: center;
+  `)}
+
+  padding: 0 0 0 ${MOBILE_PADDING};
+
+  ${onDesktop(`
+    padding-left: 0;
+  `)}
 `;
 
 const PageHeaderImage = props => (
@@ -23,12 +33,19 @@ const PageHeaderImage = props => (
   </PageHeaderImageWrapper>
 );
 
-const PageHeaderImageWrapper = styled.div``;
+const PageHeaderImageWrapper = styled.div`
+`;
+
 const PageHeaderImageImg = styled.img`
   display: block;
-  width: 80%;
+  width: 100%;
   height: auto;
-  margin: 0 0 0 auto;
+  margin: 0;
+
+  ${onDesktop(`
+    width: 80%;
+    margin-left: auto;
+  `)}
 `;
 
 export default PageHeader;

@@ -1,11 +1,12 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 import Layout from '../components/Layout';
 import SEO from '../components/Seo';
 import Header from '../components/Header';
 import PageHeader from '../components/PageHeader';
+import CtaLink from '../components/CtaLink';
+import { GalleryImage, Gallery } from '../components/Gallery';
 
 const SecondPage = () => (
   <main>
@@ -36,7 +37,26 @@ const SecondPage = () => (
         landegrensene, har vi lært hva som er viktigst for at samarbeidet skal
         fungere aller best.
       </p>
-      <Link to="/">Go back to the homepage</Link>
+      <h2>Brukertesting er viktig!</h2>
+      <p>
+        Steffen og "Irene" er vårt brukervennlighetstest-team. De jobber på
+        tvers av de kundene vi har, og for andre som trenger å få brukertestet.
+        Vi har laget dette som en egen tjeneste, fordi brukervennlighetstesting
+        er jo noe alle trenger å gjøre jevnlig!
+      </p>
+      <CtaLink to="/brukertesting">Mer om vår brukertesting</CtaLink>
+      <Gallery>
+        <GalleryImage
+          src="https://placehold.it/681/470/0f0/fff"
+          width="681"
+          height="470"
+        />
+        <GalleryImage
+          src="https://placehold.it/306/368/f00/fff"
+          width="306"
+          height="368"
+        />
+      </Gallery>
     </Layout>
   </main>
 );

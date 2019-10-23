@@ -21,9 +21,11 @@ Container.Content = styled.div`
   `)}
 `;
 
+export const MOBILE_PADDING = '1em';
+
 export const Section = styled.section`
   max-width: 1280px;
-  padding: 1em;
+  padding:  ${MOBILE_PADDING};
 
   ${onDesktop(`
     flex: 1 1 1280px;
