@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Layout from '../components/Layout';
+import Layout, { MOBILE_PADDING } from '../components/Layout';
 import SEO from '../components/Seo';
 import Header from '../components/Header';
 import PageHeader from '../components/PageHeader';
@@ -45,21 +45,53 @@ const SecondPage = () => (
         er jo noe alle trenger å gjøre jevnlig!
       </p>
       <CtaLink to="/brukertesting">Mer om vår brukertesting</CtaLink>
+    </Layout>
+    <Layout
+      asideContent={
+        <AsideContent>
+          <h3>Bestill en test</h3>
+          <p>
+            Har du en løsning som du ikke har observert at dine brukere benytter
+            seg av? Er det lenge siden du sist brukervennlighetstestet løsningen
+            din? Da kan Steffen og Irene hjelpe deg.
+          </p>
+          <CtaLink to="/">Mer om hvordan vi tester</CtaLink>
+          <AsideImg
+            src="https://placehold.it/387x279/f00000/fff"
+            width="387"
+            height="279"
+            alt="Brukertesting"
+          />
+        </AsideContent>
+      }
+    >
       <Gallery>
         <GalleryImage
-          src="https://placehold.it/681/470/0f0/fff"
+          src="https://placehold.it/681x470/00f000/fff"
           width="681"
           height="470"
+          alt="Lars-Petter og Yngve"
         />
         <GalleryImage
-          src="https://placehold.it/306/368/f00/fff"
+          src="https://placehold.it/306x368/0000f0/fff"
           width="306"
           height="368"
+          alt="Pekefinger"
         />
       </Gallery>
     </Layout>
   </main>
 );
+
+const AsideContent = styled.div`
+  padding-left: ${MOBILE_PADDING};
+`;
+
+const AsideImg = styled.img`
+  width: 100%;
+  height: auto;
+  display: block;
+`;
 
 const Ingress = styled.p`
   font-size: 1.5em;

@@ -13,10 +13,11 @@ export const Gallery = ({ children, ...props }) => (
               kids: [
                 ...kids,
                 React.cloneElement(child, {
+                  key: child.props.src,
                   ...child.props,
                   style: {
                     ...child.props.style,
-                    width: prev ? `${(100 * width) / prev * 1.2}%` : null,
+                    width: prev ? `${((100 * width) / prev) * 1.2}%` : null,
                   },
                 }),
               ],
@@ -37,7 +38,7 @@ const Container = styled.div`
 `;
 
 const Content = styled.div`
-  flex: 1 0 auto;
+  flex: 1 1 auto;
   margin-top: 1em;
   position: relative;
   left: 1em;
