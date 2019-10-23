@@ -8,20 +8,32 @@ import ClaveLogo from './clave-logo.svg';
 const Header = ({ textClassName }) => (
   <header>
     <Wrapper>
-      <ClaveLogo width="5rem" />
-      <ClaveLink to="/hva-vi-gjor" className={textClassName}>
+      <Logo />
+      <HeaderLink to="/hva-vi-gjor" className={textClassName}>
         Se hva vi gjør
-      </ClaveLink>
-      <ClaveLink to="/bli-en-av-oss" className={textClassName}>
+      </HeaderLink>
+      <HeaderLink to="/bli-en-av-oss" className={textClassName}>
         Bli en av oss
-      </ClaveLink>
+      </HeaderLink>
     </Wrapper>
   </header>
 );
 
+const Logo = styled(ClaveLogo)`
+  width: 5em;
+  height: auto;
+`;
+
+const HeaderLink = styled(ClaveLink)`
+  display: block;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+`;
+
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 1.45rem 0;
   color: ${COLOR_CLAVE_SKIN};
 `;
