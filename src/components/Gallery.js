@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { onDesktop } from './Layout';
+import Image from './Image';
 
 export const Gallery = ({ children, ...props }) => (
   <Container>
@@ -13,7 +14,7 @@ export const Gallery = ({ children, ...props }) => (
               kids: [
                 ...kids,
                 React.cloneElement(child, {
-                  key: child.props.src,
+                  key: child.props.src || child.props.alt,
                   ...child.props,
                   style: {
                     ...child.props.style,
@@ -49,15 +50,30 @@ const Content = styled.div`
   `)}
 `;
 
-export const GalleryImage = styled.img`
-  display: block;
-  margin: 0;
-  width: 100%;
-  height: auto;
+const galleryImgStyles = `
+    display: block;
+    margin: 0;
+    width: 100%;
+    height: auto;
 
-  &:nth-child(2) {
-    margin-right: 11%;
-    margin-left: auto;
-    margin-top: -20%;
-  }
+    &:nth-child(2) {
+        margin-right: 11%;
+        margin-left: auto;
+        margin-top: -20%;
+    }
 `;
+
+const GalleryImageImg = styled.img`
+  ${galleryImgStyles}
+`;
+
+const LoadedGalleryImage = styled(Image)`
+  ${galleryImgStyles}
+`;
+
+export const GalleryImage = ({ fluidImage, src, ...props }) =>
+  fluidImage ? (
+    <LoadedGalleryImage fluidImage={fluidImage} {...props} />
+  ) : (
+    <GalleryImageImg src={src} {...props} />
+  );

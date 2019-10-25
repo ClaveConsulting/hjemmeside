@@ -38,7 +38,7 @@ const JoinContent = () => (
   </div>
 );
 
-const JoinBanner = () => (
+const JoinBanner = ({ images }) => (
   <PaddedLayout
     backgroundColor={COLOR_CLAVE_LIGHTBLUE}
     asideContent={
@@ -47,13 +47,13 @@ const JoinBanner = () => (
           alt="Anniken"
           width="406"
           height="206"
-          src="https://placehold.it/406x266/000/fff"
+          fluidImage={images.anniken}
         />
         <GalleryImage
           alt="Karine"
           width="192"
           height="261"
-          src="https://placehold.it/192x261/aa3/fff"
+          fluidImage={images.karine}
         />
       </Gallery>
     }

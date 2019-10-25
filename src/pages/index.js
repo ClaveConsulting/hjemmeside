@@ -19,6 +19,7 @@ import 'scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap';
 import './index.css';
 import JoinBanner from '../components/JoinBanner';
 import CtaLink from '../components/CtaLink';
+import { useStaticQuery } from 'gatsby';
 
 TweenMax.defaultEase = TweenMax.Linear.easeNone;
 
@@ -52,13 +53,27 @@ const IndexPage = () => {
       .addTo(controller.current);
   }, []);
 
+  const images = useStaticQuery(graphql`
+    query {
+      header: file(relativePath: { eq: "frontpage.jpeg" }) {
+        ...fluidImage
+      }
+      karine: file(relativePath: { eq: "190920_Clave_lowres_5.jpg" }) {
+        ...fluidImage
+      }
+      anniken: file(relativePath: { eq: "190920_Clave_lowres_12.jpg" }) {
+        ...fluidImage
+      }
+    }
+  `);
+
   return (
     <main>
       <SEO title="Forside" />
       <StyledFirstSection id="frontpage-first-section">
         <Header textClassName="animateSkinToGreenText" frontPage />
         <StyledBackgroundImage>
-          <FrontpageImage />
+          <Image fluidImage={images.header} />
         </StyledBackgroundImage>
         <div className="overlayWithCircle" />
         <StyledTextPanel>
@@ -83,14 +98,10 @@ const IndexPage = () => {
         </p>
         <CtaLink to="/hva-vi-gjor">Se mer om hva vi gjør</CtaLink>
       </Layout>
-      <JoinBanner />
+      <JoinBanner images={images} />
     </main>
   );
 };
-
-const FrontpageImage = styled(Image)`
-  display: block;
-`;
 
 const StyledFirstSection = styled.section`
   height: 100vh;
