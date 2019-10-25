@@ -59,7 +59,7 @@ const IndexPage = () => {
     <main>
       <SEO title="Forside" />
       <StyledFirstSection id="frontpage-first-section">
-        <Header textClassName="animateSkinToGreenText" />
+        <Header textClassName="animateSkinToGreenText" frontPage />
         <StyledBackgroundImage>
           <FrontpageImage />
         </StyledBackgroundImage>
@@ -69,9 +69,9 @@ const IndexPage = () => {
             Vi brenner for de beste løsningene.
           </Title>
           <div>
-            <ClaveLink className="animateSkinToGreenText" to="/page-2/">
+            <FrontPageLink className="animateSkinToGreenText" to="/page-2/">
               Bli bedre kjent med oss
-            </ClaveLink>
+            </FrontPageLink>
           </div>
         </StyledTextPanel>
       </StyledFirstSection>
@@ -113,6 +113,10 @@ const StyledTextPanel = styled.div`
   flex-direction: column;
   justify-content: space-around;
   width: 40%;
+`;
+
+const FrontPageLink = styled(ClaveLink)`
+  color: ${COLOR_CLAVE_SKIN};
 `;
 
 const StyledBackgroundImage = styled.div`
