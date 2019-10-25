@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 
 import './layout.css';
@@ -8,24 +8,29 @@ export const onDesktop = styles => `@media screen and (min-width: 720px) {
   ${styles}
 }`;
 
-export const Container = styled.div``;
+export const Container = props => {
+  const { backgroundColor, textColor } = useContext(ColorContext);
+
+  const ColoredContainer = styled.div`
+    background-color: ${backgroundColor};
+    color: ${textColor};
+  `;
+
+  return <ColoredContainer {...props} />;
+};
+
+export const MAX_WIDTH = 1920;
 
 Container.Content = styled.div`
   margin: 0 auto;
-  max-width: 1920px;
-  display: flex;
-  flex-direction: column;
-
-  ${onDesktop(`
-    flex-direction: row;
-  `)}
+  max-width: ${MAX_WIDTH}px;
 `;
 
 export const MOBILE_PADDING = '1em';
 
 export const Section = styled.section`
   max-width: 1280px;
-  padding:  ${MOBILE_PADDING};
+  padding: ${MOBILE_PADDING};
 
   ${onDesktop(`
     flex: 1 1 1280px;
@@ -43,25 +48,30 @@ export const Aside = styled.aside`
   `)}
 `;
 
-const Layout = ({
-  backgroundColor = COLOR_CLAVE_SKIN,
-  textColor = COLOR_CLAVE_GREEN,
-  asideContent,
-  children,
-  className,
-}) => {
-  const ColoredContainer = styled(Container)`
-    background-color: ${backgroundColor};
-    color: ${textColor};
-  `;
+const LayoutWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
 
+  ${onDesktop(`
+  flex-direction: row;
+`)}
+`;
+
+export const ColorContext = React.createContext({
+  backgroundColor: COLOR_CLAVE_SKIN,
+  textColor: COLOR_CLAVE_GREEN,
+});
+
+const Layout = ({ asideContent, children }) => {
   return (
-    <ColoredContainer className={className}>
+    <Container>
       <Container.Content>
-        <Aside>{asideContent}</Aside>
-        <Section>{children}</Section>
+        <LayoutWrapper>
+          <Aside>{asideContent}</Aside>
+          <Section>{children}</Section>
+        </LayoutWrapper>
       </Container.Content>
-    </ColoredContainer>
+    </Container>
   );
 };
 

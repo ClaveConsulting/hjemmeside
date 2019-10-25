@@ -1,13 +1,12 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 
-import Layout, { MOBILE_PADDING } from '../components/Layout';
+import Layout, { MOBILE_PADDING, Container } from '../components/Layout';
 import SEO from '../components/Seo';
 import Header from '../components/Header';
 import PageHeader from '../components/PageHeader';
 import CtaLink from '../components/CtaLink';
 import { GalleryImage, Gallery } from '../components/Gallery';
-import { Link } from 'gatsby';
 import { COLOR_CLAVE_SKIN } from '../colors';
 import ClaveLink from '../components/ClaveLink';
 
@@ -147,21 +146,27 @@ const Projects = ({ children }) => {
 
   return (
     <ProjectsListContext.Provider value={{ maxImageHeight }}>
-      <ProjectsList>{children}</ProjectsList>
+      <ProjectsListContainer>
+        <Container.Content>
+          <ProjectsList>{children}</ProjectsList>
+        </Container.Content>
+      </ProjectsListContainer>
     </ProjectsListContext.Provider>
   );
 };
+
+const ProjectsListContainer = styled(Container)`
+  display: flex;
+  align-items: center;
+`;
 
 const ProjectsList = styled.ul`
   display: flex;
   flex-direction: row;
   list-style-type: none;
+  margin: 0 auto;
   justify-content: flex-end;
-  padding: 0;
-  background-color: ${COLOR_CLAVE_SKIN};
-  margin: 0;
-  width: 100%;
-  overflow-x: auto;
+  flex-wrap: wrap;
 `;
 
 const ProjectItem = styled.li`
