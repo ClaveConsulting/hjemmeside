@@ -23,6 +23,9 @@ const Header = ({ textClassName, frontPage = false }) => {
         <LinkComponent to="/bli-en-av-oss" className={textClassName}>
           Bli en av oss
         </LinkComponent>
+        <LinkComponent to="/kontakt-oss" className={textClassName}>
+          Kontakt oss
+        </LinkComponent>
       </WrapperComponent>
     </header>
   );
