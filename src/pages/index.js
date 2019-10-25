@@ -31,10 +31,7 @@ const IndexPage = () => {
 
     const tweenScroll = TweenMax.to(rule, 1, {
       cssRule: {
-        width: '360%',
-        paddingBottom: '360%',
-        right: '-165%',
-        top: '-50%',
+        transform: window.innerWidth < 720 ? 'scale(6)' : 'scale(3.1)'
       },
     });
     const tweenColor = TweenMax.to('.animateSkinToGreenText', 1, {
