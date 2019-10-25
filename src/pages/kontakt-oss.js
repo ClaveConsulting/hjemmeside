@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 
-import Layout, { MOBILE_PADDING } from '../components/Layout';
+import Layout, { MOBILE_PADDING, Container } from '../components/Layout';
 import SEO from '../components/Seo';
 import Header from '../components/Header';
 import PageHeader from '../components/PageHeader';

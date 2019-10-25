@@ -38,11 +38,6 @@ const Logo = styled(ClaveLogo)`
   height: auto;
 `;
 
-const Logo = styled(ClaveLogo)`
-  width: 5em;
-  height: auto;
-`;
-
 const HeaderLink = styled(ClaveLink)`
   display: block;
   margin-left: 0.5em;
