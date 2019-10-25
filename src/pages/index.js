@@ -33,10 +33,7 @@ const IndexPage = () => {
 
     const tweenScroll = TweenMax.to(rule, 1, {
       cssRule: {
-        width: '360%',
-        paddingBottom: '360%',
-        right: '-165%',
-        top: '-50%',
+        transform: window.innerWidth < 720 ? 'scale(6)' : 'scale(3.1)'
       },
     });
     const tweenColor = TweenMax.to('.animateSkinToGreenText', 1, {
@@ -66,7 +63,7 @@ const IndexPage = () => {
         <div className="overlayWithCircle" />
         <StyledTextPanel>
           <Title color={COLOR_CLAVE_SKIN} className="animateSkinToGreenText">
-            Vi brenner for de beste løsningene.
+            De beste løsningene krever de beste folkene.
           </Title>
           <div>
             <FrontPageLink className="animateSkinToGreenText" to="/page-2/">
@@ -102,7 +99,7 @@ const StyledFirstSection = styled.section`
   padding: 0 1rem;
 
   ${onDesktop(`
-    padding: 0 4rem;
+    padding: 0 1.5rem;
   `)}
 `;
 
@@ -113,6 +110,9 @@ const StyledTextPanel = styled.div`
   flex-direction: column;
   justify-content: space-around;
   width: 40%;
+  @media only screen and (max-width: 480px) {
+    width: 80%
+  }
 `;
 
 const FrontPageLink = styled(ClaveLink)`
@@ -128,6 +128,9 @@ const StyledBackgroundImage = styled.div`
   width: 100%;
   z-index: -2;
   background-color: ${COLOR_CLAVE_SKIN};
+    @media only screen and (max-width: 480px) {
+    padding-top: 120%;
+    }
 `;
 
 export default IndexPage;
