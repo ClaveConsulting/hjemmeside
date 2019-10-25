@@ -1,31 +1,68 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import './layout.css';
+import { COLOR_CLAVE_SKIN, COLOR_CLAVE_GREEN } from '../colors';
 
-const Layout = ({ children }) => {
-  return (
-    <Wrapper>
-      <main>{children}</main>
-    </Wrapper>
-  );
-};
+export const onDesktop = styles => `@media screen and (min-width: 720px) {
+  ${styles}
+}`;
 
-const Wrapper = styled.div`
-  width: 100%;
-  margin: auto;
+export const Container = styled.div``;
+
+Container.Content = styled.div`
+  margin: 0 auto;
+  max-width: 1920px;
+  display: flex;
+  flex-direction: column;
+
+  ${onDesktop(`
+    flex-direction: row;
+  `)}
 `;
 
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+export const MOBILE_PADDING = '1em';
+
+export const Section = styled.section`
+  max-width: 1280px;
+  padding:  ${MOBILE_PADDING};
+
+  ${onDesktop(`
+    flex: 1 1 1280px;
+    padding: 1em 3em 1em;
+  `)}
+`;
+
+export const Aside = styled.aside`
+  flex: 1 0 40%;
+  order: 1;
+  display: flex;
+
+  ${onDesktop(`
+    order: 0;
+  `)}
+`;
+
+const Layout = ({
+  backgroundColor = COLOR_CLAVE_SKIN,
+  textColor = COLOR_CLAVE_GREEN,
+  asideContent,
+  children,
+  className,
+}) => {
+  const ColoredContainer = styled(Container)`
+    background-color: ${backgroundColor};
+    color: ${textColor};
+  `;
+
+  return (
+    <ColoredContainer className={className}>
+      <Container.Content>
+        <Aside>{asideContent}</Aside>
+        <Section>{children}</Section>
+      </Container.Content>
+    </ColoredContainer>
+  );
 };
 
 export default Layout;

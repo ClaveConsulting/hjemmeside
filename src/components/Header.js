@@ -5,22 +5,50 @@ import styled from 'styled-components';
 import ClaveLink from './ClaveLink';
 import ClaveLogo from './clave-logo.svg';
 
-const Header = ({textClassName}) => (
-  <header>
-    <Wrapper>
-      <ClaveLogo width="5rem" />
-      <ClaveLink to="/hva-vi-gjor" className={textClassName}>Se hva vi gjør</ClaveLink>
-      <ClaveLink to="/bli-en-av-oss" className={textClassName}>Se hvem vi er</ClaveLink>
-      <ClaveLink to="kontakt-oss" className={textClassName}>Kontakt oss</ClaveLink>
-    </Wrapper>
-  </header>
-);
+const Header = ({ textClassName, frontPage = false }) => {
+  const WrapperComponent = frontPage ? FrontPageWrapper : Wrapper;
+  const LinkComponent = styled(ClaveLink)`
+    ${frontPage ? `color: ${COLOR_CLAVE_SKIN};` : ''}
+    display: block;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+  `;
+  return (
+    <header>
+      <WrapperComponent>
+        <Logo />
+        <LinkComponent to="/hva-vi-gjor" className={textClassName}>
+          Se hva vi gjør
+        </LinkComponent>
+        <LinkComponent to="/bli-en-av-oss" className={textClassName}>
+          Se hvem vi er
+        </LinkComponent>
+        <LinkComponent to="/kontakt-oss" className={textClassName}>
+          Kontakt oss
+        </LinkComponent>
+      </WrapperComponent>
+    </header>
+  );
+};
+
+const PADDING_VERTICAL = '1.45rem';
+
+const Logo = styled(ClaveLogo)`
+  width: 5em;
+  height: auto;
+`;
 
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 1.45rem 0rem;
-  color: ${COLOR_CLAVE_SKIN};
+  align-items: center;
+  padding: ${PADDING_VERTICAL} 1em;
+  background: ${COLOR_CLAVE_SKIN};
+`;
+
+const FrontPageWrapper = styled(Wrapper)`
+  background: none;
+  padding: ${PADDING_VERTICAL} 0;
 `;
 
 Header.propTypes = {

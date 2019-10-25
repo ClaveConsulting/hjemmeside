@@ -13,10 +13,12 @@ import { COLOR_CLAVE_GREEN, COLOR_CLAVE_SKIN } from '../colors';
 import ClaveLink from '../components/ClaveLink';
 import Header from '../components/Header';
 import Title from '../components/Title';
-import Layout from '../components/Layout';
+import Layout, { onDesktop } from '../components/Layout';
 
 import 'scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap';
 import './index.css';
+import JoinBanner from '../components/JoinBanner';
+import CtaLink from '../components/CtaLink';
 
 TweenMax.defaultEase = TweenMax.Linear.easeNone;
 
@@ -35,7 +37,7 @@ const IndexPage = () => {
       },
     });
     const tweenColor = TweenMax.to('.animateSkinToGreenText', 1, {
-      color: COLOR_CLAVE_GREEN
+      color: COLOR_CLAVE_GREEN,
     });
 
     const timelineMax = new TimelineMax();
@@ -50,53 +52,55 @@ const IndexPage = () => {
       .addTo(controller.current);
   }, []);
 
-  const frontPageTextFirstParagraph = 'Vi har ulik bakgrunn og erfaring. Når vi kombinerer det vi kan, og tenker sammen blir de beste løsningene til.';
-  const frontPageTextSecondParagraph = 'Vi jobber i prosjekter og initiativer innen teknologi og innovasjon ute hos kunder. Her sitter vi gjerne over tid.';
-  const frontPageTextThirdParagraph = 'Av og til har vi også med oss utviklere og testere fra selskapet vi har etablert i Polen.';
-
   return (
-    <Layout>
+    <main>
       <SEO title="Forside" />
       <StyledFirstSection id="frontpage-first-section">
-        <Header textClassName="animateSkinToGreenText" />
+        <Header textClassName="animateSkinToGreenText" frontPage />
         <StyledBackgroundImage>
-          <Image />
+          <FrontpageImage />
         </StyledBackgroundImage>
         <div className="overlayWithCircle" />
         <StyledTextPanel>
           <Title color={COLOR_CLAVE_SKIN} className="animateSkinToGreenText">
-            {frontPageTextFirstParagraph}
+            Vi brenner for de beste løsningene.
           </Title>
           <div>
-            <ClaveLink className="animateSkinToGreenText" to="/page-2/">
+            <FrontPageLink className="animateSkinToGreenText" to="/page-2/">
               Bli bedre kjent med oss
-            </ClaveLink>
+            </FrontPageLink>
           </div>
         </StyledTextPanel>
       </StyledFirstSection>
-      <StyledSecondSection>
-        <StyledFlexWrapper>
-          <StyledTextPanel>
-            <Title color={COLOR_CLAVE_GREEN}>{frontPageTextSecondParagraph}</Title>
-            <Title color={COLOR_CLAVE_GREEN}>{frontPageTextThirdParagraph}</Title>
-          </StyledTextPanel>
-        </StyledFlexWrapper>
-      </StyledSecondSection>;
-    </Layout>
-  )
-    ;
+      <Layout>
+        <p>
+          Vi jobber i prosjekter og initiativer innen teknologi og innovasjon og
+          ute hos kunder. Her sitter vi gjerne over tid.
+        </p>
+        <p>
+          Av og til får vi også med oss utviklere og testere i selskapet vi har
+          etablert i Polen.
+        </p>
+        <CtaLink to="/hva-vi-gjor">Se mer om hva vi gjør</CtaLink>
+      </Layout>
+      <JoinBanner />
+    </main>
+  );
 };
 
-const StyledFirstSection = styled.section`
-  height: 100vh; 
-  width: 100%; 
-  padding: 0 1.5rem;
+const FrontpageImage = styled(Image)`
+  display: block;
 `;
 
-const StyledSecondSection = styled.section`
-  height: 100vh; 
-  padding: 0 1.5rem; 
-  background-color: ${COLOR_CLAVE_SKIN};
+const StyledFirstSection = styled.section`
+  height: 100vh;
+  width: 100%;
+
+  padding: 0 1rem;
+
+  ${onDesktop(`
+    padding: 0 1.5rem;
+  `)}
 `;
 
 const StyledTextPanel = styled.div`
@@ -106,14 +110,10 @@ const StyledTextPanel = styled.div`
   flex-direction: column;
   justify-content: space-around;
   width: 40%;
-  @media only screen and (max-width: 480px) {
-    width: 80%
-    }
 `;
 
-const StyledFlexWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
+const FrontPageLink = styled(ClaveLink)`
+  color: ${COLOR_CLAVE_SKIN};
 `;
 
 const StyledBackgroundImage = styled.div`
@@ -125,9 +125,6 @@ const StyledBackgroundImage = styled.div`
   width: 100%;
   z-index: -2;
   background-color: ${COLOR_CLAVE_SKIN};
-  @media only screen and (max-width: 480px) {
-    padding-top: 100%;
-    }
 `;
 
 export default IndexPage;
