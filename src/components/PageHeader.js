@@ -1,20 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { COLOR_CLAVE_SKIN } from '../colors';
-import { onDesktop, MOBILE_PADDING } from './Layout';
+import { onDesktop, MOBILE_PADDING, Container } from './Layout';
 
 const PageHeader = ({ title, imageProps }) => {
   return (
-    <PageHeaderWrapper>
-      <h1>{title}</h1>
-      <PageHeaderImage {...imageProps} />
-    </PageHeaderWrapper>
+    <Container>
+      <PageHeaderWrapper>
+        <h1>{title}</h1>
+        <PageHeaderImage {...imageProps} />
+      </PageHeaderWrapper>
+    </Container>
   );
 };
 
-const PageHeaderWrapper = styled.div`
-  background-color: ${COLOR_CLAVE_SKIN};
+const PageHeaderWrapper = styled(Container.Content)`
+  margin: 0 auto;
 
   ${onDesktop(`
     text-align: center;
@@ -33,8 +34,7 @@ const PageHeaderImage = props => (
   </PageHeaderImageWrapper>
 );
 
-const PageHeaderImageWrapper = styled.div`
-`;
+const PageHeaderImageWrapper = styled.div``;
 
 const PageHeaderImageImg = styled.img`
   display: block;

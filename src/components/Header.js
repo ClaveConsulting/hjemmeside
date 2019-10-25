@@ -41,6 +41,13 @@ const Logo = styled(ClaveLogo)`
   height: auto;
 `;
 
+
+const HeaderLink = styled(ClaveLink)`
+  display: block;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+`;
+
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
