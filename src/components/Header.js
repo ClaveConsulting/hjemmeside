@@ -12,6 +12,9 @@ const Header = ({ textClassName, frontPage = false }) => {
     display: block;
     margin-left: 0.5em;
     margin-right: 0.5em;
+    @media only screen and (max-width: 600px) {
+      display: none;
+  }
   `;
   return (
     <header>
