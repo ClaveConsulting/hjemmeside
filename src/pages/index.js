@@ -63,7 +63,7 @@ const IndexPage = () => {
         <div className="overlayWithCircle" />
         <StyledTextPanel>
           <Title color={COLOR_CLAVE_SKIN} className="animateSkinToGreenText">
-            Vi brenner for de beste løsningene.
+            De beste løsningene krever de beste folkene.
           </Title>
           <div>
             <FrontPageLink className="animateSkinToGreenText" to="/page-2/">
@@ -110,6 +110,9 @@ const StyledTextPanel = styled.div`
   flex-direction: column;
   justify-content: space-around;
   width: 40%;
+  @media only screen and (max-width: 480px) {
+    width: 80%
+  }
 `;
 
 const FrontPageLink = styled(ClaveLink)`
@@ -125,6 +128,9 @@ const StyledBackgroundImage = styled.div`
   width: 100%;
   z-index: -2;
   background-color: ${COLOR_CLAVE_SKIN};
+    @media only screen and (max-width: 480px) {
+    padding-top: 120%;
+    }
 `;
 
 export default IndexPage;
