@@ -19,7 +19,7 @@ import 'scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap';
 import './index.css';
 import JoinBanner from '../components/JoinBanner';
 import CtaLink from '../components/CtaLink';
-import { useStaticQuery } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
 
 TweenMax.defaultEase = TweenMax.Linear.easeNone;
 
@@ -55,7 +55,7 @@ const IndexPage = () => {
 
   const images = useStaticQuery(graphql`
     query {
-      header: file(relativePath: { eq: "frontpage.jpeg" }) {
+      header: file(relativePath: { eq: "190920_Clave_lowres_18.jpg" }) {
         ...fluidImage
       }
       karine: file(relativePath: { eq: "190920_Clave_lowres_5.jpg" }) {

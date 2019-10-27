@@ -245,13 +245,9 @@ const Project = ({
   ingress,
   link,
 }) => {
-  console.log('fluidImage', fluidImage);
-  
   const { aspectRatio } = useContext(ProjectsListContext);
 
   const [imgWrapperHeight, setImgWrapperHeight] = useState(null);
-
-  console.log('imgWrapperHeight', imgWrapperHeight);
 
   const ImageComponent = fluidImage ? ProjectFluidImage : ProjectImg;
 
