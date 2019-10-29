@@ -22,13 +22,22 @@
 
 }
 
-@media only screen and (max-width: 480px) {
-    .overlayWithCircle:after {
-        top: 70%;
-    }
-}
-
 .front-page-ingress {
     padding-top: 3rem;
 }
 
+.info-flexbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+@media only screen and (max-width: 480px) {
+    .overlayWithCircle:after {
+        top: 70%;
+    }
+
+    .info-flexbox {
+        flex-direction: column;
+    }
+}

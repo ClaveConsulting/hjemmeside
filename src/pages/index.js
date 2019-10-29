@@ -20,6 +20,9 @@ import './index.css';
 import JoinBanner from '../components/JoinBanner';
 import CtaLink from '../components/CtaLink';
 import { useStaticQuery, graphql } from 'gatsby';
+import BrukeropplevelseIcon from '../components/icons/clave_ikon_brukeropplevelse.svg';
+import SystemutviklingIcon from '../components/icons/clave_ikon_systemutvikling.svg';
+import RaadgivningIcon from '../components/icons/clave_ikon_radgivning.svg';
 
 TweenMax.defaultEase = TweenMax.Linear.easeNone;
 
@@ -96,6 +99,27 @@ const IndexPage = () => {
           Av og til får vi også med oss utviklere og testere i selskapet vi har
           etablert i Polen.
         </h2>
+          <div className="info-flexbox">
+              <div>
+                  <BrukeropplevelseLogo/>
+                  <h3>Brukeropplevelse</h3>
+                  <p>Brukeropplevelse handler om å forstå brukerens behov. Vi snakker med brukeren, gjerne ved å
+                      brukervennlighetsteste.
+                      Vi har til og med vårt eget dedikerte brukertestteam!</p>
+              </div>
+              <div>
+                  <SystemutviklingLogo/>
+                  <h3>Systemutvikling</h3>
+                  <p>Sammen med våre designere lager vi intuitive løsninger.
+                      Vi kan hele tjenestestacken; arkitektur, database og integrasjon, frontend og apputvikling.</p>
+              </div>
+              <div>
+                  <RaadgivningLogo/>
+                  <h3>Rådgivning</h3>
+                  <p>Vi som jobber med prosjektledelse har alle lang erfaring. Vi er opptatt av at teamet jobber sammen,
+                      mot samme mål, og blir godt kjent.</p>
+              </div>
+          </div>
         <CtaLink to="/hva-vi-gjor">Se mer om hva vi gjør</CtaLink>
       </Layout>
       <JoinBanner images={images} />
@@ -143,5 +167,20 @@ const StyledBackgroundImage = styled.div`
     padding-top: 120%;
     }
 `;
+
+const BrukeropplevelseLogo = styled(BrukeropplevelseIcon)`
+              width: 10em;
+              height: auto;
+              `;
+
+const SystemutviklingLogo = styled(SystemutviklingIcon)`
+              width: 10em;
+              height: auto;
+              `;
+
+const RaadgivningLogo = styled(RaadgivningIcon)`
+              width: 10em;
+              height: auto;
+              `;
 
 export default IndexPage;
