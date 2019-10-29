@@ -20,12 +20,15 @@
     padding-bottom: 60%;
     box-shadow: 0 0 0 3000px #005550;
 
-
 }
 
 @media only screen and (max-width: 480px) {
     .overlayWithCircle:after {
         top: 70%;
     }
+}
+
+.front-page-ingress {
+    padding-top: 3rem;
 }
 

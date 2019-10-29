@@ -88,14 +88,14 @@ const IndexPage = () => {
         </StyledTextPanel>
       </StyledFirstSection>
       <Layout>
-        <p>
+        <h2 className="front-page-ingress">
           Vi jobber i prosjekter og initiativer innen teknologi og innovasjon og
           ute hos kunder. Her sitter vi gjerne over tid.
-        </p>
-        <p>
+        </h2>
+        <h2>
           Av og til får vi også med oss utviklere og testere i selskapet vi har
           etablert i Polen.
-        </p>
+        </h2>
         <CtaLink to="/hva-vi-gjor">Se mer om hva vi gjør</CtaLink>
       </Layout>
       <JoinBanner images={images} />
