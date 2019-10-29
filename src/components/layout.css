@@ -704,11 +704,21 @@ h2{
   font-size: 2rem;
 }
 
+h3{
+  font-size: 1.5rem;
+}
+
 @media only screen and (max-width: 600px) {
     h1 {
         font-size: 1.5rem;
     }
     h2 {
         font-size: 1rem;
+    }
+    h3 {
+      font-size: 1rem;
+    }
+    p {
+      font-size: 1rem;
     }
 }
