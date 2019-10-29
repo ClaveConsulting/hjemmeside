@@ -3,7 +3,7 @@ import React from 'react';
 import { COLOR_CLAVE_SKIN } from '../colors';
 import styled from 'styled-components';
 import ClaveLink from './ClaveLink';
-import ClaveLogo from './clave-logo.svg';
+import ClaveLogo from './icons/clave-logo.svg';
 
 const Header = ({ textClassName, frontPage = false }) => {
   const WrapperComponent = frontPage ? FrontPageWrapper : Wrapper;
