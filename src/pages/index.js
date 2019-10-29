@@ -55,7 +55,7 @@ const IndexPage = () => {
 
   const images = useStaticQuery(graphql`
     query {
-      header: file(relativePath: { eq: "190920_Clave_lowres_18.jpg" }) {
+      header: file(relativePath: { eq: "190920_Clave_lowres_18_cropped.jpg" }) {
         ...fluidImage
       }
       karine: file(relativePath: { eq: "190920_Clave_lowres_5.jpg" }) {
