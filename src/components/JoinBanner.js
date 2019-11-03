@@ -4,19 +4,12 @@ import {
   COLOR_CLAVE_LIGHTBLUE,
   COLOR_CLAVE_BLAA,
   COLOR_CLAVE_SKIN,
+  COLOR_CLAVE_GREEN,
 } from '../colors';
-import Layout, { onDesktop } from './Layout';
+import Layout, { onDesktop, ColorContext } from './Layout';
 import CtaLink from './CtaLink';
 import { Link } from 'gatsby';
 import { Gallery, GalleryImage } from './Gallery';
-
-const PaddedLayout = styled(Layout)`
-  padding-top: 2em;
-
-  ${onDesktop(`
-    padding-top: 3em;
-  `)}
-`;
 
 const JoinContent = () => (
   <div>
@@ -38,28 +31,42 @@ const JoinContent = () => (
   </div>
 );
 
-const JoinBanner = () => (
-  <PaddedLayout
-    backgroundColor={COLOR_CLAVE_LIGHTBLUE}
-    asideContent={
-      <Gallery>
-        <GalleryImage
-          alt="Anniken"
-          width="406"
-          height="206"
-          src="https://placehold.it/406x266/000/fff"
-        />
-        <GalleryImage
-          alt="Karine"
-          width="192"
-          height="261"
-          src="https://placehold.it/192x261/aa3/fff"
-        />
-      </Gallery>
-    }
+const JoinBannerWrapper = styled(Layout)`
+  padding-top: 2em;
+
+  ${onDesktop(`
+    padding-top: 3em;
+  `)}
+`;
+
+const JoinBanner = ({ images }) => (
+  <ColorContext.Provider
+    value={{
+      backgroundColor: COLOR_CLAVE_LIGHTBLUE,
+      textColor: COLOR_CLAVE_GREEN,
+    }}
   >
-    <JoinContent />
-  </PaddedLayout>
+    <JoinBannerWrapper
+      asideContent={
+        <Gallery>
+          <GalleryImage
+            alt="Anniken"
+            width="406"
+            height="206"
+            fluidImage={images.anniken}
+          />
+          <GalleryImage
+            alt="Karine"
+            width="192"
+            height="261"
+            fluidImage={images.karine}
+          />
+        </Gallery>
+      }
+    >
+      <JoinContent />
+    </JoinBannerWrapper>
+  </ColorContext.Provider>
 );
 
 const BORDER_COLOR = COLOR_CLAVE_SKIN;

@@ -19,6 +19,10 @@ import 'scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap';
 import './index.css';
 import JoinBanner from '../components/JoinBanner';
 import CtaLink from '../components/CtaLink';
+import { useStaticQuery, graphql } from 'gatsby';
+import BrukeropplevelseIcon from '../components/icons/clave_ikon_brukeropplevelse.svg';
+import SystemutviklingIcon from '../components/icons/clave_ikon_systemutvikling.svg';
+import RaadgivningIcon from '../components/icons/clave_ikon_radgivning.svg';
 
 TweenMax.defaultEase = TweenMax.Linear.easeNone;
 
@@ -33,10 +37,7 @@ const IndexPage = () => {
 
     const tweenScroll = TweenMax.to(rule, 1, {
       cssRule: {
-        width: '360%',
-        paddingBottom: '360%',
-        right: '-165%',
-        top: '-50%',
+        transform: window.innerWidth < 720 ? 'scale(6)' : 'scale(3.1)'
       },
     });
     const tweenColor = TweenMax.to('.animateSkinToGreenText', 1, {
@@ -55,18 +56,32 @@ const IndexPage = () => {
       .addTo(controller.current);
   }, []);
 
+  const images = useStaticQuery(graphql`
+    query {
+      header: file(relativePath: { eq: "190920_Clave_lowres_18_cropped.jpg" }) {
+        ...fluidImage
+      }
+      karine: file(relativePath: { eq: "190920_Clave_lowres_5.jpg" }) {
+        ...fluidImage
+      }
+      anniken: file(relativePath: { eq: "190920_Clave_lowres_12.jpg" }) {
+        ...fluidImage
+      }
+    }
+  `);
+
   return (
     <main>
       <SEO title="Forside" />
       <StyledFirstSection id="frontpage-first-section">
         <Header textClassName="animateSkinToGreenText" frontPage />
         <StyledBackgroundImage>
-          <FrontpageImage />
+          <Image fluidImage={images.header} />
         </StyledBackgroundImage>
         <div className="overlayWithCircle" />
         <StyledTextPanel>
           <Title color={COLOR_CLAVE_SKIN} className="animateSkinToGreenText">
-            Vi brenner for de beste løsningene.
+            De beste løsningene krever de beste folkene.
           </Title>
           <div>
             <FrontPageLink className="animateSkinToGreenText" to="/page-2/">
@@ -76,24 +91,41 @@ const IndexPage = () => {
         </StyledTextPanel>
       </StyledFirstSection>
       <Layout>
-        <p>
+        <h2 className="front-page-ingress">
           Vi jobber i prosjekter og initiativer innen teknologi og innovasjon og
           ute hos kunder. Her sitter vi gjerne over tid.
-        </p>
-        <p>
+        </h2>
+        <h2>
           Av og til får vi også med oss utviklere og testere i selskapet vi har
           etablert i Polen.
-        </p>
+        </h2>
+          <div className="info-flexbox">
+              <div>
+                  <BrukeropplevelseLogo/>
+                  <h3>Brukeropplevelse</h3>
+                  <p>Brukeropplevelse handler om å forstå brukerens behov. Vi snakker med brukeren, gjerne ved å
+                      brukervennlighetsteste.
+                      Vi har til og med vårt eget dedikerte brukertestteam!</p>
+              </div>
+              <div>
+                  <SystemutviklingLogo/>
+                  <h3>Systemutvikling</h3>
+                  <p>Sammen med våre designere lager vi intuitive løsninger.
+                      Vi kan hele tjenestestacken; arkitektur, database og integrasjon, frontend og apputvikling.</p>
+              </div>
+              <div>
+                  <RaadgivningLogo/>
+                  <h3>Rådgivning</h3>
+                  <p>Vi som jobber med prosjektledelse har alle lang erfaring. Vi er opptatt av at teamet jobber sammen,
+                      mot samme mål, og blir godt kjent.</p>
+              </div>
+          </div>
         <CtaLink to="/hva-vi-gjor">Se mer om hva vi gjør</CtaLink>
       </Layout>
-      <JoinBanner />
+      <JoinBanner images={images} />
     </main>
   );
 };
-
-const FrontpageImage = styled(Image)`
-  display: block;
-`;
 
 const StyledFirstSection = styled.section`
   height: 100vh;
@@ -102,7 +134,7 @@ const StyledFirstSection = styled.section`
   padding: 0 1rem;
 
   ${onDesktop(`
-    padding: 0 4rem;
+    padding: 0 1.5rem;
   `)}
 `;
 
@@ -113,6 +145,9 @@ const StyledTextPanel = styled.div`
   flex-direction: column;
   justify-content: space-around;
   width: 40%;
+  @media only screen and (max-width: 480px) {
+    width: 80%
+  }
 `;
 
 const FrontPageLink = styled(ClaveLink)`
@@ -128,6 +163,24 @@ const StyledBackgroundImage = styled.div`
   width: 100%;
   z-index: -2;
   background-color: ${COLOR_CLAVE_SKIN};
+    @media only screen and (max-width: 480px) {
+    padding-top: 120%;
+    }
 `;
+
+const BrukeropplevelseLogo = styled(BrukeropplevelseIcon)`
+              width: 10em;
+              height: auto;
+              `;
+
+const SystemutviklingLogo = styled(SystemutviklingIcon)`
+              width: 10em;
+              height: auto;
+              `;
+
+const RaadgivningLogo = styled(RaadgivningIcon)`
+              width: 10em;
+              height: auto;
+              `;
 
 export default IndexPage;

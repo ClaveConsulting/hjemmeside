@@ -3,7 +3,7 @@ import React from 'react';
 import { COLOR_CLAVE_SKIN } from '../colors';
 import styled from 'styled-components';
 import ClaveLink from './ClaveLink';
-import ClaveLogo from './clave-logo.svg';
+import ClaveLogo from './icons/clave-logo.svg';
 
 const Header = ({ textClassName, frontPage = false }) => {
   const WrapperComponent = frontPage ? FrontPageWrapper : Wrapper;
@@ -12,6 +12,9 @@ const Header = ({ textClassName, frontPage = false }) => {
     display: block;
     margin-left: 0.5em;
     margin-right: 0.5em;
+    @media only screen and (max-width: 600px) {
+      display: none;
+  }
   `;
   return (
     <header>
@@ -21,7 +24,7 @@ const Header = ({ textClassName, frontPage = false }) => {
           Se hva vi gjør
         </LinkComponent>
         <LinkComponent to="/bli-en-av-oss" className={textClassName}>
-          Bli en av oss
+          Se hvem vi er
         </LinkComponent>
         <LinkComponent to="/kontakt-oss" className={textClassName}>
           Kontakt oss
@@ -36,12 +39,6 @@ const PADDING_VERTICAL = '1.45rem';
 const Logo = styled(ClaveLogo)`
   width: 5em;
   height: auto;
-`;
-
-const HeaderLink = styled(ClaveLink)`
-  display: block;
-  margin-left: 0.5em;
-  margin-right: 0.5em;
 `;
 
 const Wrapper = styled.div`

@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { onDesktop, MOBILE_PADDING, Container } from './Layout';
+import Image from './Image';
 
 const PageHeader = ({ title, imageProps }) => {
   return (
@@ -28,24 +29,35 @@ const PageHeaderWrapper = styled(Container.Content)`
   `)}
 `;
 
-const PageHeaderImage = props => (
+const PageHeaderImage = ({ fluidImage, src, ...props }) => (
   <PageHeaderImageWrapper>
-    <PageHeaderImageImg {...props} />
+    {fluidImage ? (
+      <PageHeaderLoadedImage fluidImage={fluidImage} {...props} />
+    ) : (
+      <PageHeaderImageImg src={src} {...props} />
+    )}
   </PageHeaderImageWrapper>
 );
 
 const PageHeaderImageWrapper = styled.div``;
 
-const PageHeaderImageImg = styled.img`
+const imageStyle = `
   display: block;
   width: 100%;
   height: auto;
   margin: 0;
-
+  
   ${onDesktop(`
     width: 80%;
     margin-left: auto;
   `)}
+`;
+
+const PageHeaderImageImg = styled.img`
+  ${imageStyle}
+`;
+const PageHeaderLoadedImage = styled(Image)`
+  ${imageStyle}
 `;
 
 export default PageHeader;

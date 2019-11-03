@@ -62,9 +62,9 @@ export const ColorContext = React.createContext({
   textColor: COLOR_CLAVE_GREEN,
 });
 
-const Layout = ({ asideContent, children }) => {
+const Layout = ({ asideContent, children, className }) => {
   return (
-    <Container>
+    <Container className={className}>
       <Container.Content>
         <LayoutWrapper>
           <Aside>{asideContent}</Aside>
