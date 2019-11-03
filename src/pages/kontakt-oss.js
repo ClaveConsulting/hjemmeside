@@ -18,74 +18,6 @@ const SecondPage = () => (
         <PageHeaderWithoutImage
             title="Kontakt oss"
         />
-        <Layout
-            asideContent={
-                <AsideContent>
-                    <h3>Bestill en test</h3>
-                    <p>
-                        Har du en løsning som du ikke har observert at dine brukere benytter
-                        seg av? Er det lenge siden du sist brukervennlighetstestet løsningen
-                        din? Da kan Steffen og Irene hjelpe deg.
-                    </p>
-                    <CtaLink to="/">Mer om hvordan vi tester</CtaLink>
-                    <AsideImg
-                        src="https://placehold.it/387x279/f00000/fff"
-                        width="387"
-                        height="279"
-                        alt="Brukertesting"
-                    />
-                </AsideContent>
-            }
-        >
-            <Gallery>
-                <GalleryImage
-                    src="https://placehold.it/681x470/00f000/fff"
-                    width="681"
-                    height="470"
-                    alt="Lars-Petter og Yngve"
-                />
-                <GalleryImage
-                    src="https://placehold.it/306x368/0000f0/fff"
-                    width="306"
-                    height="368"
-                    alt="Pekefinger"
-                />
-            </Gallery>
-        </Layout>
-        <Layout
-            asideContent={
-                <AsideContent>
-                    <h3>Bestill en test</h3>
-                    <p>
-                        Har du en løsning som du ikke har observert at dine brukere benytter
-                        seg av? Er det lenge siden du sist brukervennlighetstestet løsningen
-                        din? Da kan Steffen og Irene hjelpe deg.
-                    </p>
-                    <CtaLink to="/">Mer om hvordan vi tester</CtaLink>
-                    <AsideImg
-                        src="https://placehold.it/387x279/f00000/fff"
-                        width="387"
-                        height="279"
-                        alt="Brukertesting"
-                    />
-                </AsideContent>
-            }
-        >
-            <Gallery>
-                <GalleryImage
-                    src="https://placehold.it/681x470/00f000/fff"
-                    width="681"
-                    height="470"
-                    alt="Lars-Petter og Yngve"
-                />
-                <GalleryImage
-                    src="https://placehold.it/306x368/0000f0/fff"
-                    width="306"
-                    height="368"
-                    alt="Pekefinger"
-                />
-            </Gallery>
-        </Layout>
         <Layout>
             <h2>Sjekk ut hva vi gjør hos kundene våre</h2>
             <p>
@@ -95,13 +27,40 @@ const SecondPage = () => (
                 ulike domener!
             </p>
         </Layout>
+        <Layout
+            asideContent={
+                <AsideContent>
+                    <AsideContentLow>
+                        <h3>Kom innom</h3>
+                        <p>
+                            Øvre Slottsgate 18-20 <br/>
+                            0157 OSLO
+                        </p>
+                    </AsideContentLow>
+                </AsideContent>
+            }
+        >
+            <div className="mapouter">
+                    <iframe width="600" height="500" id="gmap_canvas"
+                            src="https://maps.google.com/maps?q=%C3%98vre%20Slottsgate%2018&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                            frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0">
+                    </iframe>
+            </div>
+        </Layout>
     </main>
 );
 
 
-
 const AsideContent = styled.div`
+  position: relative;
+  width: 100%;
+`;
+
+const AsideContentLow = styled.div`
   padding-left: ${MOBILE_PADDING};
+  position: absolute;
+  bottom: 0;
+  left: 0;
 `;
 
 const AsideImg = styled.img`
@@ -116,3 +75,5 @@ const Ingress = styled.p`
 `;
 
 export default SecondPage;
+
+
