@@ -15,17 +15,28 @@ const SecondPage = () => (
     <main>
         <Header />
         <SEO title="Kontakt oss" description="" />
-        <PageHeaderWithoutImage
-            title="Kontakt oss"
-        />
         <Layout>
-            <h2>Sjekk ut hva vi gjør hos kundene våre</h2>
-            <p>
-                Det er stort sett alltid flere Clavere hos en kunde, og gjerne en
-                blanding av UX-designere, rådgivere og utviklere. Spa, post, nettbutikk,
-                bil, offentlifg forvaltning, humanitært arbeid. Vi jobber innen mange
-                ulike domener!
-            </p>
+            <h1>Kontakt oss</h1>
+        </Layout>
+        <Layout>
+            <CustomTable>
+                <tr>
+                    <NoBorder><h2>Steinar</h2></NoBorder>
+                    <NoBorder><h2>Terje</h2></NoBorder>
+                </tr>
+                <tr>
+                    <NoBorder>
+                        Sveen SEO <br/>
+                        + 47 908 86 980 <br/>
+                        steinar.sveen@clave.no
+                    </NoBorder>
+                    <NoBorder>
+                        Aasgard Salgssjef <br/>
+                        + 47 975 37 841 <br/>
+                        terje.aasgard@clave.no
+                    </NoBorder>
+                </tr>
+            </CustomTable>
         </Layout>
         <Layout
             asideContent={
@@ -47,8 +58,18 @@ const SecondPage = () => (
                     </iframe>
             </div>
         </Layout>
+        <Layout>
+            <h2>Send oss gjerne en melding</h2>
+            <CustomInput placeholder="Navn" type="text"></CustomInput><br/>
+            <CustomInput placeholder="Epost" type="text"></CustomInput><br/>
+            <CustomInput placeholder="Melding" type="text"></CustomInput><br/>
+        </Layout>
     </main>
 );
+
+const CustomTable = styled.table`
+    style='border-collapse: collapse;'
+`;
 
 
 const AsideContent = styled.div`
@@ -63,6 +84,21 @@ const AsideContentLow = styled.div`
   left: 0;
 `;
 
+const CustomInput = styled.input`
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #CCC;
+  color: 005550;
+  box-sizing: border-box;
+  font-family: 'Arvo';
+  font-size: 18px;
+  height: 50px;
+  padding: 10px 0px;
+  position: relative;
+  top: 50%;
+  width: 100%;
+`;
+
 const AsideImg = styled.img`
   width: 100%;
   height: auto;
@@ -74,6 +110,11 @@ const Ingress = styled.p`
   line-height: 1.5;
 `;
 
+const NoBorder = styled.td`
+    border:0;
+`;
+
 export default SecondPage;
+
 
 
