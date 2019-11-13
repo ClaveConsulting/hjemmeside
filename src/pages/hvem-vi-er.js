@@ -10,22 +10,7 @@ import {useStaticQuery} from 'gatsby';
 const PageContent = () => {
     const images = useStaticQuery(graphql`
     query {
-      header: file(relativePath: { eq: "190920_Clave_lowres_2.jpg" }) {
-        ...fluidImage
-      }
-      larsPetter: file(relativePath: { eq: "190920_Clave_lowres_14.jpg" }) {
-        ...fluidImage
-      }
-      pointing: file(relativePath: { eq: "190920_Clave_lowres_9.jpg" }) {
-        ...fluidImage
-      }
-      laptop: file(relativePath: { eq: "190920_Clave_lowres_16.jpg" }) {
-        ...fluidImage
-      }
-      komplett: file(relativePath: { eq: "190920_Clave_lowres_8.jpg" }) {
-        ...fluidImage
-      }
-      theWell: file(relativePath: { eq: "190920_Clave_lowres_15.jpg" }) {
+      header: file(relativePath: { eq: "190920_Clave_lowres_11.jpg" }) {
         ...fluidImage
       }
     }
