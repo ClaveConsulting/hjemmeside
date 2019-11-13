@@ -23,7 +23,7 @@ const Header = ({ textClassName, frontPage = false }) => {
         <LinkComponent to="/hva-vi-gjor" className={textClassName}>
           Se hva vi gjør
         </LinkComponent>
-        <LinkComponent to="/bli-en-av-oss" className={textClassName}>
+        <LinkComponent to="/hvem-vi-er" className={textClassName}>
           Se hvem vi er
         </LinkComponent>
         <LinkComponent to="/kontakt-oss" className={textClassName}>
