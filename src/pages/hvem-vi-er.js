@@ -7,7 +7,7 @@ import Header from '../components/Header';
 import PageHeader from '../components/PageHeader';
 import {useStaticQuery} from 'gatsby';
 
-const PageContent = () => {
+const HvemViEr = () => {
     const images = useStaticQuery(graphql`
     query {
       header: file(relativePath: { eq: "190920_Clave_lowres_11.jpg" }) {
@@ -60,4 +60,4 @@ const Ingress = styled.p`
   line-height: 1.5;
 `;
 
-export default PageContent;
+export default HvemViEr;
