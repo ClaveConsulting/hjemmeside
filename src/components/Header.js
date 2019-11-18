@@ -1,15 +1,16 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import {COLOR_CLAVE_SKIN} from '../colors';
+import {COLOR_CLAVE_GREEN, COLOR_CLAVE_SKIN} from '../colors';
 import styled from 'styled-components';
 import ClaveLink from './ClaveLink';
 import ClaveLogo from './icons/clave-logo.svg';
 import {Link} from 'gatsby';
 
-const Header = ({textClassName, frontPage = false}) => {
-    const WrapperComponent = frontPage ? FrontPageWrapper : Wrapper;
+const Header = ({textClassName, frontPage = false, greenHeader=false}) => {
+    const WrapperComponent = frontPage ? FrontPageWrapper : greenHeader ? kontaktOssWrapper : Wrapper;
+
     const LinkComponent = styled(ClaveLink)`
-    ${frontPage ? `color: ${COLOR_CLAVE_SKIN};` : ''}
+    ${frontPage || greenHeader ? `color: ${COLOR_CLAVE_SKIN};` : ''}
     display: block;
     margin-left: 0.5em;
     margin-right: 0.5em;
@@ -57,6 +58,10 @@ const Wrapper = styled.div`
 const FrontPageWrapper = styled(Wrapper)`
   background: none;
   padding: ${PADDING_VERTICAL} 0;
+`;
+
+const kontaktOssWrapper = styled(Wrapper)`
+  background: ${COLOR_CLAVE_GREEN};
 `;
 
 Header.propTypes = {
