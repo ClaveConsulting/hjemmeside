@@ -1,13 +1,14 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { COLOR_CLAVE_SKIN } from '../colors';
+import {COLOR_CLAVE_SKIN} from '../colors';
 import styled from 'styled-components';
 import ClaveLink from './ClaveLink';
 import ClaveLogo from './icons/clave-logo.svg';
+import {Link} from 'gatsby';
 
-const Header = ({ textClassName, frontPage = false }) => {
-  const WrapperComponent = frontPage ? FrontPageWrapper : Wrapper;
-  const LinkComponent = styled(ClaveLink)`
+const Header = ({textClassName, frontPage = false}) => {
+    const WrapperComponent = frontPage ? FrontPageWrapper : Wrapper;
+    const LinkComponent = styled(ClaveLink)`
     ${frontPage ? `color: ${COLOR_CLAVE_SKIN};` : ''}
     display: block;
     margin-left: 0.5em;
@@ -16,22 +17,26 @@ const Header = ({ textClassName, frontPage = false }) => {
       display: none;
   }
   `;
-  return (
-    <header>
-      <WrapperComponent>
-        <Logo />
-        <LinkComponent to="/hva-vi-gjor" className={textClassName}>
-          Se hva vi gjør
-        </LinkComponent>
-        <LinkComponent to="/bli-en-av-oss" className={textClassName}>
-          Se hvem vi er
-        </LinkComponent>
-        <LinkComponent to="/kontakt-oss" className={textClassName}>
-          Kontakt oss
-        </LinkComponent>
-      </WrapperComponent>
-    </header>
-  );
+    return (
+        <header>
+            <WrapperComponent>
+                <Link
+                    to="/"
+                >
+                    <Logo/>
+                </Link>
+                <LinkComponent to="/hva-vi-gjor" className={textClassName}>
+                    Se hva vi gjør
+                </LinkComponent>
+                <LinkComponent to="/hvem-vi-er" className={textClassName}>
+                    Se hvem vi er
+                </LinkComponent>
+                <LinkComponent to="/kontakt-oss" className={textClassName}>
+                    Kontakt oss
+                </LinkComponent>
+            </WrapperComponent>
+        </header>
+    );
 };
 
 const PADDING_VERTICAL = '1.45rem';
@@ -55,7 +60,7 @@ const FrontPageWrapper = styled(Wrapper)`
 `;
 
 Header.propTypes = {
-  children: PropTypes.string,
+    children: PropTypes.string,
 };
 
 export default Header;
