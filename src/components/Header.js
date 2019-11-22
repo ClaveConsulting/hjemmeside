@@ -1,12 +1,15 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { useState } from 'react';
 import { COLOR_CLAVE_GREEN, COLOR_CLAVE_SKIN } from '../colors';
 import styled from 'styled-components';
 import ClaveLink from './ClaveLink';
 import ClaveLogo from './icons/clave-logo.svg';
 import { Link } from 'gatsby';
+import hamburgerIcon from './icons/hamburgermeny_ikon.svg';
 
 const Header = ({ textClassName, frontPage = false }) => {
+
+  const [menuExpanded, setMenuExpanded] = useState(false);
   const WrapperComponent = frontPage ? FrontPageWrapper : Wrapper;
   const LogoComponent = frontPage ? FrontPageLogo : Logo;
   const LinkComponent = styled(ClaveLink)`
@@ -18,6 +21,40 @@ const Header = ({ textClassName, frontPage = false }) => {
       display: none;
   }
   `;
+
+  const HanburgerMenuLink = styled(ClaveLink)`
+    ${frontPage ? `color: ${COLOR_CLAVE_SKIN};` : ''}
+    display: block;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+  `;
+
+  console.log('menuExpanded: ', menuExpanded);
+  const HamburgerMenyOptions = ({ textClassName }) => {
+    return menuExpanded ? (
+      <div>
+        <HanburgerMenuLink to="/hva-vi-gjor" className={textClassName}>
+          Se hva vi gjør
+        </HanburgerMenuLink>
+        <HanburgerMenuLink to="/hvem-vi-er" className={textClassName}>
+          Se hvem vi er
+        </HanburgerMenuLink>
+        <HanburgerMenuLink to="/kontakt-oss" className={textClassName}>
+          Kontakt oss
+        </HanburgerMenuLink>
+      </div>
+    ) : '';
+  };
+
+  const HamburgerKnapp = () => {
+    return frontPage ? (<SkinColorHamburgerButton onClick={() => setMenuExpanded(!menuExpanded)}>
+      <StyledHamburgerIcon/>
+    </SkinColorHamburgerButton>):(<GreenColorHamburgerButton onClick={() => setMenuExpanded(!menuExpanded)}>
+      <StyledHamburgerIcon/>
+    </GreenColorHamburgerButton>)
+
+  };
+
   return (
     <header>
       <WrapperComponent>
@@ -39,7 +76,10 @@ const Header = ({ textClassName, frontPage = false }) => {
             Kontakt oss
           </LinkComponent>
         </InlineWrapper>
+        <HamburgerKnapp/>
       </WrapperComponent>
+
+      <HamburgerMenyOptions className={textClassName}/>
     </header>
   );
 };
@@ -50,6 +90,33 @@ const Logo = styled(ClaveLogo)`
   width: 5em;
   height: auto;
   fill: ${COLOR_CLAVE_GREEN};
+`;
+
+const HamburgerButton = styled.button`
+
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+
+      @media only screen and (min-width: 600px) {
+      display: none;
+  }
+
+`;
+
+const SkinColorHamburgerButton = styled(HamburgerButton)`
+
+fill: ${COLOR_CLAVE_SKIN};
+`;
+
+
+const GreenColorHamburgerButton = styled(HamburgerButton)`
+
+fill: ${COLOR_CLAVE_GREEN};
 `;
 
 const FrontPageLogo = styled(Logo)`
@@ -87,5 +154,11 @@ const FrontPageWrapper = styled(Wrapper)`
 Header.propTypes = {
   children: PropTypes.string,
 };
+
+const StyledHamburgerIcon = styled(hamburgerIcon)`
+  width: 2em;
+  height: auto;
+  
+`;
 
 export default Header;
