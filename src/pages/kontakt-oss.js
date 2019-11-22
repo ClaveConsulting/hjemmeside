@@ -68,7 +68,7 @@ const SecondPage = () => {
                     <p>Trenger du hjelp til noe, ønsker å vite mer om hvordan det er å jobbe hos oss eller rett og slett
                         bare er litt nysgjerrig?</p>
                     <form name="message" method="POST" data-netlify="true">
-                        <input type="hidden" name="form-name" value="contact" />
+                        <input type="hidden" name="form-name" value="message" />
                         <CustomInput name="navn" placeholder="Navn" type="text"></CustomInput><br/>
                         <CustomInput name="Epost" placeholder="Epost" type="text"></CustomInput><br/>
                         <CustomInput name="Melding" placeholder="Melding" type="text"></CustomInput><br/>
