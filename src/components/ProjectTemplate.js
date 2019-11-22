@@ -81,7 +81,7 @@ const KeywordElement = styled.p`
   line-height: 1.5;
 `;
 
-const KeywordHeader = styled.p`
+const KeywordHeader = styled.h2`
   font-size: 24px;
   line-height: 1.5;
 `;
