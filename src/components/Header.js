@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { COLOR_CLAVE_SKIN } from '../colors';
+import { COLOR_CLAVE_GREEN, COLOR_CLAVE_SKIN } from '../colors';
 import styled from 'styled-components';
 import ClaveLink from './ClaveLink';
 import ClaveLogo from './icons/clave-logo.svg';
@@ -8,6 +8,7 @@ import { Link } from 'gatsby';
 
 const Header = ({ textClassName, frontPage = false }) => {
   const WrapperComponent = frontPage ? FrontPageWrapper : Wrapper;
+  const LogoComponent = frontPage ? FrontPageLogo : Logo;
   const LinkComponent = styled(ClaveLink)`
     ${frontPage ? `color: ${COLOR_CLAVE_SKIN};` : ''}
     display: block;
@@ -24,7 +25,7 @@ const Header = ({ textClassName, frontPage = false }) => {
           <Link
             to="/"
           >
-            <Logo/>
+            <LogoComponent/>
           </Link>
         </LogoWrapper>
         <InlineWrapper>
@@ -48,6 +49,11 @@ const PADDING_VERTICAL = '1.45rem';
 const Logo = styled(ClaveLogo)`
   width: 5em;
   height: auto;
+  fill: ${COLOR_CLAVE_GREEN};
+`;
+
+const FrontPageLogo = styled(Logo)`
+  fill: ${COLOR_CLAVE_SKIN};
 `;
 
 const Wrapper = styled.div`
