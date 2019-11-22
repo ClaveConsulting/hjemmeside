@@ -1,14 +1,11 @@
-import React, {useContext, useEffect, useRef, useState} from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
-import Layout, {MOBILE_PADDING, Container, ColorContext, onDesktop} from '../components/Layout';
+import Layout, {MOBILE_PADDING, ColorContext, onDesktop} from '../components/Layout';
 import SEO from '../components/Seo';
 import Header from '../components/Header';
-import CtaLink from '../components/CtaLink';
-import {GalleryImage, Gallery} from '../components/Gallery';
 import {graphql, Link, useStaticQuery} from 'gatsby';
 import {COLOR_CLAVE_GREEN, COLOR_CLAVE_SKIN} from '../colors';
-import ClaveLink from '../components/ClaveLink';
 import JoinBanner from "../components/JoinBanner";
 
 
