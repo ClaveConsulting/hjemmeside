@@ -71,6 +71,7 @@ const SecondPage = () => {
                 </Layout>
                 <Layout>
                     <h2>Send oss gjerne en melding</h2>
+                    <p>Trenger du hjelp til noe, ønsker å vite mer om hvordan det er å jobbe hos oss eller rett og slett bare er litt nysgjerrig?</p>
                     <form name="message">
                     <CustomInput name="navn" placeholder="Navn" type="text"></CustomInput><br/>
                     <CustomInput placeholder="Epost" type="text"></CustomInput><br/>
@@ -83,12 +84,6 @@ const SecondPage = () => {
         </main>
     );
 };
-
-
-const CustomTable = styled.table`
-    style='border-collapse: collapse;'
-`;
-
 
 const AsideContent = styled.div`
   position: relative;
@@ -108,7 +103,6 @@ const CustomInput = styled.input`
   border-bottom: 1px solid #CCC;
   color: ${COLOR_CLAVE_SKIN};
   box-sizing: border-box;
-  font-family: 'Arvo';
   font-size: 18px;
   height: 50px;
   padding: 10px 0px;
@@ -117,15 +111,15 @@ const CustomInput = styled.input`
   width: 100%;
 `;
 const CustomSubmit = styled.input`
-    background-color: transparent;
+  margin-top: 1em;
+  background-color: transparent;
   border: none;
-  border-bottom: 1px solid #CCC;
+  border-bottom: 0.2em solid #CCC;
   color: ${COLOR_CLAVE_SKIN};
   box-sizing: border-box;
-  font-family: 'Arvo';
   font-size: 23px;
   height: 50px;
-  padding: 10px 0px;
+  padding: 1rem 0 0 0;
   position: relative;
   top: 50%;
 `;
@@ -136,19 +130,17 @@ const ContactInfo = styled.div`
 
   ${onDesktop(`
   flex-direction: row;
-
 `)}
 `;
 
  const Contact1 = styled.div`
-  padding: ${MOBILE_PADDING};
 
   ${onDesktop(`
     flex: 1 1 50%;
     padding: 1em 0em 0em;
   `)}
 `;
- 
+
 
 export default SecondPage;
 
