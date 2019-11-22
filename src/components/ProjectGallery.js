@@ -26,7 +26,7 @@ export const ProjectGallery = ({
   imageSpacing = 300,
 }) => {
   const LeftTextWrapper = styled.div`
-    width: 90%;
+    width: 95%;
     ${onDesktop(`
     width: 50%;
     position: static;
@@ -37,7 +37,7 @@ export const ProjectGallery = ({
   `;
 
   const RightTextWrapper = styled.div`
-    width: 90%;
+    width: 95%;
     ${onDesktop(`
     width: 80%;
     position: static;
