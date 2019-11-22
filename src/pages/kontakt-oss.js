@@ -127,6 +127,7 @@ const CustomSubmit = styled.input`
 const ContactInfo = styled.div`
   display: flex;
   flex-direction: column;
+  padding-left:0;
 
   ${onDesktop(`
   flex-direction: row;
