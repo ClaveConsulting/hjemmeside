@@ -9,6 +9,7 @@ import hamburgerIcon from './icons/hamburgermeny_ikon.svg';
 
 const Header = ({textClassName, frontPage = false, greenHeader = false}) => {
 
+  const HamburgerDiv = styled.div` ${frontPage || greenHeader ? `background: ${COLOR_CLAVE_GREEN};` : `background: ${COLOR_CLAVE_SKIN};`}`;
   const [menuExpanded, setMenuExpanded] = useState(false);
   const WrapperComponent = frontPage ? FrontPageWrapper : greenHeader ? kontaktOssWrapper : Wrapper;
     const LogoComponent = frontPage || greenHeader ? FrontPageLogo : Logo;
@@ -32,7 +33,7 @@ const Header = ({textClassName, frontPage = false, greenHeader = false}) => {
   console.log('menuExpanded: ', menuExpanded);
   const HamburgerMenyOptions = ({ textClassName }) => {
     return menuExpanded ? (
-      <div>
+      <HamburgerDiv>
         <HanburgerMenuLink to="/hva-vi-gjor" className={textClassName}>
           Se hva vi gjør
         </HanburgerMenuLink>
@@ -42,7 +43,7 @@ const Header = ({textClassName, frontPage = false, greenHeader = false}) => {
         <HanburgerMenuLink to="/kontakt-oss" className={textClassName}>
           Kontakt oss
         </HanburgerMenuLink>
-      </div>
+      </HamburgerDiv>
     ) : '';
   };
 
@@ -113,6 +114,15 @@ const SkinColorHamburgerButton = styled(HamburgerButton)`
 fill: ${COLOR_CLAVE_SKIN};
 `;
 
+
+
+const SkinDiv = styled.div`
+background: ${COLOR_CLAVE_SKIN};
+`;
+
+const GreenDiv = styled.div`
+background: ${COLOR_CLAVE_GREEN};
+`;
 
 const GreenColorHamburgerButton = styled(HamburgerButton)`
 
