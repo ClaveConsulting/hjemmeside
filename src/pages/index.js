@@ -1,15 +1,11 @@
-import React, { useLayoutEffect, useRef } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-
-import ScrollMagic from 'scrollmagic/scrollmagic/minified/ScrollMagic.min';
 import 'scrollmagic/scrollmagic/minified/plugins/animation.gsap.min';
 import TweenMax from 'gsap/src/minified/TweenMax.min';
-import TimelineMax from 'gsap/src/minified/TimelineMax.min';
-import CSSRulePlugin from 'gsap/src/minified/plugins/CSSRulePlugin.min';
 
 import Image from '../components/Image';
 import SEO from '../components/Seo';
-import { COLOR_CLAVE_GREEN, COLOR_CLAVE_SKIN } from '../colors';
+import { COLOR_CLAVE_SKIN } from '../colors';
 import ClaveLink from '../components/ClaveLink';
 import Header from '../components/Header';
 import Title from '../components/Title';
@@ -19,7 +15,7 @@ import 'scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap';
 import './index.css';
 import JoinBanner from '../components/JoinBanner';
 import CtaLink from '../components/CtaLink';
-import { useStaticQuery, graphql } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 import BrukeropplevelseIcon from '../components/icons/clave_ikon_brukeropplevelse.svg';
 import SystemutviklingIcon from '../components/icons/clave_ikon_systemutvikling.svg';
 import RaadgivningIcon from '../components/icons/clave_ikon_radgivning.svg';

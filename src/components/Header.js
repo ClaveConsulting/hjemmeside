@@ -29,7 +29,6 @@ const Header = ({textClassName, frontPage = false, greenHeader = false}) => {
     margin-right: 0.5em;
   `;
 
-  console.log('menuExpanded: ', menuExpanded);
   const HamburgerMenyOptions = ({ textClassName }) => {
     return menuExpanded ? (
       <div>
