@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 
-import Layout, {MOBILE_PADDING, Container, ColorContext} from '../components/Layout';
+import Layout, {MOBILE_PADDING, Container, ColorContext, onDesktop} from '../components/Layout';
 import SEO from '../components/Seo';
 import Header from '../components/Header';
 import CtaLink from '../components/CtaLink';
@@ -38,24 +38,16 @@ const SecondPage = () => {
                     <h1>Kontakt oss</h1>
                 </Layout>
                 <Layout>
-                    <CustomTable>
-                        <tr>
-                            <NoBorder><h2>Steinar</h2></NoBorder>
-                            <NoBorder><h2>Terje</h2></NoBorder>
-                        </tr>
-                        <tr>
-                            <NoBorder>
-                                Sveen SEO <br/>
-                                + 47 908 86 980 <br/>
-                                steinar.sveen@clave.no
-                            </NoBorder>
-                            <NoBorder>
-                                Aasgard Salgssjef <br/>
-                                + 47 975 37 841 <br/>
-                                terje.aasgard@clave.no
-                            </NoBorder>
-                        </tr>
-                    </CustomTable>
+                    <ContactInfo>
+                        <Contact1>
+                            <h3>Steinar</h3>
+                            <p>Sveen SEO <br/> + 47 908 86 980 <br/>steinar.sveen@clave.no</p>
+                        </Contact1>
+                        <Contact1>
+                            <h3>Terje</h3>
+                            <p>Asgard Salgssjef <br/>+ 47 975 37 841 <br/>terje.aasgard@clave.no</p>
+                        </Contact1>
+                    </ContactInfo>
                 </Layout>
                 <Layout
                     asideContent={
@@ -138,21 +130,25 @@ const CustomSubmit = styled.input`
   top: 50%;
 `;
 
+const ContactInfo = styled.div`
+  display: flex;
+  flex-direction: column;
 
-const AsideImg = styled.img`
-  width: 100%;
-  height: auto;
-  display: block;
+  ${onDesktop(`
+  flex-direction: row;
+
+`)}
 `;
 
-const Ingress = styled.p`
-  font-size: 1.5em;
-  line-height: 1.5;
-`;
+ const Contact1 = styled.div`
+  padding: ${MOBILE_PADDING};
 
-const NoBorder = styled.td`
-    border:0;
+  ${onDesktop(`
+    flex: 1 1 50%;
+    padding: 1em 0em 0em;
+  `)}
 `;
+ 
 
 export default SecondPage;
 
