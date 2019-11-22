@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import 'scrollmagic/scrollmagic/minified/plugins/animation.gsap.min';
-import TweenMax from 'gsap/src/minified/TweenMax.min';
 
 
 import Image from '../components/Image';
