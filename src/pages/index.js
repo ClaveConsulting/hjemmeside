@@ -27,35 +27,6 @@ import RaadgivningIcon from '../components/icons/clave_ikon_radgivning.svg';
 TweenMax.defaultEase = TweenMax.Linear.easeNone;
 
 const IndexPage = () => {
-  const controller = useRef();
-
-  useLayoutEffect(() => {
-    controller.current = new ScrollMagic.Controller();
-
-    // Css er lagt ut i ekstern fil (index.css) for å kunne bruke pseudo selector på klasse herfra
-    const rule = CSSRulePlugin.getRule('.overlayWithCircle:after');
-
-    const tweenScroll = TweenMax.to(rule, 1, {
-      cssRule: {
-        transform: window.innerWidth < 720 ? 'scale(6)' : 'scale(3.1)'
-      },
-    });
-    const tweenColor = TweenMax.to('.animateSkinToGreenText', 1, {
-      color: COLOR_CLAVE_GREEN,
-    });
-
-    const timelineMax = new TimelineMax();
-    timelineMax.add(tweenColor, 'use-same-label-to-run-at-same-time');
-    timelineMax.add(tweenScroll, 'use-same-label-to-run-at-same-time');
-
-    new ScrollMagic.Scene({
-      duration: 300,
-    })
-      .setTween(timelineMax)
-      .setPin('#frontpage-first-section')
-      .addTo(controller.current);
-  }, []);
-
   const images = useStaticQuery(graphql`
     query {
       header: file(relativePath: { eq: "190920_Clave_lowres_18_cropped.jpg" }) {
