@@ -92,7 +92,7 @@ const KeywordComponent = styled.div`
 `;
 
 export const Ingress = styled.p`
-  font-size: 36px;
+  font-size: 24px;
   line-height: 1.5;
 `;
 
