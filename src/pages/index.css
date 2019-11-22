@@ -1,26 +1,3 @@
-.overlayWithCircle {
-    position: absolute;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100%;
-    z-index: -1;
-}
-
-.overlayWithCircle:after {
-    content: '';
-    position: absolute;
-    right: -15%;
-    top: 13%;
-    border-radius: 100%;
-    width: 60%;
-    height: 0;
-    padding-bottom: 60%;
-    box-shadow: 0 0 0 3000px #005550;
-
-}
 
 .front-page-ingress {
     padding-top: 3rem;
@@ -33,9 +10,6 @@
 }
 
 @media only screen and (max-width: 480px) {
-    .overlayWithCircle:after {
-        top: 70%;
-    }
 
     .info-flexbox {
         flex-direction: column;

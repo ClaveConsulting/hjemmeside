@@ -9,7 +9,7 @@ const ClaveLink = ({ to, children, className }) => (
 
 const StyledLink = styled(Link)`
   @media only screen and (max-width: 600px) {
-  display: none;
+    display: none;
   }
   color: ${COLOR_CLAVE_GREEN};
   text-decoration: none;

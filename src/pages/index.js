@@ -1,11 +1,5 @@
-import React, { useLayoutEffect, useRef } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-
-import ScrollMagic from 'scrollmagic/scrollmagic/minified/ScrollMagic.min';
-import 'scrollmagic/scrollmagic/minified/plugins/animation.gsap.min';
-import TweenMax from 'gsap/src/minified/TweenMax.min';
-import TimelineMax from 'gsap/src/minified/TimelineMax.min';
-import CSSRulePlugin from 'gsap/src/minified/plugins/CSSRulePlugin.min';
 
 import Image from '../components/Image';
 import SEO from '../components/Seo';
@@ -15,21 +9,18 @@ import Header from '../components/Header';
 import Title from '../components/Title';
 import Layout, { onDesktop } from '../components/Layout';
 
-import 'scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap';
 import './index.css';
 import JoinBanner from '../components/JoinBanner';
 import CtaLink from '../components/CtaLink';
-import { useStaticQuery, graphql } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 import BrukeropplevelseIcon from '../components/icons/clave_ikon_brukeropplevelse.svg';
 import SystemutviklingIcon from '../components/icons/clave_ikon_systemutvikling.svg';
 import RaadgivningIcon from '../components/icons/clave_ikon_radgivning.svg';
 
-TweenMax.defaultEase = TweenMax.Linear.easeNone;
-
 const IndexPage = () => {
   const images = useStaticQuery(graphql`
     query {
-      header: file(relativePath: { eq: "190920_Clave_lowres_18_cropped.jpg" }) {
+      header: file(relativePath: { eq: "clave-frontpage.png" }) {
         ...fluidImage
       }
       karine: file(relativePath: { eq: "190920_Clave_lowres_5.jpg" }) {
@@ -49,7 +40,6 @@ const IndexPage = () => {
         <StyledBackgroundImage>
           <Image fluidImage={images.header} />
         </StyledBackgroundImage>
-        <div className="overlayWithCircle" />
         <StyledTextPanel>
           <Title color={COLOR_CLAVE_SKIN} className="animateSkinToGreenText">
             De beste løsningene krever de beste folkene.
@@ -130,28 +120,30 @@ const StyledBackgroundImage = styled.div`
   top: 0;
   left: 0;
   height: 100vh;
-  padding-left: 30%;
+  padding-left: 60%;
   width: 100%;
-  z-index: -2;
-  background-color: ${COLOR_CLAVE_SKIN};
-    @media only screen and (max-width: 480px) {
-    padding-top: 120%;
-    }
+  z-index: -1;
+  display: flex;
+  flex-direction: column-reverse;
+  background-color: ${COLOR_CLAVE_GREEN};
+  @media only screen and (max-width: 600px) {
+    padding-left: 20%;
+  }
 `;
 
 const BrukeropplevelseLogo = styled(BrukeropplevelseIcon)`
-              width: 10em;
-              height: auto;
-              `;
+  width: 10em;
+  height: auto;
+`;
 
 const SystemutviklingLogo = styled(SystemutviklingIcon)`
-              width: 10em;
-              height: auto;
-              `;
+  width: 10em;
+  height: auto;
+`;
 
 const RaadgivningLogo = styled(RaadgivningIcon)`
-              width: 10em;
-              height: auto;
-              `;
+  width: 10em;
+  height: auto;
+`;
 
 export default IndexPage;

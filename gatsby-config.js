@@ -38,20 +38,6 @@ module.exports = {
         icon: `src/images/clave-icon.png`, // This path is relative to the root of the site.
       },
     },
-    {
-      resolve: `gatsby-plugin-alias-imports`,
-      options: {
-        alias: {
-          'TweenLite': path.resolve('node_modules', 'gsap/src/minified/TweenLite.min.js'),
-          'TweenMax': path.resolve('node_modules', 'gsap/src/minified/TweenMax.min.js'),
-          'TimelineMax': path.resolve('node_modules', 'gsap/src/minified/TimelineMax.min.js'),
-          'CSSRulePlugin': path.resolve('node_modules', 'gsap/src/minified/plugins/CSSRulePlugin.min.js'),
-          'ScrollMagic': path.resolve('node_modules', 'scrollmagic/scrollmagic/minified/ScrollMagic.min.js'),
-          'animation.gsap': path.resolve('node_modules', 'scrollmagic/scrollmagic/minified/plugins/animation.gsap.min.js'),
-        },
-        extensions: [],
-      },
-    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
