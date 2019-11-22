@@ -278,7 +278,7 @@ h1 {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   text-rendering: optimizeLegibility;
-  font-size: 2rem;
+  font-size: 3.75rem;
   line-height: 1.2;
 }
 
@@ -295,7 +295,7 @@ h2 {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   text-rendering: optimizeLegibility;
-  font-size: 1.7rem;
+  font-size: 3rem;
   line-height: 1.2;
 }
 
@@ -312,7 +312,7 @@ h3 {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   text-rendering: optimizeLegibility;
-  font-size: 1.5rem;
+  font-size: 2.25rem;
   line-height: 1.2;
 }
 
@@ -329,7 +329,7 @@ h4 {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   text-rendering: optimizeLegibility;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   line-height: 1.5;
 }
 
@@ -694,18 +694,6 @@ h3,
 h4 {
   font-family: 'basis-grotesque-medium-pro', Fallback, sans-serif;
   font-weight: normal;
-}
-
-h1{
-    font-size: 2.75rem;
-}
-
-h2{
-  font-size: 2rem;
-}
-
-h3{
-  font-size: 1.5rem;
 }
 
 @media only screen and (max-width: 600px) {
