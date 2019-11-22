@@ -7,6 +7,7 @@ import Header from '../components/Header';
 import {graphql, Link, useStaticQuery} from 'gatsby';
 import {COLOR_CLAVE_GREEN, COLOR_CLAVE_SKIN} from '../colors';
 import JoinBanner from "../components/JoinBanner";
+import MyMapComponent from "../components/Map";
 
 
 const SecondPage = () => {
@@ -57,10 +58,7 @@ const SecondPage = () => {
                     }
                 >
                     <div className="mapouter">
-                        <iframe width="100%" height="500" id="gmap_canvas"
-                                src="https://maps.google.com/maps?q=%C3%98vre%20Slottsgate%2018&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                                frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0">
-                        </iframe>
+                        <MyMapComponent/>
                     </div>
                 </Layout>
                 <Layout>
