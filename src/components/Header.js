@@ -23,7 +23,7 @@ const Header = ({textClassName, frontPage = false, greenHeader = false}) => {
   `;
 
   const HanburgerMenuLink = styled(ClaveLink)`
-    ${frontPage ? `color: ${COLOR_CLAVE_SKIN};` : ''}
+    ${frontPage || greenHeader? `color: ${COLOR_CLAVE_SKIN};` : ''}
     display: block;
     margin-left: 0.5em;
     margin-right: 0.5em;
@@ -47,7 +47,7 @@ const Header = ({textClassName, frontPage = false, greenHeader = false}) => {
   };
 
   const HamburgerKnapp = () => {
-    return frontPage ? (<SkinColorHamburgerButton onClick={() => setMenuExpanded(!menuExpanded)}>
+    return frontPage || greenHeader ? (<SkinColorHamburgerButton onClick={() => setMenuExpanded(!menuExpanded)}>
       <StyledHamburgerIcon/>
     </SkinColorHamburgerButton>):(<GreenColorHamburgerButton onClick={() => setMenuExpanded(!menuExpanded)}>
       <StyledHamburgerIcon/>
