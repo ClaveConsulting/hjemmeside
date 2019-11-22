@@ -16,9 +16,6 @@ const SecondPage = () => {
 
     const images = useStaticQuery(graphql`
     query {
-      header: file(relativePath: { eq: "190920_Clave_lowres_18_cropped.jpg" }) {
-        ...fluidImage
-      }
       karine: file(relativePath: { eq: "190920_Clave_lowres_5.jpg" }) {
         ...fluidImage
       }
@@ -31,8 +28,8 @@ const SecondPage = () => {
 
     return (
         <main>
+            <Header greenHeader/>
             <ColorContext.Provider value={{backgroundColor: COLOR_CLAVE_GREEN, textColor: COLOR_CLAVE_SKIN}}>
-                <Header greenHeader/>
                 <SEO title="Kontakt oss" description=""/>
                 <Layout>
                     <h1>Kontakt oss</h1>
