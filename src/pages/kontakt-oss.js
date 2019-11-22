@@ -86,15 +86,17 @@ const SecondPage = () => {
 };
 
 const AsideContent = styled.div`
-  position: relative;
-  width: 100%;
+  padding-left: ${MOBILE_PADDING};
+  display: flex;
+  ${onDesktop(`
+   
+    padding: 1em 3em 1em;
+  `)}
 `;
 
-const AsideContentLow = styled.div`
-  padding-left: ${MOBILE_PADDING};
-  position: absolute;
-  bottom: 0;
-  left: 0;
+const AsideContentLow = styled.span`
+    display: inline-block;
+  align-self: flex-end;
 `;
 
 const CustomInput = styled.input`
@@ -125,6 +127,7 @@ const CustomSubmit = styled.input`
 `;
 
 const ContactInfo = styled.div`
+  max-width: 1280px;
   display: flex;
   flex-direction: column;
   padding-left:0;
