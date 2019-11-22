@@ -1,13 +1,13 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, {useContext, useEffect, useRef, useState} from 'react';
 import styled from 'styled-components';
 
 import Layout, {MOBILE_PADDING, Container, ColorContext, onDesktop} from '../components/Layout';
 import SEO from '../components/Seo';
 import Header from '../components/Header';
 import CtaLink from '../components/CtaLink';
-import { GalleryImage, Gallery } from '../components/Gallery';
+import {GalleryImage, Gallery} from '../components/Gallery';
 import {graphql, Link, useStaticQuery} from 'gatsby';
-import { COLOR_CLAVE_GREEN, COLOR_CLAVE_SKIN } from '../colors';
+import {COLOR_CLAVE_GREEN, COLOR_CLAVE_SKIN} from '../colors';
 import ClaveLink from '../components/ClaveLink';
 import JoinBanner from "../components/JoinBanner";
 
@@ -71,12 +71,13 @@ const SecondPage = () => {
                 </Layout>
                 <Layout>
                     <h2>Send oss gjerne en melding</h2>
-                    <p>Trenger du hjelp til noe, ønsker å vite mer om hvordan det er å jobbe hos oss eller rett og slett bare er litt nysgjerrig?</p>
-                    <form name="message">
-                    <CustomInput name="navn" placeholder="Navn" type="text"></CustomInput><br/>
-                    <CustomInput placeholder="Epost" type="text"></CustomInput><br/>
-                    <CustomInput placeholder="Melding" type="text"></CustomInput><br/>
-                    <CustomSubmit value="Send" type="submit"></CustomSubmit>
+                    <p>Trenger du hjelp til noe, ønsker å vite mer om hvordan det er å jobbe hos oss eller rett og slett
+                        bare er litt nysgjerrig?</p>
+                    <form name="message" method="POST" data-netlify="true">
+                        <CustomInput name="navn" placeholder="Navn" type="text"></CustomInput><br/>
+                        <CustomInput name="Epost" placeholder="Epost" type="text"></CustomInput><br/>
+                        <CustomInput name="Melding" placeholder="Melding" type="text"></CustomInput><br/>
+                        <CustomSubmit value="Send" type="submit"></CustomSubmit>
                     </form>
                 </Layout>
             </ColorContext.Provider>
@@ -116,7 +117,7 @@ const CustomSubmit = styled.input`
   margin-top: 1em;
   background-color: transparent;
   border: none;
-  border-bottom: 0.2em solid #CCC;
+  border-bottom: 0.1em solid #CCC;
   color: ${COLOR_CLAVE_SKIN};
   box-sizing: border-box;
   font-size: 23px;
@@ -137,7 +138,7 @@ const ContactInfo = styled.div`
 `)}
 `;
 
- const Contact1 = styled.div`
+const Contact1 = styled.div`
 
   ${onDesktop(`
     flex: 1 1 50%;
