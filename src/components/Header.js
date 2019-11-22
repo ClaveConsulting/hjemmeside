@@ -4,7 +4,7 @@ import {COLOR_CLAVE_GREEN, COLOR_CLAVE_SKIN} from '../colors';
 import styled from 'styled-components';
 import ClaveLink from './ClaveLink';
 import ClaveLogo from './icons/clave-logo.svg';
-import {Link} from 'gatsby';
+import { Link } from 'gatsby';
 
 const Header = ({textClassName, frontPage = false, greenHeader=false}) => {
     const WrapperComponent = frontPage ? FrontPageWrapper : greenHeader ? kontaktOssWrapper : Wrapper;
@@ -18,26 +18,30 @@ const Header = ({textClassName, frontPage = false, greenHeader=false}) => {
       display: none;
   }
   `;
-    return (
-        <header>
-            <WrapperComponent>
-                <Link
-                    to="/"
-                >
-                    <Logo/>
-                </Link>
-                <LinkComponent to="/hva-vi-gjor" className={textClassName}>
-                    Se hva vi gjør
-                </LinkComponent>
-                <LinkComponent to="/hvem-vi-er" className={textClassName}>
-                    Se hvem vi er
-                </LinkComponent>
-                <LinkComponent to="/kontakt-oss" className={textClassName}>
-                    Kontakt oss
-                </LinkComponent>
-            </WrapperComponent>
-        </header>
-    );
+  return (
+    <header>
+      <WrapperComponent>
+        <LogoWrapper>
+          <Link
+            to="/"
+          >
+            <Logo/>
+          </Link>
+        </LogoWrapper>
+        <InlineWrapper>
+          <LinkComponent to="/hva-vi-gjor" className={textClassName}>
+            Se hva vi gjør
+          </LinkComponent>
+          <LinkComponent to="/hvem-vi-er" className={textClassName}>
+            Se hvem vi er
+          </LinkComponent>
+          <LinkComponent to="/kontakt-oss" className={textClassName}>
+            Kontakt oss
+          </LinkComponent>
+        </InlineWrapper>
+      </WrapperComponent>
+    </header>
+  );
 };
 
 const PADDING_VERTICAL = '1.45rem';
@@ -55,6 +59,21 @@ const Wrapper = styled.div`
   background: ${COLOR_CLAVE_SKIN};
 `;
 
+const InlineWrapper = styled.div`
+  display: inline-flex;
+  justify-content: space-around;
+  width: 75%;
+      @media only screen and (min-width: 600px) {
+      margin-right: 4rem;
+  }
+`;
+
+const LogoWrapper = styled.div`
+      @media only screen and (min-width: 600px) {
+      margin-left: 4rem;
+  }
+`;
+
 const FrontPageWrapper = styled(Wrapper)`
   background: none;
   padding: ${PADDING_VERTICAL} 0;
@@ -65,7 +84,7 @@ const kontaktOssWrapper = styled(Wrapper)`
 `;
 
 Header.propTypes = {
-    children: PropTypes.string,
+  children: PropTypes.string,
 };
 
 export default Header;
