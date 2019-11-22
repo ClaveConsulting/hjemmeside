@@ -26,13 +26,18 @@ export const ProjectGallery = ({
   imageSpacing = 300,
 }) => {
   const LeftTextWrapper = styled.div`
+    width: 90%;
     ${onDesktop(`
     width: 50%;
     position: static;
   `)}
   `;
+  const LeftTextItem = styled.div`
+    padding-bottom: 20px;
+  `;
 
   const RightTextWrapper = styled.div`
+    width: 90%;
     ${onDesktop(`
     width: 80%;
     position: static;
@@ -54,10 +59,14 @@ export const ProjectGallery = ({
       <FirstImage ref={firstSectionRef} height={firstSectionHeight}>
         <GalleryImageWithSubtext image={leftImg} alt="FirstImage">
           <LeftTextWrapper>
-            <h2>Metodologi</h2>
-            <p>{methodology}</p>
-            <h2>Teknologi</h2>
-            <p>{technology}</p>
+            <LeftTextItem>
+              <h2>Metodologi</h2>
+              <p>{methodology}</p>
+            </LeftTextItem>
+            <LeftTextItem>
+              <h2>Teknologi</h2>
+              <p>{technology}</p>
+            </LeftTextItem>
           </LeftTextWrapper>
         </GalleryImageWithSubtext>
       </FirstImage>
@@ -79,6 +88,7 @@ const GalleryContainer = props => {
     padding-left: 64px;
     position: relative;
     overflow: hidden;
+    padding-bottom: 64px;
   `;
   return (
     <Container>
