@@ -161,19 +161,8 @@ const SecondPage = () => {
           }}
           title="Komplett"
           ingress="Anniken og Lars Petter jobber for The Well. The Well er Nordens største spa- og velværesenter. De må faktisk litt på spa av og til, for å forstå brukeren."
-          link="/prosjekter/the-well"
+          link="/prosjekter/komplett"
         />
-        <Project
-        image={{
-          src: 'https://placehold.it/305x239/ff0/fff',
-          alt: 'Komplett',
-          width: 305,
-          height: 239,
-        }}
-        title="Komplett Group"
-        ingress="Komplett Group"
-        link="/prosjekter/komplett"
-      />
       </Projects>
     </main>
   );

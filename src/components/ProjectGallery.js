@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import styled from 'styled-components';
-import Image from './image';
+import Image from './Image';
 import { Container, onDesktop } from './Layout';
 
 const GalleryImageWithSubtext = ({ image, children, alt }) => {
