@@ -8,7 +8,7 @@ import PageHeader from '../components/PageHeader';
 import CtaLink from '../components/CtaLink';
 import { Gallery, GalleryImage } from '../components/Gallery';
 import ClaveLink from '../components/ClaveLink';
-import { useStaticQuery } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
 import Image from '../components/Image';
 
 const SecondPage = () => {

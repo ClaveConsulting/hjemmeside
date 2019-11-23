@@ -8,10 +8,17 @@ import { Link } from 'gatsby';
 import hamburgerIcon from './icons/hamburgermeny_ikon.svg';
 
 const Header = ({ textClassName, frontPage = false, greenHeader = false }) => {
-
-  const HamburgerDiv = styled.div` ${frontPage || greenHeader ? `background: ${COLOR_CLAVE_GREEN};` : `background: ${COLOR_CLAVE_SKIN};`}`;
+  const HamburgerDiv = styled.div`
+    ${frontPage || greenHeader
+      ? `background: ${COLOR_CLAVE_GREEN};`
+      : `background: ${COLOR_CLAVE_SKIN};`}
+  `;
   const [menuExpanded, setMenuExpanded] = useState(false);
-  const WrapperComponent = frontPage ? FrontPageWrapper : greenHeader ? kontaktOssWrapper : Wrapper;
+  const WrapperComponent = frontPage
+    ? FrontPageWrapper
+    : greenHeader
+    ? kontaktOssWrapper
+    : Wrapper;
   const LogoComponent = frontPage || greenHeader ? FrontPageLogo : Logo;
   const LinkComponent = styled(ClaveLink)`
     ${frontPage || greenHeader ? `color: ${COLOR_CLAVE_SKIN};` : ''}
@@ -20,7 +27,7 @@ const Header = ({ textClassName, frontPage = false, greenHeader = false }) => {
     margin-right: 0.5em;
     @media only screen and (max-width: 600px) {
       display: none;
-  }
+    }
   `;
 
   const HanburgerMenuLink = styled(ClaveLink)`
@@ -43,25 +50,28 @@ const Header = ({ textClassName, frontPage = false, greenHeader = false }) => {
           Kontakt oss
         </HanburgerMenuLink>
       </HamburgerDiv>
-    ) : '';
+    ) : (
+      ''
+    );
   };
 
   const HamburgerKnapp = () => {
-    return frontPage || greenHeader ? (<SkinColorHamburgerButton onClick={() => setMenuExpanded(!menuExpanded)}>
-      <StyledHamburgerIcon />
-    </SkinColorHamburgerButton>) : (<GreenColorHamburgerButton onClick={() => setMenuExpanded(!menuExpanded)}>
-      <StyledHamburgerIcon />
-    </GreenColorHamburgerButton>);
-
+    return frontPage || greenHeader ? (
+      <SkinColorHamburgerButton onClick={() => setMenuExpanded(!menuExpanded)}>
+        <StyledHamburgerIcon />
+      </SkinColorHamburgerButton>
+    ) : (
+      <GreenColorHamburgerButton onClick={() => setMenuExpanded(!menuExpanded)}>
+        <StyledHamburgerIcon />
+      </GreenColorHamburgerButton>
+    );
   };
 
   return (
     <header>
       <WrapperComponent>
         <LogoWrapper>
-          <Link
-            to="/"
-          >
+          <Link to="/">
             <LogoComponent />
           </Link>
         </LogoWrapper>
@@ -93,48 +103,29 @@ const Logo = styled(ClaveLogo)`
 `;
 
 const HamburgerButton = styled.button`
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
 
-	background: none;
-	color: inherit;
-	border: none;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
-
-      @media only screen and (min-width: 600px) {
-      display: none;
+  @media only screen and (min-width: 600px) {
+    display: none;
   }
-
 `;
 
 const SkinColorHamburgerButton = styled(HamburgerButton)`
-
-fill: ${COLOR_CLAVE_SKIN};
-`;
-
-
-const SkinDiv = styled.div`
-background: ${COLOR_CLAVE_SKIN};
-`;
-
-const GreenDiv = styled.div`
-background: ${COLOR_CLAVE_GREEN};
+  fill: ${COLOR_CLAVE_SKIN};
 `;
 
 const GreenColorHamburgerButton = styled(HamburgerButton)`
-
-fill: ${COLOR_CLAVE_GREEN};
+  fill: ${COLOR_CLAVE_GREEN};
 `;
 
 const FrontPageLogo = styled(Logo)`
   fill: ${COLOR_CLAVE_SKIN};
-`;
-
-const HeaderLink = styled(ClaveLink)`
-  display: block;
-  margin-left: 0.5em;
-  margin-right: 0.5em;
 `;
 
 const Wrapper = styled.div`
@@ -149,14 +140,14 @@ const InlineWrapper = styled.div`
   display: inline-flex;
   justify-content: space-around;
   width: 75%;
-      @media only screen and (min-width: 600px) {
-      margin-right: 4rem;
+  @media only screen and (min-width: 600px) {
+    margin-right: 4rem;
   }
 `;
 
 const LogoWrapper = styled.div`
-      @media only screen and (min-width: 600px) {
-      margin-left: 4rem;
+  @media only screen and (min-width: 600px) {
+    margin-left: 4rem;
   }
 `;
 
@@ -176,7 +167,6 @@ Header.propTypes = {
 const StyledHamburgerIcon = styled(hamburgerIcon)`
   width: 2em;
   height: auto;
-  
 `;
 
 export default Header;
