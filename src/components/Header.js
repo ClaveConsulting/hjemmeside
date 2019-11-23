@@ -1,40 +1,35 @@
 import PropTypes from 'prop-types';
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { COLOR_CLAVE_GREEN, COLOR_CLAVE_SKIN } from '../colors';
 import styled from 'styled-components';
 import ClaveLink from './ClaveLink';
 import ClaveLogo from './icons/clave-logo.svg';
 import { Link } from 'gatsby';
 import hamburgerIcon from './icons/hamburgermeny_ikon.svg';
+import { Container, ColorContext } from './Layout';
+import { onDesktop } from './Breakpoints';
 
-const Header = ({ textClassName, frontPage = false, greenHeader = false }) => {
-  const HamburgerDiv = styled.div`
-    ${frontPage || greenHeader
-      ? `background: ${COLOR_CLAVE_GREEN};`
-      : `background: ${COLOR_CLAVE_SKIN};`}
-  `;
+const Header = ({ textClassName, frontPage = false }) => {
+  const HamburgerDiv = styled.div``;
   const [menuExpanded, setMenuExpanded] = useState(false);
-  const WrapperComponent = frontPage
-    ? FrontPageWrapper
-    : greenHeader
-    ? kontaktOssWrapper
-    : Wrapper;
-  const LogoComponent = frontPage || greenHeader ? FrontPageLogo : Logo;
+  const LogoComponent = frontPage ? FrontPageLogo : Logo;
   const LinkComponent = styled(ClaveLink)`
-    ${frontPage || greenHeader ? `color: ${COLOR_CLAVE_SKIN};` : ''}
-    display: block;
+    display: none;
     margin-left: 0.5em;
     margin-right: 0.5em;
-    @media only screen and (max-width: 600px) {
-      display: none;
-    }
+
+    ${onDesktop(`
+      display: block;
+    `)}
   `;
 
   const HanburgerMenuLink = styled(ClaveLink)`
-    ${frontPage || greenHeader ? `color: ${COLOR_CLAVE_SKIN};` : ''}
     display: block;
     margin-left: 0.5em;
     margin-right: 0.5em;
+    ${onDesktop(`
+      display: none;
+    `)}
   `;
 
   const HamburgerMenyOptions = ({ textClassName }) => {
@@ -56,7 +51,7 @@ const Header = ({ textClassName, frontPage = false, greenHeader = false }) => {
   };
 
   const HamburgerKnapp = () => {
-    return frontPage || greenHeader ? (
+    return frontPage ? (
       <SkinColorHamburgerButton onClick={() => setMenuExpanded(!menuExpanded)}>
         <StyledHamburgerIcon />
       </SkinColorHamburgerButton>
@@ -67,40 +62,68 @@ const Header = ({ textClassName, frontPage = false, greenHeader = false }) => {
     );
   };
 
-  return (
-    <header>
-      <WrapperComponent>
-        <LogoWrapper>
-          <Link to="/">
-            <LogoComponent />
-          </Link>
-        </LogoWrapper>
-        <InlineWrapper>
-          <LinkComponent to="/hva-vi-gjor" className={textClassName}>
-            Se hva vi gjør
-          </LinkComponent>
-          <LinkComponent to="/hvem-vi-er" className={textClassName}>
-            Se hvem vi er
-          </LinkComponent>
-          <LinkComponent to="/kontakt-oss" className={textClassName}>
-            Kontakt oss
-          </LinkComponent>
-        </InlineWrapper>
-        <HamburgerKnapp />
-      </WrapperComponent>
+  const colorContext = useContext(ColorContext);
 
-      <HamburgerMenyOptions className={textClassName} />
-    </header>
+  const newColorContext = frontPage
+    ? {
+        backgroundColor: COLOR_CLAVE_GREEN,
+        textColor: COLOR_CLAVE_SKIN,
+      }
+    : colorContext;
+
+  const WrapperComponent = frontPage
+    ? FrontPageWrapper
+    : styled(Wrapper)`
+        background: ${newColorContext.backgroundColor || COLOR_CLAVE_SKIN};
+      `;
+
+  return (
+    <ColorContext.Provider value={newColorContext}>
+      <header>
+        <Container>
+          <Container.Content>
+            <WrapperComponent>
+              <LogoWrapper>
+                <Link to="/">
+                  <LogoComponent />
+                </Link>
+              </LogoWrapper>
+              <InlineWrapper>
+                <LinkComponent to="/hva-vi-gjor" className={textClassName}>
+                  Se hva vi gjør
+                </LinkComponent>
+                <LinkComponent to="/hvem-vi-er" className={textClassName}>
+                  Se hvem vi er
+                </LinkComponent>
+                <LinkComponent to="/kontakt-oss" className={textClassName}>
+                  Kontakt oss
+                </LinkComponent>
+              </InlineWrapper>
+              <HamburgerKnapp />
+            </WrapperComponent>
+
+            <HamburgerMenyOptions className={textClassName} />
+          </Container.Content>
+        </Container>
+      </header>
+    </ColorContext.Provider>
   );
 };
 
 const PADDING_VERTICAL = '1.45rem';
 
-const Logo = styled(ClaveLogo)`
+const LogoInner = styled(ClaveLogo)`
   width: 5em;
   height: auto;
-  fill: ${COLOR_CLAVE_GREEN};
 `;
+
+export const Logo = props => {
+  const { textColor } = useContext(ColorContext);
+  const ColoredLogo = styled(LogoInner)`
+    fill: ${textColor || COLOR_CLAVE_GREEN};
+  `;
+  return <ColoredLogo {...props} />;
+};
 
 const HamburgerButton = styled.button`
   background: none;
@@ -111,9 +134,9 @@ const HamburgerButton = styled.button`
   cursor: pointer;
   outline: inherit;
 
-  @media only screen and (min-width: 600px) {
+  ${onDesktop(`
     display: none;
-  }
+  `)}
 `;
 
 const SkinColorHamburgerButton = styled(HamburgerButton)`
@@ -133,31 +156,27 @@ const Wrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: ${PADDING_VERTICAL} 1em;
-  background: ${COLOR_CLAVE_SKIN};
 `;
 
 const InlineWrapper = styled.div`
   display: inline-flex;
   justify-content: space-around;
   width: 75%;
-  @media only screen and (min-width: 600px) {
+
+  ${onDesktop(`
     margin-right: 4rem;
-  }
+  `)}
 `;
 
-const LogoWrapper = styled.div`
-  @media only screen and (min-width: 600px) {
+export const LogoWrapper = styled.div`
+  ${onDesktop(`
     margin-left: 4rem;
-  }
+  `)}
 `;
 
 const FrontPageWrapper = styled(Wrapper)`
   background: none;
   padding: ${PADDING_VERTICAL} 0;
-`;
-
-const kontaktOssWrapper = styled(Wrapper)`
-  background: ${COLOR_CLAVE_GREEN};
 `;
 
 Header.propTypes = {

@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-
-import { Container, MOBILE_PADDING, onDesktop } from './Layout';
+import { MOBILE_PADDING, Container } from './Layout';
 import Image from './Image';
+import { onDesktop } from './Breakpoints';
 
 const PageHeader = ({ title, imageProps }) => {
   return (

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { onDesktop } from './Layout';
 import Image from './Image';
+import { onDesktop } from './Breakpoints';
 
 export const Gallery = ({ children, ...props }) => (
   <Container>
