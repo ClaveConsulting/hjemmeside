@@ -64,21 +64,29 @@ const IndexPage = () => {
           <div>
             <BrukeropplevelseLogo />
             <h3>Brukeropplevelse</h3>
-            <p>Brukeropplevelse handler om å forstå brukerens behov. Vi snakker med brukeren, gjerne ved å
-              brukervennlighetsteste.
-              Vi har til og med vårt eget dedikerte brukertestteam!</p>
+            <p>
+              Brukeropplevelse handler om å forstå brukerens behov. Vi snakker
+              med brukeren, gjerne ved å brukervennlighetsteste. Vi har til og
+              med vårt eget dedikerte brukertestteam!
+            </p>
           </div>
           <div>
             <SystemutviklingLogo />
             <h3>Systemutvikling</h3>
-            <p>Sammen med våre designere lager vi intuitive løsninger.
-              Vi kan hele tjenestestacken; arkitektur, database og integrasjon, frontend og apputvikling.</p>
+            <p>
+              Sammen med våre designere lager vi intuitive løsninger. Vi kan
+              hele tjenestestacken; arkitektur, database og integrasjon,
+              frontend og apputvikling.
+            </p>
           </div>
           <div>
             <RaadgivningLogo />
             <h3>Rådgivning</h3>
-            <p>Vi som jobber med prosjektledelse har alle lang erfaring. Vi er opptatt av at teamet jobber sammen,
-              mot samme mål, og blir godt kjent.</p>
+            <p>
+              Vi som jobber med prosjektledelse har alle lang erfaring. Vi er
+              opptatt av at teamet jobber sammen, mot samme mål, og blir godt
+              kjent.
+            </p>
           </div>
         </div>
         <CtaLink to="/hva-vi-gjor">Se mer om hva vi gjør</CtaLink>
@@ -92,7 +100,7 @@ const StyledFirstSection = styled.section`
   height: 100vh;
   width: 100%;
   padding: 0 5rem;
-  
+
   ${onDesktop(`
     padding: 0 1.5rem;
   `)}
@@ -106,7 +114,7 @@ const StyledTextPanel = styled.div`
   justify-content: space-around;
   width: 40%;
   @media only screen and (max-width: 480px) {
-    width: 80%
+    width: 80%;
   }
 `;
 
