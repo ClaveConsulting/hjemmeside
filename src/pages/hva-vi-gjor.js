@@ -161,7 +161,7 @@ const SecondPage = () => {
           }}
           title="Komplett"
           ingress="Anniken og Lars Petter jobber for The Well. The Well er Nordens største spa- og velværesenter. De må faktisk litt på spa av og til, for å forstå brukeren."
-          link="/prosjekter/the-well"
+          link="/prosjekter/komplett"
         />
       </Projects>
     </main>
