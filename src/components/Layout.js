@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import styled from 'styled-components';
 
 import './layout.css';
-import { COLOR_CLAVE_SKIN, COLOR_CLAVE_GREEN } from '../colors';
+import { COLOR_CLAVE_GREEN, COLOR_CLAVE_SKIN } from '../colors';
 
 export const onDesktop = styles => `@media screen and (min-width: 720px) {
   ${styles}

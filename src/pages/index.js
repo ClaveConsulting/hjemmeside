@@ -1,11 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import 'scrollmagic/scrollmagic/minified/plugins/animation.gsap.min';
-
 
 import Image from '../components/Image';
 import SEO from '../components/Seo';
-import { COLOR_CLAVE_SKIN } from '../colors';
+import { COLOR_CLAVE_GREEN, COLOR_CLAVE_SKIN } from '../colors';
 import ClaveLink from '../components/ClaveLink';
 import Header from '../components/Header';
 import Title from '../components/Title';
@@ -62,27 +60,27 @@ const IndexPage = () => {
           Av og til får vi også med oss utviklere og testere i selskapet vi har
           etablert i Polen.
         </h2>
-          <div className="info-flexbox">
-              <div>
-                  <BrukeropplevelseLogo/>
-                  <h3>Brukeropplevelse</h3>
-                  <p>Brukeropplevelse handler om å forstå brukerens behov. Vi snakker med brukeren, gjerne ved å
-                      brukervennlighetsteste.
-                      Vi har til og med vårt eget dedikerte brukertestteam!</p>
-              </div>
-              <div>
-                  <SystemutviklingLogo/>
-                  <h3>Systemutvikling</h3>
-                  <p>Sammen med våre designere lager vi intuitive løsninger.
-                      Vi kan hele tjenestestacken; arkitektur, database og integrasjon, frontend og apputvikling.</p>
-              </div>
-              <div>
-                  <RaadgivningLogo/>
-                  <h3>Rådgivning</h3>
-                  <p>Vi som jobber med prosjektledelse har alle lang erfaring. Vi er opptatt av at teamet jobber sammen,
-                      mot samme mål, og blir godt kjent.</p>
-              </div>
+        <div className="info-flexbox">
+          <div>
+            <BrukeropplevelseLogo />
+            <h3>Brukeropplevelse</h3>
+            <p>Brukeropplevelse handler om å forstå brukerens behov. Vi snakker med brukeren, gjerne ved å
+              brukervennlighetsteste.
+              Vi har til og med vårt eget dedikerte brukertestteam!</p>
           </div>
+          <div>
+            <SystemutviklingLogo />
+            <h3>Systemutvikling</h3>
+            <p>Sammen med våre designere lager vi intuitive løsninger.
+              Vi kan hele tjenestestacken; arkitektur, database og integrasjon, frontend og apputvikling.</p>
+          </div>
+          <div>
+            <RaadgivningLogo />
+            <h3>Rådgivning</h3>
+            <p>Vi som jobber med prosjektledelse har alle lang erfaring. Vi er opptatt av at teamet jobber sammen,
+              mot samme mål, og blir godt kjent.</p>
+          </div>
+        </div>
         <CtaLink to="/hva-vi-gjor">Se mer om hva vi gjør</CtaLink>
       </Layout>
       <JoinBanner images={images} />
@@ -93,9 +91,8 @@ const IndexPage = () => {
 const StyledFirstSection = styled.section`
   height: 100vh;
   width: 100%;
-
-  padding: 0 1rem;
-
+  padding: 0 5rem;
+  
   ${onDesktop(`
     padding: 0 1.5rem;
   `)}

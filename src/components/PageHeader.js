@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { onDesktop, MOBILE_PADDING, Container } from './Layout';
+import { Container, MOBILE_PADDING, onDesktop } from './Layout';
 import Image from './Image';
 
 const PageHeader = ({ title, imageProps }) => {

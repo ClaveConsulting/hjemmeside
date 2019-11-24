@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 23.0.6, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 1920 1080" style="enable-background:new 0 0 1920 1080;" xml:space="preserve">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+     viewBox="0 0 1920 1080" style="enable-background:new 0 0 1920 1080;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:#FFBE2D;}
 	.st1{fill:#FA9691;}
@@ -9,23 +9,23 @@
 	.st3{fill:#0064C8;}
 	.st4{fill:#005550;}
 </style>
-<g id="Yellow">
+    <g id="Yellow">
 	<rect x="956.34" y="522.88" class="st0" width="329.29" height="219.52"/>
 </g>
-<g id="PinkRoundedSquare">
+    <g id="PinkRoundedSquare">
 	<path class="st1" d="M839.55,742.4H650.03c-8.28,0-15-6.72-15-15V537.88c0-8.28,6.72-15,15-15h189.52c8.28,0,15,6.72,15,15V727.4
 		C854.55,735.69,847.83,742.4,839.55,742.4z"/>
 </g>
-<g id="BlueSquare">
+    <g id="BlueSquare">
 	<rect x="1285.62" y="201" class="st2" width="219.52" height="219.52"/>
 </g>
-<g id="BlueCircle">
+    <g id="BlueCircle">
 	<circle class="st3" cx="1066.1" cy="310.76" r="109.76"/>
 </g>
-<g id="Green">
+    <g id="Green">
 	<rect x="415.5" y="201" class="st4" width="439.05" height="219.52"/>
 </g>
-<g id="PinkArrow">
+    <g id="PinkArrow">
 	<polygon class="st1" points="1185.75,642.18 1249.2,879 1422.57,705.63 	"/>
 </g>
 </svg>

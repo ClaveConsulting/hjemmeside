@@ -25,7 +25,7 @@ export const Gallery = ({ children, ...props }) => (
               prev: width,
             };
           },
-          { kids: [] }
+          { kids: [] },
         ).kids
       }
     </Content>

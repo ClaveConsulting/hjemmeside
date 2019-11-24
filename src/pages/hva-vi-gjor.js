@@ -1,12 +1,12 @@
-import React, { useContext, useState, useMemo } from 'react';
+import React, { useContext, useMemo, useState } from 'react';
 import styled from 'styled-components';
 
-import Layout, { MOBILE_PADDING, Container } from '../components/Layout';
+import Layout, { Container, MOBILE_PADDING } from '../components/Layout';
 import SEO from '../components/Seo';
 import Header from '../components/Header';
 import PageHeader from '../components/PageHeader';
 import CtaLink from '../components/CtaLink';
-import { GalleryImage, Gallery } from '../components/Gallery';
+import { Gallery, GalleryImage } from '../components/Gallery';
 import ClaveLink from '../components/ClaveLink';
 import { useStaticQuery } from 'gatsby';
 import Image from '../components/Image';
@@ -182,9 +182,9 @@ const Projects = ({ children }) => {
               return image.fluidImage.childImageSharp.fluid.aspectRatio;
 
             return image.width / image.height;
-          })
+          }),
       ),
-    [children]
+    [children],
   );
 
   return (
@@ -240,11 +240,11 @@ const ProjectImgWrapper = styled.div`
 `;
 
 const Project = ({
-  image: { src, fluidImage, alt, width, height },
-  title,
-  ingress,
-  link,
-}) => {
+                   image: { src, fluidImage, alt, width, height },
+                   title,
+                   ingress,
+                   link,
+                 }) => {
   const { aspectRatio } = useContext(ProjectsListContext);
 
   const [imgWrapperHeight, setImgWrapperHeight] = useState(null);
