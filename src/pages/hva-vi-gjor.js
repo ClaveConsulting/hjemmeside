@@ -219,7 +219,7 @@ const ProjectsList = styled.ul`
 
 const ProjectItem = styled.li`
   flex: 1 0 auto;
-  padding: 0 1em;
+  padding: 0 1rem;
 
   ${onDesktop(`
     flex: 0 0 auto;
@@ -245,7 +245,7 @@ const ProjectImgWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  margin-bottom: 1em;
+  margin-bottom: 1rem;
 `;
 
 const Project = ({
@@ -292,7 +292,7 @@ const AsideImage = styled(Image)`
 `;
 
 const Ingress = styled.p`
-  font-size: 1.5em;
+  font-size: 1.5rem;
   line-height: 1.5;
 `;
 

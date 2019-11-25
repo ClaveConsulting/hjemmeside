@@ -22,7 +22,7 @@ const FooterListItem = styled.li`
 `;
 
 const FooterContentContainer = styled(Container.Content)`
-  padding-top: 2em;
+  padding-top: 2rem;
   display: flex;
   flex-direction: column;
 

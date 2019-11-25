@@ -129,7 +129,7 @@ const CustomInput = styled.input`
   width: 100%;
 `;
 const CustomSubmit = styled.input`
-  margin-top: 1em;
+  margin-top: 1rem;
   background-color: transparent;
   border: none;
   border-bottom: 0.1em solid #ccc;
@@ -156,7 +156,7 @@ const ContactInfo = styled.div`
 const Contact1 = styled.div`
   ${onDesktop(`
     flex: 1 1 50%;
-    padding: 1em 0em 0em;
+    padding: 1rem 0rem 0rem;
   `)}
 `;
 

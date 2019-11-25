@@ -178,17 +178,17 @@ const StyledBackgroundImage = styled.div`
 `;
 
 const BrukeropplevelseLogo = styled(BrukeropplevelseIcon)`
-  width: 10em;
+  width: 10rem;
   height: auto;
 `;
 
 const SystemutviklingLogo = styled(SystemutviklingIcon)`
-  width: 10em;
+  width: 10rem;
   height: auto;
 `;
 
 const RaadgivningLogo = styled(RaadgivningIcon)`
-  width: 10em;
+  width: 10rem;
   height: auto;
 `;
 

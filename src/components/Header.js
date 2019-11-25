@@ -15,8 +15,8 @@ const Header = ({ textClassName, frontPage = false }) => {
   const LogoComponent = frontPage ? FrontPageLogo : Logo;
   const LinkComponent = styled(ClaveLink)`
     display: none;
-    margin-left: 0.5em;
-    margin-right: 0.5em;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
 
     ${onDesktop(`
       display: block;
@@ -25,8 +25,8 @@ const Header = ({ textClassName, frontPage = false }) => {
 
   const HanburgerMenuLink = styled(ClaveLink)`
     display: block;
-    margin-left: 0.5em;
-    margin-right: 0.5em;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
     ${onDesktop(`
       display: none;
     `)}
@@ -113,7 +113,7 @@ const Header = ({ textClassName, frontPage = false }) => {
 const PADDING_VERTICAL = '1.45rem';
 
 const LogoInner = styled(ClaveLogo)`
-  width: 5em;
+  width: 5rem;
   height: auto;
 `;
 
@@ -185,7 +185,7 @@ Header.propTypes = {
 };
 
 const StyledHamburgerIcon = styled(hamburgerIcon)`
-  width: 2em;
+  width: 2rem;
   height: auto;
 `;
 
