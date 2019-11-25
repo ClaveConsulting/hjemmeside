@@ -1,12 +1,8 @@
+import './layout.css';
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-
-import './layout.css';
-import { COLOR_CLAVE_GREEN, COLOR_CLAVE_SKIN } from '../colors';
-
-export const onDesktop = styles => `@media screen and (min-width: 720px) {
-  ${styles}
-}`;
+import { COLOR_CLAVE_SKIN, COLOR_CLAVE_GREEN } from '../colors';
+import { onDesktop } from './Breakpoints';
 
 export const Container = props => {
   const { backgroundColor, textColor } = useContext(ColorContext);
@@ -28,13 +24,15 @@ Container.Content = styled.div`
 
 export const MOBILE_PADDING = '1em';
 
+export const DESKTOP_PADDING_VERTICAL = '3em';
+
 export const Section = styled.section`
   max-width: 1280px;
   padding: ${MOBILE_PADDING};
 
   ${onDesktop(`
     flex: 1 1 1280px;
-    padding: 1em 3em 1em;
+    padding: 1em ${DESKTOP_PADDING_VERTICAL} 1em;
   `)}
 `;
 
@@ -45,6 +43,8 @@ export const Aside = styled.aside`
 
   ${onDesktop(`
     order: 0;
+    padding-top: ${DESKTOP_PADDING_VERTICAL};
+    padding-bottom: ${DESKTOP_PADDING_VERTICAL};
   `)}
 `;
 
@@ -53,8 +53,8 @@ const LayoutWrapper = styled.div`
   flex-direction: column;
 
   ${onDesktop(`
-  flex-direction: row;
-`)}
+    flex-direction: row;
+  `)}
 `;
 
 export const ColorContext = React.createContext({

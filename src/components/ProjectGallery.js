@@ -1,7 +1,8 @@
 import React, { useRef, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Image from './Image';
-import { Container, onDesktop } from './Layout';
+import { Container } from './Layout';
+import { onDesktop } from './Breakpoints';
 
 const GalleryImageWithSubtext = ({ image, children, alt }) => {
   const ImageWrapper = styled.div`
@@ -17,6 +18,25 @@ const GalleryImageWithSubtext = ({ image, children, alt }) => {
   );
 };
 
+const LeftTextWrapper = styled.div`
+  width: 95%;
+  ${onDesktop(`
+    width: 50%;
+    position: static;
+  `)}
+`;
+const LeftTextItem = styled.div`
+  padding-bottom: 20px;
+`;
+
+const RightTextWrapper = styled.div`
+  width: 95%;
+  ${onDesktop(`
+    width: 80%;
+    position: static;
+  `)}
+`;
+
 export const ProjectGallery = ({
   leftImg,
   rightImg,
@@ -25,24 +45,6 @@ export const ProjectGallery = ({
   finalText,
   imageSpacing = 300,
 }) => {
-  const LeftTextWrapper = styled.div`
-    width: 95%;
-    ${onDesktop(`
-    width: 50%;
-    position: static;
-  `)}
-  `;
-  const LeftTextItem = styled.div`
-    padding-bottom: 20px;
-  `;
-
-  const RightTextWrapper = styled.div`
-    width: 95%;
-    ${onDesktop(`
-    width: 80%;
-    position: static;
-  `)}
-  `;
   const [firstSectionHeight, setFirstSectionHeight] = useState(0);
   const firstSectionRef = useRef(null);
 

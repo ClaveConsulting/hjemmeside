@@ -1,10 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
-import { COLOR_CLAVE_BLAA, COLOR_CLAVE_GREEN, COLOR_CLAVE_LIGHTBLUE, COLOR_CLAVE_SKIN } from '../colors';
-import Layout, { ColorContext, onDesktop } from './Layout';
+import {
+  COLOR_CLAVE_LIGHTBLUE,
+  COLOR_CLAVE_BLAA,
+  COLOR_CLAVE_SKIN,
+  COLOR_CLAVE_GREEN,
+} from '../colors';
+import Layout, { ColorContext } from './Layout';
 import CtaLink from './CtaLink';
 import { Link } from 'gatsby';
 import { Gallery, GalleryImage } from './Gallery';
+import { onDesktop } from './Breakpoints';
 
 const JoinContent = () => (
   <div>
