@@ -4,7 +4,7 @@ import {
   ProjectPageTemplate,
   Ingress,
   Paragraph,
-} from './../../components/ProjectTemplate';
+} from '../../components/ProjectTemplate';
 import { useStaticQuery, graphql } from 'gatsby';
 import { COLOR_CLAVE_SKIN, COLOR_CLAVE_GREEN } from '../../colors';
 

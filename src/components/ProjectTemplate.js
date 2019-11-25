@@ -6,11 +6,12 @@ import Header from '../components/Header';
 import PageHeader from '../components/PageHeader';
 
 import { ProjectGallery } from './ProjectGallery';
+import Footer from './Footer';
 
 export const ProjectPageTemplate = ({
   mainImg,
-  firstImg,
-  secondImg,
+  leftImg,
+  rightImg,
   title,
   ingress,
   body,
@@ -22,7 +23,7 @@ export const ProjectPageTemplate = ({
   textColor,
 }) => {
   return (
-    <ProjectPageContainer>
+    <>
       <Header />
       <SEO title={title} description="" />
       <PageHeader
@@ -47,14 +48,15 @@ export const ProjectPageTemplate = ({
         </BodyTextLayout>
         <ProjectGallery
           imageSpacing={400}
-          leftImg={firstImg}
-          rightImg={secondImg}
+          leftImg={leftImg}
+          rightImg={rightImg}
           methodology={methodology}
           technology={technology}
           finalText={finalText}
         />
       </ColorContext.Provider>
-    </ProjectPageContainer>
+      <Footer />
+    </>
   );
 };
 
@@ -73,8 +75,6 @@ export const ProjectKeywords = ({ children }) => {
 const BodyTextLayout = styled(Layout)`
   padding-bottom: 2em;
 `;
-
-const ProjectPageContainer = styled.div``;
 
 const KeywordElement = styled.p`
   font-size: 18px;

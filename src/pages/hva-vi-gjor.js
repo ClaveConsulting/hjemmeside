@@ -131,7 +131,7 @@ const SecondPage = () => {
             }}
             title="The Well"
             ingress="Henning og Pia jobber hos Posten i innovasjonsavdeingen. Begge jobber etter metodikk innen Sercice design i team sammen med Posten sine egne ansatte."
-            link="/prosjekter/posten"
+            link="/prosjekter/the-well"
           />
           <Project
             image={{
@@ -142,7 +142,7 @@ const SecondPage = () => {
             }}
             title="Toll"
             ingress="Karine og Samson jobber for Rødekors. De skal lage et internt system for..... Da må hun snakke med …. og brukervennlighetsteste hyppig underveis."
-            link="/prosjekter/rode-kors"
+            link="/prosjekter/toll"
           />
           <Project
             image={{
@@ -153,7 +153,7 @@ const SecondPage = () => {
             }}
             title="NAF"
             ingress="Anniken og Lars Petter jobber for The Well. The Well er Nordens største spa- og velværesenter. De må faktisk litt på spa av og til, for å forstå brukeren."
-            link="/prosjekter/the-well"
+            link="/prosjekter/naf"
           />
           <Project
             image={{
