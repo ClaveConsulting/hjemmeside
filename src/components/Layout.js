@@ -26,11 +26,9 @@ Container.Content = styled.div`
 
 export const Section = styled.section`
   max-width: 1280px;
-  padding: ${MOBILE_PADDING};
 
   ${onDesktop(`
     flex: 1 1 1280px;
-    padding: ${DESKTOP_PADDING};
   `)}
 `;
 
@@ -38,19 +36,21 @@ export const Aside = styled.aside`
   flex: 1 0 40%;
   order: 1;
   display: flex;
-  padding: ${MOBILE_PADDING};
+  padding: ${MOBILE_PADDING} 0;
 
   ${onDesktop(`
     order: 0;
-    padding: ${DESKTOP_PADDING}
+    padding: 0 ${DESKTOP_PADDING} 0 0;
   `)}
 `;
 
 const LayoutWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  padding: ${MOBILE_PADDING};
 
   ${onDesktop(`
+    padding: ${DESKTOP_PADDING}
     flex-direction: row;
   `)}
 `;
