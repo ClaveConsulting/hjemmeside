@@ -162,16 +162,9 @@ const InlineWrapper = styled.div`
   display: inline-flex;
   justify-content: space-around;
   width: 75%;
-
-  ${onDesktop(`
-    margin-right: 4rem;
-  `)}
 `;
 
 export const LogoWrapper = styled.div`
-  ${onDesktop(`
-    margin-left: 4rem;
-  `)}
 `;
 
 const FrontPageWrapper = styled(Wrapper)`

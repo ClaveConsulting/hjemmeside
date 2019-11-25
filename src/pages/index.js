@@ -142,10 +142,10 @@ const IndexPage = () => {
 const StyledFirstSection = styled.section`
   height: 100vh;
   width: 100%;
-  padding: 0 5rem;
+  padding: 0 1.875rem;
 
   ${onDesktop(`
-    padding: 0 1.5rem;
+    padding: 0 5rem;
   `)}
 `;
 
