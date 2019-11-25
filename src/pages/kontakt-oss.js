@@ -32,7 +32,7 @@ const SecondPage = () => {
     >
       <>
         <main>
-          <Header />
+          <Header useSkinColoredHamburgerMenu={true} />
           <SEO title="Kontakt oss" description="" />
           <Layout>
             <h1>Kontakt oss</h1>

@@ -9,7 +9,7 @@ import hamburgerIcon from './icons/hamburgermeny_ikon.svg';
 import { Container, ColorContext } from './Layout';
 import { onDesktop } from './Breakpoints';
 
-const Header = ({ textClassName, frontPage = false }) => {
+const Header = ({ frontPage = false, useSkinColoredHamburgerMenu = false }) => {
   const HamburgerDiv = styled.div``;
   const [menuExpanded, setMenuExpanded] = useState(false);
   const LogoComponent = frontPage ? FrontPageLogo : Logo;
@@ -32,16 +32,16 @@ const Header = ({ textClassName, frontPage = false }) => {
     `)}
   `;
 
-  const HamburgerMenyOptions = ({ textClassName }) => {
+  const HamburgerMenyOptions = () => {
     return menuExpanded ? (
       <HamburgerDiv>
-        <HanburgerMenuLink to="/hva-vi-gjor" className={textClassName}>
+        <HanburgerMenuLink to="/hva-vi-gjor">
           Se hva vi gjør
         </HanburgerMenuLink>
-        <HanburgerMenuLink to="/hvem-vi-er" className={textClassName}>
+        <HanburgerMenuLink to="/hvem-vi-er">
           Se hvem vi er
         </HanburgerMenuLink>
-        <HanburgerMenuLink to="/kontakt-oss" className={textClassName}>
+        <HanburgerMenuLink to="/kontakt-oss">
           Kontakt oss
         </HanburgerMenuLink>
       </HamburgerDiv>
@@ -51,7 +51,7 @@ const Header = ({ textClassName, frontPage = false }) => {
   };
 
   const HamburgerKnapp = () => {
-    return frontPage ? (
+    return useSkinColoredHamburgerMenu ? (
       <SkinColorHamburgerButton onClick={() => setMenuExpanded(!menuExpanded)}>
         <StyledHamburgerIcon />
       </SkinColorHamburgerButton>
@@ -89,20 +89,20 @@ const Header = ({ textClassName, frontPage = false }) => {
                 </Link>
               </LogoWrapper>
               <InlineWrapper>
-                <LinkComponent to="/hva-vi-gjor" className={textClassName}>
+                <LinkComponent to="/hva-vi-gjor">
                   Se hva vi gjør
                 </LinkComponent>
-                <LinkComponent to="/hvem-vi-er" className={textClassName}>
+                <LinkComponent to="/hvem-vi-er">
                   Se hvem vi er
                 </LinkComponent>
-                <LinkComponent to="/kontakt-oss" className={textClassName}>
+                <LinkComponent to="/kontakt-oss">
                   Kontakt oss
                 </LinkComponent>
               </InlineWrapper>
               <HamburgerKnapp />
             </WrapperComponent>
 
-            <HamburgerMenyOptions className={textClassName} />
+            <HamburgerMenyOptions  />
           </Container.Content>
         </Container>
       </header>
