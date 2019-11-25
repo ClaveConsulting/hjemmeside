@@ -73,8 +73,8 @@ const IndexPage = () => {
       <main>
         <SEO title="Forside" />
         <ColorContext.Provider value={GREEN_BACKGROUND}>
+          <Header frontPage />
           <StyledFirstSection>
-            <Header frontPage />
             <StyledBackgroundImage>
               <Image fluidImage={images.header} />
             </StyledBackgroundImage>
@@ -155,7 +155,7 @@ const StyledTextPanel = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 40%;
+  width: 60%;
   @media only screen and (max-width: 480px) {
     width: 80%;
   }
