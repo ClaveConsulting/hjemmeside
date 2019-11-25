@@ -60,7 +60,7 @@ const SecondPage = () => {
               <AsideContent>
                 <AsideContentLow>
                   <h3>Kom innom</h3>
-                  <p>
+                  <p className="CustomParagraph">
                     Øvre Slottsgate 18-20 <br />
                     0157 OSLO
                   </p>
@@ -110,14 +110,16 @@ const SecondPage = () => {
   );
 };
 
+
 const AsideContent = styled.div`
   padding-left: ${MOBILE_PADDING};
   display: flex;
 
   ${onDesktop(`
-    padding: 1em 3em 1em;
+    padding: 0em 3em 0em 3em;
   `)}
 `;
+
 
 const AsideContentLow = styled.span`
   display: inline-block;
