@@ -80,11 +80,8 @@ const IndexPage = () => {
             </StyledBackgroundImage>
             <StyledTextPanel>
               <Title color={COLOR_CLAVE_SKIN}>
-                De beste løsningene krever de beste folkene.
+                  Vi er en gjeng designere og utviklere med masse engasjement.
               </Title>
-              <div>
-                <ClaveLink to="/page-2/">Bli bedre kjent med oss</ClaveLink>
-              </div>
             </StyledTextPanel>
           </StyledFirstSection>
         </ColorContext.Provider>
@@ -151,11 +148,10 @@ const StyledFirstSection = styled.section`
 
 const StyledTextPanel = styled.div`
   padding-top: 10%;
-  height: 90%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 40%;
+  width: 60%;
   @media only screen and (max-width: 480px) {
     width: 80%;
   }
