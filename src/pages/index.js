@@ -20,7 +20,7 @@ import RaadgivningIcon from '../components/icons/clave_ikon_radgivning.svg';
 import { onDesktop } from '../components/Breakpoints';
 
 const FrontPageIngress = styled.p`
-  font-size: 2em;
+  font-size: 2rem;
   font-weight: normal;
   font-family: 'basis-grotesque-medium-pro', Fallback, sans-serif;
 `;
@@ -30,7 +30,7 @@ const FrontPageTextContent = styled.div`
 `;
 
 const InfoBox = styled.div`
-  padding-right: 1em;
+  padding-right: 1rem;
 
   ${onDesktop(`
     flex: 1 1 33%;

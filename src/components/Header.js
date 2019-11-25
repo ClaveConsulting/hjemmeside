@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types';
-import React, { useState, useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { COLOR_CLAVE_GREEN, COLOR_CLAVE_SKIN } from '../colors';
 import styled from 'styled-components';
 import ClaveLink from './ClaveLink';
 import ClaveLogo from './icons/clave-logo.svg';
 import { Link } from 'gatsby';
 import hamburgerIcon from './icons/hamburgermeny_ikon.svg';
-import { Container, ColorContext } from './Layout';
+import { ColorContext, Container, DESKTOP_PADDING, MOBILE_PADDING } from './Layout';
 import { onDesktop } from './Breakpoints';
 
 const Header = ({ textClassName, frontPage = false }) => {
@@ -66,9 +66,9 @@ const Header = ({ textClassName, frontPage = false }) => {
 
   const newColorContext = frontPage
     ? {
-        backgroundColor: COLOR_CLAVE_GREEN,
-        textColor: COLOR_CLAVE_SKIN,
-      }
+      backgroundColor: COLOR_CLAVE_GREEN,
+      textColor: COLOR_CLAVE_SKIN,
+    }
     : colorContext;
 
   const WrapperComponent = frontPage
@@ -155,7 +155,7 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: ${PADDING_VERTICAL} 1em;
+  padding: ${PADDING_VERTICAL} 0;
 `;
 
 const InlineWrapper = styled.div`
@@ -169,8 +169,9 @@ const InlineWrapper = styled.div`
 `;
 
 export const LogoWrapper = styled.div`
+  padding-left: ${MOBILE_PADDING};
   ${onDesktop(`
-    margin-left: 4rem;
+    padding-left: ${DESKTOP_PADDING};
   `)}
 `;
 

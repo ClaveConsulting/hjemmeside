@@ -4,9 +4,9 @@ import styled from 'styled-components';
 import { COLOR_CLAVE_SKIN, COLOR_CLAVE_GREEN } from '../colors';
 import { onDesktop } from './Breakpoints';
 
-export const MAX_WIDTH = 1920;
-export const MOBILE_PADDING = '1.875em';
-export const DESKTOP_PADDING = '5em';
+export const MAX_WIDTH = '120rem';
+export const MOBILE_PADDING = '1.875rem';
+export const DESKTOP_PADDING = '5rem';
 
 export const Container = props => {
   const { backgroundColor, textColor } = useContext(ColorContext);
@@ -21,7 +21,7 @@ export const Container = props => {
 
 Container.Content = styled.div`
   margin: 0 auto;
-  max-width: ${MAX_WIDTH}px;
+  max-width: ${MAX_WIDTH};
 `;
 
 export const Section = styled.section`
