@@ -7,7 +7,7 @@ import { COLOR_CLAVE_GREEN, COLOR_CLAVE_SKIN } from '../colors';
 import ClaveLink from '../components/ClaveLink';
 import Header from '../components/Header';
 import Title from '../components/Title';
-import Layout, { ColorContext } from '../components/Layout';
+import Layout, { ColorContext, DESKTOP_PADDING, MOBILE_PADDING } from '../components/Layout';
 import Footer from '../components/Footer';
 
 import './index.css';
@@ -142,10 +142,10 @@ const IndexPage = () => {
 const StyledFirstSection = styled.section`
   height: 100vh;
   width: 100%;
-  padding: 0 5rem;
+  padding: 0 ${MOBILE_PADDING};
 
   ${onDesktop(`
-    padding: 0 1.5rem;
+    padding: 0 ${DESKTOP_PADDING};
   `)}
 `;
 

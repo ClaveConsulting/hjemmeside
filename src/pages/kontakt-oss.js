@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Layout, { MOBILE_PADDING, ColorContext } from '../components/Layout';
+import Layout, { ColorContext } from '../components/Layout';
 import Footer from '../components/Footer';
 import SEO from '../components/Seo';
 import Header from '../components/Header';
@@ -57,7 +57,7 @@ const SecondPage = () => {
           </Layout>
           <Layout
             asideContent={
-              <AsideContent>
+              <div>
                 <AsideContentLow>
                   <h3>Kom innom</h3>
                   <p className="CustomParagraph">
@@ -65,7 +65,7 @@ const SecondPage = () => {
                     0157 OSLO
                   </p>
                 </AsideContentLow>
-              </AsideContent>
+              </div>
             }
           >
             <div className="mapouter">
@@ -84,21 +84,21 @@ const SecondPage = () => {
                 name="navn"
                 placeholder="Navn"
                 type="text"
-              ></CustomInput>
+              />
               <br />
               <CustomInput
                 name="Epost"
                 placeholder="Epost"
                 type="text"
-              ></CustomInput>
+              />
               <br />
               <CustomInput
                 name="Melding"
                 placeholder="Melding"
                 type="text"
-              ></CustomInput>
+              />
               <br />
-              <CustomSubmit value="Send" type="submit"></CustomSubmit>
+              <CustomSubmit value="Send" type="submit"/>
             </form>
           </Layout>
           <JoinBanner images={images} />
@@ -109,17 +109,6 @@ const SecondPage = () => {
     </ColorContext.Provider>
   );
 };
-
-
-const AsideContent = styled.div`
-  padding-left: ${MOBILE_PADDING};
-  display: flex;
-
-  ${onDesktop(`
-    padding: 0em 3em 0em 3em;
-  `)}
-`;
-
 
 const AsideContentLow = styled.span`
   display: inline-block;
@@ -134,7 +123,7 @@ const CustomInput = styled.input`
   box-sizing: border-box;
   font-size: 18px;
   height: 50px;
-  padding: 10px 0px;
+  padding: 10px 0;
   position: relative;
   top: 50%;
   width: 100%;

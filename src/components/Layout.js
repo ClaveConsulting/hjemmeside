@@ -4,6 +4,10 @@ import styled from 'styled-components';
 import { COLOR_CLAVE_SKIN, COLOR_CLAVE_GREEN } from '../colors';
 import { onDesktop } from './Breakpoints';
 
+export const MAX_WIDTH = 1920;
+export const MOBILE_PADDING = '1.875em';
+export const DESKTOP_PADDING = '5em';
+
 export const Container = props => {
   const { backgroundColor, textColor } = useContext(ColorContext);
 
@@ -15,16 +19,10 @@ export const Container = props => {
   return <ColoredContainer {...props} />;
 };
 
-export const MAX_WIDTH = 1920;
-
 Container.Content = styled.div`
   margin: 0 auto;
   max-width: ${MAX_WIDTH}px;
 `;
-
-export const MOBILE_PADDING = '1em';
-
-export const DESKTOP_PADDING_VERTICAL = '3em';
 
 export const Section = styled.section`
   max-width: 1280px;
@@ -32,7 +30,7 @@ export const Section = styled.section`
 
   ${onDesktop(`
     flex: 1 1 1280px;
-    padding: 1em ${DESKTOP_PADDING_VERTICAL} 1em;
+    padding: ${DESKTOP_PADDING};
   `)}
 `;
 
@@ -40,11 +38,11 @@ export const Aside = styled.aside`
   flex: 1 0 40%;
   order: 1;
   display: flex;
+  padding: ${MOBILE_PADDING};
 
   ${onDesktop(`
     order: 0;
-    padding-top: ${DESKTOP_PADDING_VERTICAL};
-    padding-bottom: ${DESKTOP_PADDING_VERTICAL};
+    padding: ${DESKTOP_PADDING}
   `)}
 `;
 
