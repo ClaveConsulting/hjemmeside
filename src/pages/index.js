@@ -74,7 +74,7 @@ const IndexPage = () => {
         <SEO title="Forside" />
         <ColorContext.Provider value={GREEN_BACKGROUND}>
           <StyledFirstSection>
-            <Header frontPage />
+            <Header frontPage useSkinColoredHamburgerMenu />
             <StyledBackgroundImage>
               <Image fluidImage={images.header} />
             </StyledBackgroundImage>
