@@ -7,7 +7,7 @@ import { COLOR_CLAVE_GREEN, COLOR_CLAVE_SKIN } from '../colors';
 import ClaveLink from '../components/ClaveLink';
 import Header from '../components/Header';
 import Title from '../components/Title';
-import Layout, { ColorContext } from '../components/Layout';
+import Layout, { ColorContext, DESKTOP_PADDING, MOBILE_PADDING } from '../components/Layout';
 import Footer from '../components/Footer';
 
 import './index.css';
@@ -20,7 +20,7 @@ import RaadgivningIcon from '../components/icons/clave_ikon_radgivning.svg';
 import { onDesktop } from '../components/Breakpoints';
 
 const FrontPageIngress = styled.p`
-  font-size: 2em;
+  font-size: 2rem;
   font-weight: normal;
   font-family: 'basis-grotesque-medium-pro', Fallback, sans-serif;
 `;
@@ -30,7 +30,7 @@ const FrontPageTextContent = styled.div`
 `;
 
 const InfoBox = styled.div`
-  padding-right: 1em;
+  padding-right: 1rem;
 
   ${onDesktop(`
     flex: 1 1 33%;
@@ -139,10 +139,10 @@ const IndexPage = () => {
 const StyledFirstSection = styled.section`
   height: 100vh;
   width: 100%;
-  padding: 0 1.875rem;
+  padding: 0 ${MOBILE_PADDING};
 
   ${onDesktop(`
-    padding: 0 5rem;
+    padding: 0 ${DESKTOP_PADDING};
   `)}
 `;
 
@@ -174,17 +174,17 @@ const StyledBackgroundImage = styled.div`
 `;
 
 const BrukeropplevelseLogo = styled(BrukeropplevelseIcon)`
-  width: 10em;
+  width: 10rem;
   height: auto;
 `;
 
 const SystemutviklingLogo = styled(SystemutviklingIcon)`
-  width: 10em;
+  width: 10rem;
   height: auto;
 `;
 
 const RaadgivningLogo = styled(RaadgivningIcon)`
-  width: 10em;
+  width: 10rem;
   height: auto;
 `;
 

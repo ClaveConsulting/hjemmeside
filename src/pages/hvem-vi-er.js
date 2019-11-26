@@ -63,7 +63,7 @@ const HvemViEr = () => {
 };
 
 const Ingress = styled.p`
-  font-size: 1.5em;
+  font-size: 1.5rem;
   line-height: 1.5;
 `;
 

@@ -13,6 +13,6 @@ export default CtaLink;
 
 const Wrapper = styled.p``;
 const Link = styled(ClaveLink)`
-  font-size: 1.4em;
+  font-size: 1.4rem;
   color: ${COLOR_CLAVE_BLAA};
 `;

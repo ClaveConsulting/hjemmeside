@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import { Logo, LogoWrapper } from './Header';
+import { Logo } from './Header';
 import { onDesktop } from './Breakpoints';
 import ClaveLink from './ClaveLink';
 import { Link } from 'gatsby';
@@ -10,11 +10,12 @@ import {
   Aside,
   Container,
   ColorContext,
+  DESKTOP_PADDING,
 } from './Layout';
 
 const FooterElement = styled.footer``;
 const FooterList = styled.ul`
-  margin: 0 0 1em 0;
+  margin: 0 1rem 1rem 0;
   list-style-type: none;
 `;
 const FooterListItem = styled.li`
@@ -22,22 +23,22 @@ const FooterListItem = styled.li`
 `;
 
 const FooterContentContainer = styled(Container.Content)`
-  padding-top: 2em;
   display: flex;
   flex-direction: column;
+  padding: 2rem ${MOBILE_PADDING} 0;
 
   ${onDesktop(`
+    padding: 2rem ${DESKTOP_PADDING} 0;
     flex-direction: row;
   `)}
 `;
 
 const FooterLogoWrapper = styled(({ children, ...props }) => (
   <Aside {...props}>
-    <LogoWrapper>{children}</LogoWrapper>
+    {children}
   </Aside>
 ))`
   order: 0;
-  padding: ${MOBILE_PADDING};
 `;
 
 const FooterContent = styled(Section)`
@@ -48,6 +49,10 @@ const FooterContent = styled(Section)`
   ${onDesktop(`
       flex-direction: row;
     `)}
+`;
+
+const NoWrapText = styled.span`
+  white-space: nowrap;
 `;
 
 const Footer = props => {
@@ -69,23 +74,23 @@ const Footer = props => {
             <FooterContent>
               <FooterList>
                 <FooterListItem>
-                  <ClaveLink to="/hva-vi-gjor">Se hva vi gjør</ClaveLink>
+                  <ClaveLink to="/hva-vi-gjor"><NoWrapText>Se hva vi gjør</NoWrapText></ClaveLink>
                 </FooterListItem>
                 <FooterListItem>
-                  <ClaveLink to="/hvem-vi-er">Se hvem vi er</ClaveLink>
+                  <ClaveLink to="/hvem-vi-er"><NoWrapText>Se hvem vi er</NoWrapText></ClaveLink>
                 </FooterListItem>
                 <FooterListItem>
-                  <ClaveLink to="/kontakt-oss">Bli en av oss</ClaveLink>
+                  <ClaveLink to="/kontakt-oss"><NoWrapText>Bli en av oss</NoWrapText></ClaveLink>
                 </FooterListItem>
               </FooterList>
               <FooterList>
                 <FooterListItem>
                   <ClaveLink href="mailto:post@clave.no">
-                    post@clave.no
+                    <NoWrapText>post@clave.no</NoWrapText>
                   </ClaveLink>
                 </FooterListItem>
-                <FooterListItem>Øvre slottsgate 18-20</FooterListItem>
-                <FooterListItem>0157 Oslo</FooterListItem>
+                <FooterListItem><NoWrapText>Øvre slottsgate 18-20</NoWrapText></FooterListItem>
+                <FooterListItem><NoWrapText>0157 Oslo</NoWrapText></FooterListItem>
               </FooterList>
               <FooterList>
                 <FooterListItem>

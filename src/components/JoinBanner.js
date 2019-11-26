@@ -33,10 +33,10 @@ const JoinContent = () => (
 );
 
 const JoinBannerWrapper = styled(Layout)`
-  padding-top: 2em;
+  padding-top: 2rem;
 
   ${onDesktop(`
-    padding-top: 3em;
+    padding-top: 3rem;
   `)}
 `;
 
@@ -73,7 +73,7 @@ const JoinBanner = ({ images }) => (
 const BORDER_COLOR = COLOR_CLAVE_SKIN;
 
 const ContactLinkContainer = styled.div`
-  margin-bottom: 3em;
+  margin-bottom: 3rem;
 
   ${onDesktop(`
     margin-bottom: 0;
@@ -86,7 +86,7 @@ const ContactLink = styled(CtaLink)`
 
 const sectionSpacing = `
 &:not(:last-child) {
-  margin-bottom: 3em;
+  margin-bottom: 3rem;
 }`;
 
 const BannerP = styled.p`

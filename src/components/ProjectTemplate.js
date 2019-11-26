@@ -71,7 +71,7 @@ export const ProjectKeywords = ({ children }) => {
 };
 
 const BodyTextLayout = styled(Layout)`
-  padding-bottom: 2em;
+  padding-bottom: 2rem;
 `;
 
 const ProjectPageContainer = styled.div``;
@@ -87,12 +87,12 @@ const KeywordHeader = styled.h2`
 `;
 
 const KeywordComponent = styled.div`
-  margin-left: 64px;
-  width: 13em;
+  margin-left: 4rem;
+  width: 13rem;
 `;
 
 export const Ingress = styled.p`
-  font-size: 24px;
+  font-size: 1.5rem;
   line-height: 1.5;
 `;
 

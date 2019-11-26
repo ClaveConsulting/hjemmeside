@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types';
-import React, { useState, useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { COLOR_CLAVE_GREEN, COLOR_CLAVE_SKIN } from '../colors';
 import styled from 'styled-components';
 import ClaveLink from './ClaveLink';
 import ClaveLogo from './icons/clave-logo.svg';
 import { Link } from 'gatsby';
 import hamburgerIcon from './icons/hamburgermeny_ikon.svg';
-import { Container, ColorContext } from './Layout';
+import { ColorContext, Container, DESKTOP_PADDING, MOBILE_PADDING } from './Layout';
 import { onDesktop } from './Breakpoints';
 
 const Header = ({ frontPage = false, useSkinColoredHamburgerMenu = false }) => {
@@ -15,8 +15,8 @@ const Header = ({ frontPage = false, useSkinColoredHamburgerMenu = false }) => {
   const LogoComponent = frontPage ? FrontPageLogo : Logo;
   const LinkComponent = styled(ClaveLink)`
     display: none;
-    margin-left: 0.5em;
-    margin-right: 0.5em;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
 
     ${onDesktop(`
       display: block;
@@ -25,8 +25,8 @@ const Header = ({ frontPage = false, useSkinColoredHamburgerMenu = false }) => {
 
   const HanburgerMenuLink = styled(ClaveLink)`
     display: block;
-    margin-left: 0.5em;
-    margin-right: 0.5em;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
     ${onDesktop(`
       display: none;
     `)}
@@ -66,9 +66,9 @@ const Header = ({ frontPage = false, useSkinColoredHamburgerMenu = false }) => {
 
   const newColorContext = frontPage
     ? {
-        backgroundColor: COLOR_CLAVE_GREEN,
-        textColor: COLOR_CLAVE_SKIN,
-      }
+      backgroundColor: COLOR_CLAVE_GREEN,
+      textColor: COLOR_CLAVE_SKIN,
+    }
     : colorContext;
 
   const WrapperComponent = frontPage
@@ -82,27 +82,26 @@ const Header = ({ frontPage = false, useSkinColoredHamburgerMenu = false }) => {
       <header>
         <Container>
           <Container.Content>
-            <WrapperComponent>
-              <LogoWrapper>
+            <StyledHeader frontPage={frontPage}>
+              <WrapperComponent>
                 <Link to="/">
                   <LogoComponent />
                 </Link>
-              </LogoWrapper>
-              <InlineWrapper>
-                <LinkComponent to="/hva-vi-gjor">
-                  Se hva vi gjør
-                </LinkComponent>
-                <LinkComponent to="/hvem-vi-er">
-                  Se hvem vi er
-                </LinkComponent>
-                <LinkComponent to="/kontakt-oss">
-                  Kontakt oss
-                </LinkComponent>
-              </InlineWrapper>
-              <HamburgerKnapp />
-            </WrapperComponent>
-
-            <HamburgerMenyOptions  />
+                <InlineWrapper>
+                  <LinkComponent to="/hva-vi-gjor">
+                    Se hva vi gjør
+                  </LinkComponent>
+                  <LinkComponent to="/hvem-vi-er">
+                    Se hvem vi er
+                  </LinkComponent>
+                  <LinkComponent to="/kontakt-oss">
+                    Kontakt oss
+                  </LinkComponent>
+                </InlineWrapper>
+                <HamburgerKnapp />
+              </WrapperComponent>
+              <HamburgerMenyOptions />
+            </StyledHeader>
           </Container.Content>
         </Container>
       </header>
@@ -113,7 +112,7 @@ const Header = ({ frontPage = false, useSkinColoredHamburgerMenu = false }) => {
 const PADDING_VERTICAL = '1.45rem';
 
 const LogoInner = styled(ClaveLogo)`
-  width: 5em;
+  width: 5rem;
   height: auto;
 `;
 
@@ -139,6 +138,15 @@ const HamburgerButton = styled.button`
   `)}
 `;
 
+const StyledHeader = styled.header`
+  ${props => props.frontPage ? `` : `
+    padding: 0 ${MOBILE_PADDING};
+    ${onDesktop(`
+      padding: 0 ${DESKTOP_PADDING};
+    `)}
+  `}
+`;
+
 const SkinColorHamburgerButton = styled(HamburgerButton)`
   fill: ${COLOR_CLAVE_SKIN};
 `;
@@ -155,16 +163,13 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: ${PADDING_VERTICAL} 1em;
+  padding: ${PADDING_VERTICAL} 0;
 `;
 
 const InlineWrapper = styled.div`
   display: inline-flex;
   justify-content: space-around;
   width: 75%;
-`;
-
-export const LogoWrapper = styled.div`
 `;
 
 const FrontPageWrapper = styled(Wrapper)`
@@ -177,7 +182,7 @@ Header.propTypes = {
 };
 
 const StyledHamburgerIcon = styled(hamburgerIcon)`
-  width: 2em;
+  width: 2rem;
   height: auto;
 `;
 

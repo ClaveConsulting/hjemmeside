@@ -40,9 +40,9 @@ const Container = styled.div`
 
 const Content = styled.div`
   flex: 1 1 auto;
-  margin-top: 1em;
+  margin-top: 1rem;
   position: relative;
-  left: 1em;
+  left: 1rem;
 
   ${onDesktop(`
     width: 100%;
