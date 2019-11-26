@@ -75,7 +75,7 @@ const SecondPage = () => {
             brukertestet. Vi har laget dette som en egen tjeneste, fordi
             brukervennlighetstesting er jo noe alle trenger å gjøre jevnlig!
           </p>
-          <CtaLink to="/brukertesting">Mer om vår brukertesting</CtaLink>
+          <CtaLink to="/kontakt-oss">Kontakt oss for mer info</CtaLink>
         </Layout>
         <Layout
           asideContent={
