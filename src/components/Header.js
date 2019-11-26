@@ -24,9 +24,10 @@ const Header = ({ frontPage = false, useSkinColoredHamburgerMenu = false }) => {
   `;
 
   const HanburgerMenuLink = styled(ClaveLink)`
-    display: block;
+    display: table;
     margin-left: 0.5rem;
     margin-right: 0.5rem;
+    padding-bottom: 0px;!important
     ${onDesktop(`
       display: none;
     `)}
