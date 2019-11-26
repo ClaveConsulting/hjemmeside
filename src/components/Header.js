@@ -82,35 +82,27 @@ const Header = ({ textClassName, frontPage = false }) => {
       <header>
         <Container>
           <Container.Content>
-            <WrapperComponent>
-              {
-                frontPage
-                  ?
-                  <Link to="/">
-                    <LogoComponent />
-                  </Link>
-                  :
-                  <LogoWrapper>
-                    <Link to="/">
-                      <LogoComponent />
-                    </Link>
-                  </LogoWrapper>
-              }
-              <InlineWrapper>
-                <LinkComponent to="/hva-vi-gjor" className={textClassName}>
-                  Se hva vi gjør
-                </LinkComponent>
-                <LinkComponent to="/hvem-vi-er" className={textClassName}>
-                  Se hvem vi er
-                </LinkComponent>
-                <LinkComponent to="/kontakt-oss" className={textClassName}>
-                  Kontakt oss
-                </LinkComponent>
-              </InlineWrapper>
-              <HamburgerKnapp />
-            </WrapperComponent>
+            <StyledHeader frontPage={frontPage}>
+              <WrapperComponent>
+                <Link to="/">
+                  <LogoComponent />
+                </Link>
+                <InlineWrapper>
+                  <LinkComponent to="/hva-vi-gjor" className={textClassName}>
+                    Se hva vi gjør
+                  </LinkComponent>
+                  <LinkComponent to="/hvem-vi-er" className={textClassName}>
+                    Se hvem vi er
+                  </LinkComponent>
+                  <LinkComponent to="/kontakt-oss" className={textClassName}>
+                    Kontakt oss
+                  </LinkComponent>
+                </InlineWrapper>
+                <HamburgerKnapp />
+              </WrapperComponent>
 
-            <HamburgerMenyOptions className={textClassName} />
+              <HamburgerMenyOptions className={textClassName} />
+            </StyledHeader>
           </Container.Content>
         </Container>
       </header>
@@ -147,6 +139,15 @@ const HamburgerButton = styled.button`
   `)}
 `;
 
+const StyledHeader = styled.header`
+  ${props => props.frontPage ? `` : `
+    padding: 0 ${MOBILE_PADDING};
+    ${onDesktop(`
+      padding: 0 ${DESKTOP_PADDING};
+    `)}
+  `}
+`;
+
 const SkinColorHamburgerButton = styled(HamburgerButton)`
   fill: ${COLOR_CLAVE_SKIN};
 `;
@@ -170,13 +171,6 @@ const InlineWrapper = styled.div`
   display: inline-flex;
   justify-content: space-around;
   width: 75%;
-`;
-
-export const LogoWrapper = styled.div`
-  padding-left: ${MOBILE_PADDING};
-  ${onDesktop(`
-    padding-left: ${DESKTOP_PADDING};
-  `)}
 `;
 
 const FrontPageWrapper = styled(Wrapper)`
