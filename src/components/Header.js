@@ -83,11 +83,19 @@ const Header = ({ textClassName, frontPage = false }) => {
         <Container>
           <Container.Content>
             <WrapperComponent>
-              <LogoWrapper>
-                <Link to="/">
-                  <LogoComponent />
-                </Link>
-              </LogoWrapper>
+              {
+                frontPage
+                  ?
+                  <Link to="/">
+                    <LogoComponent />
+                  </Link>
+                  :
+                  <LogoWrapper>
+                    <Link to="/">
+                      <LogoComponent />
+                    </Link>
+                  </LogoWrapper>
+              }
               <InlineWrapper>
                 <LinkComponent to="/hva-vi-gjor" className={textClassName}>
                   Se hva vi gjør
