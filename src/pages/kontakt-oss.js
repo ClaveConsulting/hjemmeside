@@ -101,7 +101,7 @@ const SecondPage = () => {
               <CustomSubmit value="Send" type="submit"/>
             </form>
           </Layout>
-          <JoinBanner images={images} />
+          <JoinBanner images={images} dontShowLink />
         </main>
 
         <Footer />

@@ -8,11 +8,10 @@ import {
 } from '../colors';
 import Layout, { ColorContext } from './Layout';
 import CtaLink from './CtaLink';
-import { Link } from 'gatsby';
 import { Gallery, GalleryImage } from './Gallery';
 import { onDesktop } from './Breakpoints';
 
-const JoinContent = () => (
+const JoinContent = ({dontShowLink = false}) => (
   <div>
     <h3>Bli en av oss</h3>
     <BannerP>
@@ -21,14 +20,17 @@ const JoinContent = () => (
       ansatteid er det også vi som bestemmer.
     </BannerP>
     <PositionUl>
-      <PositionLink to="/">Senior UX designer</PositionLink>
-      <PositionLink to="/">Senior utvikler</PositionLink>
-      <PositionLink to="/">UX deltid</PositionLink>
-      <PositionLink to="/">Utvikler sommerjobb</PositionLink>
+      <PositionLink href="https://www.poption.com/companies/clave/postings/wYDf5q">Senior UX designer</PositionLink>
+      <PositionLink href="https://www.poption.com/companies/clave/postings/wrLfxm">Senior utvikler</PositionLink>
+      <PositionLink href="https://www.poption.com/companies/clave/postings/08Of7G">UX deltid</PositionLink>
+      <PositionLink href="https://www.poption.com/companies/clave/postings/w42fN5">Nyutdannede utviklere </PositionLink>
     </PositionUl>
-    <ContactLinkContainer>
-      <ContactLink to="/">Ta kontakt for en prat!</ContactLink>
-    </ContactLinkContainer>
+      {dontShowLink === true ?
+          null :
+          <ContactLinkContainer>
+            <ContactLink to="/kontakt-oss">Ta kontakt for en prat!</ContactLink>
+          </ContactLinkContainer>
+      }
   </div>
 );
 
@@ -40,7 +42,7 @@ const JoinBannerWrapper = styled(Layout)`
   `)}
 `;
 
-const JoinBanner = ({ images }) => (
+const JoinBanner = ({ images, dontShowLink = false }) => (
   <ColorContext.Provider
     value={{
       backgroundColor: COLOR_CLAVE_LIGHTBLUE,
@@ -65,7 +67,7 @@ const JoinBanner = ({ images }) => (
         </Gallery>
       }
     >
-      <JoinContent />
+      <JoinContent dontShowLink={dontShowLink}/>
     </JoinBannerWrapper>
   </ColorContext.Provider>
 );
@@ -115,7 +117,7 @@ const PositionLi = styled.li`
   }
 `;
 
-const PositionLinkInner = styled(Link)`
+const PositionLinkInner = styled.a`
   padding: 0.75em 0;
   display: block;
   border: none;
