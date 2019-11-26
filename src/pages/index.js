@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import Image from '../components/Image';
 import SEO from '../components/Seo';
 import { COLOR_CLAVE_GREEN, COLOR_CLAVE_SKIN } from '../colors';
-import ClaveLink from '../components/ClaveLink';
 import Header from '../components/Header';
 import Title from '../components/Title';
 import Layout, { ColorContext, DESKTOP_PADDING, MOBILE_PADDING } from '../components/Layout';
