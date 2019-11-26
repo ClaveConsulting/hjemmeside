@@ -4,10 +4,10 @@ import styled from 'styled-components';
 import { COLOR_CLAVE_PINK, COLOR_CLAVE_GREEN } from '../colors';
 import { ColorContext } from './Layout';
 
-const ClaveLink = ({ to, href, children, className, ...props }) => {
+const ClaveLink = ({ to, children, className, ...props }) => {
   const { textColor } = useContext(ColorContext);
 
-  const ColoredLink = styled(href ? StyledAnchor : StyledLink)`
+  const ColoredLink = styled(props.href ? StyledAnchor : StyledLink)`
     color: ${textColor || COLOR_CLAVE_GREEN};
   `;
 
