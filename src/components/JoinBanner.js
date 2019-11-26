@@ -8,11 +8,10 @@ import {
 } from '../colors';
 import Layout, { ColorContext } from './Layout';
 import CtaLink from './CtaLink';
-import { Link } from 'gatsby';
 import { Gallery, GalleryImage } from './Gallery';
 import { onDesktop } from './Breakpoints';
 
-const JoinContent = ({showLink = false}) => (
+const JoinContent = ({dontShowLink = false}) => (
   <div>
     <h3>Bli en av oss</h3>
     <BannerP>
@@ -26,11 +25,11 @@ const JoinContent = ({showLink = false}) => (
       <PositionLink href="https://www.poption.com/companies/clave/postings/08Of7G">UX deltid</PositionLink>
       <PositionLink href="https://www.poption.com/companies/clave/postings/w42fN5">Nyutdannede utviklere </PositionLink>
     </PositionUl>
-      {showLink == false ?
+      {dontShowLink === true ?
+          null :
           <ContactLinkContainer>
             <ContactLink to="/kontakt-oss">Ta kontakt for en prat!</ContactLink>
           </ContactLinkContainer>
-          : null
       }
   </div>
 );
@@ -43,7 +42,7 @@ const JoinBannerWrapper = styled(Layout)`
   `)}
 `;
 
-const JoinBanner = ({ images, showLink = false }) => (
+const JoinBanner = ({ images, dontShowLink = false }) => (
   <ColorContext.Provider
     value={{
       backgroundColor: COLOR_CLAVE_LIGHTBLUE,
@@ -68,7 +67,7 @@ const JoinBanner = ({ images, showLink = false }) => (
         </Gallery>
       }
     >
-      <JoinContent showLink={showLink}/>
+      <JoinContent dontShowLink={dontShowLink}/>
     </JoinBannerWrapper>
   </ColorContext.Provider>
 );
