@@ -95,7 +95,7 @@ const Footer = props => {
               <FooterList>
                 <FooterListItem>
                   <ClaveLink
-                    href="https://facebook.com"
+                    href="https://www.facebook.com/ClaveConsulting/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -104,11 +104,20 @@ const Footer = props => {
                 </FooterListItem>
                 <FooterListItem>
                   <ClaveLink
-                    href="https://instagram.com"
+                    href="https://www.instagram.com/claveconsulting/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     Instagram
+                  </ClaveLink>
+                </FooterListItem>
+                <FooterListItem>
+                  <ClaveLink
+                    href="https://www.linkedin.com/company/clave-consulting-as/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    LinkedIn
                   </ClaveLink>
                 </FooterListItem>
               </FooterList>
