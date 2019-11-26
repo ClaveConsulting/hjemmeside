@@ -25,10 +25,10 @@ const FooterListItem = styled.li`
 const FooterContentContainer = styled(Container.Content)`
   display: flex;
   flex-direction: column;
-  padding: 2rem ${MOBILE_PADDING} 0;
+  padding: 6rem ${MOBILE_PADDING} 9rem;
 
   ${onDesktop(`
-    padding: 2rem ${DESKTOP_PADDING} 0;
+    padding: 6rem ${DESKTOP_PADDING} 9rem;
     flex-direction: row;
   `)}
 `;

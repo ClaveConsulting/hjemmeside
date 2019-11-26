@@ -2,11 +2,11 @@ html {
     font-family: sans-serif;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
+    font-size: 16px;
 }
 
 body {
     margin: 0;
-    font-size: 1.5rem;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -675,8 +675,6 @@ pre tt:after {
     }
 }
 
-html,
-body,
 button,
 a,
 div,
