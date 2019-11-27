@@ -111,61 +111,6 @@ const SecondPage = () => {
             />
           </Gallery>
         </Layout>
-        <Layout>
-          <h2>Sjekk ut hva vi gjør hos kundene våre</h2>
-          <p>
-            Det er stort sett alltid flere Clavere hos en kunde, og gjerne en
-            blanding av UX-designere, rådgivere og utviklere. Spa, post,
-            nettbutikk, bil, offentlifg forvaltning, humanitært arbeid. Vi
-            jobber innen mange ulike domener!
-          </p>
-        </Layout>
-        <Projects>
-          <Project
-            image={{
-              fluidImage: images.theWell,
-              alt: 'Pia',
-              width: 305,
-              height: 247,
-            }}
-            title="The Well"
-            ingress="Henning og Pia jobber hos Posten i innovasjonsavdeingen. Begge jobber etter metodikk innen Sercice design i team sammen med Posten sine egne ansatte."
-            link="/prosjekter/posten"
-          />
-          <Project
-            image={{
-              src: 'https://placehold.it/305x337/000/fff',
-              alt: 'Karine',
-              width: 305,
-              height: 337,
-            }}
-            title="Toll"
-            ingress="Karine og Samson jobber for Rødekors. De skal lage et internt system for..... Da må hun snakke med …. og brukervennlighetsteste hyppig underveis."
-            link="/prosjekter/rode-kors"
-          />
-          <Project
-            image={{
-              src: 'https://placehold.it/305x239/ff0/fff',
-              alt: 'Anniken',
-              width: 305,
-              height: 239,
-            }}
-            title="NAF"
-            ingress="Anniken og Lars Petter jobber for The Well. The Well er Nordens største spa- og velværesenter. De må faktisk litt på spa av og til, for å forstå brukeren."
-            link="/prosjekter/the-well"
-          />
-          <Project
-            image={{
-              fluidImage: images.komplett,
-              alt: 'Anniken',
-              width: 305,
-              height: 239,
-            }}
-            title="Komplett"
-            ingress="Anniken og Lars Petter jobber for The Well. The Well er Nordens største spa- og velværesenter. De må faktisk litt på spa av og til, for å forstå brukeren."
-            link="/prosjekter/komplett"
-          />
-        </Projects>
       </main>
       <Footer />
     </>
