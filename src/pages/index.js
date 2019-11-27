@@ -18,12 +18,6 @@ import SystemutviklingIcon from '../components/icons/clave_ikon_systemutvikling.
 import RaadgivningIcon from '../components/icons/clave_ikon_radgivning.svg';
 import { onDesktop } from '../components/Breakpoints';
 
-const FrontPageIngress = styled.p`
-  font-size: 2rem;
-  font-weight: normal;
-  font-family: 'basis-grotesque-medium-pro', Fallback, sans-serif;
-`;
-
 const FrontPageTextContent = styled.div`
   padding-top: 3rem;
 `;
@@ -86,14 +80,14 @@ const IndexPage = () => {
         </ColorContext.Provider>
         <Layout>
           <FrontPageTextContent>
-            <FrontPageIngress>
+            <h2>
               Vi jobber i prosjekter og initiativer innen teknologi og
               innovasjon og ute hos kunder. Her sitter vi gjerne over tid.
-            </FrontPageIngress>
-            <FrontPageIngress>
+            </h2>
+            <h2>
               Av og til får vi også med oss utviklere og testere i selskapet vi
               har etablert i Polen.
-            </FrontPageIngress>
+            </h2>
             <InfoFlexbox>
               <InfoBox>
                 <BrukeropplevelseLogo />
