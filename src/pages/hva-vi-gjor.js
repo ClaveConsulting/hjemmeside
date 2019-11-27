@@ -51,10 +51,10 @@ const SecondPage = () => {
           }}
         />
         <Layout>
-          <Ingress>
+          <h2>
             Vi driver med brukeropplevelse, systemutvikling og rådgivning. Vi
             sitter stort sett alltid hos kunden vi jobber for, over tid.
-          </Ingress>
+          </h2>
           <p>
             Noen prosjekter gjør vi sammen med utviklere og testere fra Fabres i
             Polen. Vi i Clave har nemlig vært med å starte konsulentselskapet

@@ -31,10 +31,10 @@ const HvemViEr = () => {
           }}
         />
         <Layout>
-          <Ingress>
+          <h2>
             Vi mener at det er godt og litt annerledes å være en Claver. Vi
             føler en tilhørighet både til selskapet og til kollegaene våre.
-          </Ingress>
+          </h2>
           <p>
             Det er flest hverdager i året, og i denne hverdagen setter vi
             trivsel og trygghet høyt. Når vi er trygge på hverandre får vi god
