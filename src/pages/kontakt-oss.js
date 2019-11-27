@@ -50,7 +50,7 @@ const SecondPage = () => {
                 <h3>Terje</h3>
                 <p>
                   Aasgaard Salgssjef <br />+ 47 975 37 841 <br />
-                  terje.aasgard@clave.no
+                  terje.aasgaard@clave.no
                 </p>
               </Contact1>
             </ContactInfo>
