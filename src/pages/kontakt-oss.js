@@ -42,7 +42,7 @@ const SecondPage = () => {
               <Contact1>
                 <h3>Steinar</h3>
                 <p>
-                  Sveen SEO <br /> + 47 908 86 980 <br />
+                  Sveen CEO <br /> + 47 908 86 980 <br />
                   steinar.sveen@clave.no
                 </p>
               </Contact1>
