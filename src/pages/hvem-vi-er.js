@@ -54,7 +54,6 @@ const HvemViEr = () => {
             muligheter, og vi skaper et kreativt fellesskap. Teknologi og
             brukeropplevelse er det beste vi vet.
           </p>
-          <p>Varm, smart og nysgjerrig.</p>
         </Layout>
       </main>
       <Footer />
