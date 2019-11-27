@@ -68,9 +68,9 @@ const SecondPage = () => {
             landegrensene, har vi lært hva som er viktigst for at samarbeidet
             skal fungere aller best.
           </p>
-          <h2>Brukertesting er viktig!</h2>
+          <h3>Brukertesting er viktig!</h3>
           <p>
-            Steffen og "Irene" er vårt brukervennlighetstest-team. De jobber på
+            Steffen og Anniken er vårt brukervennlighetstest-team. De jobber på
             tvers av de kundene vi har, og for andre som trenger å få
             brukertestet. Vi har laget dette som en egen tjeneste, fordi
             brukervennlighetstesting er jo noe alle trenger å gjøre jevnlig!
@@ -84,10 +84,9 @@ const SecondPage = () => {
               <p>
                 Har du en løsning som du ikke har observert at dine brukere
                 benytter seg av? Er det lenge siden du sist
-                brukervennlighetstestet løsningen din? Da kan Steffen og Irene
+                brukervennlighetstestet løsningen din? Da kan Steffen og Anniken
                 hjelpe deg.
               </p>
-              <CtaLink to="/">Mer om hvordan vi tester</CtaLink>
               <AsideImage
                 fluidImage={images.laptop}
                 width="387"
