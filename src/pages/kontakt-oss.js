@@ -49,7 +49,7 @@ const SecondPage = () => {
               <Contact1>
                 <h3>Terje</h3>
                 <p>
-                  Asgard Salgssjef <br />+ 47 975 37 841 <br />
+                  Aasgaard Salgssjef <br />+ 47 975 37 841 <br />
                   terje.aasgard@clave.no
                 </p>
               </Contact1>

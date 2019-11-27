@@ -82,7 +82,7 @@ const IndexPage = () => {
           <FrontPageTextContent>
             <h2>
               Vi jobber i prosjekter og initiativer innen teknologi og
-              innovasjon og ute hos kunder. Her sitter vi gjerne over tid.
+              innovasjon ute hos kunder. Her sitter vi gjerne over tid.
             </h2>
             <h2>
               Av og til får vi også med oss utviklere og testere i selskapet vi
