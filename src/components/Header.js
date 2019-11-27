@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import React, { useContext, useState } from 'react';
 import { COLOR_CLAVE_GREEN, COLOR_CLAVE_SKIN } from '../colors';
 import styled from 'styled-components';
@@ -8,43 +7,34 @@ import { Link } from 'gatsby';
 import hamburgerIcon from './icons/hamburgermeny_ikon.svg';
 import { ColorContext, Container, DESKTOP_PADDING, MOBILE_PADDING } from './Layout';
 import { onDesktop } from './Breakpoints';
+import HamburgerMenuLink from './HamburgerMenuLink';
 
 const Header = ({ frontPage = false, useSkinColoredHamburgerMenu = false }) => {
-  const HamburgerDiv = styled.div``;
-  const [menuExpanded, setMenuExpanded] = useState(false);
-  const LogoComponent = frontPage ? FrontPageLogo : Logo;
-  const LinkComponent = styled(ClaveLink)`
-    display: none;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-
-    ${onDesktop(`
-      display: block;
-    `)}
-  `;
-
-  const HanburgerMenuLink = styled(ClaveLink)`
-    display: table;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-    padding-bottom: 0px;!important
+  const HamburgerDiv = styled.div`
+    padding-bottom: 2rem;
     ${onDesktop(`
       display: none;
     `)}
+  `;
+  const [menuExpanded, setMenuExpanded] = useState(false);
+  const LogoComponent = frontPage ? FrontPageLogo : Logo;
+  const LinkComponent = styled(ClaveLink)`
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
   `;
 
   const HamburgerMenyOptions = () => {
     return menuExpanded ? (
       <HamburgerDiv>
-        <HanburgerMenuLink to="/hva-vi-gjor">
+        <HamburgerMenuLink to="/hva-vi-gjor">
           Se hva vi gjør
-        </HanburgerMenuLink>
-        <HanburgerMenuLink to="/hvem-vi-er">
+        </HamburgerMenuLink>
+        <HamburgerMenuLink to="/hvem-vi-er">
           Se hvem vi er
-        </HanburgerMenuLink>
-        <HanburgerMenuLink to="/kontakt-oss">
+        </HamburgerMenuLink>
+        <HamburgerMenuLink to="/kontakt-oss">
           Kontakt oss
-        </HanburgerMenuLink>
+        </HamburgerMenuLink>
       </HamburgerDiv>
     ) : (
       ''
@@ -177,10 +167,6 @@ const FrontPageWrapper = styled(Wrapper)`
   background: none;
   padding: ${PADDING_VERTICAL} 0;
 `;
-
-Header.propTypes = {
-  children: PropTypes.string,
-};
 
 const StyledHamburgerIcon = styled(hamburgerIcon)`
   width: 2rem;

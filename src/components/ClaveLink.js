@@ -3,6 +3,7 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { COLOR_CLAVE_PINK, COLOR_CLAVE_GREEN } from '../colors';
 import { ColorContext } from './Layout';
+import { onMobile } from './Breakpoints';
 
 const ClaveLink = ({ to, children, className, ...props }) => {
   const { textColor } = useContext(ColorContext);
@@ -19,9 +20,9 @@ const ClaveLink = ({ to, children, className, ...props }) => {
 };
 
 const ANCHOR_STYLES = `
-  @media only screen and (max-width: 600px) {
+  ${onMobile(`
     display: none;
-  }
+  `)}
   text-decoration: none;
   padding-bottom: 5px;
   border-bottom: 1px solid ${COLOR_CLAVE_PINK};
