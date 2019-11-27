@@ -16,8 +16,8 @@ const JoinContent = ({dontShowLink = false}) => (
     <h3>Bli en av oss</h3>
     <BannerP>
       Vi mener det er godt og litt annerledes å være en Claver. Vi føler en
-      tilhørlighet både til selskapet og til kollegaene våre. Fordi vi er
-      ansatteid er det også vi som bestemmer.
+      tilhørlighet både til selskapet og til kollegaene våre. Fordi det er vi
+      ansatte som eier selskapet er det også vi som bestemmer.
     </BannerP>
     <PositionUl>
       <PositionLink href="https://www.poption.com/companies/clave/postings/wYDf5q">Senior UX designer</PositionLink>
