@@ -12,6 +12,8 @@ import ClaveLink from '../components/ClaveLink';
 import { graphql, useStaticQuery } from 'gatsby';
 import Image from '../components/Image';
 import { onDesktop } from '../components/Breakpoints';
+import Header2 from '../components/Header2';
+import { COLOR_CLAVE_GREEN, COLOR_CLAVE_SKIN } from '../colors';
 
 const SecondPage = () => {
   const images = useStaticQuery(graphql`
@@ -40,7 +42,7 @@ const SecondPage = () => {
   return (
     <>
       <main>
-        <Header />
+        <Header2 backgroundColor={COLOR_CLAVE_SKIN} textColor={COLOR_CLAVE_GREEN}/>
         <SEO title="Se hva vi gjør" description="" />
         <PageHeader
           title="Se hva vi gjør"

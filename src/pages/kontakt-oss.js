@@ -10,6 +10,7 @@ import { COLOR_CLAVE_GREEN, COLOR_CLAVE_SKIN } from '../colors';
 import JoinBanner from '../components/JoinBanner';
 import MyMapComponent from '../components/Map';
 import { onDesktop } from '../components/Breakpoints';
+import Header2 from '../components/Header2';
 
 const SecondPage = () => {
   const images = useStaticQuery(graphql`
@@ -32,7 +33,7 @@ const SecondPage = () => {
     >
       <>
         <main>
-          <Header useSkinColoredHamburgerMenu={true} />
+          <Header2 backgroundColor={COLOR_CLAVE_GREEN} textColor={COLOR_CLAVE_SKIN} />
           <SEO title="Kontakt oss" description="" />
           <Layout>
             <h1>Kontakt oss</h1>
