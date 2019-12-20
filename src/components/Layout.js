@@ -5,8 +5,8 @@ import { COLOR_CLAVE_SKIN, COLOR_CLAVE_GREEN } from '../colors';
 import { onDesktop } from './Breakpoints';
 
 export const MAX_WIDTH = '120rem';
-export const MOBILE_PADDING = '1.875rem';
-export const DESKTOP_PADDING = '5rem';
+export const MOBILE_PADDING = '3rem';
+export const DESKTOP_PADDING = '6rem';
 
 export const Container = props => {
   const { backgroundColor, textColor } = useContext(ColorContext);

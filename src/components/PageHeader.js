@@ -2,13 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import { MOBILE_PADDING, Container } from './Layout';
 import Image from './Image';
-import { onDesktop } from './Breakpoints';
+import { onDesktop, onMobile } from './Breakpoints';
 
 const PageHeader = ({ title, imageProps }) => {
   return (
     <Container>
       <PageHeaderWrapper>
-        <h1>{title}</h1>
+        <PageHeaderTitle>{title}</PageHeaderTitle>
         <PageHeaderImage {...imageProps} />
       </PageHeaderWrapper>
     </Container>
@@ -26,6 +26,7 @@ const PageHeaderWrapper = styled(Container.Content)`
 
   ${onDesktop(`
     padding-left: 0;
+    margin-bottom: 
   `)}
 `;
 
@@ -58,6 +59,14 @@ const PageHeaderImageImg = styled.img`
 `;
 const PageHeaderLoadedImage = styled(Image)`
   ${imageStyle}
+`;
+const PageHeaderTitle = styled.h1`
+    ${onDesktop(`
+    margin-bottom:4rem;
+  `)}
+  ${onMobile(`
+    margin-bottom:1.5rem;
+  `)}
 `;
 
 export default PageHeader;

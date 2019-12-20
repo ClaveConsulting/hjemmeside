@@ -140,7 +140,6 @@ const StyledFirstSection = styled.section`
 `;
 
 const StyledTextPanel = styled.div`
-  padding-top: 10%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;

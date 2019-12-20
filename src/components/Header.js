@@ -6,7 +6,7 @@ import ClaveLogo from './icons/clave-logo.svg';
 import { Link } from 'gatsby';
 import hamburgerIcon from './icons/hamburgermeny_ikon.svg';
 import { ColorContext, Container, DESKTOP_PADDING, MOBILE_PADDING } from './Layout';
-import { onDesktop } from './Breakpoints';
+import { onDesktop, onMobile } from './Breakpoints';
 import HamburgerMenuLink from './HamburgerMenuLink';
 
 const Header = ({ frontPage = false, useSkinColoredHamburgerMenu = false }) => {
@@ -100,7 +100,11 @@ const Header = ({ frontPage = false, useSkinColoredHamburgerMenu = false }) => {
   );
 };
 
-const PADDING_VERTICAL = '1.45rem';
+const PADDING_TOP_DESKTOP = '4rem';
+const PADDING_BOTTOM_DESKTOP = '6rem';
+
+const PADDING_TOP_MOBILE = '1.5rem';
+const PADDING_BOTTOM_MOBILE = '4.75rem';
 
 const LogoInner = styled(ClaveLogo)`
   width: 5rem;
@@ -154,7 +158,15 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: ${PADDING_VERTICAL} 0;
+    ${onDesktop(`
+  padding-top: ${PADDING_TOP_DESKTOP};
+  padding-bottom: ${PADDING_BOTTOM_DESKTOP};
+  `)}
+      ${onMobile(`
+  padding-top: ${PADDING_TOP_MOBILE};
+  padding-bottom: ${PADDING_BOTTOM_MOBILE};
+  `)}
+  
 `;
 
 const InlineWrapper = styled.div`
@@ -165,7 +177,15 @@ const InlineWrapper = styled.div`
 
 const FrontPageWrapper = styled(Wrapper)`
   background: none;
-  padding: ${PADDING_VERTICAL} 0;
+      ${onDesktop(`
+  padding-top: ${PADDING_TOP_DESKTOP};
+  padding-bottom: ${PADDING_BOTTOM_DESKTOP};
+  `)}
+      ${onMobile(`
+padding-top: ${PADDING_TOP_MOBILE};
+padding-bottom: ${PADDING_BOTTOM_MOBILE};
+`)}
+  
 `;
 
 const StyledHamburgerIcon = styled(hamburgerIcon)`
