@@ -1,4 +1,5 @@
 import React from 'react';
+import Form from '../components/Form/Form.js';
 import styled from 'styled-components';
 
 import Layout, { ColorContext } from '../components/Layout';
@@ -78,28 +79,7 @@ const SecondPage = () => {
               Trenger du hjelp til noe, ønsker å vite mer om hvordan det er å
               jobbe hos oss eller rett og slett bare er litt nysgjerrig?
             </p>
-            <form name="message" method="POST" data-netlify="true">
-              <input type="hidden" name="form-name" value="message" />
-              <CustomInput
-                name="navn"
-                placeholder="Navn"
-                type="text"
-              />
-              <br />
-              <CustomInput
-                name="Epost"
-                placeholder="Epost"
-                type="text"
-              />
-              <br />
-              <CustomInput
-                name="Melding"
-                placeholder="Melding"
-                type="text"
-              />
-              <br />
-              <CustomSubmit value="Send" type="submit"/>
-            </form>
+            <Form/>
           </Layout>
           <JoinBanner images={images} dontShowLink />
         </main>
@@ -113,33 +93,6 @@ const SecondPage = () => {
 const AsideContentLow = styled.span`
   display: inline-block;
   align-self: flex-end;
-`;
-
-const CustomInput = styled.input`
-  background-color: transparent;
-  border: none;
-  border-bottom: 1px solid #ccc;
-  color: ${COLOR_CLAVE_SKIN};
-  box-sizing: border-box;
-  font-size: 18px;
-  height: 50px;
-  padding: 10px 0;
-  position: relative;
-  top: 50%;
-  width: 100%;
-`;
-const CustomSubmit = styled.input`
-  margin-top: 1rem;
-  background-color: transparent;
-  border: none;
-  border-bottom: 0.1em solid #ccc;
-  color: ${COLOR_CLAVE_SKIN};
-  box-sizing: border-box;
-  font-size: 23px;
-  height: 50px;
-  padding: 1rem 0 0 0;
-  position: relative;
-  top: 50%;
 `;
 
 const ContactInfo = styled.div`
