@@ -40,8 +40,8 @@ const SecondPage = () => {
   return (
     <>
       <main>
-        <Header />
-        <SEO title="Se hva vi gjør" description="" />
+        <Header/>
+        <SEO title="Se hva vi gjør" description=""/>
         <PageHeader
           title="Se hva vi gjør"
           imageProps={{
@@ -56,6 +56,15 @@ const SecondPage = () => {
             sitter stort sett alltid hos kunden vi jobber for, over tid.
           </h2>
           <p>
+            Med våre dyktige prosjektledere, utviklere og designere når vi nye høyder sammen.
+            Våre tverrfaglige team samarbeider om å lage intuitive løsninger hvor brukeren står i fokus.
+            Fornøyde brukere gir fornøyde kunder.
+          </p>
+          <p>
+            Vi er stolte over fagområdene våre, og er alltid opptatt av å være oppdatert på det siste innenfor
+            metodikker og systemer.
+          </p>
+          <p>
             Noen prosjekter gjør vi sammen med utviklere og testere fra Fabres i
             Polen. Vi i Clave har nemlig vært med å starte konsulentselskapet
             Fabres som er lokalisert i Polen. De samarbeider vi med på flere
@@ -68,24 +77,16 @@ const SecondPage = () => {
             landegrensene, har vi lært hva som er viktigst for at samarbeidet
             skal fungere aller best.
           </p>
-          <h3>Brukertesting er viktig!</h3>
-          <p>
-            Steffen og Anniken er vårt brukervennlighetstest-team. De jobber på
-            tvers av de kundene vi har, og for andre som trenger å få
-            brukertestet. Vi har laget dette som en egen tjeneste, fordi
-            brukervennlighetstesting er jo noe alle trenger å gjøre jevnlig!
-          </p>
-          <CtaLink to="/kontakt-oss">Kontakt oss for mer info</CtaLink>
         </Layout>
         <Layout
           asideContent={
             <div>
-              <h3>Bestill en test</h3>
+              <h3>Brukertesting er viktig!</h3>
               <p>
-                Har du en løsning som du ikke har observert at dine brukere
-                benytter seg av? Er det lenge siden du sist
-                brukervennlighetstestet løsningen din? Da kan Steffen og Anniken
-                hjelpe deg.
+                Steffen og Anniken er vårt brukervennlighetstest-team. De jobber på
+                tvers av de kundene vi har, og for andre som trenger å få
+                brukertestet. Vi har laget dette som en egen tjeneste, fordi
+                brukervennlighetstesting er jo noe alle trenger å gjøre jevnlig!
               </p>
               <AsideImage
                 fluidImage={images.laptop}
@@ -112,7 +113,7 @@ const SecondPage = () => {
           </Gallery>
         </Layout>
       </main>
-      <Footer />
+      <Footer/>
     </>
   );
 };
