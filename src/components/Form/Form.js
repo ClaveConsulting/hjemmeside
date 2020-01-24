@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import styled from "styled-components";
 import {COLOR_CLAVE_SKIN} from "../../colors";
-import "./error.css"
+import "./form.css"
 
 class Form extends Component {
     constructor(props) {
@@ -119,7 +119,12 @@ class Form extends Component {
                         onBlur={this.changeMessagePlaceholder.bind(this)}
                     />
                 <br/>
-                <CustomSubmit value="Send" type="submit" disabled={!this.state.formValid}/>
+                <CustomSubmit
+                    value="Send"
+                    type="submit"
+                    disabled={!this.state.formValid}
+                    className={this.state.formValid ? "pointer" : ""}
+                />
             </form>
         )
     }
