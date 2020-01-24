@@ -24,6 +24,8 @@ const FrontPageTextContent = styled.div`
 
 const InfoBox = styled.div`
   padding-right: 1rem;
+  margin-right: 2.5rem;
+  max-width: 25rem;
 
   ${onDesktop(`
     flex: 1 1 33%;
@@ -83,10 +85,6 @@ const IndexPage = () => {
             <h2>
               Vi jobber i prosjekter og initiativer innen teknologi og
               innovasjon ute hos kunder. Her sitter vi gjerne over tid.
-            </h2>
-            <h2>
-              Av og til får vi også med oss utviklere og testere i selskapet vi
-              har etablert i Polen.
             </h2>
             <InfoFlexbox>
               <InfoBox>
@@ -166,17 +164,17 @@ const StyledBackgroundImage = styled.div`
 `;
 
 const BrukeropplevelseLogo = styled(BrukeropplevelseIcon)`
-  width: 10rem;
+  width: 15rem;
   height: auto;
 `;
 
 const SystemutviklingLogo = styled(SystemutviklingIcon)`
-  width: 10rem;
+  width: 15rem;
   height: auto;
 `;
 
 const RaadgivningLogo = styled(RaadgivningIcon)`
-  width: 10rem;
+  width: 15rem;
   height: auto;
 `;
 
