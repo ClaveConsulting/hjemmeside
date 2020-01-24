@@ -73,7 +73,7 @@ const IndexPage = () => {
             </StyledBackgroundImage>
             <StyledTextPanel>
               <Title color={COLOR_CLAVE_SKIN}>
-                  Vi er en gjeng designere og utviklere med masse engasjement.
+                  Vi er en gjeng designere og utviklere med masse engasjement
               </Title>
             </StyledTextPanel>
           </StyledFirstSection>
@@ -103,7 +103,7 @@ const IndexPage = () => {
                 <h3>Systemutvikling</h3>
                 <p>
                   Sammen med våre designere lager vi intuitive løsninger. Vi kan
-                  hele tjenestestacken; arkitektur, database og integrasjon,
+                  hele tjenestestacken: arkitektur, database og integrasjon,
                   frontend og apputvikling.
                 </p>
               </InfoBox>
@@ -111,7 +111,7 @@ const IndexPage = () => {
                 <RaadgivningLogo />
                 <h3>Rådgivning</h3>
                 <p>
-                  Vi som jobber med prosjektledelse har alle lang erfaring. Vi
+                  Vi som jobber med rådgivning har alle lang erfaring. Vi
                   er opptatt av at teamet jobber sammen, mot samme mål, og blir
                   godt kjent.
                 </p>
