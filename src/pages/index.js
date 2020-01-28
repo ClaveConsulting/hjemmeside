@@ -16,11 +16,14 @@ import { graphql, useStaticQuery } from 'gatsby';
 import BrukeropplevelseIcon from '../components/icons/clave_ikon_brukeropplevelse.svg';
 import SystemutviklingIcon from '../components/icons/clave_ikon_systemutvikling.svg';
 import RaadgivningIcon from '../components/icons/clave_ikon_radgivning.svg';
-import { onDesktop } from '../components/Breakpoints';
+import {onDesktop, onMobile} from '../components/Breakpoints';
 
 const FrontPageTextContent = styled.div`
   padding-top: 3rem;
 `;
+
+const PADDING_TOP_DESKTOP = '6rem';
+const PADDING_TOP_MOBILE = '4.75rem';
 
 const InfoBox = styled.div`
   padding-right: 1rem;
@@ -74,9 +77,11 @@ const IndexPage = () => {
               <Image fluidImage={images.header} />
             </StyledBackgroundImage>
             <StyledTextPanel>
-              <Title color={COLOR_CLAVE_SKIN}>
-                  Vi er en gjeng designere og utviklere med masse engasjement
-              </Title>
+              <TitleWrapper>
+                  <Title color={COLOR_CLAVE_SKIN}>
+                      Vi er en gjeng designere og utviklere med masse engasjement
+                  </Title>
+              </TitleWrapper>
             </StyledTextPanel>
           </StyledFirstSection>
         </ColorContext.Provider>
@@ -126,6 +131,15 @@ const IndexPage = () => {
     </>
   );
 };
+
+const TitleWrapper = styled.div`
+    ${onDesktop(`
+  padding-top: ${PADDING_TOP_DESKTOP};
+  `)}
+      ${onMobile(`
+  padding-top: ${PADDING_TOP_MOBILE};
+  `)}
+`;
 
 const StyledFirstSection = styled.section`
   height: 100vh;

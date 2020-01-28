@@ -6,12 +6,15 @@ import Footer from '../components/Footer';
 import SEO from '../components/Seo';
 import Header from '../components/Header';
 import PageHeader from '../components/PageHeader';
-import CtaLink from '../components/CtaLink';
 import { Gallery, GalleryImage } from '../components/Gallery';
 import ClaveLink from '../components/ClaveLink';
 import { graphql, useStaticQuery } from 'gatsby';
 import Image from '../components/Image';
-import { onDesktop } from '../components/Breakpoints';
+import {onDesktop, onMobile} from '../components/Breakpoints';
+import {COLOR_CLAVE_SKIN} from "../colors";
+
+const PADDING_TOP_DESKTOP = '6rem';
+const PADDING_TOP_MOBILE = '4.75rem';
 
 const SecondPage = () => {
   const images = useStaticQuery(graphql`
@@ -42,14 +45,16 @@ const SecondPage = () => {
       <main>
         <Header/>
         <SEO title="Se hva vi gjør" description=""/>
-        <PageHeader
-          title="Se hva vi gjør"
-          imageProps={{
-            fluidImage: images.header,
-            width: 1227,
-            height: 728,
-          }}
-        />
+        <TitleWrapper>
+              <PageHeader
+              title="Se hva vi gjør"
+              imageProps={{
+                fluidImage: images.header,
+                width: 1227,
+                height: 728,
+              }}
+            />
+        </TitleWrapper>
         <Layout>
           <h2>
             Vi driver med brukeropplevelse, systemutvikling og rådgivning. Vi
@@ -147,6 +152,17 @@ const Projects = ({ children }) => {
     </ProjectsListContext.Provider>
   );
 };
+
+const TitleWrapper = styled.div`
+background-color: ${COLOR_CLAVE_SKIN};
+    ${onDesktop(`
+  padding-top: ${PADDING_TOP_DESKTOP};
+  
+  `)}
+      ${onMobile(`
+  padding-top: ${PADDING_TOP_MOBILE};
+  `)}
+`;
 
 const ProjectsListContainer = styled(Container)`
   display: flex;

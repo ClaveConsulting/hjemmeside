@@ -7,6 +7,11 @@ import SEO from '../components/Seo';
 import Header from '../components/Header';
 import PageHeader from '../components/PageHeader';
 import { useStaticQuery, graphql } from 'gatsby';
+import {COLOR_CLAVE_SKIN} from "../colors";
+import {onDesktop, onMobile} from "../components/Breakpoints";
+
+const PADDING_TOP_DESKTOP = '6rem';
+const PADDING_TOP_MOBILE = '4.75rem';
 
 const HvemViEr = () => {
   const images = useStaticQuery(graphql`
@@ -22,14 +27,16 @@ const HvemViEr = () => {
       <main>
         <Header/>
         <SEO title="Se hvem vi er" description=""/>
-        <PageHeader
-          title="Se hvem vi er"
-          imageProps={{
-            fluidImage: images.header,
-            width: 1227,
-            height: 728,
-          }}
-        />
+          <TitleWrapper>
+          <PageHeader
+            title="Se hvem vi er"
+            imageProps={{
+              fluidImage: images.header,
+              width: 1227,
+              height: 728,
+            }}
+          />
+          </TitleWrapper>
         <Layout>
           <h2>
             Vi mener at det er godt og litt annerledes å være en Claver. Vi
@@ -60,6 +67,18 @@ const HvemViEr = () => {
     </>
   );
 };
+
+
+const TitleWrapper = styled.div`
+background-color: ${COLOR_CLAVE_SKIN};
+    ${onDesktop(`
+  padding-top: ${PADDING_TOP_DESKTOP};
+  
+  `)}
+      ${onMobile(`
+  padding-top: ${PADDING_TOP_MOBILE};
+  `)}
+`;
 
 const Ingress = styled.p`
   font-size: 1.5rem;

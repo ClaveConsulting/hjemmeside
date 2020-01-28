@@ -101,10 +101,7 @@ const Header = ({ frontPage = false, useSkinColoredHamburgerMenu = false }) => {
 };
 
 const PADDING_TOP_DESKTOP = '4rem';
-const PADDING_BOTTOM_DESKTOP = '6rem';
-
 const PADDING_TOP_MOBILE = '1.5rem';
-const PADDING_BOTTOM_MOBILE = '4.75rem';
 
 const LogoInner = styled(ClaveLogo)`
   width: 5rem;
@@ -160,11 +157,9 @@ const Wrapper = styled.div`
   align-items: center;
     ${onDesktop(`
   padding-top: ${PADDING_TOP_DESKTOP};
-  padding-bottom: ${PADDING_BOTTOM_DESKTOP};
   `)}
       ${onMobile(`
   padding-top: ${PADDING_TOP_MOBILE};
-  padding-bottom: ${PADDING_BOTTOM_MOBILE};
   `)}
   
 `;
@@ -179,11 +174,9 @@ const FrontPageWrapper = styled(Wrapper)`
   background: none;
       ${onDesktop(`
   padding-top: ${PADDING_TOP_DESKTOP};
-  padding-bottom: ${PADDING_BOTTOM_DESKTOP};
   `)}
       ${onMobile(`
 padding-top: ${PADDING_TOP_MOBILE};
-padding-bottom: ${PADDING_BOTTOM_MOBILE};
 `)}
   
 `;

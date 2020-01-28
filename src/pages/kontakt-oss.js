@@ -10,7 +10,10 @@ import { graphql, useStaticQuery } from 'gatsby';
 import { COLOR_CLAVE_GREEN, COLOR_CLAVE_SKIN } from '../colors';
 import JoinBanner from '../components/JoinBanner';
 import MyMapComponent from '../components/Map';
-import { onDesktop } from '../components/Breakpoints';
+import {onDesktop, onMobile} from '../components/Breakpoints';
+
+const PADDING_TOP_DESKTOP = '6rem';
+const PADDING_TOP_MOBILE = '4.75rem';
 
 const SecondPage = () => {
   const images = useStaticQuery(graphql`
@@ -36,7 +39,9 @@ const SecondPage = () => {
           <Header useSkinColoredHamburgerMenu={true} />
           <SEO title="Kontakt oss" description="" />
           <Layout>
-            <h1>Kontakt oss</h1>
+            <TitleWrapper>
+              <h1>Kontakt oss</h1>
+            </TitleWrapper>
           </Layout>
           <Layout>
             <ContactInfo>
@@ -89,6 +94,17 @@ const SecondPage = () => {
     </ColorContext.Provider>
   );
 };
+
+const TitleWrapper = styled.div`
+background-color: ${COLOR_CLAVE_GREEN};
+    ${onDesktop(`
+  padding-top: ${PADDING_TOP_DESKTOP};
+  
+  `)}
+      ${onMobile(`
+  padding-top: ${PADDING_TOP_MOBILE};
+  `)}
+`;
 
 const AsideContentLow = styled.span`
   display: inline-block;
