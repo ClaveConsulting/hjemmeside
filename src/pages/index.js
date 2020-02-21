@@ -139,11 +139,13 @@ const StyledFirstSection = styled.section`
 
 const StyledTextPanel = styled.div`
   display: flex;
+  padding-top: 30vh;
   flex-direction: column;
   justify-content: space-around;
   width: 60%;
   @media only screen and (max-width: 480px) {
     width: 80%;
+    padding-top: 0;
   }
 `;
 
