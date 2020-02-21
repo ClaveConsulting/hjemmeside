@@ -57,7 +57,7 @@ const Header = ({ frontPage = false, useSkinColoredHamburgerMenu = false }) => {
 
   const newColorContext = frontPage
     ? {
-      backgroundColor: COLOR_CLAVE_GREEN,
+      backgroundColor: "none",
       textColor: COLOR_CLAVE_SKIN,
     }
     : colorContext;
