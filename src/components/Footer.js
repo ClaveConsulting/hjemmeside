@@ -34,9 +34,7 @@ const FooterContentContainer = styled(Container.Content)`
 `;
 
 const FooterLogoWrapper = styled(({ children, ...props }) => (
-  <Aside {...props}>
-    {children}
-  </Aside>
+  <Aside {...props}>{children}</Aside>
 ))`
   order: 0;
 `;
@@ -54,6 +52,12 @@ const FooterContent = styled(Section)`
 const NoWrapText = styled.span`
   white-space: nowrap;
 `;
+
+const MobileAccesibleClaveLink = ({ children, ...props }) => (
+  <ClaveLink {...props} showOnMobile>
+    {children}
+  </ClaveLink>
+);
 
 const Footer = props => {
   const colorContext = useContext(ColorContext);
@@ -74,51 +78,61 @@ const Footer = props => {
             <FooterContent>
               <FooterList>
                 <FooterListItem>
-                  <ClaveLink to="/hva-vi-gjor"><NoWrapText>Se hva vi gjør</NoWrapText></ClaveLink>
-                </FooterListItem>
-                <FooterListItem>
-                  <ClaveLink to="/hvem-vi-er"><NoWrapText>Se hvem vi er</NoWrapText></ClaveLink>
-                </FooterListItem>
-                <FooterListItem>
-                  <ClaveLink to="/kontakt-oss"><NoWrapText>Bli en av oss</NoWrapText></ClaveLink>
-                </FooterListItem>
-              </FooterList>
-              <FooterList>
-                <FooterListItem>
-                  <ClaveLink href="mailto:post@clave.no">
-                    <NoWrapText>post@clave.no</NoWrapText>
+                  <ClaveLink to="/hva-vi-gjor">
+                    <NoWrapText>Se hva vi gjør</NoWrapText>
                   </ClaveLink>
                 </FooterListItem>
-                <FooterListItem><NoWrapText>Øvre slottsgate 18-20</NoWrapText></FooterListItem>
-                <FooterListItem><NoWrapText>0157 Oslo</NoWrapText></FooterListItem>
+                <FooterListItem>
+                  <ClaveLink to="/hvem-vi-er">
+                    <NoWrapText>Se hvem vi er</NoWrapText>
+                  </ClaveLink>
+                </FooterListItem>
+                <FooterListItem>
+                  <ClaveLink to="/kontakt-oss">
+                    <NoWrapText>Bli en av oss</NoWrapText>
+                  </ClaveLink>
+                </FooterListItem>
               </FooterList>
               <FooterList>
                 <FooterListItem>
-                  <ClaveLink
+                  <MobileAccesibleClaveLink href="mailto:post@clave.no">
+                    <NoWrapText>post@clave.no</NoWrapText>
+                  </MobileAccesibleClaveLink>
+                </FooterListItem>
+                <FooterListItem>
+                  <NoWrapText>Øvre slottsgate 18-20</NoWrapText>
+                </FooterListItem>
+                <FooterListItem>
+                  <NoWrapText>0157 Oslo</NoWrapText>
+                </FooterListItem>
+              </FooterList>
+              <FooterList>
+                <FooterListItem>
+                  <MobileAccesibleClaveLink
                     href="https://www.facebook.com/ClaveConsulting/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     Facebook
-                  </ClaveLink>
+                  </MobileAccesibleClaveLink>
                 </FooterListItem>
                 <FooterListItem>
-                  <ClaveLink
+                  <MobileAccesibleClaveLink
                     href="https://www.instagram.com/claveconsulting/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     Instagram
-                  </ClaveLink>
+                  </MobileAccesibleClaveLink>
                 </FooterListItem>
                 <FooterListItem>
-                  <ClaveLink
+                  <MobileAccesibleClaveLink
                     href="https://www.linkedin.com/company/clave-consulting-as/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     LinkedIn
-                  </ClaveLink>
+                  </MobileAccesibleClaveLink>
                 </FooterListItem>
               </FooterList>
             </FooterContent>
