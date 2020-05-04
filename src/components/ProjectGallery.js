@@ -61,14 +61,18 @@ export const ProjectGallery = ({
       <FirstImage ref={firstSectionRef} height={firstSectionHeight}>
         <GalleryImageWithSubtext image={leftImg} alt="FirstImage">
           <LeftTextWrapper>
-            <LeftTextItem>
-              <h2>Metodologi</h2>
-              <p>{methodology}</p>
-            </LeftTextItem>
-            <LeftTextItem>
-              <h2>Teknologi</h2>
-              <p>{technology}</p>
-            </LeftTextItem>
+            {methodology ? (
+              <LeftTextItem>
+                <h2>Metodologi</h2>
+                <p>{methodology}</p>
+              </LeftTextItem>
+            ) : null}
+            {technology ? (
+              <LeftTextItem>
+                <h2>Teknologi</h2>
+                <p>{technology}</p>
+              </LeftTextItem>
+            ) : null}
           </LeftTextWrapper>
         </GalleryImageWithSubtext>
       </FirstImage>

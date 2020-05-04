@@ -4,8 +4,12 @@ import styled from 'styled-components';
 import SEO from '../components/Seo';
 import Header from '../components/Header';
 import PageHeader from '../components/PageHeader';
+import { onDesktop, onMobile } from './Breakpoints';
 
 import { ProjectGallery } from './ProjectGallery';
+
+const PADDING_TOP_DESKTOP = '6rem';
+const PADDING_TOP_MOBILE = '4.75rem';
 
 export const ProjectPageTemplate = ({
   mainImg,
@@ -21,18 +25,29 @@ export const ProjectPageTemplate = ({
   backgroundColor,
   textColor,
 }) => {
+  const TitleWrapper = styled.div`
+    background-color: ${backgroundColor};
+    ${onDesktop(`
+  padding-top: ${PADDING_TOP_DESKTOP};
+  `)} ${onMobile(`
+  padding-top: ${PADDING_TOP_MOBILE};
+  `)};
+  `;
+
   return (
     <ProjectPageContainer>
       <Header />
       <SEO title={title} description="" />
-      <PageHeader
-        title={title}
-        imageProps={{
-          fluidImage: mainImg,
-          width: 1227,
-          height: 728,
-        }}
-      />
+      <TitleWrapper>
+        <PageHeader
+          title={title}
+          imageProps={{
+            fluidImage: mainImg,
+            width: 1227,
+            height: 728,
+          }}
+        />
+      </TitleWrapper>
       <ColorContext.Provider
         value={{
           backgroundColor,
@@ -62,6 +77,11 @@ export const ProjectKeywords = ({ children }) => {
   const keywordList = children.map(fact => (
     <KeywordElement>{fact}</KeywordElement>
   ));
+
+  if (keywordList.length === 0) {
+    return null;
+  }
+
   return (
     <KeywordComponent>
       <KeywordHeader>Prosjektfakta</KeywordHeader>
@@ -92,7 +112,7 @@ const KeywordComponent = styled.div`
 `;
 
 export const Ingress = styled.p`
-  font-size: 1.5rem;
+  font-size: 2rem;
   line-height: 1.5;
 `;
 

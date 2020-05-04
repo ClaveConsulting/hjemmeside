@@ -34,9 +34,7 @@ const FooterContentContainer = styled(Container.Content)`
 `;
 
 const FooterLogoWrapper = styled(({ children, ...props }) => (
-  <Aside {...props}>
-    {children}
-  </Aside>
+  <Aside {...props}>{children}</Aside>
 ))`
   order: 0;
 `;

@@ -1,17 +1,17 @@
-import React, { useContext, useMemo, useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
-import Layout, { Container } from '../components/Layout';
+import Layout from '../components/Layout';
 import Footer from '../components/Footer';
 import SEO from '../components/Seo';
 import Header from '../components/Header';
 import PageHeader from '../components/PageHeader';
 import { Gallery, GalleryImage } from '../components/Gallery';
-import ClaveLink from '../components/ClaveLink';
 import { graphql, useStaticQuery } from 'gatsby';
 import Image from '../components/Image';
 import { onDesktop, onMobile } from '../components/Breakpoints';
 import { COLOR_CLAVE_SKIN } from '../colors';
+import ClaveProjects from './../components/ClaveProjects';
 
 const PADDING_TOP_DESKTOP = '6rem';
 const PADDING_TOP_MOBILE = '4.75rem';
@@ -35,6 +35,9 @@ const SecondPage = props => {
         ...fluidImage
       }
       theWell: file(relativePath: { eq: "190920_Clave_lowres_15.jpg" }) {
+        ...fluidImage
+      }
+      naf: file(relativePath: { eq: "190920_Clave_lowres_13.jpg" }) {
         ...fluidImage
       }
     }
@@ -118,39 +121,35 @@ const SecondPage = props => {
             />
           </Gallery>
         </Layout>
+        <Layout>
+          <h2>Sjekk ut hva vi gjør hos kundene våre</h2>
+          <p>
+            Det er stort sett alltid flere Clavere hos en kunde, og gjerne en
+            blanding av UX-designere, rådgivere og utviklere. Spa, post,
+            nettbutikk, bil, offentlig forvaltning og humanitært arbeid. Vi
+            jobber innen mange ulike domener!
+          </p>
+        </Layout>
+        <Layout asideContent={
+        <ClaveProjects />}>
+        <Gallery>
+            <GalleryImage
+              fluidImage={images.komplett}
+              width="681"
+              height="470"
+              alt="Lars-Petter og Yngve"
+            />
+            <GalleryImage
+              fluidImage={images.naf}
+              width="306"
+              height="368"
+              alt="Pekefinger"
+            />
+          </Gallery>
+        </Layout>
       </main>
       <Footer />
     </>
-  );
-};
-
-const ProjectsListContext = React.createContext({ maxHeight: 0 });
-
-const Projects = ({ children }) => {
-  const aspectRatio = useMemo(
-    () =>
-      Math.min.apply(
-        null,
-        children
-          .map(child => child.props.image)
-          .map(image => {
-            if (image.fluidImage)
-              return image.fluidImage.childImageSharp.fluid.aspectRatio;
-
-            return image.width / image.height;
-          })
-      ),
-    [children]
-  );
-
-  return (
-    <ProjectsListContext.Provider value={{ aspectRatio }}>
-      <ProjectsListContainer>
-        <Container.Content>
-          <ProjectsList>{children}</ProjectsList>
-        </Container.Content>
-      </ProjectsListContainer>
-    </ProjectsListContext.Provider>
   );
 };
 
@@ -165,97 +164,10 @@ const TitleWrapper = styled.div`
   `)}
 `;
 
-const ProjectsListContainer = styled(Container)`
-  display: flex;
-  align-items: center;
-`;
-
-const ProjectsList = styled.ul`
-  display: flex;
-  flex-direction: row;
-  list-style-type: none;
-  margin: 0 auto;
-  justify-content: flex-end;
-  flex-wrap: wrap;
-`;
-
-const ProjectItem = styled.li`
-  flex: 1 0 auto;
-  padding: 0 1rem;
-
-  ${onDesktop(`
-    flex: 0 0 auto;
-  `)}
-`;
-
-const projectImageStyle = `
-  display: block;
-  width: 100%;
-  height: auto;
-  margin-top: auto;
-`;
-
-const ProjectImg = styled.img`
-  ${projectImageStyle}
-`;
-
-const ProjectFluidImage = styled(Image)`
-  ${projectImageStyle}
-`;
-
-const ProjectImgWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  margin-bottom: 1rem;
-`;
-
-const Project = ({
-  image: { src, fluidImage, alt, width, height },
-  title,
-  ingress,
-  link,
-}) => {
-  const { aspectRatio } = useContext(ProjectsListContext);
-
-  const [imgWrapperHeight, setImgWrapperHeight] = useState(null);
-
-  const ImageComponent = fluidImage ? ProjectFluidImage : ProjectImg;
-
-  return (
-    <ProjectItem style={{ flexBasis: `${width}px` }}>
-      <ProjectImgWrapper
-        ref={div => {
-          if (!div) return;
-
-          setImgWrapperHeight(`${div.offsetWidth / aspectRatio}px`);
-        }}
-        style={{ height: imgWrapperHeight }}
-      >
-        <ImageComponent
-          fluidImage={fluidImage}
-          src={src}
-          alt={alt}
-          width={width}
-          height={height}
-        />
-      </ProjectImgWrapper>
-      <h3>{title}</h3>
-      <p>{ingress}</p>
-      <ClaveLink to={link}>Mer om {title}</ClaveLink>
-    </ProjectItem>
-  );
-};
-
 const AsideImage = styled(Image)`
   width: 100%;
   height: auto;
   display: block;
-`;
-
-const Ingress = styled.p`
-  font-size: 1.5rem;
-  line-height: 1.5;
 `;
 
 export default SecondPage;
