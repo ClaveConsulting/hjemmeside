@@ -11,6 +11,7 @@ import { COLOR_CLAVE_GREEN } from '../colors';
 const ProjectItem = styled.li`
   flex: 1 0 auto;
   padding: 0 1rem;
+  margin: 0px 10px 0px 10px;
 
   ${onDesktop(`
     flex: 0 0 auto;
