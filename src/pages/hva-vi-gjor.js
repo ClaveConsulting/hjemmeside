@@ -1,4 +1,4 @@
-import React, { useContext, useMemo, useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 import Layout, { Container } from '../components/Layout';
@@ -6,12 +6,10 @@ import Footer from '../components/Footer';
 import SEO from '../components/Seo';
 import Header from '../components/Header';
 import PageHeader from '../components/PageHeader';
-import CtaLink from '../components/CtaLink';
 import { Gallery, GalleryImage } from '../components/Gallery';
-import ClaveLink from '../components/ClaveLink';
 import { graphql, useStaticQuery } from 'gatsby';
 import Image from '../components/Image';
-import { onDesktop } from '../components/Breakpoints';
+import { Project, Projects } from './../components/ProjectCarousel';
 
 const SecondPage = () => {
   const images = useStaticQuery(graphql`
@@ -40,8 +38,8 @@ const SecondPage = () => {
   return (
     <>
       <main>
-        <Header/>
-        <SEO title="Se hva vi gjør" description=""/>
+        <Header />
+        <SEO title="Se hva vi gjør" description="" />
         <PageHeader
           title="Se hva vi gjør"
           imageProps={{
@@ -56,13 +54,14 @@ const SecondPage = () => {
             sitter stort sett alltid hos kunden vi jobber for, over tid.
           </h2>
           <p>
-            Med våre dyktige prosjektledere, utviklere og designere når vi nye høyder sammen.
-            Våre tverrfaglige team samarbeider om å lage intuitive løsninger hvor brukeren står i fokus.
-            Fornøyde brukere gir fornøyde kunder.
+            Med våre dyktige prosjektledere, utviklere og designere når vi nye
+            høyder sammen. Våre tverrfaglige team samarbeider om å lage
+            intuitive løsninger hvor brukeren står i fokus. Fornøyde brukere gir
+            fornøyde kunder.
           </p>
           <p>
-            Vi er stolte over fagområdene våre, og er alltid opptatt av å være oppdatert på det siste innenfor
-            metodikker og systemer.
+            Vi er stolte over fagområdene våre, og er alltid opptatt av å være
+            oppdatert på det siste innenfor metodikker og systemer.
           </p>
           <p>
             Noen prosjekter gjør vi sammen med utviklere og testere fra Fabres i
@@ -83,8 +82,8 @@ const SecondPage = () => {
             <div>
               <h3>Brukertesting er viktig!</h3>
               <p>
-                Steffen og Anniken er vårt brukervennlighetstest-team. De jobber på
-                tvers av de kundene vi har, og for andre som trenger å få
+                Steffen og Anniken er vårt brukervennlighetstest-team. De jobber
+                på tvers av de kundene vi har, og for andre som trenger å få
                 brukertestet. Vi har laget dette som en egen tjeneste, fordi
                 brukervennlighetstesting er jo noe alle trenger å gjøre jevnlig!
               </p>
@@ -112,121 +111,21 @@ const SecondPage = () => {
             />
           </Gallery>
         </Layout>
+        <Layout>
+          <h2>Sjekk ut hva vi gjør hos kundene våre</h2>
+          <p>
+            Det er stort sett alltid flere Clavere hos en kunde, og gjerne en
+            blanding av UX-designere, rådgivere og utviklere. Spa, post,
+            nettbutikk, bil, offentlig forvaltning og humanitært arbeid. Vi
+            jobber innen mange ulike domener!
+          </p>
+        </Layout>
+        <Container>
+          <ClaveProjectCarousel />
+        </Container>
       </main>
-      <Footer/>
+      <Footer />
     </>
-  );
-};
-
-const ProjectsListContext = React.createContext({ maxHeight: 0 });
-
-const Projects = ({ children }) => {
-  const aspectRatio = useMemo(
-    () =>
-      Math.min.apply(
-        null,
-        children
-          .map(child => child.props.image)
-          .map(image => {
-            if (image.fluidImage)
-              return image.fluidImage.childImageSharp.fluid.aspectRatio;
-
-            return image.width / image.height;
-          }),
-      ),
-    [children],
-  );
-
-  return (
-    <ProjectsListContext.Provider value={{ aspectRatio }}>
-      <ProjectsListContainer>
-        <Container.Content>
-          <ProjectsList>{children}</ProjectsList>
-        </Container.Content>
-      </ProjectsListContainer>
-    </ProjectsListContext.Provider>
-  );
-};
-
-const ProjectsListContainer = styled(Container)`
-  display: flex;
-  align-items: center;
-`;
-
-const ProjectsList = styled.ul`
-  display: flex;
-  flex-direction: row;
-  list-style-type: none;
-  margin: 0 auto;
-  justify-content: flex-end;
-  flex-wrap: wrap;
-`;
-
-const ProjectItem = styled.li`
-  flex: 1 0 auto;
-  padding: 0 1rem;
-
-  ${onDesktop(`
-    flex: 0 0 auto;
-  `)}
-`;
-
-const projectImageStyle = `
-  display: block;
-  width: 100%;
-  height: auto;
-  margin-top: auto;
-`;
-
-const ProjectImg = styled.img`
-  ${projectImageStyle}
-`;
-
-const ProjectFluidImage = styled(Image)`
-  ${projectImageStyle}
-`;
-
-const ProjectImgWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  margin-bottom: 1rem;
-`;
-
-const Project = ({
-                   image: { src, fluidImage, alt, width, height },
-                   title,
-                   ingress,
-                   link,
-                 }) => {
-  const { aspectRatio } = useContext(ProjectsListContext);
-
-  const [imgWrapperHeight, setImgWrapperHeight] = useState(null);
-
-  const ImageComponent = fluidImage ? ProjectFluidImage : ProjectImg;
-
-  return (
-    <ProjectItem style={{ flexBasis: `${width}px` }}>
-      <ProjectImgWrapper
-        ref={div => {
-          if (!div) return;
-
-          setImgWrapperHeight(`${div.offsetWidth / aspectRatio}px`);
-        }}
-        style={{ height: imgWrapperHeight }}
-      >
-        <ImageComponent
-          fluidImage={fluidImage}
-          src={src}
-          alt={alt}
-          width={width}
-          height={height}
-        />
-      </ProjectImgWrapper>
-      <h3>{title}</h3>
-      <p>{ingress}</p>
-      <ClaveLink to={link}>Mer om {title}</ClaveLink>
-    </ProjectItem>
   );
 };
 
@@ -236,9 +135,83 @@ const AsideImage = styled(Image)`
   display: block;
 `;
 
-const Ingress = styled.p`
-  font-size: 1.5rem;
-  line-height: 1.5;
-`;
+const ClaveProjectCarousel = () => {
+  const images = useStaticQuery(graphql`
+    query {
+      komplett: file(relativePath: { eq: "190920_Clave_lowres_8.jpg" }) {
+        ...fluidImage
+      }
+      rodekors: file(relativePath: { eq: "190920_Clave_lowres_5_crop.jpg" }) {
+        ...fluidImage
+      }
+      posten: file(relativePath: { eq: "190920_Clave_lowres_7_crop.jpg" }) {
+        ...fluidImage
+      }
+      thewell: file(relativePath: { eq: "190920_Clave_lowres_12_crop.jpg" }) {
+        ...fluidImage
+      }
+      toll: file(relativePath: { eq: "190920_Clave_lowres_3_crop.jpg" }) {
+        ...fluidImage
+      }
+      naf: file(relativePath: { eq: "190920_Clave_lowres_13.jpg" }) {
+        ...fluidImage
+      }
+      eika: file(relativePath: { eq: "190920_Clave_lowres_1_crop.jpg" }) {
+        ...fluidImage
+      }
+    }
+  `);
+  return (
+    <Projects>
+      <Project
+        image={{ fluidImage: images.posten, alt: 'Pia' }}
+        title="Posten"
+        ingress="Henning og Pia jobber hos Posten i innovasjonsavdeingen. Begge jobber etter metodikk innen Service design i team sammen med Posten sine egne ansatte. Her kartlegger de kundereiser og finner painponts knyttet til levering og netthandel."
+        link="/prosjekter/posten"
+      />
+      <Project
+        image={{ fluidImage: images.rodekors, alt: 'Karine' }}
+        title="Røde Kors"
+        ingress="Karine og Samson jobber for Røde Kors sammen med utviklere fra Fabres i Polen. De lager et varslings- og overvåkingssystem, slik at frivillige rundt i verden kan varsle om sykdomstilfeller i sine lokalsamfunn, og på den måten oppdage og stoppe sykdomsutbrudd og epidemier."
+        link="/prosjekter/rode-kors"
+      />
+      <Project
+        image={{ fluidImage: images.thewell, alt: 'Anniken' }}
+        title="The Well"
+        ingress="Anniken og Lars Petter jobber sammen med Miron fra Fabres, med bestillings- og betalingsløsning på nettsidene til The Well. The Well er Nordens største spa- og velværesenter. De må faktisk litt på spa av og til, for å forstå brukeren. Viktigst for brukeropplevelsen er nok likevel de jevnlige brukertestene de kjører."
+        link="/prosjekter/the-well"
+      />
+      <Project
+        image={{ fluidImage: images.toll, alt: 'Samson og Morten' }}
+        title="Toll"
+        ingress="Kim, Eirik, Christian, Øyvind og Bent jobber på ulike prosjekter med... (Her mangler vi tekst)"
+      />
+      <Project
+        image={{ fluidImage: images.naf, alt: 'Yngve' }}
+        title="NAF"
+        ingress="Lill, Yngve, Andreas, Marius, Mathias, Svein Helge, Petter og John har tilsammen vært innom over 20 prosjekter. Blant annet ny kjøpekontrakt med digital signering, interne systemer som får sjappa til å gå rundt, og ikke minst studentprosjektet som ble startskuddet for den nye medlemsappen."
+        link="/prosjekter/naf"
+      />
+      <Project
+        image={{ fluidImage: images.naf, alt: 'alt' }}
+        title="Statens Pensjonskasse"
+        ingress="Dan jobber er med på å lage en ny saksbehandlingsløsning som de ansatte skal bruke til å sørge for at deres 1 million medlemmer får riktig pensjon til riktig tid. Å gjøre pensjon enkelt for brukeren er ingen liten ambisjon, men med Dan på laget er de godt på vei."
+        link="/prosjekter/naf"
+      />
+      <Project
+        image={{ fluidImage: images.naf, alt: 'alt' }}
+        title="Statens Vegvesen"
+        ingress="Jan Willem, Ulf, Ragnhild og Torstein er hos Statens Vegvesen. Der jobber de på et av norges største offentlige IT-prosjekter der man erstatter det gamle motorvognregisteret med nye digitale løsninger for blant annet trafikkstasjoner, bilforhandlere, og vanlige brukere gjennom selvbetjening på Din Side."
+        link="/prosjekter/naf"
+      />
+      <Project
+        image={{ fluidImage: images.eika, alt: 'Charlotte' }}
+        title="Eika"
+        ingress="Charlotte, Michael og Morten jobber med utvikling av mobilapper og banksystemer hos Eika. De gjør det enklere for kunden å få oversikt over egne sparepenger og gjør det til en lek å investere i fond og aksjer. Eika alliansen er en samling med 66 lokalbanker."
+        link="/prosjekter/naf"
+      />
+    </Projects>
+  );
+};
 
 export default SecondPage;
