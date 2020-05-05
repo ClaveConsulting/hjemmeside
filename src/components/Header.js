@@ -117,13 +117,12 @@ const Header = ({
 const PADDING_TOP_DESKTOP = '4rem';
 const PADDING_TOP_MOBILE = '1.5rem';
 
-const LogoInner = styled(ClaveLogo)`
-  width: 5rem;
-  height: auto;
-`;
-
 export const Logo = props => {
   const { textColor } = useContext(ColorContext);
+  const LogoInner = styled(ClaveLogo)`
+    width: ${props.width || '5rem'};
+    height: auto;
+  `;
   const ColoredLogo = styled(LogoInner)`
     fill: ${textColor || COLOR_CLAVE_GREEN};
   `;
