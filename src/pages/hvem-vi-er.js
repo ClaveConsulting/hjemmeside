@@ -7,13 +7,13 @@ import SEO from '../components/Seo';
 import Header from '../components/Header';
 import PageHeader from '../components/PageHeader';
 import { useStaticQuery, graphql } from 'gatsby';
-import {COLOR_CLAVE_SKIN} from "../colors";
-import {onDesktop, onMobile} from "../components/Breakpoints";
+import { COLOR_CLAVE_SKIN } from '../colors';
+import { onDesktop, onMobile } from '../components/Breakpoints';
 
 const PADDING_TOP_DESKTOP = '6rem';
 const PADDING_TOP_MOBILE = '4.75rem';
 
-const HvemViEr = () => {
+const HvemViEr = props => {
   const images = useStaticQuery(graphql`
     query {
       header: file(relativePath: { eq: "190920_Clave_lowres_11.jpg" }) {
@@ -25,9 +25,9 @@ const HvemViEr = () => {
   return (
     <>
       <main>
-        <Header/>
-        <SEO title="Se hvem vi er" description=""/>
-          <TitleWrapper>
+        <Header {...props} />
+        <SEO title="Se hvem vi er" description="" />
+        <TitleWrapper>
           <PageHeader
             title="Se hvem vi er"
             imageProps={{
@@ -36,7 +36,7 @@ const HvemViEr = () => {
               height: 728,
             }}
           />
-          </TitleWrapper>
+        </TitleWrapper>
         <Layout>
           <h2>
             Vi mener at det er godt og litt annerledes å være en Claver. Vi
@@ -56,26 +56,25 @@ const HvemViEr = () => {
 
           <p>
             Sammen reiser vi ut i verden på jakt etter inspirasjon. Faglig
-            utvikling er viktig for oss, både som team og for hver enkelt.
-            Vi har innedager vi fyller med faglig innhold og prosjekter.
-            Sammen ser vi muligheter, og vi skaper et kreativt fellesskap.
-            Teknologi og brukeropplevelse er det beste vi vet.
+            utvikling er viktig for oss, både som team og for hver enkelt. Vi
+            har innedager vi fyller med faglig innhold og prosjekter. Sammen ser
+            vi muligheter, og vi skaper et kreativt fellesskap. Teknologi og
+            brukeropplevelse er det beste vi vet.
           </p>
         </Layout>
       </main>
-      <Footer/>
+      <Footer />
     </>
   );
 };
 
-
 const TitleWrapper = styled.div`
-background-color: ${COLOR_CLAVE_SKIN};
-    ${onDesktop(`
+  background-color: ${COLOR_CLAVE_SKIN};
+  ${onDesktop(`
   padding-top: ${PADDING_TOP_DESKTOP};
   
   `)}
-      ${onMobile(`
+  ${onMobile(`
   padding-top: ${PADDING_TOP_MOBILE};
   `)}
 `;
