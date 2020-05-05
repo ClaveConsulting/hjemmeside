@@ -44,6 +44,16 @@ export const Aside = styled.aside`
   `)}
 `;
 
+const EmptyAsidePadding = styled.aside`
+  flex: 1 0 40%;
+  order: 1;
+  display: flex;
+
+  ${onDesktop(`
+  order: 0;
+`)}
+`;
+
 const LayoutWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -61,11 +71,12 @@ export const ColorContext = React.createContext({
 });
 
 const Layout = ({ asideContent, children, className }) => {
+  const AsideWrapper = asideContent ? Aside : EmptyAsidePadding;
   return (
     <Container className={className}>
       <Container.Content>
         <LayoutWrapper>
-          <Aside>{asideContent}</Aside>
+          <AsideWrapper>{asideContent}</AsideWrapper>
           <Section>{children}</Section>
         </LayoutWrapper>
       </Container.Content>
