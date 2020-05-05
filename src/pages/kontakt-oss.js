@@ -12,7 +12,7 @@ import JoinBanner from '../components/JoinBanner';
 import MyMapComponent from '../components/Map';
 import { onDesktop } from '../components/Breakpoints';
 
-const SecondPage = () => {
+const SecondPage = props => {
   const images = useStaticQuery(graphql`
     query {
       karine: file(relativePath: { eq: "190920_Clave_lowres_5.jpg" }) {
@@ -33,7 +33,7 @@ const SecondPage = () => {
     >
       <>
         <main>
-          <Header useSkinColoredHamburgerMenu={true} />
+          <Header {...props} useSkinColoredHamburgerMenu={true} />
           <SEO title="Kontakt oss" description="" />
           <Layout>
             <h1>Kontakt oss</h1>
@@ -79,7 +79,7 @@ const SecondPage = () => {
               Trenger du hjelp til noe, ønsker å vite mer om hvordan det er å
               jobbe hos oss eller rett og slett bare er litt nysgjerrig?
             </p>
-            <Form/>
+            <Form />
           </Layout>
           <JoinBanner images={images} dontShowLink />
         </main>

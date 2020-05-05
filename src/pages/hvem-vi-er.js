@@ -8,7 +8,7 @@ import Header from '../components/Header';
 import PageHeader from '../components/PageHeader';
 import { useStaticQuery, graphql } from 'gatsby';
 
-const HvemViEr = () => {
+const HvemViEr = props => {
   const images = useStaticQuery(graphql`
     query {
       header: file(relativePath: { eq: "190920_Clave_lowres_11.jpg" }) {
@@ -20,8 +20,8 @@ const HvemViEr = () => {
   return (
     <>
       <main>
-        <Header/>
-        <SEO title="Se hvem vi er" description=""/>
+        <Header {...props} />
+        <SEO title="Se hvem vi er" description="" />
         <PageHeader
           title="Se hvem vi er"
           imageProps={{
@@ -49,14 +49,14 @@ const HvemViEr = () => {
 
           <p>
             Sammen reiser vi ut i verden på jakt etter inspirasjon. Faglig
-            utvikling er viktig for oss, både som team og for hver enkelt.
-            Vi har innedager vi fyller med faglig innhold og prosjekter.
-            Sammen ser vi muligheter, og vi skaper et kreativt fellesskap.
-            Teknologi og brukeropplevelse er det beste vi vet.
+            utvikling er viktig for oss, både som team og for hver enkelt. Vi
+            har innedager vi fyller med faglig innhold og prosjekter. Sammen ser
+            vi muligheter, og vi skaper et kreativt fellesskap. Teknologi og
+            brukeropplevelse er det beste vi vet.
           </p>
         </Layout>
       </main>
-      <Footer/>
+      <Footer />
     </>
   );
 };

@@ -13,7 +13,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import Image from '../components/Image';
 import { onDesktop } from '../components/Breakpoints';
 
-const SecondPage = () => {
+const SecondPage = props => {
   const images = useStaticQuery(graphql`
     query {
       header: file(relativePath: { eq: "190920_Clave_lowres_2.jpg" }) {
@@ -40,8 +40,8 @@ const SecondPage = () => {
   return (
     <>
       <main>
-        <Header/>
-        <SEO title="Se hva vi gjør" description=""/>
+        <Header {...props} />
+        <SEO title="Se hva vi gjør" description="" />
         <PageHeader
           title="Se hva vi gjør"
           imageProps={{
@@ -56,13 +56,14 @@ const SecondPage = () => {
             sitter stort sett alltid hos kunden vi jobber for, over tid.
           </h2>
           <p>
-            Med våre dyktige prosjektledere, utviklere og designere når vi nye høyder sammen.
-            Våre tverrfaglige team samarbeider om å lage intuitive løsninger hvor brukeren står i fokus.
-            Fornøyde brukere gir fornøyde kunder.
+            Med våre dyktige prosjektledere, utviklere og designere når vi nye
+            høyder sammen. Våre tverrfaglige team samarbeider om å lage
+            intuitive løsninger hvor brukeren står i fokus. Fornøyde brukere gir
+            fornøyde kunder.
           </p>
           <p>
-            Vi er stolte over fagområdene våre, og er alltid opptatt av å være oppdatert på det siste innenfor
-            metodikker og systemer.
+            Vi er stolte over fagområdene våre, og er alltid opptatt av å være
+            oppdatert på det siste innenfor metodikker og systemer.
           </p>
           <p>
             Noen prosjekter gjør vi sammen med utviklere og testere fra Fabres i
@@ -83,8 +84,8 @@ const SecondPage = () => {
             <div>
               <h3>Brukertesting er viktig!</h3>
               <p>
-                Steffen og Anniken er vårt brukervennlighetstest-team. De jobber på
-                tvers av de kundene vi har, og for andre som trenger å få
+                Steffen og Anniken er vårt brukervennlighetstest-team. De jobber
+                på tvers av de kundene vi har, og for andre som trenger å få
                 brukertestet. Vi har laget dette som en egen tjeneste, fordi
                 brukervennlighetstesting er jo noe alle trenger å gjøre jevnlig!
               </p>
@@ -113,7 +114,7 @@ const SecondPage = () => {
           </Gallery>
         </Layout>
       </main>
-      <Footer/>
+      <Footer />
     </>
   );
 };
@@ -132,9 +133,9 @@ const Projects = ({ children }) => {
               return image.fluidImage.childImageSharp.fluid.aspectRatio;
 
             return image.width / image.height;
-          }),
+          })
       ),
-    [children],
+    [children]
   );
 
   return (
@@ -194,11 +195,11 @@ const ProjectImgWrapper = styled.div`
 `;
 
 const Project = ({
-                   image: { src, fluidImage, alt, width, height },
-                   title,
-                   ingress,
-                   link,
-                 }) => {
+  image: { src, fluidImage, alt, width, height },
+  title,
+  ingress,
+  link,
+}) => {
   const { aspectRatio } = useContext(ProjectsListContext);
 
   const [imgWrapperHeight, setImgWrapperHeight] = useState(null);

@@ -5,11 +5,20 @@ import ClaveLink from './ClaveLink';
 import ClaveLogo from './icons/clave-logo.svg';
 import { Link } from 'gatsby';
 import hamburgerIcon from './icons/hamburgermeny_ikon.svg';
-import { ColorContext, Container, DESKTOP_PADDING, MOBILE_PADDING } from './Layout';
+import {
+  ColorContext,
+  Container,
+  DESKTOP_PADDING,
+  MOBILE_PADDING,
+} from './Layout';
 import { onDesktop, onMobile } from './Breakpoints';
 import HamburgerMenuLink from './HamburgerMenuLink';
 
-const Header = ({ frontPage = false, useSkinColoredHamburgerMenu = false }) => {
+const Header = ({
+  frontPage = false,
+  useSkinColoredHamburgerMenu = false,
+  uri,
+}) => {
   const HamburgerDiv = styled.div`
     padding-bottom: 2rem;
     ${onDesktop(`
@@ -24,21 +33,30 @@ const Header = ({ frontPage = false, useSkinColoredHamburgerMenu = false }) => {
   `;
 
   const HamburgerMenyOptions = () => {
+    const menuLinks = [
+      {
+        label: 'Se hva vi gjør',
+        to: '/hva-vi-gjor',
+      },
+      {
+        label: 'Se hvem vi er',
+        to: '/hvem-vi-er',
+      },
+      {
+        label: 'Kontakt oss',
+        to: '/kontakt-oss',
+      },
+    ];
+
     return menuExpanded ? (
       <HamburgerDiv>
-        <HamburgerMenuLink to="/hva-vi-gjor">
-          Se hva vi gjør
-        </HamburgerMenuLink>
-        <HamburgerMenuLink to="/hvem-vi-er">
-          Se hvem vi er
-        </HamburgerMenuLink>
-        <HamburgerMenuLink to="/kontakt-oss">
-          Kontakt oss
-        </HamburgerMenuLink>
+        {menuLinks.map(({ label, to }) => (
+          <HamburgerMenuLink key={label} to={to} active={to === uri}>
+            {label}
+          </HamburgerMenuLink>
+        ))}
       </HamburgerDiv>
-    ) : (
-      ''
-    );
+    ) : null;
   };
 
   const HamburgerKnapp = () => {
@@ -57,9 +75,9 @@ const Header = ({ frontPage = false, useSkinColoredHamburgerMenu = false }) => {
 
   const newColorContext = frontPage
     ? {
-      backgroundColor: "none",
-      textColor: COLOR_CLAVE_SKIN,
-    }
+        backgroundColor: 'none',
+        textColor: COLOR_CLAVE_SKIN,
+      }
     : colorContext;
 
   const WrapperComponent = frontPage
@@ -82,12 +100,8 @@ const Header = ({ frontPage = false, useSkinColoredHamburgerMenu = false }) => {
                   <LinkComponent to="/hva-vi-gjor">
                     Se hva vi gjør
                   </LinkComponent>
-                  <LinkComponent to="/hvem-vi-er">
-                    Se hvem vi er
-                  </LinkComponent>
-                  <LinkComponent to="/kontakt-oss">
-                    Kontakt oss
-                  </LinkComponent>
+                  <LinkComponent to="/hvem-vi-er">Se hvem vi er</LinkComponent>
+                  <LinkComponent to="/kontakt-oss">Kontakt oss</LinkComponent>
                 </InlineWrapper>
                 <HamburgerKnapp />
               </WrapperComponent>
@@ -134,7 +148,10 @@ const HamburgerButton = styled.button`
 `;
 
 const StyledHeader = styled.header`
-  ${props => props.frontPage ? `` : `
+  ${props =>
+    props.frontPage
+      ? ``
+      : `
     padding: 0 ${MOBILE_PADDING};
     ${onDesktop(`
       padding: 0 ${DESKTOP_PADDING};
@@ -158,15 +175,14 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-    ${onDesktop(`
+  ${onDesktop(`
   padding-top: ${PADDING_TOP_DESKTOP};
   padding-bottom: ${PADDING_BOTTOM_DESKTOP};
   `)}
-      ${onMobile(`
+  ${onMobile(`
   padding-top: ${PADDING_TOP_MOBILE};
   padding-bottom: ${PADDING_BOTTOM_MOBILE};
   `)}
-  
 `;
 
 const InlineWrapper = styled.div`
@@ -177,15 +193,14 @@ const InlineWrapper = styled.div`
 
 const FrontPageWrapper = styled(Wrapper)`
   background: none;
-      ${onDesktop(`
+  ${onDesktop(`
   padding-top: ${PADDING_TOP_DESKTOP};
   padding-bottom: ${PADDING_BOTTOM_DESKTOP};
   `)}
-      ${onMobile(`
+  ${onMobile(`
 padding-top: ${PADDING_TOP_MOBILE};
 padding-bottom: ${PADDING_BOTTOM_MOBILE};
 `)}
-  
 `;
 
 const StyledHamburgerIcon = styled(hamburgerIcon)`
