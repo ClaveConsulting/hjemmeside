@@ -72,12 +72,10 @@ const ProjectCarousel = ({ children }) => {
       breakpoint: { max: 10000, min: 720 },
       items: 3,
       slidesToSlide: 1,
-      partialVisibilityGutter: 30,
     },
     mobile: {
       breakpoint: { max: 720, min: 0 },
       items: 1,
-      partialVisibilityGutter: 50,
     },
   };
 
@@ -88,7 +86,6 @@ const ProjectCarousel = ({ children }) => {
       showDots={false}
       customRightArrow={<CustomRightArrow />}
       customLeftArrow={<CustomLeftArrow />}
-      partialVisible
     >
       {children}
     </Carousel>
