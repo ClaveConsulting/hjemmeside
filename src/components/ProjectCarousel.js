@@ -155,7 +155,11 @@ export const Project = ({
       </ProjectImgWrapper>
       <h3>{title}</h3>
       <p>{ingress}</p>
-      {link ? <ClaveLink to={link}>Mer om {title}</ClaveLink> : null}
+      {link ? (
+        <ClaveLink to={link} showOnMobile>
+          Mer om {title}
+        </ClaveLink>
+      ) : null}
     </ProjectItem>
   );
 };
