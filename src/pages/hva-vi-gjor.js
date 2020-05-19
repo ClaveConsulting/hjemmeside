@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Layout, { Container } from '../components/Layout';
+import Layout from '../components/Layout';
 import Footer from '../components/Footer';
 import SEO from '../components/Seo';
 import Header from '../components/Header';
@@ -30,6 +30,9 @@ const SecondPage = () => {
         ...fluidImage
       }
       theWell: file(relativePath: { eq: "190920_Clave_lowres_15.jpg" }) {
+        ...fluidImage
+      }
+      naf: file(relativePath: { eq: "190920_Clave_lowres_13.jpg" }) {
         ...fluidImage
       }
     }
@@ -120,9 +123,23 @@ const SecondPage = () => {
             jobber innen mange ulike domener!
           </p>
         </Layout>
-        <Container>
-          <ClaveProjects />
-        </Container>
+        <Layout asideContent={
+        <ClaveProjects />}>
+        <Gallery>
+            <GalleryImage
+              fluidImage={images.komplett}
+              width="681"
+              height="470"
+              alt="Lars-Petter og Yngve"
+            />
+            <GalleryImage
+              fluidImage={images.naf}
+              width="306"
+              height="368"
+              alt="Pekefinger"
+            />
+          </Gallery>
+        </Layout>
       </main>
       <Footer />
     </>
