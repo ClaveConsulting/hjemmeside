@@ -25,7 +25,7 @@ const JoinContent = ({ dontShowLink = false, showStillingsannonser = true }) => 
         </PositionUl> :
         <BannerP>
           Vi er alltid på utkikk etter flinke folk som deler vårt engasjement for design og utvikling. Vi oppfordrer deg
-          til å sende oss en åpen søknad til post@clave.no, selv om vi ikke har noen aktive annonser.
+          til å sende oss en åpen søknad til post@clave.no
         </BannerP>
     }
     {
