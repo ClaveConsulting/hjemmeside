@@ -1,17 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import {
-  COLOR_CLAVE_LIGHTBLUE,
-  COLOR_CLAVE_BLAA,
-  COLOR_CLAVE_SKIN,
-  COLOR_CLAVE_GREEN,
-} from '../colors';
+import { COLOR_CLAVE_BLAA, COLOR_CLAVE_GREEN, COLOR_CLAVE_LIGHTBLUE, COLOR_CLAVE_SKIN } from '../colors';
 import Layout, { ColorContext } from './Layout';
 import CtaLink from './CtaLink';
 import { Gallery, GalleryImage } from './Gallery';
 import { onDesktop } from './Breakpoints';
 
-const JoinContent = ({dontShowLink = false}) => (
+const JoinContent = ({ dontShowLink = false, showStillingsannonser = true }) => (
   <div>
     <h3>Bli en av oss</h3>
     <BannerP>
@@ -19,18 +14,26 @@ const JoinContent = ({dontShowLink = false}) => (
       tilhørlighet både til selskapet og til kollegaene våre. Fordi det er vi
       ansatte som eier selskapet er det også vi som bestemmer.
     </BannerP>
-    <PositionUl>
-      <PositionLink href="https://www.poption.com/companies/clave/postings/wYDf5q">Senior UX designer</PositionLink>
-      <PositionLink href="https://www.poption.com/companies/clave/postings/wrLfxm">Senior utvikler</PositionLink>
-      <PositionLink href="https://www.poption.com/companies/clave/postings/08Of7G">UX deltid</PositionLink>
-      <PositionLink href="https://www.poption.com/companies/clave/postings/w42fN5">Nyutdannede utviklere </PositionLink>
-    </PositionUl>
-      {dontShowLink === true ?
-          null :
-          <ContactLinkContainer>
-            <ContactLink to="/kontakt-oss">Ta kontakt for en prat!</ContactLink>
-          </ContactLinkContainer>
-      }
+    {
+      showStillingsannonser ?
+        <PositionUl>
+          <PositionLink href="https://www.poption.com/companies/clave/postings/wYDf5q">Senior UX designer</PositionLink>
+          <PositionLink href="https://www.poption.com/companies/clave/postings/wrLfxm">Senior utvikler</PositionLink>
+          <PositionLink href="https://www.poption.com/companies/clave/postings/08Of7G">UX deltid</PositionLink>
+          <PositionLink href="https://www.poption.com/companies/clave/postings/w42fN5">Nyutdannede
+            utviklere </PositionLink>
+        </PositionUl> :
+        <BannerP>
+          Vi er alltid på utkikk etter flinke folk som deler vårt engasjement for design og utvikling. Vi oppfordrer deg
+          til å sende oss en åpen søknad til post@clave.no, selv om vi ikke har noen aktive annonser.
+        </BannerP>
+    }
+    {
+      !dontShowLink &&
+      <ContactLinkContainer>
+        <ContactLink to="/kontakt-oss">Ta kontakt for en prat!</ContactLink>
+      </ContactLinkContainer>
+    }
   </div>
 );
 
@@ -67,7 +70,7 @@ const JoinBanner = ({ images, dontShowLink = false }) => (
         </Gallery>
       }
     >
-      <JoinContent dontShowLink={dontShowLink}/>
+      <JoinContent dontShowLink={dontShowLink} showStillingsannonser={false} />
     </JoinBannerWrapper>
   </ColorContext.Provider>
 );
