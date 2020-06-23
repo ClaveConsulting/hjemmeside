@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { COLOR_CLAVE_BLAA, COLOR_CLAVE_GREEN, COLOR_CLAVE_LIGHTBLUE, COLOR_CLAVE_SKIN } from '../colors';
+import { COLOR_CLAVE_GREEN, COLOR_CLAVE_LIGHTBLUE, COLOR_CLAVE_SKIN } from '../colors';
 import Layout, { ColorContext } from './Layout';
 import CtaLink from './CtaLink';
 import { Gallery, GalleryImage } from './Gallery';
@@ -122,13 +122,29 @@ const PositionLi = styled.li`
 
 const PositionLinkInner = styled.a`
   padding: 0.75em 0;
-  display: block;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   border: none;
   text-decoration: none;
+  font-size: 24px;
 
-  &,
+  & {
+    color: ${COLOR_CLAVE_GREEN};
+  }
   &:visited {
-    color: ${COLOR_CLAVE_BLAA};
+  }
+  &:hover {
+    color: ${BORDER_COLOR};
+    text-decoration: underline;
+  }
+  &:hover:after {
+    content: '';
+    display: block;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 20px solid ${BORDER_COLOR};
+    transform: scaleX(0.75) scaleY(0.75);
   }
 `;
 
