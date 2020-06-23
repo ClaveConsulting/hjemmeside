@@ -6,7 +6,11 @@ import SEO from '../components/Seo';
 import { COLOR_CLAVE_GREEN, COLOR_CLAVE_SKIN } from '../colors';
 import Header from '../components/Header';
 import Title from '../components/Title';
-import Layout, { ColorContext, DESKTOP_PADDING, MOBILE_PADDING } from '../components/Layout';
+import Layout, {
+  ColorContext,
+  DESKTOP_PADDING,
+  MOBILE_PADDING,
+} from '../components/Layout';
 import Footer from '../components/Footer';
 
 import './index.css';
@@ -16,7 +20,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import BrukeropplevelseIcon from '../components/icons/clave_ikon_brukeropplevelse.svg';
 import SystemutviklingIcon from '../components/icons/clave_ikon_systemutvikling.svg';
 import RaadgivningIcon from '../components/icons/clave_ikon_radgivning.svg';
-import {onDesktop, onMobile} from '../components/Breakpoints';
+import { onDesktop, onMobile } from '../components/Breakpoints';
 
 const FrontPageTextContent = styled.div`
   padding-top: 3rem;
@@ -78,9 +82,10 @@ const IndexPage = () => {
             </StyledBackgroundImage>
             <StyledTextPanel>
               <TitleWrapper>
-                  <Title color={COLOR_CLAVE_SKIN}>
-                      Vi er en gjeng designere og utviklere med masse engasjement
-                  </Title>
+                <Title color={COLOR_CLAVE_SKIN}>
+                  Vi er en gjeng flinke designere og utviklere med stort
+                  engasjement for det vi driver med
+                </Title>
               </TitleWrapper>
             </StyledTextPanel>
           </StyledFirstSection>
@@ -88,35 +93,37 @@ const IndexPage = () => {
         <Layout>
           <FrontPageTextContent>
             <h2>
-              Vi jobber i prosjekter og initiativer innen teknologi og
-              innovasjon ute hos kunder. Her sitter vi gjerne over tid.
+              Vi brenner for teknologi, innovasjon og å lage de aller beste
+              løsningene for menneskene som skal bruke dem. Vi er stolte av
+              jobbene vi gjør og enda stoltere av relasjonene vi bygger med
+              kundene våre.
             </h2>
             <InfoFlexbox>
               <InfoBox>
                 <BrukeropplevelseLogo />
-                <h3>Brukeropplevelse</h3>
+                <h3>Brukeropplevelse og UX-design</h3>
                 <p>
-                  Brukeropplevelse handler om å forstå brukerens behov. Vi
-                  snakker med brukeren, gjerne ved å brukervennlighetsteste. Vi
-                  har til og med vårt eget dedikerte brukertestteam!
+                  De beste løsningene lager vi når vi forstår brukerne og deres
+                  behov. Vi gjennomfører alt fra behovskartlegging,
+                  brukertesting og større tjenestedesignprosjekter.
                 </p>
               </InfoBox>
               <InfoBox>
                 <SystemutviklingLogo />
                 <h3>Systemutvikling</h3>
                 <p>
-                  Sammen med våre designere lager vi intuitive løsninger. Vi kan
-                  hele tjenestestacken: arkitektur, database og integrasjon,
-                  frontend og apputvikling.
+                  Vi lager intuitive og innovative løsninger som virker. Vi kan
+                  hele tjenestestacken: arkitektur, database, frontend,
+                  apputvikling, infrastruktur, nettverk og skytjenester.
                 </p>
               </InfoBox>
               <InfoBox>
                 <RaadgivningLogo />
-                <h3>Rådgivning</h3>
+                <h3>Rådgivning og prosjektledelse</h3>
                 <p>
-                  Vi som jobber med rådgivning har alle lang erfaring. Vi
-                  er opptatt av at teamet jobber sammen, mot samme mål, og blir
-                  godt kjent.
+                  Vi har lang erfaring med rådgivning innenfor teknologi,
+                  prosess og arkitektur. I samarbeid med kunden kommer vi frem
+                  til gode løsninger på komplekse problemer.
                 </p>
               </InfoBox>
             </InfoFlexbox>
@@ -133,10 +140,10 @@ const IndexPage = () => {
 };
 
 const TitleWrapper = styled.div`
-    ${onDesktop(`
+  ${onDesktop(`
   padding-top: ${PADDING_TOP_DESKTOP};
   `)}
-      ${onMobile(`
+  ${onMobile(`
   padding-top: ${PADDING_TOP_MOBILE};
   `)}
 `;

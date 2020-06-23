@@ -10,9 +10,9 @@ const JoinContent = ({ dontShowLink = false, showStillingsannonser = true }) => 
   <div>
     <h3>Bli en av oss</h3>
     <BannerP>
-      Vi mener det er godt og litt annerledes å være en Claver. Vi føler en
-      tilhørlighet både til selskapet og til kollegaene våre. Fordi det er vi
-      ansatte som eier selskapet er det også vi som bestemmer.
+      Det er godt og litt annerledes å være en Claver. Vi føler en tilhørighet
+      både til selskapet og til kollegaene våre. Fordi vi eies av de ansatte er
+      vi alle med og bestemmer.
     </BannerP>
     {
       showStillingsannonser ?
