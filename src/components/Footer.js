@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { Logo } from './Header';
 import { onDesktop } from './Breakpoints';
-import ClaveLink from './ClaveLink';
+import FooterLink from './FooterLink';
 import { Link } from 'gatsby';
 import {
   MOBILE_PADDING,
@@ -59,6 +59,14 @@ const Footer = props => {
   const colorContext = useContext(ColorContext);
 
   const textColor = props.textColor || colorContext.textColor;
+  const ClaveTriangle = styled.div`
+    margin: 20px 0;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 16px solid ${textColor};
+  `;
   const backgroundColor = props.backgroundColor || colorContext.backgroundColor;
 
   return (
@@ -68,57 +76,70 @@ const Footer = props => {
           <FooterContentContainer>
             <FooterLogoWrapper>
               <Link to="/">
-                <Logo />
+                <Logo width="100px" />
               </Link>
             </FooterLogoWrapper>
             <FooterContent>
               <FooterList>
                 <FooterListItem>
-                  <ClaveLink to="/hva-vi-gjor"><NoWrapText>Se hva vi gjør</NoWrapText></ClaveLink>
+                  <FooterLink to="/hva-vi-gjor">
+                    <NoWrapText>Se hva vi gjør</NoWrapText>
+                  </FooterLink>
                 </FooterListItem>
                 <FooterListItem>
-                  <ClaveLink to="/hvem-vi-er"><NoWrapText>Se hvem vi er</NoWrapText></ClaveLink>
+                  <FooterLink to="/hvem-vi-er">
+                    <NoWrapText>Se hvem vi er</NoWrapText>
+                  </FooterLink>
                 </FooterListItem>
                 <FooterListItem>
-                  <ClaveLink to="/kontakt-oss"><NoWrapText>Bli en av oss</NoWrapText></ClaveLink>
+                  <FooterLink to="/kontakt-oss">
+                    <NoWrapText>Bli en av oss</NoWrapText>
+                  </FooterLink>
                 </FooterListItem>
               </FooterList>
               <FooterList>
                 <FooterListItem>
-                  <ClaveLink href="mailto:post@clave.no">
+                  <FooterLink href="mailto:post@clave.no">
                     <NoWrapText>post@clave.no</NoWrapText>
-                  </ClaveLink>
+                  </FooterLink>
                 </FooterListItem>
-                <FooterListItem><NoWrapText>Øvre slottsgate 18-20</NoWrapText></FooterListItem>
-                <FooterListItem><NoWrapText>0157 Oslo</NoWrapText></FooterListItem>
+                <FooterListItem>
+                  <NoWrapText>Øvre slottsgate 18-20</NoWrapText>
+                </FooterListItem>
+                <FooterListItem>
+                  <NoWrapText>0157 Oslo</NoWrapText>
+                </FooterListItem>
               </FooterList>
               <FooterList>
                 <FooterListItem>
-                  <ClaveLink
+                  <FooterLink
                     href="https://www.facebook.com/ClaveConsulting/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     Facebook
-                  </ClaveLink>
+                  </FooterLink>
                 </FooterListItem>
                 <FooterListItem>
-                  <ClaveLink
+                  <FooterLink
                     href="https://www.instagram.com/claveconsulting/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     Instagram
-                  </ClaveLink>
+                  </FooterLink>
                 </FooterListItem>
                 <FooterListItem>
-                  <ClaveLink
+                  <FooterLink
                     href="https://www.linkedin.com/company/clave-consulting-as/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     LinkedIn
-                  </ClaveLink>
+                  </FooterLink>
+                  <FooterListItem>
+                    <ClaveTriangle />
+                  </FooterListItem>
                 </FooterListItem>
               </FooterList>
             </FooterContent>
