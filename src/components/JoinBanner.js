@@ -23,10 +23,16 @@ const JoinContent = ({ dontShowLink = false, showStillingsannonser = true }) => 
           <PositionLink href="https://www.poption.com/companies/clave/postings/w42fN5">Nyutdannede
             utviklere </PositionLink>
         </PositionUl> :
-        <BannerP>
-          Vi er alltid på utkikk etter flinke folk som deler vårt engasjement for design og utvikling. Vi oppfordrer deg
-          til å sende oss en åpen søknad til post@clave.no
-        </BannerP>
+        <>
+          <BannerP>
+            Vi er alltid på utkikk etter flinke folk som deler vårt engasjement for design og utvikling. Vi oppfordrer
+            deg
+            til å sende oss en åpen søknad til post@clave.no
+          </BannerP>
+          <PositionUl>
+            <PositionLink href="https://www.poption.com/companies/clave/postings/pBGf7n">Sommerjobb 2021</PositionLink>
+          </PositionUl>
+        </>
     }
     {
       !dontShowLink &&
