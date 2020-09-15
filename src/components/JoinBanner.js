@@ -20,8 +20,9 @@ const JoinContent = ({ dontShowLink = false, showStillingsannonser = true }) => 
           <PositionLink href="https://www.poption.com/companies/clave/postings/wYDf5q">Senior UX designer</PositionLink>
           <PositionLink href="https://www.poption.com/companies/clave/postings/wrLfxm">Senior utvikler</PositionLink>
           <PositionLink href="https://www.poption.com/companies/clave/postings/08Of7G">UX deltid</PositionLink>
-          <PositionLink href="https://www.poption.com/companies/clave/postings/w42fN5">Nyutdannede
-            utviklere </PositionLink>
+          <PositionLink href="https://www.poption.com/companies/clave/postings/w42fN5">
+            Nyutdannede utviklere
+          </PositionLink>
         </PositionUl> :
         <>
           <BannerP>
@@ -31,6 +32,9 @@ const JoinContent = ({ dontShowLink = false, showStillingsannonser = true }) => 
           </BannerP>
           <PositionUl>
             <PositionLink href="https://www.poption.com/companies/clave/postings/pBGf7n">Sommerjobb 2021</PositionLink>
+            <PositionLink href="https://www.poption.com/companies/clave/postings/w42fN5">
+              Nyutdannede utviklere
+            </PositionLink>
           </PositionUl>
         </>
     }
