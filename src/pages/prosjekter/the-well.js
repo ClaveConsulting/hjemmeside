@@ -72,7 +72,7 @@ const ProjectPage = () => {
           }
           keywords={[
             'Oppstart 2019',
-            'Omtrent 5.000 arbeidstimer pre år',
+            'Omtrent 5.000 arbeidstimer per år',
             'UX’er, front- og backend utviklere',
           ]}
           leftImg={images.first}
