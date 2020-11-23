@@ -60,31 +60,40 @@ const SecondPage = props => {
         </TitleWrapper>
         <Layout>
           <h2>
-            Vi driver med brukeropplevelse, systemutvikling og rådgivning. Vi
-            sitter stort sett alltid hos kunden vi jobber for, over tid.
+            Brukeropplevelse, systemutvikling og rådgivning er spesialiteten
+            vår. Vi er stolte av jobbene vi gjør og enda stoltere av relasjonene
+            vi bygger med kundene våre.
           </h2>
           <p>
-            Med våre dyktige prosjektledere, utviklere og designere når vi nye
-            høyder sammen. Våre tverrfaglige team samarbeider om å lage
-            intuitive løsninger hvor brukeren står i fokus. Fornøyde brukere gir
-            fornøyde kunder.
+            Vi lager løsninger for menneskene som skal bruke dem. Brukeren står
+            derfor alltid i fokus når våre tverrfaglige team samarbeider om å
+            lage intuitive løsninger. Fornøyde brukere gir fornøyde kunder.
           </p>
           <p>
-            Vi er stolte over fagområdene våre, og er alltid opptatt av å være
-            oppdatert på det siste innenfor metodikker og systemer.
+            Vi er stolte av fagområdene våre, og er alltid opptatt av å være
+            oppdatert på det siste innenfor metode, system og teknologi. Vi er
+            skikkelig gode på å samarbeide tett med kundene våre og vi tror det
+            er noe av det som gjør at vi lykkes.
           </p>
           <p>
-            Noen prosjekter gjør vi sammen med utviklere og testere fra Fabres i
-            Polen. Vi i Clave har nemlig vært med å starte konsulentselskapet
-            Fabres som er lokalisert i Polen. De samarbeider vi med på flere
-            prosjekter.
+            For å forstå menneskene som skal bruke løsningene vi lager må vi
+            skaffe oss innsikt og det gjør vi ved hjelp av både kvalitative og
+            kvantitative metoder. Vi gjennomfører alt fra behovskartlegging,
+            brukertester, dybdeintervjuer og større tjenestedesignprosjekter.
+            Kunnskap gir oss både mulighet til å skape noe nytt og til å
+            forbedre det som allerede eksisterer.
           </p>
           <p>
-            Når vi jobber med de, møtes vi selvfølgelig av og til, men har også
-            utviklet et skikkelig godt forhold ved å se og snakke med hverandre
-            via video hver dag. Ved å jobbe i tverrfaglige team, på tvers av
-            landegrensene, har vi lært hva som er viktigst for at samarbeidet
-            skal fungere aller best.
+            Vi benytter alltid moderne teknologi når vi ut utvikler løsninger.
+            Vår spisskompetanse ligger innen komplekse web-løsninger som er tett
+            integrert med økosystemet til kunden. Samlet har våre utviklere
+            kompetanse på alt fra frontend med f.eks. React, til Java og .NET på
+            backend.
+          </p>
+          <p>
+            Vi i Clave har vært med å starte konsulentselskapet Fabres som er
+            lokalisert i Polen. Noen prosjekter gjør vi derfor sammen med
+            utviklere og testere derfra.
           </p>
         </Layout>
         <Layout
@@ -130,9 +139,8 @@ const SecondPage = props => {
             jobber innen mange ulike domener!
           </p>
         </Layout>
-        <Layout asideContent={
-        <ClaveProjects />}>
-        <Gallery>
+        <Layout asideContent={<ClaveProjects />}>
+          <Gallery>
             <GalleryImage
               fluidImage={images.komplett}
               width="681"
