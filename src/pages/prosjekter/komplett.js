@@ -34,50 +34,49 @@ const ProjectPage = () => {
           title="Komplett Group"
           ingress={
             <Ingress>
-              Sammen med Komplett jobbet vi mot å skape smarte og smilende
-              løsninger som gjør livet lettere både for brukerne og de som
-              jobbet i Komplett. Fordi vi var folk med mange ulike bakgrunner
-              som tenkte sammen og utfylte hverandre, kunne vi skape entusiasme.
+              Sammen med Komplett har vi jobbet fram enkle og smarte løsninger
+              som gjør livet lettere både for kundene og for de som jobber hos
+              Komplett.
             </Ingress>
           }
           body={
             <TextComponentWrapper>
               <Paragraph>
-                Over lang tid var vi mange Clavere hos Komplett, hvor vi sammen
-                med Komplett skapte blant annet den store Markedsplassen, lagde
-                nye betalingsløsninger, ny meny, nytt apotek og ny PC-bygger.
+                Vi har vært mange Clavere hos Komplett gjennom flere år. Sammen
+                har vi blant annet skapt nye betalingsløsninger, ny navigasjon,
+                ny “pc-bygger” og et nytt apotek.
               </Paragraph>
 
               <Paragraph>
-                Teamene i Komplett bestod av UX'ere, utviklere og testere fra
-                både Komplett, Clave og det Polske selskapet Fabres. I tillegg
-                var alltid forretning med i prosessen. Vi møttes selvfølgelig av
-                og til, men utviklet også et skikkelig godt forhold ved å se og
-                snakke med hverandre via video hver dag. Ved å jobbe i
-                tverrfaglige team, på tvers av landegrensene, har vi lært hva
-                som er viktigst for at samarbeidet skal fungere aller best.{' '}
+                De tverrfaglige teamene vi har jobbet i har bestått av både
+                utviklere, UX-designere og testere fra Komplett, Clave og
+                datterselskapet vårt Fabres. Vi har hele tiden hatt et tett
+                samarbeid med forretningssiden hos Komplett og sånn har vi klart
+                å sikre at vi alltid går i samme retning som kundens ambisjoner.
               </Paragraph>
 
               <Paragraph>
                 Komplett er modige. De ser muligheter og kaster seg inn i nye
-                markeder. Reisen med Komplett har vært spennende. - Fra å
-                utvikle det alle håpet var riktig, til å faktisk lytte til
-                brukeren i alt som utvikles. Alltid. Vi inviterte brukeren til
-                dialog, brukertestet det vi lagde og samarbeidet tett med
-                kundeservice. Fail fast, men snakk med brukeren først!
+                markeder. Vår reise sammen med dem har derfor vært veldig
+                spennende - fra å utvikle det vi alle håpet skulle være riktig
+                har vi beveget oss til alltid å lytte til kundene til Komplett
+                når vi har utviklet noe nytt. Gjennom dialog, brukertesting og
+                samarbeid med kundeservice er vi stolte av å ha laget produkter
+                som kundene syns er enkle å bruke og som har hatt kort vei fra
+                tegnebord til produksjon.
               </Paragraph>
             </TextComponentWrapper>
           }
           keywords={[
             'Oppstart 2015',
-            'Omtrent 18.000 arbeidstimer hver dag',
+            'Omtrent 20.000 arbeidstimer per i dag',
             'UX’ere, front- og backend utviklere, testere, arkitekter og leveranseledere',
           ]}
           leftImg={images.first}
           rightImg={images.second}
           methodology="Scrum, Spotify Engineering Culture"
           technology="IMS SQL Server, MS .NET Core, Azure, JavaScript (React.js, AngularJS), CSS, HTML, REST, SOAP, Umbraco CMS, Confluence, Jira, Github, Jenkins CI, Octopus Deploy"
-          finalText="Komplett er Nordens største netthandelsaktør. Nettbutikkene fornyes og videreutvikles kontinuerlig, og utviklingsavdelingen jobber med alle deler av Komplett-butikkens plattform og hele kundereisen på nett."
+          finalText="Komplett er Nordens største netthandelsaktør. Nettbutikkene fornyes og videreutvikles kontinuerlig. Utviklingsavdelingen jobber med alle deler av Komplett-butikkens plattform og hele kundereisen på nett."
           backgroundColor={COLOR_CLAVE_SKIN}
           textColor={COLOR_CLAVE_GREEN}
         />

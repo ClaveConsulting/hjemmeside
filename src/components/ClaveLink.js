@@ -5,9 +5,10 @@ import { COLOR_CLAVE_PINK, COLOR_CLAVE_GREEN, COLOR_CLAVE_YELLOW } from '../colo
 import { ColorContext } from './Layout';
 import { onMobile } from './Breakpoints';
 
-const ClaveLink = ({ to, children, className, ...props }) => {
-  const { textColor } = useContext(ColorContext);
+export const ignoreStyle = styles => '';
 
+const ClaveLink = ({ to, children, className, showOnMobile, ...props }) => {
+  const { textColor } = useContext(ColorContext);
   const ColoredLink = styled(props.href ? StyledAnchor : StyledLink)`
     color: ${textColor || COLOR_CLAVE_GREEN};
   `;
