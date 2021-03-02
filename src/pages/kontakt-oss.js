@@ -86,7 +86,7 @@ const SecondPage = props => {
             </p>
             <Form />
           </Layout>
-          <JoinBanner images={images} dontShowLink />
+          <JoinBanner images={images} />
         </main>
 
         <Footer />
