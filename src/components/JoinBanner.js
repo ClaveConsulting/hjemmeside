@@ -6,7 +6,11 @@ import CtaLink from './CtaLink';
 import { Gallery, GalleryImage } from './Gallery';
 import { onDesktop } from './Breakpoints';
 
-const JoinContent = ({ dontShowLink = false, showStillingsannonser = true }) => (
+const JoinContent = ({
+                       showTaKontaktForEnPrat = false,
+                       showStillingsannonserSenior = false,
+                       showStillingsannonserSkole = false,
+                     }) => (
   <div>
     <h3>Bli en av oss</h3>
     <BannerP>
@@ -15,7 +19,7 @@ const JoinContent = ({ dontShowLink = false, showStillingsannonser = true }) => 
       vi alle med og bestemmer.
     </BannerP>
     {
-      showStillingsannonser ?
+      showStillingsannonserSenior && (
         <PositionUl>
           <PositionLink href="https://www.poption.com/companies/clave/postings/wYDf5q">Senior UX designer</PositionLink>
           <PositionLink href="https://www.poption.com/companies/clave/postings/wrLfxm">Senior utvikler</PositionLink>
@@ -23,7 +27,11 @@ const JoinContent = ({ dontShowLink = false, showStillingsannonser = true }) => 
           <PositionLink href="https://www.poption.com/companies/clave/postings/w42fN5">
             Nyutdannede utviklere
           </PositionLink>
-        </PositionUl> :
+        </PositionUl>
+      )
+    }
+    {
+      showStillingsannonserSkole && (
         <>
           <BannerP>
             Vi er alltid på utkikk etter flinke folk som deler vårt engasjement for design og utvikling. Vi oppfordrer
@@ -37,9 +45,10 @@ const JoinContent = ({ dontShowLink = false, showStillingsannonser = true }) => 
             </PositionLink>
           </PositionUl>
         </>
+      )
     }
     {
-      !dontShowLink &&
+      showTaKontaktForEnPrat &&
       <ContactLinkContainer>
         <ContactLink to="/kontakt-oss">Ta kontakt for en prat!</ContactLink>
       </ContactLinkContainer>
@@ -55,7 +64,7 @@ const JoinBannerWrapper = styled(Layout)`
   `)}
 `;
 
-const JoinBanner = ({ images, dontShowLink = false }) => (
+const JoinBanner = ({ images, showTaKontaktForEnPrat = true }) => (
   <ColorContext.Provider
     value={{
       backgroundColor: COLOR_CLAVE_LIGHTBLUE,
@@ -80,7 +89,7 @@ const JoinBanner = ({ images, dontShowLink = false }) => (
         </Gallery>
       }
     >
-      <JoinContent dontShowLink={dontShowLink} showStillingsannonser={false} />
+      <JoinContent showTaKontaktForEnPrat={showTaKontaktForEnPrat} />
     </JoinBannerWrapper>
   </ColorContext.Provider>
 );
@@ -142,12 +151,15 @@ const PositionLinkInner = styled.a`
   & {
     color: ${COLOR_CLAVE_GREEN};
   }
+
   &:visited {
   }
+
   &:hover {
     color: ${BORDER_COLOR};
     text-decoration: underline;
   }
+
   &:hover:after {
     content: '';
     display: block;

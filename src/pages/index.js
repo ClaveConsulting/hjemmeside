@@ -130,7 +130,7 @@ const IndexPage = () => {
             <CtaLink to="/hva-vi-gjor">Se mer om hva vi gjør</CtaLink>
           </FrontPageTextContent>
         </Layout>
-        <JoinBanner images={images} />
+        <JoinBanner images={images}  />
       </main>
       <ColorContext.Provider value={GREEN_BACKGROUND}>
         <Footer />
