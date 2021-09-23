@@ -9,7 +9,7 @@ import { onDesktop } from './Breakpoints';
 const JoinContent = ({
                        showTaKontaktForEnPrat = false,
                        showStillingsannonserSenior = false,
-                       showStillingsannonserSkole = false,
+                       showStillingsannonserSkole = true,
                      }) => (
   <div>
     <h3>Bli en av oss</h3>
@@ -39,10 +39,9 @@ const JoinContent = ({
             til å sende oss en åpen søknad til post@clave.no
           </BannerP>
           <PositionUl>
-            <PositionLink href="https://www.poption.com/companies/clave/postings/pBGf7n">Sommerjobb 2021</PositionLink>
-            <PositionLink href="https://www.poption.com/companies/clave/postings/w42fN5">
-              Nyutdannede utviklere
-            </PositionLink>
+            <PositionLink href="https://www.poption.com/companies/clave/postings/08Of7G">Deltids- og sommerjobb som UX-designer</PositionLink>
+            <PositionLink href="https://www.poption.com/companies/clave/postings/wYDf7E">Nyutdannede utviklere til Clave 2022</PositionLink>
+            <PositionLink href="https://www.poption.com/companies/clave/postings/w42f2E">Sommerjobb hos Clave 2022</PositionLink>
           </PositionUl>
         </>
       )
