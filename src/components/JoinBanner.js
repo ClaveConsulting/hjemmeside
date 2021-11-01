@@ -8,8 +8,8 @@ import { onDesktop } from './Breakpoints';
 
 const JoinContent = ({
                        showTaKontaktForEnPrat = false,
-                       showStillingsannonserSenior = false,
-                       showStillingsannonserSkole = true,
+                       showStillingsannonserSenior = true,
+                       showStillingsannonserSkole = false,
                      }) => (
   <div>
     <h3>Bli en av oss</h3>
@@ -21,12 +21,7 @@ const JoinContent = ({
     {
       showStillingsannonserSenior && (
         <PositionUl>
-          <PositionLink href="https://www.poption.com/companies/clave/postings/wYDf5q">Senior UX designer</PositionLink>
           <PositionLink href="https://www.poption.com/companies/clave/postings/wrLfxm">Senior utvikler</PositionLink>
-          <PositionLink href="https://www.poption.com/companies/clave/postings/08Of7G">UX deltid</PositionLink>
-          <PositionLink href="https://www.poption.com/companies/clave/postings/w42fN5">
-            Nyutdannede utviklere
-          </PositionLink>
         </PositionUl>
       )
     }
