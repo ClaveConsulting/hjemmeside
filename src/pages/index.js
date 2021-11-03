@@ -50,6 +50,10 @@ const InfoFlexbox = styled.div`
   `)}
 `;
 
+const inBrowser = typeof window !== 'undefined';
+
+const IsLandscapeScreen = () => inBrowser ? window.innerWidth > window.innerHeight : false;
+
 const IndexPage = () => {
   const images = useStaticQuery(graphql`
     query {
@@ -73,10 +77,12 @@ const IndexPage = () => {
   const scoverlayElement = useRef();
 
   useLayoutEffect(() => {
+    const scrollY = () => inBrowser ? window.scrollY : 0;
+
     const setClipPath = () => {
-      scoverlayElement.current.style.clipPath = window.innerWidth > window.innerHeight ?
-        `circle(calc(${1.5 * window.scrollY}px + min(45vh, 45vw)) at 85% 70%)` :
-        `circle(calc(${1 * window.scrollY}px + 20vh) at 85% 90%)`
+      scoverlayElement.current.style.clipPath = IsLandscapeScreen() ?
+        `circle(calc(${1.5 * scrollY()}px + min(45vh, 45vw)) at 85% 70%)` :
+        `circle(calc(${1 * scrollY()}px + 20vh) at 85% 90%)`
     }
     setClipPath();
     window.addEventListener('scroll', setClipPath)
@@ -112,7 +118,7 @@ const IndexPage = () => {
                   </TitleWrapper>
                 </StyledTextPanel>
                 <StyledBackgroundImage>
-                  <Image fluidImage={images.header} style={{ height: window.innerWidth > window.innerHeight ? "100vh" : "auto" }} />
+                  <Image fluidImage={images.header} style={{ height: IsLandscapeScreen() ? "100vh" : "auto" }} />
                 </StyledBackgroundImage>
               </PostsrollContent>
             </StickyScrollBox>
