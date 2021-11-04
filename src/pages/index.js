@@ -1,4 +1,4 @@
-import React, { useRef, useLayoutEffect } from 'react';
+import React, { useRef, useEffect ,useLayoutEffect } from 'react';
 import styled from 'styled-components';
 
 import Image from '../components/Image';
@@ -76,13 +76,13 @@ const IndexPage = () => {
 
   const scoverlayElement = useRef();
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const scrollY = () => inBrowser ? window.scrollY : 0;
 
     const setClipPath = () => {
       scoverlayElement.current.style.clipPath = IsLandscapeScreen() ?
         `circle(calc(${1.5 * scrollY()}px + min(45vh, 45vw)) at 85% 70%)` :
-        `circle(calc(${1 * scrollY()}px + 20vh) at 85% 90%)`
+        `circle(calc(${1 * scrollY()}px + 25vh) at 85% 85%)`
     }
     setClipPath();
     window.addEventListener('scroll', setClipPath)
@@ -184,7 +184,7 @@ const TitleWrapper = styled.div`
 
 const StyledFirstSection = styled.section`
   width: 100%;
-  height: max(200vh, 100vw);
+  height: max(180vh, 90vw);
 `;
 
 const StickyScrollBox = styled.div`
@@ -217,6 +217,7 @@ const StyledBackgroundImage = styled.div`
   width: 90%;
   ${onDesktop(`
     width: 65%;
+    max-width: 150vh;
   `)}
 `;
 
@@ -241,6 +242,9 @@ const PrescrollContent = styled(ScrollContent)`
 
 const PostsrollContent = styled(ScrollContent)`
   background-color: ${COLOR_CLAVE_SKIN};
+  clip-path: ${IsLandscapeScreen() ?
+  `circle(45vw at 85% 70%)` :
+  `circle(25vh at 85% 85%);`}
 `;
 
 const BrukeropplevelseLogo = styled(BrukeropplevelseIcon)`
