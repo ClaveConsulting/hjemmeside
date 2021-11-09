@@ -54,19 +54,17 @@ const ProjectLink = styled.a`
   justify-content: space-between;
   border: none;
   text-decoration: underline;
-  font-size: 24px;
+  font-size: 24px;  
+  color: ${COLOR_CLAVE_GREEN};
+  text-decoration-color: ${COLOR_CLAVE_PINK};
 
   ${onDesktop(`
   font-size: 32px;
   `)}
 
-  & {
-    color: ${COLOR_CLAVE_PINK};
-  }
   &:visited {
   }
   &:hover {
-    color: ${COLOR_CLAVE_GREEN};
     text-decoration: underline;
     text-decoration-color: ${COLOR_CLAVE_YELLOW};
   }
