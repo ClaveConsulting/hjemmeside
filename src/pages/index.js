@@ -1,4 +1,4 @@
-import React, { useRef, useEffect ,useLayoutEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 import styled from 'styled-components';
 
 import Image from '../components/Image';
@@ -118,7 +118,7 @@ const IndexPage = () => {
                   </TitleWrapper>
                 </StyledTextPanel>
                 <StyledBackgroundImage>
-                  <Image fluidImage={images.header} style={{ height: IsLandscapeScreen() ? "100vh" : "auto" }} />
+                  <Image fluidImage={images.header} style={{ height: IsLandscapeScreen() ? "100vh" : "50vh" }} />
                 </StyledBackgroundImage>
               </PostsrollContent>
             </StickyScrollBox>
