@@ -18,6 +18,7 @@ const Header = ({
   frontPage = false,
   useSkinColoredHamburgerMenu = false,
   uri,
+  textColor = COLOR_CLAVE_SKIN,
 }) => {
   const HamburgerDiv = styled.div`
     padding-bottom: 2rem;
@@ -76,7 +77,7 @@ const Header = ({
   const newColorContext = frontPage
     ? {
         backgroundColor: 'none',
-        textColor: COLOR_CLAVE_SKIN,
+        textColor: textColor,
       }
     : colorContext;
 
