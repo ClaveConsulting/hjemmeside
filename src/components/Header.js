@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { COLOR_CLAVE_GREEN, COLOR_CLAVE_SKIN } from '../colors';
+import { COLOR_CLAVE_GREEN, COLOR_CLAVE_PEACH } from '../colors';
 import styled from 'styled-components';
 import ClaveLink from './ClaveLink';
 import ClaveLogo from './icons/clave-logo.svg';
@@ -18,7 +18,7 @@ const Header = ({
   frontPage = false,
   useSkinColoredHamburgerMenu = false,
   uri,
-  textColor = COLOR_CLAVE_SKIN,
+  textColor = COLOR_CLAVE_PEACH,
 }) => {
   const HamburgerDiv = styled.div`
     padding-bottom: 2rem;
@@ -84,7 +84,7 @@ const Header = ({
   const WrapperComponent = frontPage
     ? FrontPageWrapper
     : styled(Wrapper)`
-        background: ${newColorContext.backgroundColor || COLOR_CLAVE_SKIN};
+        background: ${newColorContext.backgroundColor || COLOR_CLAVE_PEACH};
       `;
 
   return (
@@ -157,7 +157,7 @@ const StyledHeader = styled.header`
 `;
 
 const SkinColorHamburgerButton = styled(HamburgerButton)`
-  fill: ${COLOR_CLAVE_SKIN};
+  fill: ${COLOR_CLAVE_PEACH};
 `;
 
 const GreenColorHamburgerButton = styled(HamburgerButton)`
@@ -165,7 +165,7 @@ const GreenColorHamburgerButton = styled(HamburgerButton)`
 `;
 
 const FrontPageLogo = styled(Logo)`
-  fill: ${COLOR_CLAVE_SKIN};
+  fill: ${COLOR_CLAVE_PEACH};
 `;
 
 const Wrapper = styled.div`

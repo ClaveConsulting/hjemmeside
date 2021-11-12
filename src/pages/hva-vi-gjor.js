@@ -10,7 +10,7 @@ import { Gallery, GalleryImage } from '../components/Gallery';
 import { graphql, useStaticQuery } from 'gatsby';
 import Image from '../components/Image';
 import { onDesktop, onMobile } from '../components/Breakpoints';
-import { COLOR_CLAVE_SKIN } from '../colors';
+import { COLOR_CLAVE_PEACH } from '../colors';
 import ClaveProjects from './../components/ClaveProjects';
 
 const PADDING_TOP_DESKTOP = '6rem';
@@ -162,7 +162,7 @@ const SecondPage = props => {
 };
 
 const TitleWrapper = styled.div`
-  background-color: ${COLOR_CLAVE_SKIN};
+  background-color: ${COLOR_CLAVE_PEACH};
   ${onDesktop(`
   padding-top: ${PADDING_TOP_DESKTOP};
   

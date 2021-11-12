@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import styled from "styled-components";
-import {COLOR_CLAVE_SKIN} from "../../colors";
+import {COLOR_CLAVE_PEACH} from "../../colors";
 import "./form.css"
 
 class Form extends Component {
@@ -52,6 +52,7 @@ class Form extends Component {
                 messageValid = value.length > 0;
                 this.setState({messageIsChanged: true});
                 break;
+            default:
         }
         this.setState({
             nameValid: nameValid,
@@ -134,7 +135,7 @@ const CustomInput = styled.input`
   background-color: transparent;
   border: none;
   border-bottom: 1px solid #ccc;
-  color: ${COLOR_CLAVE_SKIN};
+  color: ${COLOR_CLAVE_PEACH};
   box-sizing: border-box;
   font-size: 18px;
   height: 50px;
@@ -148,7 +149,7 @@ const CustomSubmit = styled.input`
   background-color: transparent;
   border: none;
   border-bottom: 0.1em solid #ccc;
-  color: ${COLOR_CLAVE_SKIN};
+  color: ${COLOR_CLAVE_PEACH};
   box-sizing: border-box;
   font-size: 23px;
   height: 50px;

@@ -11,31 +11,31 @@ import { ProjectGallery } from './ProjectGallery';
 const PADDING_TOP_DESKTOP = '6rem';
 const PADDING_TOP_MOBILE = '4.75rem';
 
-export const ProjectPageTemplate = ({
-  mainImg,
-  firstImg,
-  secondImg,
-  title,
-  ingress,
-  body,
-  keywords,
-  methodology,
-  technology,
-  finalText,
-  backgroundColor,
-  textColor,
-}) => {
+export const ProjectPageTemplate = (props) => {
+  const {mainImg,
+    firstImg,
+    secondImg,
+    title,
+    ingress,
+    keywords,
+    methodology,
+    technology,
+    finalText,
+    backgroundColor,
+    textColor} = props;
+
   const TitleWrapper = styled.div`
     background-color: ${backgroundColor};
     ${onDesktop(`
-  padding-top: ${PADDING_TOP_DESKTOP};
-  `)} ${onMobile(`
-  padding-top: ${PADDING_TOP_MOBILE};
-  `)};
+      padding-top: ${PADDING_TOP_DESKTOP};
+    `)} 
+    ${onMobile(`
+      padding-top: ${PADDING_TOP_MOBILE};
+    `)};
   `;
 
   return (
-    <ProjectPageContainer>
+    <div>
       <Header />
       <SEO title={title} description="" />
       <TitleWrapper>
@@ -54,11 +54,15 @@ export const ProjectPageTemplate = ({
           textColor,
         }}
       >
-        <Layout>{ingress}</Layout>
+        <Layout>
+          <Ingress>
+            {ingress}
+          </Ingress>
+        </Layout>
         <BodyTextLayout
           asideContent={<ProjectKeywords>{keywords}</ProjectKeywords>}
         >
-          {body}
+          {props.children}
         </BodyTextLayout>
         <ProjectGallery
           imageSpacing={400}
@@ -69,18 +73,18 @@ export const ProjectPageTemplate = ({
           finalText={finalText}
         />
       </ColorContext.Provider>
-    </ProjectPageContainer>
+    </div>
   );
 };
 
 export const ProjectKeywords = ({ children }) => {
-  const keywordList = children.map(fact => (
-    <KeywordElement>{fact}</KeywordElement>
-  ));
-
-  if (keywordList.length === 0) {
+  if (!children) {
     return null;
   }
+
+  const keywordList = children.map(fact => (
+    <KeywordElement key={fact}>{fact}</KeywordElement>
+  ));
 
   return (
     <KeywordComponent>
@@ -93,8 +97,6 @@ export const ProjectKeywords = ({ children }) => {
 const BodyTextLayout = styled(Layout)`
   padding-bottom: 2rem;
 `;
-
-const ProjectPageContainer = styled.div``;
 
 const KeywordElement = styled.p`
   font-size: 18px;
@@ -115,5 +117,3 @@ export const Ingress = styled.p`
   font-size: 2rem;
   line-height: 1.5;
 `;
-
-export const Paragraph = styled.p``;

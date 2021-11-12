@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import Image from '../components/Image';
 import SEO from '../components/Seo';
-import { COLOR_CLAVE_GREEN, COLOR_CLAVE_SKIN } from '../colors';
+import { COLOR_CLAVE_GREEN, COLOR_CLAVE_PEACH } from '../colors';
 import Header from '../components/Header';
 import Title from '../components/Title';
 import Layout, {
@@ -71,7 +71,7 @@ const IndexPage = () => {
 
   const GREEN_BACKGROUND = {
     backgroundColor: COLOR_CLAVE_GREEN,
-    textColor: COLOR_CLAVE_SKIN,
+    textColor: COLOR_CLAVE_PEACH,
   };
 
   const scoverlayElement = useRef();
@@ -100,7 +100,7 @@ const IndexPage = () => {
                 <Header frontPage useSkinColoredHamburgerMenu />
                 <StyledTextPanel>
                   <TitleWrapper>
-                    <Title color={COLOR_CLAVE_SKIN}>
+                    <Title color={COLOR_CLAVE_PEACH}>
                       Vi er en gjeng flinke designere og utviklere med stort
                       engasjement for det vi driver med
                     </Title>
@@ -241,7 +241,7 @@ const PrescrollContent = styled(ScrollContent)`
 `;
 
 const PostsrollContent = styled(ScrollContent)`
-  background-color: ${COLOR_CLAVE_SKIN};
+  background-color: ${COLOR_CLAVE_PEACH};
   clip-path: ${IsLandscapeScreen() ?
   `circle(45vw at 85% 70%)` :
   `circle(25vh at 85% 85%);`}

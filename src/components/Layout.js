@@ -1,7 +1,7 @@
 import './layout.css';
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import { COLOR_CLAVE_SKIN, COLOR_CLAVE_GREEN } from '../colors';
+import { COLOR_CLAVE_PEACH, COLOR_CLAVE_GREEN } from '../colors';
 import { onDesktop } from './Breakpoints';
 
 export const MAX_WIDTH = '120rem';
@@ -66,7 +66,7 @@ const LayoutWrapper = styled.div`
 `;
 
 export const ColorContext = React.createContext({
-  backgroundColor: COLOR_CLAVE_SKIN,
+  backgroundColor: COLOR_CLAVE_PEACH,
   textColor: COLOR_CLAVE_GREEN,
 });
 

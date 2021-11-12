@@ -135,9 +135,9 @@ const Footer = props => {
                   >
                     LinkedIn
                   </FooterLink>
-                  <FooterListItem>
-                    <ClaveTriangle />
-                  </FooterListItem>
+                </FooterListItem>
+                <FooterListItem>
+                  <ClaveTriangle />
                 </FooterListItem>
               </FooterList>
             </FooterContent>

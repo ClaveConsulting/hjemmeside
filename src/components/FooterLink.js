@@ -3,7 +3,6 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { COLOR_CLAVE_PINK, COLOR_CLAVE_GREEN } from '../colors';
 import { ColorContext } from './Layout';
-import { onMobile } from './Breakpoints';
 
 const FooterLink = ({ to, children, className, ...props }) => {
   const { textColor } = useContext(ColorContext);
