@@ -3,7 +3,7 @@ import {
   ProjectPageTemplate,
 } from '../../components/ProjectTemplate';
 import { useStaticQuery, graphql } from 'gatsby';
-import { COLOR_CLAVE_PEACH, COLOR_CLAVE_GREEN } from '../../colors';
+import { COLOR_CLAVE_GREEN, COLOR_CLAVE_MUSTARD } from '../../colors';
 import Footer from '../../components/Footer';
 
 const ProjectPage = () => {
@@ -22,8 +22,6 @@ const ProjectPage = () => {
   `);
 
   return (
-    <>
-      <main>
         <ProjectPageTemplate
           mainImg={images.main}
           firstImg={images.left}
@@ -40,7 +38,7 @@ const ProjectPage = () => {
           methodology="Lean"
           technology="Teknologi .NET Core, React.js, Azure, MS SQL Server, Azure DevOps, Umbraco CMS, Kanban"
           finalText="The Well er Nordens største spa- og velværesenter som ligger på Kolbotn. Her finner du 10,500 kvm med bassenger og forskjellige saunarom."
-          backgroundColor={COLOR_CLAVE_PEACH}
+          backgroundColor={COLOR_CLAVE_MUSTARD}
           textColor={COLOR_CLAVE_GREEN}
         >
           <div>
@@ -71,9 +69,6 @@ const ProjectPage = () => {
             </p>
           </div>
         </ProjectPageTemplate>
-      </main>
-      <Footer />
-    </>
   );
 };
 

@@ -11,7 +11,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import Image from '../components/Image';
 import { onDesktop, onMobile } from '../components/Breakpoints';
 import { COLOR_CLAVE_PEACH } from '../colors';
-import ClaveProjects from './../components/ClaveProjects';
+import { Projects } from '../components/ProjectList';
 
 const PADDING_TOP_DESKTOP = '6rem';
 const PADDING_TOP_MOBILE = '4.75rem';
@@ -115,6 +115,7 @@ const SecondPage = props => {
             </div>
           }
         >
+          <Projects />
           <Gallery>
             <GalleryImage
               fluidImage={images.larsPetter}
@@ -124,31 +125,6 @@ const SecondPage = props => {
             />
             <GalleryImage
               fluidImage={images.pointing}
-              width="306"
-              height="368"
-              alt="Pekefinger"
-            />
-          </Gallery>
-        </Layout>
-        <Layout>
-          <h2>Sjekk ut hva vi gjør hos kundene våre</h2>
-          <p>
-            Det er stort sett alltid flere Clavere hos en kunde, og gjerne en
-            blanding av UX-designere, rådgivere og utviklere. Spa, post,
-            nettbutikk, bil, offentlig forvaltning og humanitært arbeid. Vi
-            jobber innen mange ulike domener!
-          </p>
-        </Layout>
-        <Layout asideContent={<ClaveProjects />}>
-          <Gallery>
-            <GalleryImage
-              fluidImage={images.komplett}
-              width="681"
-              height="470"
-              alt="Lars-Petter og Yngve"
-            />
-            <GalleryImage
-              fluidImage={images.naf}
               width="306"
               height="368"
               alt="Pekefinger"

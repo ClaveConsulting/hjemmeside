@@ -7,12 +7,14 @@ import PageHeader from '../components/PageHeader';
 import { onDesktop, onMobile } from './Breakpoints';
 
 import { ProjectGallery } from './ProjectGallery';
+import Footer from './Footer';
 
 const PADDING_TOP_DESKTOP = '6rem';
 const PADDING_TOP_MOBILE = '4.75rem';
 
 export const ProjectPageTemplate = (props) => {
-  const {mainImg,
+  const {
+    mainImg,
     firstImg,
     secondImg,
     title,
@@ -22,7 +24,7 @@ export const ProjectPageTemplate = (props) => {
     technology,
     finalText,
     backgroundColor,
-    textColor} = props;
+    textColor } = props;
 
   const TitleWrapper = styled.div`
     background-color: ${backgroundColor};
@@ -35,25 +37,25 @@ export const ProjectPageTemplate = (props) => {
   `;
 
   return (
-    <div>
-      <Header />
-      <SEO title={title} description="" />
-      <TitleWrapper>
-        <PageHeader
-          title={title}
-          imageProps={{
-            fluidImage: mainImg,
-            width: 1227,
-            height: 728,
-          }}
-        />
-      </TitleWrapper>
-      <ColorContext.Provider
-        value={{
-          backgroundColor,
-          textColor,
-        }}
-      >
+    <ColorContext.Provider
+      value={{
+        backgroundColor,
+        textColor,
+      }}
+    >
+      <main>
+        <Header />
+        <SEO title={title} description="" />
+        <TitleWrapper>
+          <PageHeader
+            title={title}
+            imageProps={{
+              fluidImage: mainImg,
+              width: 1227,
+              height: 728,
+            }}
+          />
+        </TitleWrapper>
         <Layout>
           <Ingress>
             {ingress}
@@ -72,8 +74,9 @@ export const ProjectPageTemplate = (props) => {
           technology={technology}
           finalText={finalText}
         />
-      </ColorContext.Provider>
-    </div>
+      </main>
+      <Footer />
+    </ColorContext.Provider>
   );
 };
 

@@ -15,8 +15,8 @@ import { onDesktop, onMobile } from './Breakpoints';
 import HamburgerMenuLink from './HamburgerMenuLink';
 
 const Header = ({
-  frontPage = false,
-  useSkinColoredHamburgerMenu = false,
+  frontPage,
+  useSkinColoredHamburgerMenu,
   uri,
   textColor = COLOR_CLAVE_PEACH,
 }) => {
@@ -27,7 +27,6 @@ const Header = ({
     `)}
   `;
   const [menuExpanded, setMenuExpanded] = useState(false);
-  const LogoComponent = frontPage ? FrontPageLogo : Logo;
   const LinkComponent = styled(ClaveLink)`
     margin-left: 0.5rem;
     margin-right: 0.5rem;
@@ -95,7 +94,7 @@ const Header = ({
             <StyledHeader frontPage={frontPage}>
               <WrapperComponent>
                 <Link to="/">
-                  <LogoComponent />
+                  <Logo />
                 </Link>
                 <InlineWrapper>
                   <LinkComponent to="/hva-vi-gjor">
@@ -162,10 +161,6 @@ const SkinColorHamburgerButton = styled(HamburgerButton)`
 
 const GreenColorHamburgerButton = styled(HamburgerButton)`
   fill: ${COLOR_CLAVE_GREEN};
-`;
-
-const FrontPageLogo = styled(Logo)`
-  fill: ${COLOR_CLAVE_PEACH};
 `;
 
 const Wrapper = styled.div`

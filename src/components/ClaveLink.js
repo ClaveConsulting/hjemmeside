@@ -11,10 +11,13 @@ const ClaveLink = ({ to, children, className, showOnMobile, ...props }) => {
   const { textColor } = useContext(ColorContext);
   const ColoredLink = styled(props.href ? StyledAnchor : StyledLink)`
     color: ${textColor || COLOR_CLAVE_GREEN};
+    ${onMobile(`
+      display: ${showOnMobile ? "flex" : "none"};
+    `)}
   `;
 
   return (
-    <Underline>
+    <Underline showOnMobile>
       <ColoredLink className={className} to={to} {...props}>
         {children}
       </ColoredLink>
@@ -40,38 +43,36 @@ const hoverKeyframes = keyframes`
 }
 `;
 
-const hoverAnimation = props => css`
+const hoverAnimation = css`
   ${hoverKeyframes} 0.5s;
 `;
 
-const Underline = styled.div`
+const Underline = styled.div(props => css`
   display: flex;
   flex-direction: column;
+  width: fit-content;
   &:after {
     content: '';
     margin-top: 5px;
     display: block;
-    height: 1px;
+    height: 2px;
     background: ${COLOR_CLAVE_PINK};
   }
   &:hover:after {
     content: '';
     margin-top: 5px;
     display: block;
-    height: 1px;
+    height: 2px;
     animation: ${hoverAnimation};
     animation-fill-mode: forwards;
   }
 
   ${onMobile(`
-    display: none;
+    display: ${props.showOnMobile ? "block" : "none"};
   `)}
-`;
+`);
 
-const ANCHOR_STYLES = `
-  ${onMobile(`
-    display: none;
-  `)}
+const ANCHOR_STYLES = css`
   text-decoration: none;
 `;
 
