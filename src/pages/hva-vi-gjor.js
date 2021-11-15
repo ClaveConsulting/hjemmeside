@@ -98,21 +98,21 @@ const SecondPage = props => {
         </Layout>
         <Layout
           asideContent={
-            <div>
-              <h3>Brukertesting er viktig!</h3>
-              <p>
+            <UserTestingBlock>
+              <h4>Brukertesting er viktig!</h4>
+              <UserTestingText>
                 Steffen og Anniken er vårt brukervennlighetstest-team. De jobber
                 på tvers av de kundene vi har, og for andre som trenger å få
                 brukertestet. Vi har laget dette som en egen tjeneste, fordi
                 brukervennlighetstesting er jo noe alle trenger å gjøre jevnlig!
-              </p>
+              </UserTestingText>
               <AsideImage
                 fluidImage={images.laptop}
                 width="387"
                 height="279"
                 alt="Brukertesting"
               />
-            </div>
+            </UserTestingBlock>
           }
         >
           <Projects />
@@ -153,5 +153,18 @@ const AsideImage = styled(Image)`
   height: auto;
   display: block;
 `;
+
+const UserTestingBlock = styled.div`
+  margin-top: 150px;
+  ${onMobile(`
+    margin-top: 0;
+  `)}
+`
+
+const UserTestingText = styled.p`
+  font-size: 18px;
+  line-height: 23.4px;
+`
+
 
 export default SecondPage;

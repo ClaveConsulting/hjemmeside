@@ -197,7 +197,10 @@ const StickyScrollBox = styled.div`
 `;
 
 const ScrollImage = styled(Image)`
-  height: ${IsLandscapeScreen() ? "100vh" : "50vh" }
+  height: 100vh;
+  ${
+    onMobile("height: 50vh")   
+  }
 `
 
 const StyledTextPanel = styled.div`
