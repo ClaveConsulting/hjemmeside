@@ -52,7 +52,7 @@ const InfoFlexbox = styled.div`
 
 const inBrowser = typeof window !== 'undefined';
 
-const IsLandscapeScreen = () => inBrowser ? window.innerWidth > window.innerHeight : false;
+const IsLandscapeScreen = () => inBrowser ? window.innerWidth >= window.innerHeight : false;
 
 const IndexPage = () => {
   const images = useStaticQuery(graphql`
@@ -97,7 +97,7 @@ const IndexPage = () => {
           <StyledFirstSection>
             <StickyScrollBox >
               <PrescrollContent>
-                <Header frontPage useSkinColoredHamburgerMenu />
+                <Header frontPage useSkinColoredHamburgerMenu={true} />
                 <StyledTextPanel>
                   <TitleWrapper>
                     <Title color={COLOR_CLAVE_PEACH}>
@@ -108,7 +108,7 @@ const IndexPage = () => {
                 </StyledTextPanel>
               </PrescrollContent>
               <PostsrollContent ref={scoverlayElement}>
-                <Header frontPage textColor={COLOR_CLAVE_GREEN} />
+                <Header frontPage useSkinColoredHamburgerMenu={false} textColor={COLOR_CLAVE_GREEN} />
                 <StyledTextPanel>
                   <TitleWrapper>
                     <Title color={COLOR_CLAVE_GREEN}>
@@ -118,7 +118,7 @@ const IndexPage = () => {
                   </TitleWrapper>
                 </StyledTextPanel>
                 <StyledBackgroundImage>
-                  <Image fluidImage={images.header} style={{ height: IsLandscapeScreen() ? "100vh" : "50vh" }} />
+                  <ScrollImage fluidImage={images.header}/>
                 </StyledBackgroundImage>
               </PostsrollContent>
             </StickyScrollBox>
@@ -195,6 +195,10 @@ const StickyScrollBox = styled.div`
   top: 0;
   left: 0;
 `;
+
+const ScrollImage = styled(Image)`
+  height: ${IsLandscapeScreen() ? "100vh" : "50vh" }
+`
 
 const StyledTextPanel = styled.div`
   display: flex;
