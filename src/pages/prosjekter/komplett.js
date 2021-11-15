@@ -3,7 +3,7 @@ import {
   ProjectPageTemplate,
 } from './../../components/ProjectTemplate';
 import { useStaticQuery, graphql } from 'gatsby';
-import { COLOR_CLAVE_GREEN, COLOR_CLAVE_MUSTARD } from '../../colors';
+import { COLOR_CLAVE_GREEN, COLOR_CLAVE_SUNNY } from '../../colors';
 
 const ProjectPage = () => {
   const images = useStaticQuery(graphql`
@@ -39,7 +39,7 @@ const ProjectPage = () => {
       methodology="Scrum, Spotify Engineering Culture"
       technology="IMS SQL Server, MS .NET Core, Azure, JavaScript (React.js, AngularJS), CSS, HTML, REST, SOAP, Umbraco CMS, Confluence, Jira, Github, Jenkins CI, Octopus Deploy"
       finalText="Komplett er Nordens største netthandelsaktør. Nettbutikkene fornyes og videreutvikles kontinuerlig. Utviklingsavdelingen jobber med alle deler av Komplett-butikkens plattform og hele kundereisen på nett."
-      backgroundColor={COLOR_CLAVE_MUSTARD}
+      backgroundColor={COLOR_CLAVE_SUNNY}
       textColor={COLOR_CLAVE_GREEN}
     >
       <div>

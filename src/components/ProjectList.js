@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { onDesktop } from '../components/Breakpoints';
+import { onDesktop, onMobile } from '../components/Breakpoints';
 import {
   COLOR_CLAVE_GREEN,
   COLOR_CLAVE_MUSTARD,
@@ -26,7 +26,13 @@ const ProjectList = styled.ul`
   padding: 70px 96px 120px 70px;
   list-style: none;
   flex: 1 0 auto;
-  background-color: ${COLOR_CLAVE_MUSTARD}
+  background-color: ${COLOR_CLAVE_MUSTARD};
+  ${
+    onMobile(`
+      margin: -70px -47px -90px;
+      padding: 70px 47px 120px;
+    `)
+  }
 `;
 
 const ProjectLink = styled(ClaveLink)`

@@ -3,7 +3,7 @@ import {
   ProjectPageTemplate
 } from '../../components/ProjectTemplate';
 import { useStaticQuery, graphql } from 'gatsby';
-import { COLOR_CLAVE_GREEN, COLOR_CLAVE_MUSTARD } from '../../colors';
+import { COLOR_CLAVE_GREEN, COLOR_CLAVE_SUNNY } from '../../colors';
 
 const ProjectPage = () => {
   const images = useStaticQuery(graphql`
@@ -35,7 +35,7 @@ const ProjectPage = () => {
       methodology={null}
       technology={null}
       finalText="Det har vært litt av en reise hittil som vi er stolte over å ha fått være med på. Som de sier hos NAF: «Reisen blir aldri slik man hadde tenkt», noe som gjør det til et spennende og variert oppdrag med både små og store seiere underveis."
-      backgroundColor={COLOR_CLAVE_MUSTARD}
+      backgroundColor={COLOR_CLAVE_SUNNY}
       textColor={COLOR_CLAVE_GREEN}
     >
       <div>

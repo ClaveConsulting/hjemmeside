@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout, { ColorContext } from '../components/Layout';
+import Layout, { ColorContext, Container } from '../components/Layout';
 import styled from 'styled-components';
 import SEO from '../components/Seo';
 import Header from '../components/Header';
@@ -66,14 +66,18 @@ export const ProjectPageTemplate = (props) => {
         >
           {props.children}
         </BodyTextLayout>
-        <ProjectGallery
-          imageSpacing={400}
-          leftImg={firstImg}
-          rightImg={secondImg}
-          methodology={methodology}
-          technology={technology}
-          finalText={finalText}
-        />
+        <Container>
+          <Container.Content>
+            <ProjectGallery
+              imageSpacing={400}
+              leftImg={firstImg}
+              rightImg={secondImg}
+              methodology={methodology}
+              technology={technology}
+              finalText={finalText}
+            />
+          </Container.Content>
+        </Container>
       </main>
       <Footer />
     </ColorContext.Provider>
