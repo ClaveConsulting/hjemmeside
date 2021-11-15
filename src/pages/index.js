@@ -118,7 +118,7 @@ const IndexPage = () => {
                   </TitleWrapper>
                 </StyledTextPanel>
                 <StyledBackgroundImage>
-                  <ScrollImage fluidImage={images.header}/>
+                  <ScrollImage fluidImage={images.header} />
                 </StyledBackgroundImage>
               </PostsrollContent>
             </StickyScrollBox>
@@ -176,9 +176,11 @@ const IndexPage = () => {
 const TitleWrapper = styled.div`
   ${onDesktop(`
     padding-top: ${PADDING_TOP_DESKTOP};
+    padding-left: ${DESKTOP_PADDING};
   `)}
   ${onMobile(`
     padding-top: ${PADDING_TOP_MOBILE};
+    padding-left: ${MOBILE_PADDING};
   `)}
 `;
 
@@ -198,8 +200,7 @@ const StickyScrollBox = styled.div`
 
 const ScrollImage = styled(Image)`
   height: 100vh;
-  ${
-    onMobile("height: 50vh")   
+  ${onMobile("height: 50vh")
   }
 `
 
@@ -236,11 +237,6 @@ const ScrollContent = styled.div`
   bottom: 0;
   width: 100%;
   flex-direction: column;
-  padding: 0 ${MOBILE_PADDING};
-
-  ${onDesktop(`
-    padding: 0 ${DESKTOP_PADDING};
-  `)}
 `;
 
 const PrescrollContent = styled(ScrollContent)`
@@ -250,8 +246,8 @@ const PrescrollContent = styled(ScrollContent)`
 const PostsrollContent = styled(ScrollContent)`
   background-color: ${COLOR_CLAVE_PEACH};
   clip-path: ${IsLandscapeScreen() ?
-  `circle(45vw at 85% 70%)` :
-  `circle(25vh at 85% 85%);`}
+    `circle(45vw at 85% 70%)` :
+    `circle(25vh at 85% 85%);`}
 `;
 
 const BrukeropplevelseLogo = styled(BrukeropplevelseIcon)`

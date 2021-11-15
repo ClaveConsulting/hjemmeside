@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { COLOR_CLAVE_GREEN, COLOR_CLAVE_PEACH } from '../colors';
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 import ClaveLink from './ClaveLink';
 import ClaveLogo from './icons/clave-logo.svg';
 import { Link } from 'gatsby';
@@ -75,14 +75,12 @@ const Header = ({
 
   const newColorContext = frontPage
     ? {
-        backgroundColor: 'none',
-        textColor: textColor,
-      }
+      backgroundColor: 'none',
+      textColor: textColor,
+    }
     : colorContext;
 
-  const WrapperComponent = frontPage
-    ? FrontPageWrapper
-    : styled(Wrapper)`
+  const WrapperComponent = styled(Wrapper)`
         background: ${newColorContext.backgroundColor || COLOR_CLAVE_PEACH};
       `;
 
@@ -143,17 +141,12 @@ const HamburgerButton = styled.button`
   `)}
 `;
 
-const StyledHeader = styled.header`
-  ${props =>
-    props.frontPage
-      ? ``
-      : `
+const StyledHeader = styled.header(props => css`
     padding: 0 ${MOBILE_PADDING};
     ${onDesktop(`
       padding: 0 ${DESKTOP_PADDING};
     `)}
-  `}
-`;
+`);
 
 const SkinColorHamburgerButton = styled(HamburgerButton)`
   fill: ${COLOR_CLAVE_PEACH};
@@ -179,16 +172,6 @@ const InlineWrapper = styled.div`
   display: inline-flex;
   justify-content: space-around;
   width: 75%;
-`;
-
-const FrontPageWrapper = styled(Wrapper)`
-  background: none;
-  ${onDesktop(`
-  padding-top: ${PADDING_TOP_DESKTOP};
-  `)}
-  ${onMobile(`
-padding-top: ${PADDING_TOP_MOBILE};
-`)}
 `;
 
 const StyledHamburgerIcon = styled(hamburgerIcon)`
