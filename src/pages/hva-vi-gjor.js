@@ -10,8 +10,8 @@ import { Gallery, GalleryImage } from '../components/Gallery';
 import { graphql, useStaticQuery } from 'gatsby';
 import Image from '../components/Image';
 import { onDesktop, onMobile } from '../components/Breakpoints';
-import { COLOR_CLAVE_SKIN } from '../colors';
-import ClaveProjects from './../components/ClaveProjects';
+import { COLOR_CLAVE_PEACH } from '../colors';
+import { Projects } from '../components/ProjectList';
 
 const PADDING_TOP_DESKTOP = '6rem';
 const PADDING_TOP_MOBILE = '4.75rem';
@@ -98,23 +98,24 @@ const SecondPage = props => {
         </Layout>
         <Layout
           asideContent={
-            <div>
-              <h3>Brukertesting er viktig!</h3>
-              <p>
+            <UserTestingBlock>
+              <h4>Brukertesting er viktig!</h4>
+              <UserTestingText>
                 Steffen og Anniken er vårt brukervennlighetstest-team. De jobber
                 på tvers av de kundene vi har, og for andre som trenger å få
                 brukertestet. Vi har laget dette som en egen tjeneste, fordi
                 brukervennlighetstesting er jo noe alle trenger å gjøre jevnlig!
-              </p>
+              </UserTestingText>
               <AsideImage
                 fluidImage={images.laptop}
                 width="387"
                 height="279"
                 alt="Brukertesting"
               />
-            </div>
+            </UserTestingBlock>
           }
         >
+          <Projects />
           <Gallery>
             <GalleryImage
               fluidImage={images.larsPetter}
@@ -130,31 +131,6 @@ const SecondPage = props => {
             />
           </Gallery>
         </Layout>
-        <Layout>
-          <h2>Sjekk ut hva vi gjør hos kundene våre</h2>
-          <p>
-            Det er stort sett alltid flere Clavere hos en kunde, og gjerne en
-            blanding av UX-designere, rådgivere og utviklere. Spa, post,
-            nettbutikk, bil, offentlig forvaltning og humanitært arbeid. Vi
-            jobber innen mange ulike domener!
-          </p>
-        </Layout>
-        <Layout asideContent={<ClaveProjects />}>
-          <Gallery>
-            <GalleryImage
-              fluidImage={images.komplett}
-              width="681"
-              height="470"
-              alt="Lars-Petter og Yngve"
-            />
-            <GalleryImage
-              fluidImage={images.naf}
-              width="306"
-              height="368"
-              alt="Pekefinger"
-            />
-          </Gallery>
-        </Layout>
       </main>
       <Footer />
     </>
@@ -162,7 +138,7 @@ const SecondPage = props => {
 };
 
 const TitleWrapper = styled.div`
-  background-color: ${COLOR_CLAVE_SKIN};
+  background-color: ${COLOR_CLAVE_PEACH};
   ${onDesktop(`
   padding-top: ${PADDING_TOP_DESKTOP};
   
@@ -177,5 +153,18 @@ const AsideImage = styled(Image)`
   height: auto;
   display: block;
 `;
+
+const UserTestingBlock = styled.div`
+  margin-top: 150px;
+  ${onMobile(`
+    margin-top: 0;
+  `)}
+`
+
+const UserTestingText = styled.p`
+  font-size: 18px;
+  line-height: 23.4px;
+`
+
 
 export default SecondPage;

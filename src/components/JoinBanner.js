@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { COLOR_CLAVE_GREEN, COLOR_CLAVE_LIGHTBLUE, COLOR_CLAVE_SKIN } from '../colors';
+import { COLOR_CLAVE_GREEN, COLOR_CLAVE_LIGHTBLUE, COLOR_CLAVE_PEACH } from '../colors';
 import Layout, { ColorContext } from './Layout';
 import CtaLink from './CtaLink';
 import { Gallery, GalleryImage } from './Gallery';
@@ -88,7 +88,7 @@ const JoinBanner = ({ images, showTaKontaktForEnPrat = true }) => (
   </ColorContext.Provider>
 );
 
-const BORDER_COLOR = COLOR_CLAVE_SKIN;
+const BORDER_COLOR = COLOR_CLAVE_PEACH;
 
 const ContactLinkContainer = styled.div`
   margin-bottom: 3rem;

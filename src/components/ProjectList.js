@@ -3,74 +3,37 @@ import styled from 'styled-components';
 import { onDesktop } from '../components/Breakpoints';
 import {
   COLOR_CLAVE_GREEN,
-  COLOR_CLAVE_PINK,
-  COLOR_CLAVE_YELLOW,
+  COLOR_CLAVE_MUSTARD,
 } from '../colors';
+import ClaveLink from './ClaveLink';
 
-const ProjectItem = styled.li`
-  flex: 1 0 auto;
-
-  ${onDesktop(`
-    flex: 0 0 auto;
-  `)}
-`;
-
-const ProjectList = styled.ul`
-  list-style: none;
-  flex: 1 0 auto;
-`;
-
-const ProjectHeader = styled.h2`
-  color: ${COLOR_CLAVE_GREEN};
-  font-size: 28px;
-
-  ${onDesktop(`
-  font-size: 34px;
-  `)}
-`;
-
-export const Projects = ({ children }) => {
+export const Projects = () => {
   return (
     <ProjectList>
-      <ProjectHeader>Prosjekter</ProjectHeader>
-      {children.filter(x => x !== null)}
+      <h2>Sjekk ut hva vi gjør hos kundene våre</h2>
+      <p>Det er stort sett alltid flere Clavere ute hos de forskjellige kundene våre, og gjerne en blanding av UX-designere, 
+        prosjektledere og utviklere. Vi jobber innenfor mange ulike felt: Nettbutikk, spa, post, bil, offentlig forvaltning og humanitært arbeid.
+      </p>
+      <ProjectLink showOnMobile href={"/prosjekter/naf"}>NAF</ProjectLink>
+      <ProjectLink showOnMobile href={"/prosjekter/the-well"}>The Well</ProjectLink>
+      <ProjectLink showOnMobile href={"/prosjekter/komplett"}>Komplett</ProjectLink>
     </ProjectList>
   );
 };
 
-export const Project = ({ title, link }) => {
-  return link ? (
-    <ProjectItem>
-      <ProjectLink href={link}>{title}</ProjectLink>
-    </ProjectItem>
-  ) : null;
-};
+const ProjectList = styled.ul`
+  margin: -70px -96px -90px -70px;
+  padding: 70px 96px 120px 70px;
+  list-style: none;
+  flex: 1 0 auto;
+  background-color: ${COLOR_CLAVE_MUSTARD}
+`;
 
-const ProjectLink = styled.a`
-  padding: 0.25em 0 0.25em 0;
-  margin: 0 2.5em 0 0;
+const ProjectLink = styled(ClaveLink)`
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  border: none;
-  text-decoration: underline;
   font-size: 24px;
-
-  ${onDesktop(`
-  font-size: 32px;
-  `)}
-
-  & {
-    color: ${COLOR_CLAVE_PINK};
-  }
-  &:visited {
-  }
-  &:hover {
-    color: ${COLOR_CLAVE_GREEN};
-    text-decoration: underline;
-    text-decoration-color: ${COLOR_CLAVE_YELLOW};
-  }
-
+  margin: 20px -15px -3px 0;
+  
   &:after {
     content: '';
     width: 0;
@@ -85,10 +48,20 @@ const ProjectLink = styled.a`
     content: '';
     width: 0;
     height: 0;
+    margin-left: 20px;
+    margin-top: -2px;
     display: block;
     border-top: 15px solid transparent;
     border-bottom: 15px solid transparent;
     border-left: 20px solid ${COLOR_CLAVE_GREEN};
     transform: scaleX(0.6) scaleY(0.6);
   }
+
+  ${onDesktop(`
+  font-size: 32px;
+
+  &:hover:after {
+    margin-top: 5px;
+  }
+  `)}
 `;

@@ -31,16 +31,14 @@ const PageHeaderWrapper = styled(Container.Content)`
 `;
 
 const PageHeaderImage = ({ fluidImage, src, ...props }) => (
-  <PageHeaderImageWrapper>
+  <div>
     {fluidImage ? (
       <PageHeaderLoadedImage fluidImage={fluidImage} {...props} />
     ) : (
       <PageHeaderImageImg src={src} {...props} />
     )}
-  </PageHeaderImageWrapper>
+  </div>
 );
-
-const PageHeaderImageWrapper = styled.div``;
 
 const imageStyle = `
   display: block;

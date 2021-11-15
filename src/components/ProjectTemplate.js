@@ -7,58 +7,64 @@ import PageHeader from '../components/PageHeader';
 import { onDesktop, onMobile } from './Breakpoints';
 
 import { ProjectGallery } from './ProjectGallery';
+import Footer from './Footer';
 
 const PADDING_TOP_DESKTOP = '6rem';
 const PADDING_TOP_MOBILE = '4.75rem';
 
-export const ProjectPageTemplate = ({
-  mainImg,
-  firstImg,
-  secondImg,
-  title,
-  ingress,
-  body,
-  keywords,
-  methodology,
-  technology,
-  finalText,
-  backgroundColor,
-  textColor,
-}) => {
+export const ProjectPageTemplate = (props) => {
+  const {
+    mainImg,
+    firstImg,
+    secondImg,
+    title,
+    ingress,
+    keywords,
+    methodology,
+    technology,
+    finalText,
+    backgroundColor,
+    textColor } = props;
+
   const TitleWrapper = styled.div`
     background-color: ${backgroundColor};
     ${onDesktop(`
-  padding-top: ${PADDING_TOP_DESKTOP};
-  `)} ${onMobile(`
-  padding-top: ${PADDING_TOP_MOBILE};
-  `)};
+      padding-top: ${PADDING_TOP_DESKTOP};
+    `)} 
+    ${onMobile(`
+      padding-top: ${PADDING_TOP_MOBILE};
+    `)};
   `;
 
   return (
-    <ProjectPageContainer>
-      <Header />
-      <SEO title={title} description="" />
-      <TitleWrapper>
-        <PageHeader
-          title={title}
-          imageProps={{
-            fluidImage: mainImg,
-            width: 1227,
-            height: 728,
-          }}
-        />
-      </TitleWrapper>
-      <ColorContext.Provider
-        value={{
-          backgroundColor,
-          textColor,
-        }}
-      >
-        <Layout>{ingress}</Layout>
+    <ColorContext.Provider
+      value={{
+        backgroundColor,
+        textColor,
+      }}
+    >
+      <main>
+        <Header />
+        <SEO title={title} description="" />
+        <TitleWrapper>
+          <PageHeader
+            title={title}
+            imageProps={{
+              fluidImage: mainImg,
+              width: 1227,
+              height: 728,
+            }}
+          />
+        </TitleWrapper>
+        <Layout>
+          <Ingress>
+            {ingress}
+          </Ingress>
+        </Layout>
         <BodyTextLayout
           asideContent={<ProjectKeywords>{keywords}</ProjectKeywords>}
         >
-          {body}
+          {props.children}
         </BodyTextLayout>
         <ProjectGallery
           imageSpacing={400}
@@ -68,19 +74,20 @@ export const ProjectPageTemplate = ({
           technology={technology}
           finalText={finalText}
         />
-      </ColorContext.Provider>
-    </ProjectPageContainer>
+      </main>
+      <Footer />
+    </ColorContext.Provider>
   );
 };
 
 export const ProjectKeywords = ({ children }) => {
-  const keywordList = children.map(fact => (
-    <KeywordElement>{fact}</KeywordElement>
-  ));
-
-  if (keywordList.length === 0) {
+  if (!children) {
     return null;
   }
+
+  const keywordList = children.map(fact => (
+    <KeywordElement key={fact}>{fact}</KeywordElement>
+  ));
 
   return (
     <KeywordComponent>
@@ -93,8 +100,6 @@ export const ProjectKeywords = ({ children }) => {
 const BodyTextLayout = styled(Layout)`
   padding-bottom: 2rem;
 `;
-
-const ProjectPageContainer = styled.div``;
 
 const KeywordElement = styled.p`
   font-size: 18px;
@@ -115,5 +120,3 @@ export const Ingress = styled.p`
   font-size: 2rem;
   line-height: 1.5;
 `;
-
-export const Paragraph = styled.p``;

@@ -1,9 +1,9 @@
-import React, { useRef, useEffect ,useLayoutEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 import styled from 'styled-components';
 
 import Image from '../components/Image';
 import SEO from '../components/Seo';
-import { COLOR_CLAVE_GREEN, COLOR_CLAVE_SKIN } from '../colors';
+import { COLOR_CLAVE_GREEN, COLOR_CLAVE_PEACH } from '../colors';
 import Header from '../components/Header';
 import Title from '../components/Title';
 import Layout, {
@@ -52,7 +52,7 @@ const InfoFlexbox = styled.div`
 
 const inBrowser = typeof window !== 'undefined';
 
-const IsLandscapeScreen = () => inBrowser ? window.innerWidth > window.innerHeight : false;
+const IsLandscapeScreen = () => inBrowser ? window.innerWidth >= window.innerHeight : false;
 
 const IndexPage = () => {
   const images = useStaticQuery(graphql`
@@ -71,7 +71,7 @@ const IndexPage = () => {
 
   const GREEN_BACKGROUND = {
     backgroundColor: COLOR_CLAVE_GREEN,
-    textColor: COLOR_CLAVE_SKIN,
+    textColor: COLOR_CLAVE_PEACH,
   };
 
   const scoverlayElement = useRef();
@@ -97,10 +97,10 @@ const IndexPage = () => {
           <StyledFirstSection>
             <StickyScrollBox >
               <PrescrollContent>
-                <Header frontPage useSkinColoredHamburgerMenu />
+                <Header frontPage useSkinColoredHamburgerMenu={true} />
                 <StyledTextPanel>
                   <TitleWrapper>
-                    <Title color={COLOR_CLAVE_SKIN}>
+                    <Title color={COLOR_CLAVE_PEACH}>
                       Vi er en gjeng flinke designere og utviklere med stort
                       engasjement for det vi driver med
                     </Title>
@@ -108,7 +108,7 @@ const IndexPage = () => {
                 </StyledTextPanel>
               </PrescrollContent>
               <PostsrollContent ref={scoverlayElement}>
-                <Header frontPage textColor={COLOR_CLAVE_GREEN} />
+                <Header frontPage useSkinColoredHamburgerMenu={false} textColor={COLOR_CLAVE_GREEN} />
                 <StyledTextPanel>
                   <TitleWrapper>
                     <Title color={COLOR_CLAVE_GREEN}>
@@ -118,7 +118,7 @@ const IndexPage = () => {
                   </TitleWrapper>
                 </StyledTextPanel>
                 <StyledBackgroundImage>
-                  <Image fluidImage={images.header} style={{ height: IsLandscapeScreen() ? "100vh" : "auto" }} />
+                  <ScrollImage fluidImage={images.header}/>
                 </StyledBackgroundImage>
               </PostsrollContent>
             </StickyScrollBox>
@@ -196,6 +196,13 @@ const StickyScrollBox = styled.div`
   left: 0;
 `;
 
+const ScrollImage = styled(Image)`
+  height: 100vh;
+  ${
+    onMobile("height: 50vh")   
+  }
+`
+
 const StyledTextPanel = styled.div`
   display: flex;
   height: 60vh;
@@ -241,7 +248,7 @@ const PrescrollContent = styled(ScrollContent)`
 `;
 
 const PostsrollContent = styled(ScrollContent)`
-  background-color: ${COLOR_CLAVE_SKIN};
+  background-color: ${COLOR_CLAVE_PEACH};
   clip-path: ${IsLandscapeScreen() ?
   `circle(45vw at 85% 70%)` :
   `circle(25vh at 85% 85%);`}

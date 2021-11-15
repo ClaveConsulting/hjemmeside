@@ -7,7 +7,7 @@ import Footer from '../components/Footer';
 import SEO from '../components/Seo';
 import Header from '../components/Header';
 import { graphql, useStaticQuery } from 'gatsby';
-import { COLOR_CLAVE_GREEN, COLOR_CLAVE_SKIN } from '../colors';
+import { COLOR_CLAVE_GREEN, COLOR_CLAVE_PEACH } from '../colors';
 import JoinBanner from '../components/JoinBanner';
 import MyMapComponent from '../components/Map';
 import {onDesktop, onMobile} from '../components/Breakpoints';
@@ -31,7 +31,7 @@ const SecondPage = props => {
     <ColorContext.Provider
       value={{
         backgroundColor: COLOR_CLAVE_GREEN,
-        textColor: COLOR_CLAVE_SKIN,
+        textColor: COLOR_CLAVE_PEACH,
       }}
     >
       <>

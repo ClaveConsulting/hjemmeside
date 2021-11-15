@@ -1,6 +1,7 @@
+export const COLOR_CLAVE_PEACH = '#FFE6CD';
 export const COLOR_CLAVE_GREEN = '#005550';
-export const COLOR_CLAVE_SKIN = '#FEE4CC';
-export const COLOR_CLAVE_PINK = '#F89791';
-export const COLOR_CLAVE_BLAA = '#002850';
-export const COLOR_CLAVE_LIGHTBLUE = '#BAD6E0';
+export const COLOR_CLAVE_PINK = '#FA9691';
 export const COLOR_CLAVE_YELLOW = '#FFBE2D';
+export const COLOR_CLAVE_LIGHTBLUE = '#B4D7E1';
+export const COLOR_CLAVE_MUSTARD = '#FFD678';
+export const COLOR_CLAVE_BLUE = '#002850';

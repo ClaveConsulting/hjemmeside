@@ -7,7 +7,7 @@ import SEO from '../components/Seo';
 import Header from '../components/Header';
 import PageHeader from '../components/PageHeader';
 import { useStaticQuery, graphql } from 'gatsby';
-import { COLOR_CLAVE_SKIN } from '../colors';
+import { COLOR_CLAVE_PEACH } from '../colors';
 import { onDesktop, onMobile } from '../components/Breakpoints';
 
 const PADDING_TOP_DESKTOP = '6rem';
@@ -77,7 +77,7 @@ const HvemViEr = props => {
 };
 
 const TitleWrapper = styled.div`
-  background-color: ${COLOR_CLAVE_SKIN};
+  background-color: ${COLOR_CLAVE_PEACH};
   ${onDesktop(`
   padding-top: ${PADDING_TOP_DESKTOP};
   
@@ -85,11 +85,6 @@ const TitleWrapper = styled.div`
   ${onMobile(`
   padding-top: ${PADDING_TOP_MOBILE};
   `)}
-`;
-
-const Ingress = styled.p`
-  font-size: 1.5rem;
-  line-height: 1.5;
 `;
 
 export default HvemViEr;
