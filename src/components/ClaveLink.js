@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import styled, { keyframes, css } from 'styled-components';
 import { COLOR_CLAVE_PINK, COLOR_CLAVE_GREEN, COLOR_CLAVE_YELLOW } from '../colors';
 import { ColorContext } from './Layout';
-import { onMobile } from './Breakpoints';
+import { onMobile, onDesktop } from './Breakpoints';
 
 export const ignoreStyle = styles => '';
 
@@ -71,6 +71,43 @@ const Underline = styled.div(props => css`
     display: ${props.showOnMobile ? "block" : "none"};
   `)}
 `);
+
+export const ArrowLink = styled(ClaveLink)`
+  display: flex;
+  font-size: 24px;
+  margin: 20px -15px -3px 0;
+  
+  &:after {
+    content: '';
+    width: 0;
+    height: 0;
+    display: block;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 20px solid transparent;
+  }
+
+  &:hover:after {
+    content: '';
+    width: 0;
+    height: 0;
+    margin-left: 20px;
+    margin-top: -2px;
+    display: block;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 20px solid ${COLOR_CLAVE_GREEN};
+    transform: scaleX(0.6) scaleY(0.6);
+  }
+
+  ${onDesktop(`
+  font-size: 32px;
+
+  &:hover:after {
+    margin-top: 5px;
+  }
+  `)}
+`;
 
 const ANCHOR_STYLES = css`
   text-decoration: none;

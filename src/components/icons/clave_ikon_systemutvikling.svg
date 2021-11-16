@@ -1,26 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 23.0.6, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-     viewBox="0 0 1920 1080" style="enable-background:new 0 0 1920 1080;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:#FA9691;}
-	.st1{fill:#002850;}
-	.st2{fill:#005550;}
-	.st3{fill:#FFBE2D;}
-</style>
-    <g id="TriPink_x5F_BlueScreen">
-	<polygon class="st0" points="1208.21,756.75 1137.63,879 1278.79,879 	"/>
-</g>
-    <g id="BlueScreen">
-	<rect x="953.96" y="450.61" class="st1" width="508.49" height="338.99"/>
-</g>
-    <g id="TriPink_x5F_GreenScreen">
-	<polygon class="st0" points="789.11,507.14 718.53,629.39 859.69,629.39 	"/>
-</g>
-    <g id="GreenScreen">
-	<rect x="534.86" y="201" class="st2" width="508.49" height="338.99"/>
-</g>
-    <g id="Yellow">
-	<rect x="953.96" y="450.61" class="st3" width="89.39" height="89.39"/>
-</g>
+<svg width="214" height="151" viewBox="0 0 214 151" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M155.285 123.773L139.008 151H171.561L155.285 123.773Z" fill="#FA9691"/>
+<path d="M213.916 55.5898H96.6504V131.087H213.916V55.5898Z" fill="#002850"/>
+<path d="M58.6342 68.1836L42.3574 95.4103H74.911L58.6342 68.1836Z" fill="#FA9691"/>
+<path d="M117.265 0H0V75.4975H117.265V0Z" fill="#005550"/>
+<path d="M117.265 55.5898H96.6504V75.4981H117.265V55.5898Z" fill="#FFBE2D"/>
 </svg>

@@ -30,6 +30,10 @@ const Header = ({
   const LinkComponent = styled(ClaveLink)`
     margin-left: 0.5rem;
     margin-right: 0.5rem;
+
+    &:hover {
+      font-weight: 600;
+    }
   `;
 
   const HamburgerMenyOptions = () => {
