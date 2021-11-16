@@ -273,6 +273,9 @@ const InfoBox = styled.div`
   ${
     onMobile(`
       width: auto;
+      h3 {
+        min-height: auto;
+      }
     `)
   }
 `;

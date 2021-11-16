@@ -32,7 +32,7 @@ const Header = ({
     margin-right: 0.5rem;
 
     &:hover {
-      font-weight: 600;
+      -webkit-text-stroke-width: 1px;
     }
   `;
 
