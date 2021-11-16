@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import Image from '../components/Image';
 import SEO from '../components/Seo';
@@ -8,6 +8,7 @@ import Header from '../components/Header';
 import Title from '../components/Title';
 import Layout, {
   ColorContext,
+  Container,
   DESKTOP_PADDING,
   MOBILE_PADDING,
 } from '../components/Layout';
@@ -15,40 +16,12 @@ import Footer from '../components/Footer';
 
 import './index.css';
 import JoinBanner from '../components/JoinBanner';
-import CtaLink from '../components/CtaLink';
 import { graphql, useStaticQuery } from 'gatsby';
 import BrukeropplevelseIcon from '../components/icons/clave_ikon_brukeropplevelse.svg';
 import SystemutviklingIcon from '../components/icons/clave_ikon_systemutvikling.svg';
 import RaadgivningIcon from '../components/icons/clave_ikon_radgivning.svg';
 import { onDesktop, onMobile } from '../components/Breakpoints';
-
-const FrontPageTextContent = styled.div`
-  padding-top: 3rem;
-`;
-
-const PADDING_TOP_DESKTOP = '6rem';
-const PADDING_TOP_MOBILE = '4.75rem';
-
-const InfoBox = styled.div`
-  padding-right: 1rem;
-  margin-right: 2.5rem;
-  max-width: 25rem;
-
-  ${onDesktop(`
-    flex: 1 1 33%;
-  `)}
-`;
-
-const InfoFlexbox = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  flex-direction: column;
-
-  ${onDesktop(`
-    flex-direction: row;
-  `)}
-`;
+import { ArrowLink } from '../components/ClaveLink';
 
 const inBrowser = typeof window !== 'undefined';
 
@@ -132,38 +105,45 @@ const IndexPage = () => {
               jobbene vi gjør og enda stoltere av relasjonene vi bygger med
               kundene våre.
             </h2>
-            <InfoFlexbox>
-              <InfoBox>
-                <BrukeropplevelseLogo />
-                <h3>Brukeropplevelse og UX-design</h3>
-                <p>
-                  De beste løsningene lager vi når vi forstår brukerne og deres
-                  behov. Vi gjennomfører alt fra behovskartlegging,
-                  brukertesting og større tjenestedesignprosjekter.
-                </p>
-              </InfoBox>
-              <InfoBox>
-                <SystemutviklingLogo />
-                <h3>Systemutvikling</h3>
-                <p>
-                  Vi lager intuitive og innovative løsninger som virker. Vi kan
-                  hele tjenestestacken: arkitektur, database, frontend,
-                  apputvikling, infrastruktur, nettverk og skytjenester.
-                </p>
-              </InfoBox>
-              <InfoBox>
-                <RaadgivningLogo />
-                <h3>Rådgivning og prosjektledelse</h3>
-                <p>
-                  Vi har lang erfaring med rådgivning innenfor teknologi,
-                  prosess og arkitektur. I samarbeid med kunden kommer vi frem
-                  til gode løsninger på komplekse problemer.
-                </p>
-              </InfoBox>
-            </InfoFlexbox>
-            <CtaLink to="/hva-vi-gjor">Se mer om hva vi gjør</CtaLink>
           </FrontPageTextContent>
         </Layout>
+        <Container>
+          <Container.Content>
+            <WideWrapper>
+              <h2>Vi liker å drive med</h2>
+              <InfoFlexbox>
+                <InfoBox>
+                  <BrukeropplevelseLogo />
+                  <h3>Brukeropplevelse og UX-design</h3>
+                  <p>
+                    De beste løsningene lager vi når vi forstår brukerne og deres
+                    behov. Vi gjennomfører alt fra behovskartlegging,
+                    brukertesting og større tjenestedesignprosjekter.
+                  </p>
+                </InfoBox>
+                <InfoBox>
+                  <SystemutviklingLogo />
+                  <h3>Systemutvikling</h3>
+                  <p>
+                    Vi lager intuitive og innovative løsninger som virker. Vi kan
+                    hele tjenestestacken: arkitektur, database, frontend,
+                    apputvikling, infrastruktur, nettverk og skytjenester.
+                  </p>
+                </InfoBox>
+                <InfoBox>
+                  <RaadgivningLogo />
+                  <h3>Rådgivning og prosjektledelse</h3>
+                  <p>
+                    Vi har lang erfaring med rådgivning innenfor teknologi,
+                    prosess og arkitektur. I samarbeid med kunden kommer vi frem
+                    til gode løsninger på komplekse problemer.
+                  </p>
+                </InfoBox>
+              </InfoFlexbox>
+              <ArrowLink to="/hva-vi-gjor">Se mer om hva vi gjør</ArrowLink>
+            </WideWrapper>
+          </Container.Content>
+        </Container>
         <JoinBanner images={images} />
       </main>
       <ColorContext.Provider value={GREEN_BACKGROUND}>
@@ -172,6 +152,13 @@ const IndexPage = () => {
     </>
   );
 };
+
+const PADDING_TOP_DESKTOP = '6rem';
+const PADDING_TOP_MOBILE = '4.75rem';
+
+const FrontPageTextContent = styled.div`
+  padding-top: 3rem;
+`;
 
 const TitleWrapper = styled.div`
   ${onDesktop(`
@@ -250,19 +237,60 @@ const PostsrollContent = styled(ScrollContent)`
     `circle(25vh at 85% 85%);`}
 `;
 
-const BrukeropplevelseLogo = styled(BrukeropplevelseIcon)`
+const LogoStyles = css`
   width: 15rem;
   height: auto;
+  margin-bottom: 20px;  
+`
+
+const BrukeropplevelseLogo = styled(BrukeropplevelseIcon)`${LogoStyles}`;
+
+const SystemutviklingLogo = styled(SystemutviklingIcon)`${LogoStyles}`;
+
+const RaadgivningLogo = styled(RaadgivningIcon)`${LogoStyles}`;
+
+const WideWrapper = styled.div`
+    padding: 0 6rem 8rem;
+
+    ${
+      onMobile(`
+      padding: 0 3rem 4rem;
+      `)
+    }
+`
+
+const InfoBox = styled.div`
+  max-width: 25rem;
+  min-width: 20rem;
+  margin-top: 30px;
+  flex-shrink: 1;
+  width: 30%;
+  
+  h3 {
+    min-height: 98px;
+  }
+
+  ${
+    onMobile(`
+      width: auto;
+      h3 {
+        min-height: auto;
+      }
+    `)
+  }
 `;
 
-const SystemutviklingLogo = styled(SystemutviklingIcon)`
-  width: 15rem;
-  height: auto;
-`;
+const InfoFlexbox = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 40px;
 
-const RaadgivningLogo = styled(RaadgivningIcon)`
-  width: 15rem;
-  height: auto;
+
+  ${onDesktop(`
+    flex-direction: row;
+  `)}
 `;
 
 export default IndexPage;

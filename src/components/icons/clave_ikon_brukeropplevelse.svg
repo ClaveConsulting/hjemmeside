@@ -1,31 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 23.0.6, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-     viewBox="0 0 1920 1080" style="enable-background:new 0 0 1920 1080;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:#FFBE2D;}
-	.st1{fill:#FA9691;}
-	.st2{fill:#002850;}
-	.st3{fill:#0064C8;}
-	.st4{fill:#005550;}
-</style>
-    <g id="Yellow">
-	<rect x="956.34" y="522.88" class="st0" width="329.29" height="219.52"/>
-</g>
-    <g id="PinkRoundedSquare">
-	<path class="st1" d="M839.55,742.4H650.03c-8.28,0-15-6.72-15-15V537.88c0-8.28,6.72-15,15-15h189.52c8.28,0,15,6.72,15,15V727.4
-		C854.55,735.69,847.83,742.4,839.55,742.4z"/>
-</g>
-    <g id="BlueSquare">
-	<rect x="1285.62" y="201" class="st2" width="219.52" height="219.52"/>
-</g>
-    <g id="BlueCircle">
-	<circle class="st3" cx="1066.1" cy="310.76" r="109.76"/>
-</g>
-    <g id="Green">
-	<rect x="415.5" y="201" class="st4" width="439.05" height="219.52"/>
-</g>
-    <g id="PinkArrow">
-	<polygon class="st1" points="1185.75,642.18 1249.2,879 1422.57,705.63 	"/>
-</g>
+<svg width="214" height="152" viewBox="0 0 214 152" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M169.941 73.0117H107V115.812H169.941V73.0117Z" fill="#FFBE2D"/>
+<path d="M83.934 115.812H46.9832C45.3688 115.812 44.0586 114.502 44.0586 112.887V75.9363C44.0586 74.3219 45.3688 73.0117 46.9832 73.0117H83.934C85.5484 73.0117 86.8586 74.3219 86.8586 75.9363V112.887C86.8586 114.503 85.5484 115.812 83.934 115.812Z" fill="#FA9691"/>
+<path d="M214 0H171.2V42.8H214V0Z" fill="#002850"/>
+<path d="M128.4 42.8C140.219 42.8 149.8 33.2189 149.8 21.4C149.8 9.58111 140.219 0 128.4 0C116.581 0 107 9.58111 107 21.4C107 33.2189 116.581 42.8 128.4 42.8Z" fill="#0064C8"/>
+<path d="M88.1176 0H0V42.8H88.1176V0Z" fill="#005550"/>
+<path d="M152.317 105.738L164.459 151.056L197.635 117.88L152.317 105.738Z" fill="#FA9691"/>
 </svg>
