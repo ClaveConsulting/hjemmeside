@@ -23,6 +23,7 @@ import RaadgivningIcon from '../components/icons/clave_ikon_radgivning.svg';
 import { onDesktop, onMobile } from '../components/Breakpoints';
 import { ArrowLink } from '../components/ClaveLink';
 import JoinSection from '../components/JoinSection';
+import { Ingress } from '../components/Ingress';
 
 const inBrowser = typeof window !== 'undefined';
 
@@ -100,12 +101,12 @@ const IndexPage = () => {
         </ColorContext.Provider>
         <Layout>
           <FrontPageTextContent>
-            <h2>
+            <Ingress>
               Vi brenner for teknologi, innovasjon og å lage de aller beste
               løsningene for menneskene som skal bruke dem. Vi er stolte av
               jobbene vi gjør og enda stoltere av relasjonene vi bygger med
               kundene våre.
-            </h2>
+            </Ingress>
           </FrontPageTextContent>
         </Layout>
         <Container>

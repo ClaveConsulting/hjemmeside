@@ -697,7 +697,7 @@ h4 {
     font-family: 'basis-grotesque-medium-pro', Fallback, sans-serif;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 720px) {
     h1 {
         font-size: 2.25rem;
         line-height: 3rem;
