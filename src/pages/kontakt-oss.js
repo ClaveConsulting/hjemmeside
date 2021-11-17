@@ -8,9 +8,9 @@ import SEO from '../components/Seo';
 import Header from '../components/Header';
 import { graphql, useStaticQuery } from 'gatsby';
 import { COLOR_CLAVE_GREEN, COLOR_CLAVE_PEACH } from '../colors';
-import JoinBanner from '../components/JoinBanner';
 import MyMapComponent from '../components/Map';
 import {onDesktop, onMobile} from '../components/Breakpoints';
+import JoinSection from '../components/JoinSection.js';
 
 const PADDING_TOP_DESKTOP = '6rem';
 const PADDING_TOP_MOBILE = '4.75rem';
@@ -86,7 +86,7 @@ const SecondPage = props => {
             </p>
             <Form />
           </Layout>
-          <JoinBanner images={images} />
+          <JoinSection images={images} />
         </main>
 
         <Footer />

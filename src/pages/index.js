@@ -15,7 +15,6 @@ import Layout, {
 import Footer from '../components/Footer';
 
 import './index.css';
-import JoinBanner from '../components/JoinBanner';
 import { graphql, useStaticQuery } from 'gatsby';
 import BrukeropplevelseIcon from '../components/icons/clave_ikon_brukeropplevelse.svg';
 import SystemutviklingIcon from '../components/icons/clave_ikon_systemutvikling.svg';
