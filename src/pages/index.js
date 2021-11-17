@@ -22,6 +22,7 @@ import SystemutviklingIcon from '../components/icons/clave_ikon_systemutvikling.
 import RaadgivningIcon from '../components/icons/clave_ikon_radgivning.svg';
 import { onDesktop, onMobile } from '../components/Breakpoints';
 import { ArrowLink } from '../components/ClaveLink';
+import JoinSection from '../components/JoinSection';
 
 const inBrowser = typeof window !== 'undefined';
 
@@ -144,7 +145,7 @@ const IndexPage = () => {
             </WideWrapper>
           </Container.Content>
         </Container>
-        <JoinBanner images={images} />
+        <JoinSection images={images} />
       </main>
       <ColorContext.Provider value={GREEN_BACKGROUND}>
         <Footer />
