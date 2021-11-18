@@ -48,14 +48,14 @@ const SecondPage = props => {
               <Contact1>
                 <h3>Steinar</h3>
                 <p>
-                  Sveen CEO <br /> + 47 908 86 980 <br />
+                  Sveen | CEO <br /> + 47 908 86 980 <br />
                   steinar.sveen@clave.no
                 </p>
               </Contact1>
               <Contact1>
                 <h3>Terje</h3>
                 <p>
-                  Aasgaard Salgssjef <br />+ 47 975 37 841 <br />
+                  Aasgaard | Salgssjef <br />+ 47 975 37 841 <br />
                   terje.aasgaard@clave.no
                 </p>
               </Contact1>

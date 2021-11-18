@@ -1,9 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { COLOR_CLAVE_BLUE, COLOR_CLAVE_GREEN, COLOR_CLAVE_LIGHTBLUE } from '../colors';
+import { COLOR_CLAVE_BLUE, COLOR_CLAVE_LIGHTBLUE } from '../colors';
 import Layout, { ColorContext } from './Layout';
 import { Gallery, GalleryImage } from './Gallery';
-import { ArrowLink } from './ClaveLink';
 import { Link } from 'gatsby';
 import { onMobile } from './Breakpoints';
 
@@ -16,14 +15,19 @@ const JoinSection = ({ images }) => {
       }}>
       <AsideDiv>
         <h2>Bli en av oss!</h2>
-        <ArrowLink showOnMobile to="/jobb-som-utvikler">Jobbe som utvikler</ArrowLink>
-        <PaddedP>
-          Som utvikler i Clave får du jobbe med det siste nye innen teknologi. <PLink to="/jobb-som-utvikler">Det kan du lese mer om her og se våre ledige stillinger.</PLink>
-        </PaddedP>
-        <ArrowLink showOnMobile to="/jobb-som-designer">Jobbe som designer</ArrowLink>
-        <PaddedP>
-          Nysgjerrig på hvordan det er å jobbe som designer i Clave? <PLink to="/jobb-som-designer">Les om det her og se ledige stillinger</PLink>
-        </PaddedP>
+        <h3>Jobbe som utvikler</h3>
+        <p>
+          Som utvikler i Clave får du jobbe med det siste nye innen teknologi.
+          <br/><br/>
+          <PLink to="/jobb-som-utvikler">Finn ut mer om det her</PLink>
+        </p>
+        <br/><br/>
+        <h3>Jobbe som designer</h3>
+        <p>
+          Nysgjerrig på hvordan det er å jobbe som designer i Clave?
+          <br/><br/>
+          <PLink to="/jobb-som-designer">Få svaret her</PLink>
+        </p>
       </AsideDiv>
       </ColorContext.Provider>
     )
@@ -74,10 +78,6 @@ const AsideDiv = styled.div`
     padding: 3rem;
     margin: 3rem -3rem 0;
   `)}
-`
-
-const PaddedP = styled.p`
-  padding-top: 0.75rem;
 `
 
 const PLink = styled(Link)`

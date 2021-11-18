@@ -1,13 +1,13 @@
 import React from 'react';
 import Layout from "../Layout";
-import styled from 'styled-components';
+import { Ingress } from '../Ingress';
 
 const ContactInfo = () => {
   return (
     <Layout>
-      <h2>
+      <Ingress>
         Ønsker du å stille oss flere spørsmål? <br/> Ring Terje på +47 975 37 841 eller send oss en mail
-      </h2>
+      </Ingress>
     </Layout>
   )
 }

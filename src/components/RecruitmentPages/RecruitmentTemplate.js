@@ -1,6 +1,4 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
-import styled from 'styled-components';
 import { ColorContext } from '../Layout';
 import Header from '../Header';
 import Footer from '../Footer';
