@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { onMobile } from '../Breakpoints';
 import { COLOR_CLAVE_BLUE, COLOR_CLAVE_LIGHTBLUE } from '../../colors';
-import { Link } from "gatsby";
 import Layout from "../Layout";
 
 
@@ -19,7 +18,7 @@ const SearchingForBanner = ({ positions }) => {
           activePositions.length === 0 ? 
             <p>...dyktige folk som ønsker å sende oss en åpen søknad.</p> :
             activePositions.map(p => 
-              <Link to={p.url}>{p.text}</Link>
+              <a href={p.url}>{p.text}</a>
             )
         }
       </Wrapper>
@@ -32,6 +31,10 @@ const Wrapper = styled.div`
   color: ${COLOR_CLAVE_BLUE};
   margin: -3rem -6rem -3rem 15%;
   padding: 3rem;
+
+  & > a {
+    color: ${COLOR_CLAVE_BLUE};
+  }
 
   & > a:visited {
     color: ${COLOR_CLAVE_BLUE};
