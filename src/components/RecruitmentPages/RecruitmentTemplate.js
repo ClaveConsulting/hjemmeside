@@ -1,5 +1,5 @@
 import React from 'react';
-import { ColorContext } from '../Layout';
+import Layout, { ColorContext } from '../Layout';
 import Header from '../Header';
 import Footer from '../Footer';
 import { COLOR_CLAVE_GREEN, COLOR_CLAVE_PEACH } from '../../colors';
@@ -7,6 +7,7 @@ import SEO from '../Seo';
 import ClaveInfo from './ClaveInfo';
 import ContactInfo from './ContactInfo';
 import SearchingForBanner from './SearchingForBanner';
+import { BackLink } from '../BackLink';
 
 const RecruitmentTemplate = props => {
   const {
@@ -28,6 +29,9 @@ const RecruitmentTemplate = props => {
           <ClaveInfo />
           <SearchingForBanner positions={positions} />
           <ContactInfo />
+          <Layout
+            asideContent={<BackLink to="/" />
+            } />
         </main>
       </ColorContext.Provider>
       <ColorContext.Provider

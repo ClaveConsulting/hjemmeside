@@ -33,6 +33,10 @@ const Wrapper = styled.div`
   margin: -3rem -6rem -3rem 15%;
   padding: 3rem;
 
+  & > a:visited {
+    color: ${COLOR_CLAVE_BLUE};
+  }
+
   ${
     onMobile(`
       margin:0 -3rem;

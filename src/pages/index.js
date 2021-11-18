@@ -20,7 +20,7 @@ import BrukeropplevelseIcon from '../components/icons/clave_ikon_brukeropplevels
 import SystemutviklingIcon from '../components/icons/clave_ikon_systemutvikling.svg';
 import RaadgivningIcon from '../components/icons/clave_ikon_radgivning.svg';
 import { onDesktop, onMobile } from '../components/Breakpoints';
-import { ArrowLink } from '../components/ClaveLink';
+import { RightArrowLink } from '../components/ClaveLink';
 import JoinSection from '../components/JoinSection';
 import { Ingress } from '../components/Ingress';
 
@@ -141,7 +141,7 @@ const IndexPage = () => {
                   </p>
                 </InfoBox>
               </InfoFlexbox>
-              <ArrowLink to="/hva-vi-gjor">Se mer om hva vi gjør</ArrowLink>
+              <RightArrowLink to="/hva-vi-gjor">Se mer om hva vi gjør</RightArrowLink>
             </WideWrapper>
           </Container.Content>
         </Container>

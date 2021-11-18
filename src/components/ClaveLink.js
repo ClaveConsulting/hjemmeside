@@ -72,7 +72,7 @@ const Underline = styled.div(props => css`
   `)}
 `);
 
-export const ArrowLink = styled(ClaveLink)`
+export const RightArrowLink = styled(ClaveLink)`
   display: flex;
   font-size: 24px;
   margin: 20px -15px -3px 0;
@@ -104,6 +104,42 @@ export const ArrowLink = styled(ClaveLink)`
   font-size: 32px;
 
   &:hover:after {
+    margin-top: 5px;
+  }
+  `)}
+`;
+
+export const LeftArrowLink = styled(ClaveLink)`
+  display: flex;
+  font-size: 24px;
+  margin: 20px 0px -3px -40px;
+  
+  &:before {
+    content: '';
+    width: 40px;
+    height: 0;
+    display: block;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 20px solid transparent;
+  }
+
+  &:hover:before {
+    content: '';
+    width: 0;
+    height: 0;
+    margin: -2px 20px -20px 0;
+    display: block;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 20px solid ${COLOR_CLAVE_GREEN};
+    transform: scaleX(-0.6) scaleY(0.6);
+  }
+
+  ${onDesktop(`
+  font-size: 32px;
+
+  &:hover:before {
     margin-top: 5px;
   }
   `)}
