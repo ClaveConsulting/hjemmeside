@@ -4,7 +4,7 @@ import { onMobile } from '../components/Breakpoints';
 import {
   COLOR_CLAVE_MUSTARD,
 } from '../colors';
-import { ArrowLink } from './ClaveLink';
+import { RightArrowLink } from './ClaveLink';
 
 export const Projects = () => {
   return (
@@ -13,9 +13,9 @@ export const Projects = () => {
       <p>Det er stort sett alltid flere Clavere ute hos de forskjellige kundene våre, og gjerne en blanding av UX-designere, 
         prosjektledere og utviklere. Vi jobber innenfor mange ulike felt: Nettbutikk, spa, post, bil, offentlig forvaltning og humanitært arbeid.
       </p>
-      <ArrowLink showOnMobile href={"/prosjekter/naf"}>NAF</ArrowLink>
-      <ArrowLink showOnMobile href={"/prosjekter/the-well"}>The Well</ArrowLink>
-      <ArrowLink showOnMobile href={"/prosjekter/komplett"}>Komplett</ArrowLink>
+      <RightArrowLink showOnMobile href={"/prosjekter/naf"}>NAF</RightArrowLink>
+      <RightArrowLink showOnMobile href={"/prosjekter/the-well"}>The Well</RightArrowLink>
+      <RightArrowLink showOnMobile href={"/prosjekter/komplett"}>Komplett</RightArrowLink>
     </ProjectList>
   );
 };

@@ -8,9 +8,9 @@ import SEO from '../components/Seo';
 import Header from '../components/Header';
 import { graphql, useStaticQuery } from 'gatsby';
 import { COLOR_CLAVE_GREEN, COLOR_CLAVE_PEACH } from '../colors';
-import JoinBanner from '../components/JoinBanner';
 import MyMapComponent from '../components/Map';
 import {onDesktop, onMobile} from '../components/Breakpoints';
+import JoinSection from '../components/JoinSection.js';
 
 const PADDING_TOP_DESKTOP = '6rem';
 const PADDING_TOP_MOBILE = '4.75rem';
@@ -48,14 +48,14 @@ const SecondPage = props => {
               <Contact1>
                 <h3>Steinar</h3>
                 <p>
-                  Sveen CEO <br /> + 47 908 86 980 <br />
+                  Sveen | CEO <br /> + 47 908 86 980 <br />
                   steinar.sveen@clave.no
                 </p>
               </Contact1>
               <Contact1>
                 <h3>Terje</h3>
                 <p>
-                  Aasgaard Salgssjef <br />+ 47 975 37 841 <br />
+                  Aasgaard | Salgssjef <br />+ 47 975 37 841 <br />
                   terje.aasgaard@clave.no
                 </p>
               </Contact1>
@@ -86,7 +86,7 @@ const SecondPage = props => {
             </p>
             <Form />
           </Layout>
-          <JoinBanner images={images} />
+          <JoinSection images={images} />
         </main>
 
         <Footer />

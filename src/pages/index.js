@@ -15,13 +15,14 @@ import Layout, {
 import Footer from '../components/Footer';
 
 import './index.css';
-import JoinBanner from '../components/JoinBanner';
 import { graphql, useStaticQuery } from 'gatsby';
 import BrukeropplevelseIcon from '../components/icons/clave_ikon_brukeropplevelse.svg';
 import SystemutviklingIcon from '../components/icons/clave_ikon_systemutvikling.svg';
 import RaadgivningIcon from '../components/icons/clave_ikon_radgivning.svg';
 import { onDesktop, onMobile } from '../components/Breakpoints';
-import { ArrowLink } from '../components/ClaveLink';
+import { RightArrowLink } from '../components/ClaveLink';
+import JoinSection from '../components/JoinSection';
+import { Ingress } from '../components/Ingress';
 
 const inBrowser = typeof window !== 'undefined';
 
@@ -99,12 +100,12 @@ const IndexPage = () => {
         </ColorContext.Provider>
         <Layout>
           <FrontPageTextContent>
-            <h2>
+            <Ingress>
               Vi brenner for teknologi, innovasjon og å lage de aller beste
               løsningene for menneskene som skal bruke dem. Vi er stolte av
               jobbene vi gjør og enda stoltere av relasjonene vi bygger med
               kundene våre.
-            </h2>
+            </Ingress>
           </FrontPageTextContent>
         </Layout>
         <Container>
@@ -140,11 +141,11 @@ const IndexPage = () => {
                   </p>
                 </InfoBox>
               </InfoFlexbox>
-              <ArrowLink to="/hva-vi-gjor">Se mer om hva vi gjør</ArrowLink>
+              <RightArrowLink to="/hva-vi-gjor">Se mer om hva vi gjør</RightArrowLink>
             </WideWrapper>
           </Container.Content>
         </Container>
-        <JoinBanner images={images} />
+        <JoinSection images={images} />
       </main>
       <ColorContext.Provider value={GREEN_BACKGROUND}>
         <Footer />
