@@ -43,26 +43,26 @@ const DeveloperPage = props => {
       <Layout>
         <h1>Jobbe som utvikler</h1>
         <Ingress>
-          I Clave leverer vi ikke bare tjenester innen systemutvikling og brukeropplevelse,
-          men folk som virkelig brenner for faget sitt! Vi har en bedriftskultur som er
-          tuftet på lagånd, åpenhet, og kunnskapsdeling. Det er dette vi kaller Claveånden.
+          Kjernen i alt vi driver med er folk som brenner for faget sitt og som er i kontinuerlig faglig utvikling. 
+          Clave ønsker å levere det beste innen systemutvikling, og mener at veien dit er en bedriftskultur som er tuftet på lagånd, åpenhet og kunnskapsdeling.
         </Ingress>
       </Layout>
       <MidSplitLayout image={images.yngve}>
-        <h2>Kan dette være deg?</h2>
+        <h2>Er dette deg?</h2>
         <p>
-          I Clave liker vi folk som har et brennende engasjement for jobben de gjør
-          og som ikke er redd for å gi det lille ekstra. Utviklere som
-          har erfaring med frontend eller backend-utvikling med Java eller
-          .NET passer godt inn hos oss. Vi liker at du er med å diskuterer ulike tilnærminger,
-          og så sammen komme frem til den optimale løsningen.
+          Er dette deg?
+        I Clave liker vi folk som har et stort engasjement for jobben de gjør og som ønsker å gi det lille ekstra. 
+        Utviklere som har erfaring med frontend eller backend-utvikling med Java eller .NET passer godt inn hos oss.
+          </p>
+        <p>
+        Vi liker at du er i stand til å diskutere ulike forslag og slik bidra til at vi sammen kommer fram til de optimale løsningene.
         </p>
         <p>
           Det skader ikke om du også:
           <List>
             <li>engasjeres av teknologi og ønsker å utvikle deg selv og dine kolleger</li>
             <li>trives i et sosialt arbeidsmiljø og kommuniserer godt med andre</li>
-            <li>er selvgående og har viljen til å stå opp for det du oppriktig tror er best</li>
+            <li>er selvgående og har evne til å argumentere for det du mener er den beste løsningen</li>
             <li>har relevant utdannelse fra universitet eller høgskole</li>
           </List>
         </p>
