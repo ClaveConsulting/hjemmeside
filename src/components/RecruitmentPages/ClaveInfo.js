@@ -6,20 +6,21 @@ const ClaveInfo = () => {
     <Layout>
       <h2>Hos oss i Clave</h2>
       <p>
-        Hos oss vil vi at alle skal oppleve et godt arbeidsmiljø og stor takhøyde.
-        Det mener vi er viktig. Og så har vi det morsomt på jobb.
-        Tverrfaglig samarbeid gjør oss sterke i møtet med faglige utfordringer.
-        Lagånd, positivitet og omsorg for kollegaene våre gjør oss trygge på hverandre.
-        Da kan vi lage de aller beste løsningene.
+        Det er veldig viktig for oss at alle skal oppleve et godt arbeidsmiljø og stor takhøyde. 
+    Dessuten har vi det morsomt på jobb! 
+    Gjennom tverrfaglig samarbeid blir vi sterke i møtet med faglige utfordringer, og utvikler oss både som fagpersoner og kollegaer.
       </p>
       <p>
-        Når det kommer til kundene våre satser vi på spennende og varierte prosjekter.
-        Vi mener at lederskap basert på tillit til de ansatte er viktig,
-        og at man får muligheten til å påvirke sin egen arbeidshverdag.
+        Lagånd, positivitet og omsorg for kollegaene våre gjør oss trygge på hverandre og på jobben vi gjør. 
+    I Clave tror vi det er oppskriften på å lage de aller beste løsningene.
       </p>
       <p>
-        Vi har konkurransedyktige betingelser, og et akskjeprogram med mulighet til å bli medeier.
-        Og viktigst av alt, et inkluderende og hyggelig arbeidsmiljø med ydmyke og flinke kolleger.
+       Vi jobber i spennende og varierte prosjekter ute hos kundene våre, og du kan selv påvirke hva du vil jobbe med og i hvilken retning du ønsker å utvikle deg. 
+    Lederskap basert på tillit til de ansatte står sentralt, og det er en selvfølge at du får mulighet til å påvirke din egen arbeidshverdag.
+      </p>
+      <p>
+       Clave tilbyr konkurransedyktige betingelser, og et aksjeprogram med mulighet til å bli medeier. 
+    Og viktigst av alt: Et inkluderende og hyggelig arbeidsmiljø med ydmyke og flinke kolleger.
       </p>
     </Layout>
   )
