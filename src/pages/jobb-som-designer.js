@@ -38,10 +38,7 @@ const DeveloperPage = props => {
       <Layout>
         <h1>Jobbe som designer</h1>
         <Ingress>
-          I Clave mener vi at de beste løsningene blir til ved god dialog og med 
-          folk som brenner for faget sitt. Vi skal derfor ikke bare levere 
-          tjenester innen systemutvikling og brukeropplevelse, men nøkkelpersoner 
-          med et stort hjerte for faget og kundenes forretning.
+        Vi omskaper gode ideer til fungerende løsninger ved hjelp av dialog, faglig tyngde og grundige designprosesser. Gjennom å lage intuitive og tiltalende designløsninger forener vi brukernes behov med kundenes ønsker. Det er viktig for Clave at vi leverer nøkkelpersoner med stort hjerte for faget og kundenes virksomhet.
         </Ingress>
       </Layout>
       <MidSplitLayout image={images.pia}>
