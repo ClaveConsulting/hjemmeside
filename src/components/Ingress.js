@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { onMobile } from "./Breakpoints";
 
 export const Ingress = styled.p`  
-  font-size: 3rem;
+  font-size: 2.5rem;
   line-height: 3.75rem;
   font-weight: 400;
   ${onMobile(`    
