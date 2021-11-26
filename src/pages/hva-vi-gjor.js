@@ -59,11 +59,11 @@ const SecondPage = props => {
           />
         </TitleWrapper>
         <Layout>
-          <h2>
+          <Ingress>
             Brukeropplevelse, systemutvikling og rådgivning er spesialiteten
             vår. Vi er stolte av jobbene vi gjør og enda stoltere av relasjonene
             vi bygger med kundene våre.
-          </h2>
+          </Ingress>
           <p>
             Vi lager løsninger for menneskene som skal bruke dem. Brukeren står
             derfor alltid i fokus når våre tverrfaglige team samarbeider om å
