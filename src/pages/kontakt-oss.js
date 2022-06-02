@@ -67,8 +67,8 @@ const SecondPage = props => {
                 <AsideContentLow>
                   <h3>Kom innom</h3>
                   <p className="CustomParagraph">
-                    Øvre Slottsgate 18-20 <br />
-                    0157 OSLO
+                    Kongens gate 12 <br />
+                    0153 OSLO
                   </p>
                 </AsideContentLow>
               </div>

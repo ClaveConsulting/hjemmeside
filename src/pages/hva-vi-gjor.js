@@ -12,6 +12,7 @@ import Image from '../components/Image';
 import { onDesktop, onMobile } from '../components/Breakpoints';
 import { COLOR_CLAVE_PEACH } from '../colors';
 import { Projects } from '../components/ProjectList';
+import { Ingress } from './../components/Ingress';
 
 const PADDING_TOP_DESKTOP = '6rem';
 const PADDING_TOP_MOBILE = '4.75rem';
