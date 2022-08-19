@@ -16,10 +16,10 @@ const SearchingForBanner = ({ positions }) => {
         </h2>
         {
           activePositions.length === 0 ? 
-            <p>...dyktige folk som ønsker å sende oss en åpen søknad.</p> :
-            activePositions.map(p => 
-              <a href={p.url}>{p.text}</a>
-            )
+            <p>...dyktige folk som ønsker å sende oss en åpen søknad.</p> : (<ul>
+            {activePositions.map(p => (
+              <li key={p.url}><a href={p.url}>{p.text}</a></li>
+            ))}</ul>)
         }
       </Wrapper>
     </Layout>
