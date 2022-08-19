@@ -9,14 +9,9 @@ import { Ingress } from '../components/Ingress';
 
 const positions = [
   {
-    text: "Deltids- og sommerjobb som UX-designer",
+    text: "Sommerjobb hos Clave 2023",
     active: false,
-    url: "https://www.poption.com/companies/clave/postings/08Of7G"
-  },
-  {
-    text: "Sommerjobb hos Clave 2022",
-    active: false,
-    url: "https://www.poption.com/companies/clave/postings/w42f2E"
+    url: "https://clave.homerun.co/sommerjobb-hos-clave-2023/no"
   },
 ]
 
