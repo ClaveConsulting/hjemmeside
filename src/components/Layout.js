@@ -60,7 +60,7 @@ const LayoutWrapper = styled.div`
   padding: ${MOBILE_PADDING};
 
   ${onDesktop(`
-    padding: ${DESKTOP_PADDING}
+    padding: ${DESKTOP_PADDING};
     flex-direction: row;
   `)}
 `;
