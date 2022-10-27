@@ -15,7 +15,7 @@ const positions = [
   },
   {
     text: 'Deltid- og sommerjobb som UX-designer',
-    active: true,
+    active: false,
     url: 'https://clave.homerun.co/deltid-og-sommerjobb-som-ux-designer'
   },
 ];

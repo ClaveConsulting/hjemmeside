@@ -20,7 +20,7 @@ const positions = [
   },
   {
     text: "Sommerjobb hos Clave 2023",
-    active: true,
+    active: false,
     url: "https://clave.homerun.co/sommerjobb-hos-clave-2023/no"
   },
 ]
