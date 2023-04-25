@@ -8,12 +8,12 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: "gatsby-plugin-react-svg",
+      resolve: 'gatsby-plugin-react-svg',
       options: {
         rule: {
-          include: path.resolve('src', 'components')
-        }
-      }
+          include: path.resolve('src', 'components'),
+        },
+      },
     },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-image`,
@@ -36,6 +36,12 @@ module.exports = {
         theme_color: `#005550`,
         display: `minimal-ui`,
         icon: `src/images/clave-icon.png`, // This path is relative to the root of the site.
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-simple-analytics',
+      options: {
+        trackPageViews: true,
       },
     },
   ],
