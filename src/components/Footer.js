@@ -53,7 +53,7 @@ const NoWrapText = styled.span`
   white-space: nowrap;
 `;
 
-const Footer = props => {
+const Footer = (props) => {
   const colorContext = useContext(ColorContext);
 
   const textColor = props.textColor || colorContext.textColor;
@@ -137,7 +137,15 @@ const Footer = props => {
                   </FooterLink>
                 </FooterListItem>
                 <FooterListItem>
-                  <ClaveTriangle />
+                  <div style={{ width: '16px' }}>
+                    <a
+                      target="_blank"
+                      rel="noopener"
+                      href="https://storewebclaveplatformer.z16.web.core.windows.net/"
+                    >
+                      <ClaveTriangle />
+                    </a>
+                  </div>
                 </FooterListItem>
               </FooterList>
             </FooterContent>
