@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import Layout from '../components/Layout';
 import Footer from '../components/Footer';
-import SEO from '../components/Seo';
+import Seo from '../components/Seo';
 import Header from '../components/Header';
 import PageHeader from '../components/PageHeader';
 import { useStaticQuery, graphql } from 'gatsby';
@@ -26,7 +26,7 @@ const HvemViEr = props => {
     <>
       <main>
         <Header {...props} />
-        <SEO title="Se hvem vi er" description="" />
+        <Seo title="Se hvem vi er" description="" />
         <TitleWrapper>
           <PageHeader
             title="Se hvem vi er"

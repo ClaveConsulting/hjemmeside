@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import styled, { css } from 'styled-components';
 
 import Image from '../components/Image';
-import SEO from '../components/Seo';
+import Seo from '../components/Seo';
 import { COLOR_CLAVE_GREEN, COLOR_CLAVE_PEACH } from '../colors';
 import Header from '../components/Header';
 import Title from '../components/Title';
@@ -66,7 +66,7 @@ const IndexPage = () => {
   return (
     <>
       <main>
-        <SEO title="Forside" />
+        <Seo title="Forside" />
         <ColorContext.Provider value={GREEN_BACKGROUND}>
           <StyledFirstSection>
             <StickyScrollBox >

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import Layout from '../components/Layout';
 import Footer from '../components/Footer';
-import SEO from '../components/Seo';
+import Seo from '../components/Seo';
 import Header from '../components/Header';
 import PageHeader from '../components/PageHeader';
 import { Gallery, GalleryImage } from '../components/Gallery';
@@ -17,7 +17,7 @@ import { Ingress } from './../components/Ingress';
 const PADDING_TOP_DESKTOP = '6rem';
 const PADDING_TOP_MOBILE = '4.75rem';
 
-const SecondPage = props => {
+const SecondPage = (props) => {
   const images = useStaticQuery(graphql`
     query {
       header: file(relativePath: { eq: "190920_Clave_lowres_2.jpg" }) {
@@ -48,7 +48,7 @@ const SecondPage = props => {
     <>
       <main>
         <Header {...props} />
-        <SEO title="Se hva vi gjør" description="" />
+        <Seo title="Se hva vi gjør" description="" />
         <TitleWrapper>
           <PageHeader
             title="Se hva vi gjør"
@@ -102,10 +102,11 @@ const SecondPage = props => {
             <UserTestingBlock>
               <h4>Brukertesting er viktig!</h4>
               <UserTestingText>
-                Steffen og Anniken er vårt brukervennlighetstest-team. De jobber
+                Vi har laget brukertesting som en egen tjeneste, fordi
+                brukertesting er jo noe alle trenger å gjøre jevnlig. Vi jobber
                 på tvers av de kundene vi har, og for andre som trenger å få
-                brukertestet. Vi har laget dette som en egen tjeneste, fordi
-                brukervennlighetstesting er jo noe alle trenger å gjøre jevnlig!
+                brukertestet løsningene sine. Kontakt oss hvis du ønsker å høre
+                mer om brukertesting og tjenesten vi leverer.
               </UserTestingText>
               <AsideImage
                 fluidImage={images.laptop}
@@ -160,12 +161,11 @@ const UserTestingBlock = styled.div`
   ${onMobile(`
     margin-top: 0;
   `)}
-`
+`;
 
 const UserTestingText = styled.p`
   font-size: 18px;
   line-height: 23.4px;
-`
-
+`;
 
 export default SecondPage;

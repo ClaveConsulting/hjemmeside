@@ -140,7 +140,7 @@ const Footer = (props) => {
                   <div style={{ width: '16px' }}>
                     <a
                       target="_blank"
-                      rel="noopener"
+                      rel="noopener noreferrer"
                       href="https://storewebclaveplatformer.z16.web.core.windows.net/"
                     >
                       <ClaveTriangle />

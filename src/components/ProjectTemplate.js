@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout, { ColorContext, Container } from '../components/Layout';
 import styled from 'styled-components';
-import SEO from '../components/Seo';
+import Seo from '../components/Seo';
 import Header from '../components/Header';
 import PageHeader from '../components/PageHeader';
 import { onDesktop, onMobile } from './Breakpoints';
@@ -45,7 +45,7 @@ export const ProjectPageTemplate = (props) => {
     >
       <main>
         <Header />
-        <SEO title={title} description="" />
+        <Seo title={title} description="" />
         <TitleWrapper>
           <PageHeader
             title={title}
