@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import Layout, { ColorContext } from '../components/Layout';
 import Footer from '../components/Footer';
-import SEO from '../components/Seo';
+import Seo from '../components/Seo';
 import Header from '../components/Header';
 import { graphql, useStaticQuery } from 'gatsby';
 import { COLOR_CLAVE_GREEN, COLOR_CLAVE_PEACH } from '../colors';
@@ -37,7 +37,7 @@ const SecondPage = props => {
       <>
         <main>
           <Header {...props} useSkinColoredHamburgerMenu={true} />
-          <SEO title="Kontakt oss" description="" />
+          <Seo title="Kontakt oss" description="" />
           <Layout>
             <TitleWrapper>
               <h1>Kontakt oss</h1>

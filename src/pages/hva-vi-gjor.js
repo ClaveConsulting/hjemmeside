@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import Layout from '../components/Layout';
 import Footer from '../components/Footer';
-import SEO from '../components/Seo';
+import Seo from '../components/Seo';
 import Header from '../components/Header';
 import PageHeader from '../components/PageHeader';
 import { Gallery, GalleryImage } from '../components/Gallery';
@@ -48,7 +48,7 @@ const SecondPage = (props) => {
     <>
       <main>
         <Header {...props} />
-        <SEO title="Se hva vi gjør" description="" />
+        <Seo title="Se hva vi gjør" description="" />
         <TitleWrapper>
           <PageHeader
             title="Se hva vi gjør"
