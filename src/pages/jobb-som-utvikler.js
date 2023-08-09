@@ -14,14 +14,14 @@ const positions = [
     url: "https://clave.homerun.co/senior-full-stack-developer-2/no"
   },
   {
-    text: "Nyutdannede utviklere til Clave 2023",
-    active: false,
-    url: "https://clave.homerun.co/nyutdannede-utviklere-til-clave-2023/no"
+    text: "Nyutdannede utviklere til Clave 2024 ",
+    active: true,
+    url: "https://clave.homerun.co/nyutdannede-utviklere-til-clave-2024/no"
   },
   {
-    text: "Sommerjobb hos Clave 2023",
-    active: false,
-    url: "https://clave.homerun.co/sommerjobb-hos-clave-2023/no"
+    text: "Sommerjobb hos Clave 2024",
+    active: true,
+    url: "https://clave.homerun.co/sommerjobb-hos-clave-2024/no"
   },
 ]
 
