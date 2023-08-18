@@ -75,7 +75,7 @@ const IndexPage = () => {
                 <StyledTextPanel>
                   <TitleWrapper>
                     <Title color={COLOR_CLAVE_PEACH}>
-                      Vi er en gjeng flinke designere og utviklere med stort
+                      Vi er en mange flinke designere og utviklere med stort
                       engasjement for det vi driver med
                     </Title>
                   </TitleWrapper>
