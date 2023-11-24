@@ -8,7 +8,7 @@ export const MAX_WIDTH = '120rem';
 export const MOBILE_PADDING = '3rem';
 export const DESKTOP_PADDING = '6rem';
 
-export const Container = props => {
+export const Container = (props) => {
   const { backgroundColor, textColor } = useContext(ColorContext);
 
   const ColoredContainer = styled.div`
@@ -70,15 +70,21 @@ export const ColorContext = React.createContext({
   textColor: COLOR_CLAVE_GREEN,
 });
 
-const Layout = ({ asideContent, children, className }) => {
+export function ContentColumn({ asideContent, children, className }) {
   const AsideWrapper = asideContent ? Aside : EmptyAsidePadding;
+  return (
+    <LayoutWrapper className={className}>
+      <AsideWrapper>{asideContent}</AsideWrapper>
+      <Section>{children}</Section>
+    </LayoutWrapper>
+  );
+}
+
+const Layout = ({ asideContent, children, className }) => {
   return (
     <Container className={className}>
       <Container.Content>
-        <LayoutWrapper>
-          <AsideWrapper>{asideContent}</AsideWrapper>
-          <Section>{children}</Section>
-        </LayoutWrapper>
+        <ContentColumn asideContent={asideContent}>{children}</ContentColumn>
       </Container.Content>
     </Container>
   );
