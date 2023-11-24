@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { COLOR_CLAVE_GREEN, COLOR_CLAVE_PEACH } from '../colors';
-import styled, {css} from 'styled-components';
+import styled, { css } from 'styled-components';
 import ClaveLink from './ClaveLink';
 import ClaveLogo from './icons/clave-logo.svg';
 import { Link } from 'gatsby';
@@ -63,15 +63,17 @@ const Header = ({
     ) : null;
   };
 
-  const HamburgerKnapp = () => {
-    return useSkinColoredHamburgerMenu ? (
-      <SkinColorHamburgerButton onClick={() => setMenuExpanded(!menuExpanded)}>
+  const HamburgerButton = () => {
+    const ButtonComponent = useSkinColoredHamburgerMenu
+      ? SkinColorHamburgerButton
+      : GreenColorHamburgerButton;
+    return (
+      <ButtonComponent
+        aria-label="Meny"
+        onClick={() => setMenuExpanded(!menuExpanded)}
+      >
         <StyledHamburgerIcon />
-      </SkinColorHamburgerButton>
-    ) : (
-      <GreenColorHamburgerButton onClick={() => setMenuExpanded(!menuExpanded)}>
-        <StyledHamburgerIcon />
-      </GreenColorHamburgerButton>
+      </ButtonComponent>
     );
   };
 
@@ -79,14 +81,14 @@ const Header = ({
 
   const newColorContext = frontPage
     ? {
-      backgroundColor: 'none',
-      textColor: textColor,
-    }
+        backgroundColor: 'none',
+        textColor: textColor,
+      }
     : colorContext;
 
   const WrapperComponent = styled(Wrapper)`
-        background: ${newColorContext.backgroundColor || COLOR_CLAVE_PEACH};
-      `;
+    background: ${newColorContext.backgroundColor || COLOR_CLAVE_PEACH};
+  `;
 
   return (
     <ColorContext.Provider value={newColorContext}>
@@ -95,7 +97,7 @@ const Header = ({
           <Container.Content>
             <StyledHeader frontPage={frontPage}>
               <WrapperComponent>
-                <Link to="/">
+                <Link aria-label="Forsiden til Clave.no" to="/">
                   <Logo />
                 </Link>
                 <InlineWrapper>
@@ -105,7 +107,7 @@ const Header = ({
                   <LinkComponent to="/hvem-vi-er">Se hvem vi er</LinkComponent>
                   <LinkComponent to="/kontakt-oss">Kontakt oss</LinkComponent>
                 </InlineWrapper>
-                <HamburgerKnapp />
+                <HamburgerButton />
               </WrapperComponent>
               <HamburgerMenyOptions />
             </StyledHeader>
@@ -119,7 +121,7 @@ const Header = ({
 const PADDING_TOP_DESKTOP = '4rem';
 const PADDING_TOP_MOBILE = '1.5rem';
 
-export const Logo = props => {
+export const Logo = (props) => {
   const { textColor } = useContext(ColorContext);
   const LogoInner = styled(ClaveLogo)`
     width: ${props.width || '5rem'};
@@ -145,12 +147,14 @@ const HamburgerButton = styled.button`
   `)}
 `;
 
-const StyledHeader = styled.header(props => css`
+const StyledHeader = styled.header(
+  (props) => css`
     padding: 0 ${MOBILE_PADDING};
     ${onDesktop(`
       padding: 0 ${DESKTOP_PADDING};
     `)}
-`);
+  `
+);
 
 const SkinColorHamburgerButton = styled(HamburgerButton)`
   fill: ${COLOR_CLAVE_PEACH};

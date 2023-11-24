@@ -73,7 +73,7 @@ const Footer = (props) => {
         <Container>
           <FooterContentContainer>
             <FooterLogoWrapper>
-              <Link to="/">
+              <Link to="/" aria-label='Forsiden til Clave.no'>
                 <Logo width="100px" />
               </Link>
             </FooterLogoWrapper>
@@ -142,6 +142,7 @@ const Footer = (props) => {
                       target="_blank"
                       rel="noopener noreferrer"
                       href="https://storewebclaveplatformer.z16.web.core.windows.net/"
+                      aria-label="Claveplatformer"
                     >
                       <ClaveTriangle />
                     </a>
