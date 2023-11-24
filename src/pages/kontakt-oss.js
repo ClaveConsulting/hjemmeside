@@ -1,5 +1,4 @@
 import React from 'react';
-import Form from '../components/Form/Form.js';
 import styled from 'styled-components';
 
 import Layout, { ColorContext } from '../components/Layout';
@@ -77,14 +76,6 @@ const SecondPage = props => {
             <div className="mapouter">
               <MyMapComponent />
             </div>
-          </Layout>
-          <Layout>
-            <h2>Send oss gjerne en melding</h2>
-            <p>
-              Trenger du hjelp til noe, ønsker å vite mer om hvordan det er å
-              jobbe hos oss eller rett og slett bare er litt nysgjerrig?
-            </p>
-            <Form />
           </Layout>
           <JoinSection images={images} />
         </main>
