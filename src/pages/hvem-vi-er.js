@@ -8,12 +8,8 @@ import Header from '../components/Header';
 import PageHeader from '../components/PageHeader';
 import { useStaticQuery, graphql } from 'gatsby';
 import { COLOR_CLAVE_PEACH } from '../colors';
-import { onDesktop, onMobile } from '../components/Breakpoints';
 
-const PADDING_TOP_DESKTOP = '6rem';
-const PADDING_TOP_MOBILE = '4.75rem';
-
-const HvemViEr = props => {
+const HvemViEr = (props) => {
   const images = useStaticQuery(graphql`
     query {
       header: file(relativePath: { eq: "190920_Clave_lowres_11.jpg" }) {
@@ -30,6 +26,12 @@ const HvemViEr = props => {
         <TitleWrapper>
           <PageHeader
             title="Se hvem vi er"
+            ingress={
+              <>
+                Vi mener at det er godt og litt annerledes å være en Claver. Vi
+                føler en tilhørighet både til selskapet og til kollegaene våre.
+              </>
+            }
             imageProps={{
               fluidImage: images.header,
               width: 1227,
@@ -38,11 +40,6 @@ const HvemViEr = props => {
           />
         </TitleWrapper>
         <Layout>
-          <h2>
-            Vi mener at det er godt og litt annerledes å være en Claver. Vi
-            føler en tilhørighet både til selskapet og til kollegaene våre.
-          </h2>
-
           <p>
             Det er flest hverdager i året, og i denne hverdagen setter vi
             trivsel og trygghet høyt. Vi har det morsomt på jobb. Tverrfaglig
@@ -78,13 +75,6 @@ const HvemViEr = props => {
 
 const TitleWrapper = styled.div`
   background-color: ${COLOR_CLAVE_PEACH};
-  ${onDesktop(`
-  padding-top: ${PADDING_TOP_DESKTOP};
-  
-  `)}
-  ${onMobile(`
-  padding-top: ${PADDING_TOP_MOBILE};
-  `)}
 `;
 
 export default HvemViEr;

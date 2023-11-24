@@ -9,13 +9,9 @@ import PageHeader from '../components/PageHeader';
 import { Gallery, GalleryImage } from '../components/Gallery';
 import { graphql, useStaticQuery } from 'gatsby';
 import Image from '../components/Image';
-import { onDesktop, onMobile } from '../components/Breakpoints';
+import { onMobile } from '../components/Breakpoints';
 import { COLOR_CLAVE_PEACH } from '../colors';
 import { Projects } from '../components/ProjectList';
-import { Ingress } from './../components/Ingress';
-
-const PADDING_TOP_DESKTOP = '6rem';
-const PADDING_TOP_MOBILE = '4.75rem';
 
 const SecondPage = (props) => {
   const images = useStaticQuery(graphql`
@@ -52,6 +48,13 @@ const SecondPage = (props) => {
         <TitleWrapper>
           <PageHeader
             title="Se hva vi gjør"
+            ingress={
+              <>
+                Brukeropplevelse, systemutvikling og rådgivning er
+                spesialitetene våre. Vi er stolte av jobbene vi gjør og enda
+                stoltere av relasjonene vi bygger med kundene våre.
+              </>
+            }
             imageProps={{
               fluidImage: images.header,
               width: 1227,
@@ -60,11 +63,6 @@ const SecondPage = (props) => {
           />
         </TitleWrapper>
         <Layout>
-          <Ingress>
-            Brukeropplevelse, systemutvikling og rådgivning er spesialitetene
-            våre. Vi er stolte av jobbene vi gjør og enda stoltere av
-            relasjonene vi bygger med kundene våre.
-          </Ingress>
           <p>
             Vi lager løsninger for menneskene som skal bruke dem. Brukeren står
             derfor alltid i fokus når våre tverrfaglige team samarbeider om å
@@ -141,13 +139,6 @@ const SecondPage = (props) => {
 
 const TitleWrapper = styled.div`
   background-color: ${COLOR_CLAVE_PEACH};
-  ${onDesktop(`
-  padding-top: ${PADDING_TOP_DESKTOP};
-  
-  `)}
-  ${onMobile(`
-  padding-top: ${PADDING_TOP_MOBILE};
-  `)}
 `;
 
 const AsideImage = styled(Image)`

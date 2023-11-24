@@ -1,26 +1,30 @@
 import React from 'react';
 import styled from 'styled-components';
-import { MOBILE_PADDING, Container } from './Layout';
+import { MOBILE_PADDING, Container, ContentColumn } from './Layout';
 import Image from './Image';
 import { onDesktop, onMobile } from './Breakpoints';
+import { Ingress } from './Ingress';
 
-const PageHeader = ({ title, imageProps }) => {
+const PageHeader = ({ title, ingress = undefined, imageProps }) => {
   return (
     <Container>
       <PageHeaderWrapper>
-        <PageHeaderTitle>{title}</PageHeaderTitle>
+        <PageHeaderContent>
+          <PageHeaderTitle>{title}</PageHeaderTitle>
+          {ingress ? <Ingress>{ingress}</Ingress> : null}
+        </PageHeaderContent>
         <PageHeaderImage {...imageProps} />
       </PageHeaderWrapper>
     </Container>
   );
 };
 
+const PageHeaderContent = styled(ContentColumn)`
+  padding-bottom: 2rem;
+`;
+
 const PageHeaderWrapper = styled(Container.Content)`
   margin: 0 auto;
-
-  ${onDesktop(`
-    text-align: center;
-  `)}
 
   padding: 0 0 0 ${MOBILE_PADDING};
 
@@ -59,7 +63,7 @@ const PageHeaderLoadedImage = styled(Image)`
   ${imageStyle}
 `;
 const PageHeaderTitle = styled.h1`
-    ${onDesktop(`
+  ${onDesktop(`
     margin-bottom:4rem;
   `)}
   ${onMobile(`

@@ -4,13 +4,15 @@ import styled from 'styled-components';
 import Seo from '../components/Seo';
 import Header from '../components/Header';
 import PageHeader from '../components/PageHeader';
-import { onDesktop, onMobile } from './Breakpoints';
 
 import { ProjectGallery } from './ProjectGallery';
 import Footer from './Footer';
 
-const PADDING_TOP_DESKTOP = '6rem';
-const PADDING_TOP_MOBILE = '4.75rem';
+const TitleWrapper = styled.div.attrs(({ backgroundColor = "peach" }) => ({
+  backgroundColor,
+}))`
+  background-color: ${({ backgroundColor }) => backgroundColor};
+`;
 
 export const ProjectPageTemplate = (props) => {
   const {
@@ -24,17 +26,8 @@ export const ProjectPageTemplate = (props) => {
     technology,
     finalText,
     backgroundColor,
-    textColor } = props;
-
-  const TitleWrapper = styled.div`
-    background-color: ${backgroundColor};
-    ${onDesktop(`
-      padding-top: ${PADDING_TOP_DESKTOP};
-    `)} 
-    ${onMobile(`
-      padding-top: ${PADDING_TOP_MOBILE};
-    `)};
-  `;
+    textColor,
+  } = props;
 
   return (
     <ColorContext.Provider
@@ -46,9 +39,10 @@ export const ProjectPageTemplate = (props) => {
       <main>
         <Header />
         <Seo title={title} description="" />
-        <TitleWrapper>
+        <TitleWrapper backgroundColor={backgroundColor}>
           <PageHeader
             title={title}
+            ingress={ingress}
             imageProps={{
               fluidImage: mainImg,
               width: 1227,
@@ -56,11 +50,6 @@ export const ProjectPageTemplate = (props) => {
             }}
           />
         </TitleWrapper>
-        <Layout>
-          <Ingress>
-            {ingress}
-          </Ingress>
-        </Layout>
         <BodyTextLayout
           asideContent={<ProjectKeywords>{keywords}</ProjectKeywords>}
         >
@@ -89,7 +78,7 @@ export const ProjectKeywords = ({ children }) => {
     return null;
   }
 
-  const keywordList = children.map(fact => (
+  const keywordList = children.map((fact) => (
     <KeywordElement key={fact}>{fact}</KeywordElement>
   ));
 
