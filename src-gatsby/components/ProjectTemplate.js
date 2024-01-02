@@ -1,9 +1,9 @@
 import React from 'react';
-import Layout, { ColorContext, Container } from '../components/Layout';
+import Layout, { ColorContext, Container } from './Layout';
 import styled from 'styled-components';
-import Seo from '../components/Seo';
-import Header from '../components/Header';
-import PageHeader from '../components/PageHeader';
+import Seo from './Seo';
+import Header from './Header';
+import PageHeader from './PageHeader';
 
 import { ProjectGallery } from './ProjectGallery';
 import Footer from './Footer';

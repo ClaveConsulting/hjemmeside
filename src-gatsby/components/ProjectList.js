@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { onMobile } from '../components/Breakpoints';
+import { onMobile } from './Breakpoints';
 import {
   COLOR_CLAVE_MUSTARD,
 } from '../colors';
@@ -10,7 +10,7 @@ export const Projects = () => {
   return (
     <ProjectList>
       <h2>Sjekk ut hva vi gjør hos kundene våre</h2>
-      <p>Det er stort sett alltid flere Clavere ute hos de forskjellige kundene våre, og gjerne en blanding av UX-designere, 
+      <p>Det er stort sett alltid flere Clavere ute hos de forskjellige kundene våre, og gjerne en blanding av UX-designere,
         prosjektledere og utviklere. Vi jobber innenfor mange ulike felt: Nettbutikk, spa, post, bil, offentlig forvaltning og humanitært arbeid.
       </p>
       <RightArrowLink showOnMobile href={"/prosjekter/naf"}>NAF</RightArrowLink>
