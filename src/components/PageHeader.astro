@@ -1,0 +1,62 @@
+---
+
+interface Props {
+    title: string;
+    ingress: string;
+    imageProps: {
+        src: string;
+        fluidImage: string;
+    };
+}
+const { title, ingress, imageProps } = Astro.props;
+
+---
+
+<div class="container">
+    <div class="page-header-wrapper">
+        <div class="page-header-content">
+            <h1 class="page-header-title">{title}</h1>
+          {ingress ? <p class="ingress">{ingress}</p> : null}
+        </div>
+        <!--<div class="page-header-image">-->
+        <!--  {imageProps.fluidImage ? (-->
+        <!--          <img src={imageProps.fluidImage} alt="Fluid Image" {...imageProps}/>-->
+        <!--  ) : (-->
+        <!--          <img src={imageProps.src} alt="Image" {...imageProps}/>-->
+        <!--  )}-->
+        <!--</div>-->
+    </div>
+</div>
+<style>
+    /* Basic CSS for PageHeader component */
+    .container {
+        /* Styles for Container */
+        /* Define your styles */
+    }
+
+    .page-header-wrapper {
+        /* Styles for PageHeaderWrapper */
+        /* Define your styles */
+    }
+
+    .page-header-content {
+        /* Styles for PageHeaderContent */
+        /* Define your styles */
+    }
+
+    .page-header-title {
+        /* Styles for PageHeaderTitle */
+        /* Define your styles */
+    }
+
+    .ingress {
+        /* Styles for Ingress */
+        /* Define your styles */
+    }
+
+    .page-header-image {
+        /* Styles for PageHeaderImage */
+        /* Define your styles */
+    }
+
+</style>
