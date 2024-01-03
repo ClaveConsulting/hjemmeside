@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'basis-grotesque-medium-pro';
+    src: url('basis-grotesque-medium-pro.eot');
+    src: url('basis-grotesque-medium-pro.eot?#iefix') format('embedded-opentype'),
+    url('basis-grotesque-medium-pro.woff2') format('woff2'),
+    url('basis-grotesque-medium-pro.woff') format('woff'),
+    url('basis-grotesque-medium-pro.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'basis-grotesque-regular-pro';
+    src: url('basis-grotesque-regular-pro.eot');
+    src: url('basis-grotesque-regular-pro.eot?#iefix') format('embedded-opentype'),
+    url('basis-grotesque-regular-pro.woff2') format('woff2'),
+    url('basis-grotesque-regular-pro.woff') format('woff'),
+    url('basis-grotesque-regular-pro.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

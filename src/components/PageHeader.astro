@@ -28,35 +28,62 @@ const { title, ingress, imageProps } = Astro.props;
     </div>
 </div>
 <style>
-    /* Basic CSS for PageHeader component */
+
+    /* PageHeader.css */
+
     .container {
-        /* Styles for Container */
-        /* Define your styles */
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
     }
 
     .page-header-wrapper {
-        /* Styles for PageHeaderWrapper */
-        /* Define your styles */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
     }
 
     .page-header-content {
-        /* Styles for PageHeaderContent */
-        /* Define your styles */
+        flex: 1;
     }
 
     .page-header-title {
-        /* Styles for PageHeaderTitle */
-        /* Define your styles */
+        font-size: 2rem;
+        margin-bottom: 1rem;
     }
 
     .ingress {
-        /* Styles for Ingress */
-        /* Define your styles */
+        font-size: 2.5rem;
+        line-height: 3rem;
+        font-weight: 400;
     }
 
     .page-header-image {
-        /* Styles for PageHeaderImage */
-        /* Define your styles */
+        flex: 1;
+        max-width: 50%;
+    }
+
+    .page-header-image img {
+        display: block;
+        width: 100%;
+        height: auto;
+        margin: 0;
+    }
+
+    @media (min-width: 768px) {
+        .container {
+            padding: 0 40px;
+        }
+
+        .page-header-wrapper {
+            padding: 40px 0;
+        }
+
+        .page-header-title {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+        }
     }
 
 </style>
