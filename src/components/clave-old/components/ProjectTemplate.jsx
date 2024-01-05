@@ -11,7 +11,7 @@ import Footer from './Footer';
 const TitleWrapper = styled.div.attrs(({ backgroundColor = "peach" }) => ({
   backgroundColor,
 }))`
-  background-color: ${({ backgroundColor }) => backgroundColor};
+    background-color: ${({ backgroundColor }) => backgroundColor};
 `;
 
 export const ProjectPageTemplate = (props) => {
@@ -44,7 +44,7 @@ export const ProjectPageTemplate = (props) => {
             title={title}
             ingress={ingress}
             imageProps={{
-              fluidImage: mainImg,
+              src: mainImg,
               width: 1227,
               height: 728,
             }}
@@ -91,25 +91,25 @@ export const ProjectKeywords = ({ children }) => {
 };
 
 const BodyTextLayout = styled(Layout)`
-  padding-bottom: 2rem;
+    padding-bottom: 2rem;
 `;
 
 const KeywordElement = styled.p`
-  font-size: 18px;
-  line-height: 1.5;
+    font-size: 18px;
+    line-height: 1.5;
 `;
 
 const KeywordHeader = styled.h2`
-  font-size: 24px;
-  line-height: 1.5;
+    font-size: 24px;
+    line-height: 1.5;
 `;
 
 const KeywordComponent = styled.div`
-  margin-left: 4rem;
-  width: 13rem;
+    margin-left: 4rem;
+    width: 13rem;
 `;
 
 export const Ingress = styled.p`
-  font-size: 2rem;
-  line-height: 1.5;
+    font-size: 2rem;
+    line-height: 1.5;
 `;

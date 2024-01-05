@@ -7,38 +7,16 @@ import Seo from '../components/Seo';
 import Header from '../components/Header';
 import PageHeader from '../components/PageHeader';
 import { Gallery, GalleryImage } from '../components/Gallery';
-import { graphql, useStaticQuery } from 'gatsby';
-import Image from '../components/Image';
 import { onMobile } from '../components/Breakpoints';
 import { COLOR_CLAVE_PEACH } from '../colors';
 import { Projects } from '../components/ProjectList';
+import headerBilde from '../images/190920_Clave_lowres_2.jpg';
+import larsPetterBilde from '../images/190920_Clave_lowres_14.jpg';
+import pointingBilde from '../images/190920_Clave_lowres_9.jpg';
+import laptopBilde from '../images/190920_Clave_lowres_16.jpg';
+
 
 const SecondPage = (props) => {
-  const images = useStaticQuery(graphql`
-    query {
-      header: file(relativePath: { eq: "190920_Clave_lowres_2.jpg" }) {
-        ...fluidImage
-      }
-      larsPetter: file(relativePath: { eq: "190920_Clave_lowres_14.jpg" }) {
-        ...fluidImage
-      }
-      pointing: file(relativePath: { eq: "190920_Clave_lowres_9.jpg" }) {
-        ...fluidImage
-      }
-      laptop: file(relativePath: { eq: "190920_Clave_lowres_16.jpg" }) {
-        ...fluidImage
-      }
-      komplett: file(relativePath: { eq: "190920_Clave_lowres_8.jpg" }) {
-        ...fluidImage
-      }
-      theWell: file(relativePath: { eq: "190920_Clave_lowres_15.jpg" }) {
-        ...fluidImage
-      }
-      naf: file(relativePath: { eq: "190920_Clave_lowres_13.jpg" }) {
-        ...fluidImage
-      }
-    }
-  `);
 
   return (
     <>
@@ -56,7 +34,7 @@ const SecondPage = (props) => {
               </>
             }
             imageProps={{
-              fluidImage: images.header,
+              src: headerBilde,
               width: 1227,
               height: 728,
             }}
@@ -107,7 +85,7 @@ const SecondPage = (props) => {
                 mer om brukertesting og tjenesten vi leverer.
               </UserTestingText>
               <AsideImage
-                fluidImage={images.laptop}
+                src={laptopBilde}
                 width="387"
                 height="279"
                 alt="Brukertesting"
@@ -118,13 +96,14 @@ const SecondPage = (props) => {
           <Projects />
           <Gallery>
             <GalleryImage
-              fluidImage={images.larsPetter}
+              // fluidImage={images.larsPetter}
+              src={larsPetterBilde}
               width="681"
               height="470"
               alt="Lars-Petter og Yngve"
             />
             <GalleryImage
-              fluidImage={images.pointing}
+              src={pointingBilde}
               width="306"
               height="368"
               alt="Pekefinger"
@@ -141,7 +120,7 @@ const TitleWrapper = styled.div`
   background-color: ${COLOR_CLAVE_PEACH};
 `;
 
-const AsideImage = styled(Image)`
+const AsideImage = styled.img`
   width: 100%;
   height: auto;
   display: block;

@@ -6,7 +6,6 @@ import Layout, { ColorContext } from '../components/Layout';
 import Footer from '../components/Footer';
 import Seo from '../components/Seo';
 import Header from '../components/Header';
-import { graphql, useStaticQuery } from 'gatsby';
 import { COLOR_CLAVE_GREEN, COLOR_CLAVE_PEACH } from '../colors';
 import MyMapComponent from '../components/Map';
 import {onDesktop, onMobile} from '../components/Breakpoints';
@@ -16,16 +15,6 @@ const PADDING_TOP_DESKTOP = '6rem';
 const PADDING_TOP_MOBILE = '4.75rem';
 
 const SecondPage = props => {
-  const images = useStaticQuery(graphql`
-    query {
-      karine: file(relativePath: { eq: "190920_Clave_lowres_5.jpg" }) {
-        ...fluidImage
-      }
-      anniken: file(relativePath: { eq: "190920_Clave_lowres_12.jpg" }) {
-        ...fluidImage
-      }
-    }
-  `);
 
   return (
     <ColorContext.Provider
@@ -86,7 +75,7 @@ const SecondPage = props => {
             </p>
             <Form />
           </Layout>
-          <JoinSection images={images} />
+          <JoinSection />
         </main>
 
         <Footer />

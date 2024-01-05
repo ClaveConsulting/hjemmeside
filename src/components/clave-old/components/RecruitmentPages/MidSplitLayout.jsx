@@ -1,7 +1,6 @@
 import '../layout.css';
 import React from "react";
 import styled from 'styled-components';
-import Image from '../Image';
 import { onDesktop } from '../Breakpoints';
 import { COLOR_CLAVE_GREEN, COLOR_CLAVE_PEACH } from '../../colors';
 
@@ -16,7 +15,7 @@ const MidSplitLayout = props => {
     <Wrapper>
       <Content>
       <Left>
-        <Image alt="" width="833" height="566" fluidImage={image} />        
+        <Image alt="" width="833" height="566" src={image} />
       </Left>
       <Right>{props.children}</Right>
       </Content>

@@ -6,17 +6,10 @@ import Footer from '../components/Footer';
 import Seo from '../components/Seo';
 import Header from '../components/Header';
 import PageHeader from '../components/PageHeader';
-import { useStaticQuery, graphql } from 'gatsby';
 import { COLOR_CLAVE_PEACH } from '../colors';
+import headerBilde from '../images/190920_Clave_lowres_11.jpg';
 
 const HvemViEr = (props) => {
-  const images = useStaticQuery(graphql`
-    query {
-      header: file(relativePath: { eq: "190920_Clave_lowres_11.jpg" }) {
-        ...fluidImage
-      }
-    }
-  `);
 
   return (
     <>
@@ -33,7 +26,7 @@ const HvemViEr = (props) => {
               </>
             }
             imageProps={{
-              fluidImage: images.header,
+              src: headerBilde,
               width: 1227,
               height: 728,
             }}
@@ -74,7 +67,7 @@ const HvemViEr = (props) => {
 };
 
 const TitleWrapper = styled.div`
-  background-color: ${COLOR_CLAVE_PEACH};
+    background-color: ${COLOR_CLAVE_PEACH};
 `;
 
 export default HvemViEr;

@@ -2,7 +2,6 @@ import React from 'react';
 import {
   ProjectPageTemplate,
 } from '../../components/ProjectTemplate';
-import { useStaticQuery, graphql } from 'gatsby';
 import { COLOR_CLAVE_GREEN, COLOR_CLAVE_SUNNY } from '../../colors';
 
 const ProjectPage = () => {

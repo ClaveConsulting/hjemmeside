@@ -2,29 +2,18 @@ import React from 'react';
 import {
   ProjectPageTemplate,
 } from '../../components/ProjectTemplate';
-import { useStaticQuery, graphql } from 'gatsby';
 import { COLOR_CLAVE_GREEN, COLOR_CLAVE_SUNNY } from '../../colors';
+import mainBilde from '../../images/190920_Clave_lowres_15.jpg';
+import leftBilde from '../../images/190920_Clave_lowres_14.jpg';
+import rightBilde from '../../images/190920_Clave_lowres_12.jpg';
 
 const ProjectPage = () => {
-  const images = useStaticQuery(graphql`
-    query {
-      main: file(relativePath: { eq: "190920_Clave_lowres_15.jpg" }) {
-        ...fluidImage
-      }
-      left: file(relativePath: { eq: "190920_Clave_lowres_14.jpg" }) {
-        ...fluidImage
-      }
-      right: file(relativePath: { eq: "190920_Clave_lowres_12.jpg" }) {
-        ...fluidImage
-      }
-    }
-  `);
 
   return (
         <ProjectPageTemplate
-          mainImg={images.main}
-          firstImg={images.left}
-          secondImg={images.right}
+          mainImg={mainBilde}
+          firstImg={leftBilde}
+          secondImg={rightBilde}
           title="The Well"
           ingress="Hos The Well jobber vi for å gjøre det enkelt å slappe av. Vi har fått muligheten til å jobbe med nytt design på nettsidene, kjøpsprosessen og ny bookingløsning."
           keywords={[
@@ -32,8 +21,6 @@ const ProjectPage = () => {
             'Omtrent 5.000 arbeidstimer per år',
             'UX’er, front- og backend utviklere',
           ]}
-          leftImg={images.first}
-          rightImg={images.second}
           methodology="Lean"
           technology="Teknologi .NET Core, React.js, Azure, MS SQL Server, Azure DevOps, Umbraco CMS, Kanban"
           finalText="The Well er Nordens største spa- og velværesenter som ligger på Kolbotn. Her finner du 10,500 kvm med bassenger og forskjellige saunarom."

@@ -6,7 +6,6 @@ import Layout, { ColorContext } from '../components/Layout';
 import Footer from '../components/Footer';
 import Seo from '../components/Seo';
 import Header from '../components/Header';
-import { graphql, useStaticQuery } from 'gatsby';
 import { COLOR_CLAVE_GREEN, COLOR_CLAVE_PEACH } from '../colors';
 import MyMapComponent from '../components/Map';
 import {onDesktop, onMobile} from '../components/Breakpoints';
@@ -16,16 +15,6 @@ const PADDING_TOP_DESKTOP = '6rem';
 const PADDING_TOP_MOBILE = '4.75rem';
 
 const SecondPage = props => {
-  const images = useStaticQuery(graphql`
-    query {
-      karine: file(relativePath: { eq: "190920_Clave_lowres_5.jpg" }) {
-        ...fluidImage
-      }
-      anniken: file(relativePath: { eq: "190920_Clave_lowres_12.jpg" }) {
-        ...fluidImage
-      }
-    }
-  `);
 
   return (
     <ColorContext.Provider
@@ -86,7 +75,7 @@ const SecondPage = props => {
             </p>
             <Form />
           </Layout>
-          <JoinSection images={images} />
+          <JoinSection />
         </main>
 
         <Footer />
@@ -96,34 +85,34 @@ const SecondPage = props => {
 };
 
 const TitleWrapper = styled.div`
-background-color: ${COLOR_CLAVE_GREEN};
+    background-color: ${COLOR_CLAVE_GREEN};
     ${onDesktop(`
   padding-top: ${PADDING_TOP_DESKTOP};
   
   `)}
-      ${onMobile(`
+    ${onMobile(`
   padding-top: ${PADDING_TOP_MOBILE};
   `)}
 `;
 
 const AsideContentLow = styled.span`
-  display: inline-block;
-  align-self: flex-end;
+    display: inline-block;
+    align-self: flex-end;
 `;
 
 const ContactInfo = styled.div`
-  max-width: 1280px;
-  display: flex;
-  flex-direction: column;
-  padding-left: 0;
+    max-width: 1280px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
 
-  ${onDesktop(`
+    ${onDesktop(`
   flex-direction: row;
 `)}
 `;
 
 const Contact1 = styled.div`
-  ${onDesktop(`
+    ${onDesktop(`
     flex: 1 1 50%;
     padding: 1rem 0rem 0rem;
   `)}

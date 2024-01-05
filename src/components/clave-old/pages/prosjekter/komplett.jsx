@@ -2,29 +2,18 @@ import React from 'react';
 import {
   ProjectPageTemplate,
 } from '../../components/ProjectTemplate';
-import { useStaticQuery, graphql } from 'gatsby';
 import { COLOR_CLAVE_GREEN, COLOR_CLAVE_SUNNY } from '../../colors';
+import mainBilde from '../../images/190920_Clave_lowres_8.jpg';
+import leftBilde from '../../images/190920_Clave_lowres_7.jpg';
+import rightBilde from '../../images/190920_Clave_lowres_3.jpg';
 
 const ProjectPage = () => {
-  const images = useStaticQuery(graphql`
-    query {
-      main: file(relativePath: { eq: "190920_Clave_lowres_8.jpg" }) {
-        ...fluidImage
-      }
-      left: file(relativePath: { eq: "190920_Clave_lowres_7.jpg" }) {
-        ...fluidImage
-      }
-      right: file(relativePath: { eq: "190920_Clave_lowres_3.jpg" }) {
-        ...fluidImage
-      }
-    }
-  `);
 
   return (
     <ProjectPageTemplate
-      mainImg={images.main}
-      firstImg={images.left}
-      secondImg={images.right}
+      mainImg={mainBilde}
+      firstImg={leftBilde}
+      secondImg={rightBilde}
       title="Komplett Group"
       ingress="Sammen med Komplett har vi jobbet fram enkle og smarte løsninger
               som gjør livet lettere både for kundene og for de som jobber hos
@@ -34,8 +23,6 @@ const ProjectPage = () => {
         'Omtrent 20.000 arbeidstimer per i dag',
         'UX’ere, front- og backend utviklere, testere, arkitekter og leveranseledere',
       ]}
-      leftImg={images.first}
-      rightImg={images.second}
       methodology="Scrum, Spotify Engineering Culture"
       technology="IMS SQL Server, MS .NET Core, Azure, JavaScript (React.js, AngularJS), CSS, HTML, REST, SOAP, Umbraco CMS, Confluence, Jira, Github, Jenkins CI, Octopus Deploy"
       finalText="Komplett er Nordens største netthandelsaktør. Nettbutikkene fornyes og videreutvikles kontinuerlig. Utviklingsavdelingen jobber med alle deler av Komplett-butikkens plattform og hele kundereisen på nett."

@@ -44,7 +44,7 @@ export const ProjectPageTemplate = (props) => {
             title={title}
             ingress={ingress}
             imageProps={{
-              fluidImage: mainImg,
+              src: mainImg,
               width: 1227,
               height: 728,
             }}

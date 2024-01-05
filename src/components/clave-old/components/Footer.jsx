@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { Logo } from './Header';
 import { onDesktop } from './Breakpoints';
 import FooterLink from './FooterLink';
-import { Link } from 'gatsby';
 import {
   MOBILE_PADDING,
   Section,

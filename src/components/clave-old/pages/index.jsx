@@ -1,7 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import styled, { css } from 'styled-components';
 
-import Image from '../components/Image';
 import Seo from '../components/Seo';
 import { COLOR_CLAVE_GREEN, COLOR_CLAVE_PEACH } from '../colors';
 import Header from '../components/Header';
@@ -15,7 +14,6 @@ import Layout, {
 import Footer from '../components/Footer';
 
 import './index.css';
-import { graphql, useStaticQuery } from 'gatsby';
 import BrukeropplevelseIcon from '../components/icons/clave_ikon_brukeropplevelse.svg';
 import SystemutviklingIcon from '../components/icons/clave_ikon_systemutvikling.svg';
 import RaadgivningIcon from '../components/icons/clave_ikon_radgivning.svg';
@@ -23,25 +21,13 @@ import { onDesktop, onMobile } from '../components/Breakpoints';
 import { RightArrowLink } from '../components/ClaveLink';
 import JoinSection from '../components/JoinSection';
 import { Ingress } from '../components/Ingress';
+import frontPageBilde from '../images/frontpage1.png';
 
 const inBrowser = typeof window !== 'undefined';
 
 const IsLandscapeScreen = () => inBrowser ? window.innerWidth >= window.innerHeight : false;
 
 const IndexPage = () => {
-  const images = useStaticQuery(graphql`
-    query {
-      header: file(relativePath: { eq: "frontpage1.png" }) {
-        ...fluidImage
-      }
-      karine: file(relativePath: { eq: "190920_Clave_lowres_5.jpg" }) {
-        ...fluidImage
-      }
-      anniken: file(relativePath: { eq: "190920_Clave_lowres_12.jpg" }) {
-        ...fluidImage
-      }
-    }
-  `);
 
   const GREEN_BACKGROUND = {
     backgroundColor: COLOR_CLAVE_GREEN,
@@ -92,7 +78,7 @@ const IndexPage = () => {
                   </TitleWrapper>
                 </StyledTextPanel>
                 <StyledBackgroundImage>
-                  <ScrollImage fluidImage={images.header} />
+                  <ScrollImage src={frontPageBilde} />
                 </StyledBackgroundImage>
               </PostsrollContent>
             </StickyScrollBox>
@@ -145,7 +131,7 @@ const IndexPage = () => {
             </WideWrapper>
           </Container.Content>
         </Container>
-        <JoinSection images={images} />
+        <JoinSection />
       </main>
       <ColorContext.Provider value={GREEN_BACKGROUND}>
         <Footer />
@@ -186,7 +172,7 @@ const StickyScrollBox = styled.div`
   left: 0;
 `;
 
-const ScrollImage = styled(Image)`
+const ScrollImage = styled(img)`
   height: 100vh;
   ${onMobile("height: 50vh")
   }

@@ -1,18 +1,15 @@
 import React, { useRef, useEffect, useState } from 'react';
 import styled from 'styled-components';
-import Image from './Image';
 import { Container } from './Layout';
 import { onDesktop } from './Breakpoints';
 
 const GalleryImageWithSubtext = ({ image, children, alt }) => {
-  const ImageWrapper = styled.div`
+  const ImageWrapper = styled.img`
     padding-bottom: 60px;
   `;
   return (
     <GalleryImageContainer>
-      <ImageWrapper>
-        <Image alt={alt} width="833" height="566" fluidImage={image} />
-      </ImageWrapper>
+      <ImageWrapper alt={alt} width="833" height="566" src={image}/>
       {children}
     </GalleryImageContainer>
   );

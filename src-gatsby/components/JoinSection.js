@@ -5,8 +5,10 @@ import Layout, { ColorContext } from './Layout';
 import { Gallery, GalleryImage } from './Gallery';
 import { Link } from 'gatsby';
 import { onMobile } from './Breakpoints';
+import bildeKarine from '../images/190920_Clave_lowres_5.jpg';
+import bildeAnniken from '../images/190920_Clave_lowres_12.jpg';
 
-const JoinSection = ({ images }) => {
+const JoinSection = () => {
   const AsideContent = () => {
     return (
       <ColorContext.Provider value={{
@@ -45,13 +47,13 @@ const JoinSection = ({ images }) => {
             alt="Anniken"
             width="406"
             height="206"
-            fluidImage={images.anniken}
+            src={bildeAnniken}
           />
           <GalleryImage
             alt="Karine"
             width="192"
             height="261"
-            fluidImage={images.karine}
+            src={bildeKarine}
           />
         </Gallery>
       </GalleryWrapper>

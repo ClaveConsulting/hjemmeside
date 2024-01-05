@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import Image from './Image';
 import { onDesktop } from './Breakpoints';
 
 export const Gallery = ({ children, ...props }) => (
@@ -67,7 +66,7 @@ const GalleryImageImg = styled.img`
   ${galleryImgStyles}
 `;
 
-const LoadedGalleryImage = styled(Image)`
+const LoadedGalleryImage = styled.img`
   ${galleryImgStyles}
 `;
 

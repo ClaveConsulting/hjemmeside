@@ -1,50 +1,47 @@
 import React, { useRef, useEffect, useState } from 'react';
 import styled from 'styled-components';
-import Image from './Image';
 import { Container } from './Layout';
 import { onDesktop } from './Breakpoints';
 
 const GalleryImageWithSubtext = ({ image, children, alt }) => {
-  const ImageWrapper = styled.div`
+  const ImageWrapper = styled.img`
     padding-bottom: 60px;
   `;
   return (
     <GalleryImageContainer>
-      <ImageWrapper>
-        <Image alt={alt} width="833" height="566" fluidImage={image} />
-      </ImageWrapper>
+      <ImageWrapper alt={alt} width="833" height="566" src={image}/>
       {children}
     </GalleryImageContainer>
   );
 };
 
 const LeftTextWrapper = styled.div`
-  width: 95%;
-  ${onDesktop(`
+    width: 95%;
+    ${onDesktop(`
     width: 50%;
     position: static;
   `)}
 `;
 const LeftTextItem = styled.div`
-  padding-bottom: 20px;
+    padding-bottom: 20px;
 `;
 
 const RightTextWrapper = styled.div`
-  width: 95%;
-  ${onDesktop(`
+    width: 95%;
+    ${onDesktop(`
     width: 80%;
     position: static;
   `)}
 `;
 
 export const ProjectGallery = ({
-  leftImg,
-  rightImg,
-  methodology,
-  technology,
-  finalText,
-  imageSpacing = 300,
-}) => {
+                                 leftImg,
+                                 rightImg,
+                                 methodology,
+                                 technology,
+                                 finalText,
+                                 imageSpacing = 300,
+                               }) => {
   const [firstSectionHeight, setFirstSectionHeight] = useState(0);
   const firstSectionRef = useRef(null);
 
@@ -91,10 +88,10 @@ export const ProjectGallery = ({
 
 const GalleryContainer = props => {
   const ContainerPadding = styled.div`
-    padding-left: 64px;
-    position: relative;
-    overflow: hidden;
-    padding-bottom: 64px;
+      padding-left: 64px;
+      position: relative;
+      overflow: hidden;
+      padding-bottom: 64px;
   `;
   return (
     <Container>
@@ -104,17 +101,17 @@ const GalleryContainer = props => {
 };
 
 styled(Container)`
-  margin-left: 64px;
+    margin-left: 64px;
 `;
 
 const GalleryImageContainer = styled.div`
-  display: flex;
-  flex: 1;
-  flex-direction: column;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
 `;
 
 const FirstImage = styled.div`
-  ${onDesktop(`
+    ${onDesktop(`
   width: 62%;
   position: relative;
   float: left;
@@ -122,7 +119,7 @@ const FirstImage = styled.div`
 `;
 const SecondImage = ({ children, desktopTopMargin }) => {
   const SectionStyle = styled.div`
-    ${onDesktop(`
+      ${onDesktop(`
   width: 60%;
   position: relative;
   float: right;

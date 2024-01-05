@@ -3,7 +3,6 @@ import { COLOR_CLAVE_GREEN, COLOR_CLAVE_PEACH } from '../colors';
 import styled, { css } from 'styled-components';
 import ClaveLink from './ClaveLink';
 import ClaveLogo from './icons/clave-logo.svg';
-import { Link } from 'gatsby';
 import hamburgerIcon from './icons/hamburgermeny_ikon.svg';
 import {
   ColorContext,

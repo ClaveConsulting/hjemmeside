@@ -2,36 +2,23 @@ import React from 'react';
 import {
   ProjectPageTemplate
 } from '../../components/ProjectTemplate';
-import { useStaticQuery, graphql } from 'gatsby';
 import { COLOR_CLAVE_GREEN, COLOR_CLAVE_SUNNY } from '../../colors';
+import mainBilde from '../../images/190920_Clave_lowres_6.jpg';
+import leftBilde from '../../images/190920_Clave_lowres_13.jpg';
+import rightBilde from '../../images/190920_Clave_lowres_18.jpg';
 
 const ProjectPage = () => {
-  const images = useStaticQuery(graphql`
-    query {
-      main: file(relativePath: { eq: "190920_Clave_lowres_6.jpg" }) {
-        ...fluidImage
-      }
-      left: file(relativePath: { eq: "190920_Clave_lowres_13.jpg" }) {
-        ...fluidImage
-      }
-      right: file(relativePath: { eq: "190920_Clave_lowres_18.jpg" }) {
-        ...fluidImage
-      }
-    }
-  `);
 
   return (
     <ProjectPageTemplate
-      mainImg={images.main}
-      firstImg={images.left}
-      secondImg={images.right}
+      mainImg={mainBilde}
+      firstImg={leftBilde}
+      secondImg={rightBilde}
       title="NAF"
       ingress="Over flere år har vi vært så heldige å få lov til å kombinere vår
               kompetanse innenfor brukeropplevelse, utvikling og prosjektledelse
               med NAF sin tunge innsikt i bilhold og trafikksikkerhet."
       keywords={[]}
-      leftImg={images.first}
-      rightImg={images.second}
       methodology={null}
       technology={null}
       finalText="Det har vært litt av en reise hittil som vi er stolte over å ha fått være med på. Som de sier hos NAF: «Reisen blir aldri slik man hadde tenkt», noe som gjør det til et spennende og variert oppdrag med både små og store seiere underveis."

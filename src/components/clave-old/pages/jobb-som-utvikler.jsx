@@ -1,10 +1,10 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import Layout from '../components/Layout';
 import MidSplitLayout from '../components/RecruitmentPages/MidSplitLayout';
 import RecruitmentTemplate from '../components/RecruitmentPages/RecruitmentTemplate';
 import { Ingress } from '../components/Ingress';
+import yngveBilde from '../images/190920_Clave_lowres_13.jpg';
 
 const positions = [
   {
@@ -15,13 +15,6 @@ const positions = [
 ];
 
 const DeveloperPage = (props) => {
-  const images = useStaticQuery(graphql`
-    query {
-      yngve: file(relativePath: { eq: "190920_Clave_lowres_13.jpg" }) {
-        ...fluidImage
-      }
-    }
-  `);
 
   return (
     <RecruitmentTemplate positions={positions} title="Jobbe som utvikler">
@@ -34,7 +27,7 @@ const DeveloperPage = (props) => {
           er tuftet på lagånd, åpenhet og kunnskapsdeling.
         </Ingress>
       </Layout>
-      <MidSplitLayout image={images.yngve}>
+      <MidSplitLayout image={yngveBilde}>
         <h2>Er dette deg?</h2>
         <p>
           Er dette deg? I Clave liker vi folk som har et stort engasjement for

@@ -1,10 +1,10 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import Layout from '../components/Layout';
 import MidSplitLayout from '../components/RecruitmentPages/MidSplitLayout';
 import RecruitmentTemplate from '../components/RecruitmentPages/RecruitmentTemplate';
 import { Ingress } from '../components/Ingress';
+import piaBilde from '../images/190920_Clave_lowres_7.jpg';
 
 
 const positions = [
@@ -22,13 +22,6 @@ const positions = [
 
 
 const DeveloperPage = props => {
-  const images = useStaticQuery(graphql`
-    query {
-      pia: file(relativePath: { eq: "190920_Clave_lowres_7.jpg" }) {
-        ...fluidImage
-      }
-    }
-  `);
 
   return (
     <RecruitmentTemplate
@@ -44,7 +37,7 @@ const DeveloperPage = props => {
           Det er viktig for Clave at vi leverer nøkkelpersoner med stort hjerte for faget og kundenes virksomhet.
         </Ingress>
       </Layout>
-      <MidSplitLayout image={images.pia}>
+      <MidSplitLayout src={piaBilde}>
         <h2>Er dette deg?</h2>
         <p>
           Vi i Clave liker folk som legger sjelen sin i å utforske, analysere og forstå, og som ikke er fremmed for å
