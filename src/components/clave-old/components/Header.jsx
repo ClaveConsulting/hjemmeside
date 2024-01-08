@@ -96,9 +96,9 @@ const Header = ({
           <Container.Content>
             <StyledHeader frontPage={frontPage}>
               <WrapperComponent>
-                <Link aria-label="Forsiden til Clave.no" to="/">
+                <link aria-label="Forsiden til Clave.no" to="/">
                   <Logo />
-                </Link>
+                </link>
                 <InlineWrapper>
                   <LinkComponent to="/hva-vi-gjor">
                     Se hva vi gjør

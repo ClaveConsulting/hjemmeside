@@ -81,7 +81,7 @@ const AsideDiv = styled.div`
   `)}
 `
 
-const PLink = styled(Link)`
+const PLink = styled.link`
     color: ${COLOR_CLAVE_BLUE};
     text-decoration: underline;
     font-size: 1.5rem;

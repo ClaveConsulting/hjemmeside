@@ -72,9 +72,9 @@ const Footer = (props) => {
         <Container>
           <FooterContentContainer>
             <FooterLogoWrapper>
-              <Link to="/" aria-label='Forsiden til Clave.no'>
+              <link to="/" aria-label='Forsiden til Clave.no'>
                 <Logo width="100px" />
-              </Link>
+              </link>
             </FooterLogoWrapper>
             <FooterContent>
               <FooterList>
