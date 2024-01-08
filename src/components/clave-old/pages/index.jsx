@@ -172,7 +172,7 @@ const StickyScrollBox = styled.div`
   left: 0;
 `;
 
-const ScrollImage = styled(img)`
+const ScrollImage = styled.img`
   height: 100vh;
   ${onMobile("height: 50vh")
   }
