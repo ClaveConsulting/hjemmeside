@@ -12,6 +12,7 @@ import {
 } from './Layout';
 import { onDesktop, onMobile } from './Breakpoints';
 import HamburgerMenuLink from './HamburgerMenuLink';
+import { Link } from 'react-router-dom';
 
 const Header = ({
   frontPage,
@@ -96,9 +97,9 @@ const Header = ({
           <Container.Content>
             <StyledHeader frontPage={frontPage}>
               <WrapperComponent>
-                <link aria-label="Forsiden til Clave.no" to="/">
-                  <Logo />
-                </link>
+                {/*<Link aria-label="Forsiden til Clave.no" to="/">*/}
+                {/*  <Logo />*/}
+                {/*</Link>*/}
                 <InlineWrapper>
                   <LinkComponent to="/hva-vi-gjor">
                     Se hva vi gjør
@@ -106,7 +107,7 @@ const Header = ({
                   <LinkComponent to="/hvem-vi-er">Se hvem vi er</LinkComponent>
                   <LinkComponent to="/kontakt-oss">Kontakt oss</LinkComponent>
                 </InlineWrapper>
-                <HamburgerButton />
+                {/*<HamburgerButton />*/}
               </WrapperComponent>
               <HamburgerMenyOptions />
             </StyledHeader>

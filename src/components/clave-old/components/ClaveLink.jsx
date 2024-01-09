@@ -3,6 +3,7 @@ import styled, { keyframes, css } from 'styled-components';
 import { COLOR_CLAVE_PINK, COLOR_CLAVE_GREEN, COLOR_CLAVE_YELLOW } from '../colors';
 import { ColorContext } from './Layout';
 import { onMobile, onDesktop } from './Breakpoints';
+import { Link, NavLink } from 'react-router-dom';
 
 export const ignoreStyle = styles => '';
 
@@ -151,7 +152,7 @@ const ANCHOR_STYLES = css`
 const StyledAnchor = styled.a`
   ${ANCHOR_STYLES}
 `;
-const StyledLink = styled.link`
+const StyledLink = styled(Link)`
   ${ANCHOR_STYLES}
 `;
 

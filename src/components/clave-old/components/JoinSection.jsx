@@ -6,6 +6,7 @@ import { Gallery, GalleryImage } from './Gallery';
 import { onMobile } from './Breakpoints';
 import bildeKarine from '../images/190920_Clave_lowres_5.jpg';
 import bildeAnniken from '../images/190920_Clave_lowres_12.jpg';
+import { Link } from 'react-router-dom';
 
 const JoinSection = () => {
   const AsideContent = () => {
@@ -81,7 +82,7 @@ const AsideDiv = styled.div`
   `)}
 `
 
-const PLink = styled.link`
+const PLink = styled(Link)`
     color: ${COLOR_CLAVE_BLUE};
     text-decoration: underline;
     font-size: 1.5rem;

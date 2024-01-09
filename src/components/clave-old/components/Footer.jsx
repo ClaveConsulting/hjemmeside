@@ -11,6 +11,7 @@ import {
   ColorContext,
   DESKTOP_PADDING,
 } from './Layout';
+import { Link } from 'react-router-dom';
 
 const FooterElement = styled.footer``;
 const FooterList = styled.ul`
@@ -71,11 +72,11 @@ const Footer = (props) => {
       <ColorContext.Provider value={{ textColor, backgroundColor }}>
         <Container>
           <FooterContentContainer>
-            <FooterLogoWrapper>
-              <link to="/" aria-label='Forsiden til Clave.no'>
-                <Logo width="100px" />
-              </link>
-            </FooterLogoWrapper>
+            {/*<FooterLogoWrapper>*/}
+            {/*  <Link to="/" aria-label='Forsiden til Clave.no'>*/}
+            {/*    <Logo width="100px" />*/}
+            {/*  </Link>*/}
+            {/*</FooterLogoWrapper>*/}
             <FooterContent>
               <FooterList>
                 <FooterListItem>

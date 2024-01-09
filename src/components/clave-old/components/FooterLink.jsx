@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { COLOR_CLAVE_PINK, COLOR_CLAVE_GREEN } from '../colors';
 import { ColorContext } from './Layout';
+import { Link } from 'react-router-dom';
 
 const FooterLink = ({ to, children, className, ...props }) => {
   const { textColor } = useContext(ColorContext);
@@ -29,7 +30,7 @@ const StyledAnchor = styled.a`
   ${ANCHOR_STYLES}
 `;
 
-const StyledLink = styled.link`
+const StyledLink = styled(Link)`
   ${ANCHOR_STYLES}
 `;
 
