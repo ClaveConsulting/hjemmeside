@@ -1,0 +1,15 @@
+<aside class="aside">
+    <slot></slot>
+</aside>
+<style>
+    .aside {
+        flex: 1 0 40%;
+        order: 1;
+        display: flex;
+
+        padding: 3rem 0;
+        @media screen and (min-width: 720px) {
+            padding: 0 6rem 0 0;
+        }
+    }
+</style>
