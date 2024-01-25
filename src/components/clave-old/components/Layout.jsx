@@ -318,6 +318,8 @@ const GlobalStyle = createGlobalStyle`
         padding-right: 0;
         padding-top: 0;
         margin-bottom: 1.45rem;
+        object-fit: cover;
+        
     }
 
     h1 {
