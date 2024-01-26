@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { Logo } from './Header';
 import { onDesktop } from './Breakpoints';
 import FooterLink from './FooterLink';
-import ClaveLogo from './icons/clave-logo.svg?react';
 import {
   MOBILE_PADDING,
   Section,
@@ -66,7 +65,7 @@ const Footer = (props) => {
           <FooterContentContainer>
             <FooterLogoWrapper>
               <a href="/" aria-label='Forsiden til Clave.no'>
-                <ClaveLogo width="100px" />
+                <Logo width="100px" />
               </a>
             </FooterLogoWrapper>
             <FooterContent>
