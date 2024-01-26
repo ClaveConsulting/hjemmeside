@@ -23,9 +23,9 @@ import FontBasisWoff from "./fonts/basis/basis-grotesque-medium-pro.woff";
 import FontBasisTtf from "./fonts/basis/basis-grotesque-medium-pro.ttf";
 
 import FontBasisRegular from "./fonts/basis/basis-grotesque-regular-pro.eot";
-import FontBasisWoff2Regular from "./fonts/basis/basis-grotesque-medium-pro.woff2";
-import FontBasisWoffRegular from "./fonts/basis/basis-grotesque-medium-pro.woff";
-import FontBasisTtfRegular from "./fonts/basis/basis-grotesque-medium-pro.ttf";
+import FontBasisWoff2Regular from "./fonts/basis/basis-grotesque-regular-pro.woff2";
+import FontBasisWoffRegular from "./fonts/basis/basis-grotesque-regular-pro.woff";
+import FontBasisTtfRegular from "./fonts/basis/basis-grotesque-regular-pro.ttf";
 
 const GlobalStyle = createGlobalStyle`
 
