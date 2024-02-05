@@ -127,10 +127,9 @@ const AsideImage = styled.img`
 
 const UserTestingBlock = styled.div`
     margin-top: 150px;
-    ${onMobile(`
+    @media only screen and (max-width: 719px) {
     margin-top: 0;
-  `)}
-`;
+    }`;
 
 const UserTestingText = styled.p`
     font-size: 18px;

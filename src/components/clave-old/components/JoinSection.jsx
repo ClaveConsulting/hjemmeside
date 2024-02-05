@@ -75,11 +75,10 @@ const AsideDiv = styled.div`
     padding: 96px 80% 96px 143px;
     margin: 0 -110% 0 -96px;
 
-    ${onMobile(`
+    @media only screen and (max-width: 719px) {
     padding: 3rem;
     margin: 3rem -3rem 0;
-  `)}
-`
+  }`
 
 const PLink = styled.a`
     color: ${COLOR_CLAVE_BLUE};
@@ -88,10 +87,9 @@ const PLink = styled.a`
     line-height: 2.0625rem;
     cursor: pointer;
 
-    ${onMobile(`
+    @media only screen and (max-width: 719px) {
     font-size: 1.125rem;
     line-height: 1.5625rem;
-  `)}
-`
+    }`
 
 export default JoinSection;

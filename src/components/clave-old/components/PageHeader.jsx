@@ -69,10 +69,9 @@ const PageHeaderLoadedImage = styled.img`
 const PageHeaderTitle = styled.h1`
   ${onDesktop(`
     margin-bottom:4rem;
-  `)}
-  ${onMobile(`
+  `)};
+  @media only screen and (max-width: 719px) {
     margin-bottom:1.5rem;
-  `)}
-`;
+}`;
 
 export default PageHeader;

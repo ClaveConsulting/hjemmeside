@@ -150,12 +150,11 @@ const TitleWrapper = styled.div`
   ${onDesktop(`
     padding-top: ${PADDING_TOP_DESKTOP};
     padding-left: ${DESKTOP_PADDING};
-  `)}
-  ${onMobile(`
+  `)};
+  @media only screen and (max-width: 719px) {
     padding-top: ${PADDING_TOP_MOBILE};
     padding-left: ${MOBILE_PADDING};
-  `)}
-`;
+  }`;
 
 const StyledFirstSection = styled.section`
   width: 100%;
@@ -176,7 +175,7 @@ const ScrollImage = styled.img`
   width: 100%;
   height: 100vh;
   margin-bottom: 0;
-  ${onMobile("height: 50vh")
+  @media only screen and (max-width: 719px) {"height: 50vh")
 }
 `
 

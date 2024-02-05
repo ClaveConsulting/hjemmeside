@@ -87,10 +87,9 @@ const TitleWrapper = styled.div`
     ${onDesktop(`
   padding-top: ${PADDING_TOP_DESKTOP};
   
-  `)}
-    ${onMobile(`
-  padding-top: ${PADDING_TOP_MOBILE};
-  `)}
+  `)};
+    @media only screen and (max-width: 719px) {
+  padding-top: ${PADDING_TOP_MOBILE};}
 `;
 
 const AsideContentLow = styled.span`

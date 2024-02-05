@@ -145,11 +145,11 @@ const Wrapper = styled.div`
   align-items: center;
   ${onDesktop(`
   padding-top: ${PADDING_TOP_DESKTOP};
-  `)}
-  ${onMobile(`
+  `)};
+  @media only screen and (max-width: 719px) {
   padding-top: ${PADDING_TOP_MOBILE};
-  `)}
-`;
+    color: red;
+  }`;
 
 const InlineWrapper = styled.div`
   display: inline-flex;

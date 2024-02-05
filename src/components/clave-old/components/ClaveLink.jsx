@@ -60,9 +60,9 @@ const Underline = styled.div`
     animation-fill-mode: forwards;
   }
 
-  ${onMobile(`
+  @media only screen and (max-width: 719px) {
     display: ${props => props.$showOnMobile ? "block" : "none"};
-  `)}
+  }
 `;
 export const RightArrowLink = styled(ClaveLink)`
   display: flex;
@@ -147,9 +147,8 @@ const StyledAnchor = styled.a`
 
 const ColoredLink = styled(StyledAnchor)`
     color: ${props => props.$textColor || COLOR_CLAVE_GREEN};
-    ${onMobile(`
-      display: ${props => props.$showOnMobile ? "flex" : "none"};
-    `)}
-  `;
+    @media only screen and (max-width: 719px) {
+      display: ${props => props.$showOnMobile ? "flex" : "none"};  
+    }`;
 
 export default ClaveLink;
