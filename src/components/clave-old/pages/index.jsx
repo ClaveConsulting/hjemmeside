@@ -175,6 +175,7 @@ const ScrollImage = styled.img`
   display: block;
   width: 100%;
   height: 100vh;
+  margin-bottom: 0;
   ${onMobile("height: 50vh")
 }
 `
