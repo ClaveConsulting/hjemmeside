@@ -794,9 +794,9 @@ Container.Content = styled.div`
 export const Section = styled.section`
     max-width: 1280px;
 
-    ${onDesktop(`
+    @media screen and (min-width: 720px) {
     flex: 1 1 1280px;
-  `)}
+  }
 `;
 
 export const Aside = styled.aside`
@@ -805,10 +805,10 @@ export const Aside = styled.aside`
     display: flex;
     padding: ${MOBILE_PADDING} 0;
 
-    ${onDesktop(`
+    @media screen and (min-width: 720px) {
     order: 0;
     padding: 0 ${DESKTOP_PADDING} 0 0;
-  `)}
+  }
 `;
 
 const EmptyAsidePadding = styled.aside`
@@ -816,7 +816,7 @@ const EmptyAsidePadding = styled.aside`
     order: 1;
     display: flex;
 
-    ${onDesktop(`
+    @media screen and (min-width: 720px) {(`
   order: 0;
 `)}
 `;
@@ -826,10 +826,10 @@ const LayoutWrapper = styled.div`
     flex-direction: column;
     padding: ${MOBILE_PADDING};
 
-    ${onDesktop(`
+    @media screen and (min-width: 720px) {
     padding: ${DESKTOP_PADDING};
     flex-direction: row;
-  `)}
+  }
 `;
 
 export const ColorContext = React.createContext({

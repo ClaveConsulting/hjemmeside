@@ -14,10 +14,10 @@ const GalleryImageWithSubtext = ({ image, children, alt }) => {
 
 const LeftTextWrapper = styled.div`
     width: 95%;
-    ${onDesktop(`
+    @media screen and (min-width: 720px) {
     width: 50%;
     position: static;
-  `)}
+  }
 `;
 const LeftTextItem = styled.div`
     padding-bottom: 20px;
@@ -25,11 +25,10 @@ const LeftTextItem = styled.div`
 
 const RightTextWrapper = styled.div`
     width: 95%;
-    ${onDesktop(`
+    @media screen and (min-width: 720px) {
     width: 80%;
     position: static;
-  `)}
-`;
+  }`;
 
 export const ProjectGallery = ({
                                  leftImg,
@@ -99,11 +98,11 @@ const GalleryImageContainer = styled.div`
 `;
 
 const FirstImage = styled.div`
-    ${onDesktop(`
+    @media screen and (min-width: 720px) {
   width: 62%;
   position: relative;
   float: left;
-  `)}
+  }
 `;
 const SecondImage = ({ children, desktopTopMargin }) => {
 
@@ -121,10 +120,9 @@ const ContainerPadding = styled.div`
   `;
 
 const SectionStyle = styled.div`
-      ${onDesktop(`
+      @media screen and (min-width: 720px) {
   width: 60%;
   position: relative;
   float: right;
   margin-top: ${props => props.$desktopTopMargin}px
-  `)}
-  `;
+  }`;

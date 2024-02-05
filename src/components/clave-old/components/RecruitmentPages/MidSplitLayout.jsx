@@ -1,7 +1,6 @@
 import '../layout.css';
 import React from "react";
 import styled from 'styled-components';
-import { onDesktop } from '../Breakpoints';
 import { COLOR_CLAVE_GREEN, COLOR_CLAVE_PEACH } from '../../colors';
 
 export const MAX_WIDTH = '120rem';
@@ -35,10 +34,9 @@ const Content = styled.div`
   max-width: ${MAX_WIDTH};
   margin: 0 auto;
 
-  ${onDesktop(`
+  @media screen and (min-width: 720px) {
     grid-template-columns: 1fr 1fr;
-  `)}
-`
+  }`
 
 const Left = styled.div`
   height: 400px;
@@ -47,8 +45,8 @@ const Left = styled.div`
 const Right = styled.div`
 padding: ${MOBILE_PADDING};
 
-${onDesktop(`
+@media screen and (min-width: 720px) {
   padding: 0 ${DESKTOP_PADDING} 0 6rem;
-`)}`
+}`
 
 export default MidSplitLayout;

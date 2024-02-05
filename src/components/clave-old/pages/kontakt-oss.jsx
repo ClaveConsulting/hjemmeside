@@ -7,7 +7,6 @@ import Footer from '../components/Footer';
 import Header from '../components/Header';
 import { COLOR_CLAVE_GREEN, COLOR_CLAVE_PEACH } from '../colors';
 import MyMapComponent from '../components/Map';
-import {onDesktop, onMobile} from '../components/Breakpoints';
 import JoinSection from '../components/JoinSection';
 
 const PADDING_TOP_DESKTOP = '6rem';
@@ -84,10 +83,9 @@ const KontaktOssPage = props => {
 
 const TitleWrapper = styled.div`
     background-color: ${COLOR_CLAVE_GREEN};
-    ${onDesktop(`
+    @media screen and (min-width: 720px) {
   padding-top: ${PADDING_TOP_DESKTOP};
-  
-  `)};
+    };
     @media only screen and (max-width: 719px) {
   padding-top: ${PADDING_TOP_MOBILE};}
 `;
@@ -103,16 +101,14 @@ const ContactInfo = styled.div`
     flex-direction: column;
     padding-left: 0;
 
-    ${onDesktop(`
-  flex-direction: row;
-`)}
-`;
+    @media screen and (min-width: 720px) {
+  flex-direction: row;  
+    }`;
 
 const Contact1 = styled.div`
-    ${onDesktop(`
+    @media screen and (min-width: 720px) {
     flex: 1 1 50%;
-    padding: 1rem 0rem 0rem;
-  `)}
-`;
+    padding: 1rem 0rem 0rem;  
+    }`;
 
 export default KontaktOssPage;

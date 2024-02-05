@@ -117,17 +117,16 @@ const HamburgerButton = styled.button`
   cursor: pointer;
   outline: inherit;
 
-  ${onDesktop(`
+  @media screen and (min-width: 720px) {
     display: none;
-  `)}
-`;
+  }`;
 
 const StyledHeader = styled.header(
   (props) => css`
     padding: 0 ${MOBILE_PADDING};
-    ${onDesktop(`
+    @media screen and (min-width: 720px) {
       padding: 0 ${DESKTOP_PADDING};
-    `)}
+    }
   `
 );
 
@@ -143,12 +142,11 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  ${onDesktop(`
+  @media screen and (min-width: 720px) {
   padding-top: ${PADDING_TOP_DESKTOP};
-  `)};
+  };
   @media only screen and (max-width: 719px) {
   padding-top: ${PADDING_TOP_MOBILE};
-    color: red;
   }`;
 
 const InlineWrapper = styled.div`
@@ -183,9 +181,8 @@ const ColoredLogo = styled(ClaveLogo)`
 
 const HamburgerDiv = styled.div`
     padding-bottom: 2rem;
-    ${onDesktop(`
+    @media screen and (min-width: 720px) {
       display: none;
-    `)}
-  `;
+    }`;
 
 export default Header;

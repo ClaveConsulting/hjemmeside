@@ -147,10 +147,10 @@ const FrontPageTextContent = styled.div`
 `;
 
 const TitleWrapper = styled.div`
-  ${onDesktop(`
+  @media screen and (min-width: 720px) {
     padding-top: ${PADDING_TOP_DESKTOP};
     padding-left: ${DESKTOP_PADDING};
-  `)};
+  };
   @media only screen and (max-width: 719px) {
     padding-top: ${PADDING_TOP_MOBILE};
     padding-left: ${MOBILE_PADDING};
@@ -186,10 +186,10 @@ const StyledTextPanel = styled.div`
   max-width: 45em;
   flex-direction: column;
   justify-content: space-around;
-  ${onDesktop(`
+  @media screen and (min-width: 720px) {
     height: 80vh;
     width: 55%;
-  `)}
+  }
 `;
 
 const StyledBackgroundImage = styled.div`
@@ -198,10 +198,10 @@ const StyledBackgroundImage = styled.div`
   right: 0;
   z-index: -1;
   width: 90%;
-  ${onDesktop(`
+  @media screen and (min-width: 720px) {
     width: 65%;
-    max-width: 150vh;
-  `)}
+    max-width: 150vh;  
+  }
 `;
 
 const ScrollContent = styled.div`
@@ -276,9 +276,8 @@ const InfoFlexbox = styled.div`
   gap: 40px;
 
 
-  ${onDesktop(`
-    flex-direction: row;
-  `)}
-`;
+  @media screen and (min-width: 720px) {
+    flex-direction: row;  
+  }`;
 
 export default IndexPage;

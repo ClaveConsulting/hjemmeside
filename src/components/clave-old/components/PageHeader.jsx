@@ -32,11 +32,10 @@ const PageHeaderWrapper = styled(Container.Content)`
 
   padding: 0 0 0 ${MOBILE_PADDING};
 
-  ${onDesktop(`
+  @media screen and (min-width: 720px) {
     padding-left: 0;
-    margin-bottom: 
-  `)}
-`;
+    margin-bottom:0;
+    }`;
 
 const PageHeaderImage = ({ fluidImage, src, ...props }) => (
   <div>
@@ -54,10 +53,10 @@ const imageStyle = `
   height: auto;
   margin: 0;
   
-  ${onDesktop(`
+  @media screen and (min-width: 720px) {
     width: 80%;
     margin-left: auto;
-  `)}
+  }
 `;
 
 const PageHeaderImageImg = styled.img`
@@ -67,9 +66,9 @@ const PageHeaderLoadedImage = styled.img`
   ${imageStyle}
 `;
 const PageHeaderTitle = styled.h1`
-  ${onDesktop(`
+  @media screen and (min-width: 720px) {
     margin-bottom:4rem;
-  `)};
+  };
   @media only screen and (max-width: 719px) {
     margin-bottom:1.5rem;
 }`;

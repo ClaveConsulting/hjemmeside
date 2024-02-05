@@ -92,13 +92,13 @@ export const RightArrowLink = styled(ClaveLink)`
     transform: scaleX(0.6) scaleY(0.6);
   }
 
-  ${onDesktop(`
-  font-size: 32px;
+  @media screen and (min-width: 720px) {
+      font-size: 32px;
 
-  &:hover:after {
-    margin-top: 5px;
+      &:hover:after {
+          margin-top: 5px;
+      }
   }
-  `)}
 `;
 
 export const LeftArrowLink = styled(ClaveLink)`
@@ -128,13 +128,13 @@ export const LeftArrowLink = styled(ClaveLink)`
     transform: scaleX(-0.6) scaleY(0.6);
   }
 
-  ${onDesktop(`
+  @media screen and (min-width: 720px) {
   font-size: 32px;
 
   &:hover:before {
     margin-top: 5px;
+    }  
   }
-  `)}
 `;
 
 const ANCHOR_STYLES = css`

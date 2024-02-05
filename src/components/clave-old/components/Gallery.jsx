@@ -43,11 +43,10 @@ const Content = styled.div`
   position: relative;
   left: 1rem;
 
-  ${onDesktop(`
+  @media screen and (min-width: 720px) {
     width: 100%;
-    position: static;
-  `)}
-`;
+    position: static;  
+  }`;
 
 const galleryImgStyles = `
     display: block;
