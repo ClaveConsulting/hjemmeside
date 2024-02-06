@@ -3,11 +3,9 @@ import styled from 'styled-components';
 
 import Layout from '../components/Layout';
 import Footer from '../components/Footer';
-import Seo from '../components/Seo';
 import Header from '../components/Header';
 import PageHeader from '../components/PageHeader';
 import { Gallery, GalleryImage } from '../components/Gallery';
-import { onMobile } from '../components/Breakpoints';
 import { COLOR_CLAVE_PEACH } from '../colors';
 import { Projects } from '../components/ProjectList';
 import headerBilde from '../images/190920_Clave_lowres_2.jpg';

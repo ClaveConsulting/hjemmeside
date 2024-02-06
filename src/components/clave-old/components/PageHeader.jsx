@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { MOBILE_PADDING, Container, ContentColumn } from './Layout';
-import { onDesktop, onMobile } from './Breakpoints';
 import { Ingress } from './Ingress';
 
 

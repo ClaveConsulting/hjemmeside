@@ -1,8 +1,16 @@
 import './layout.css';
 import React, { useContext } from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
-import { COLOR_CLAVE_PEACH, COLOR_CLAVE_GREEN } from '../colors';
-import { onDesktop } from './Breakpoints';
+import { COLOR_CLAVE_GREEN, COLOR_CLAVE_PEACH } from '../colors';
+import FontBasis from "./fonts/basis/basis-grotesque-medium-pro.eot";
+import FontBasisWoff2 from "./fonts/basis/basis-grotesque-medium-pro.woff2";
+import FontBasisWoff from "./fonts/basis/basis-grotesque-medium-pro.woff";
+import FontBasisTtf from "./fonts/basis/basis-grotesque-medium-pro.ttf";
+
+import FontBasisRegular from "./fonts/basis/basis-grotesque-regular-pro.eot";
+import FontBasisWoff2Regular from "./fonts/basis/basis-grotesque-regular-pro.woff2";
+import FontBasisWoffRegular from "./fonts/basis/basis-grotesque-regular-pro.woff";
+import FontBasisTtfRegular from "./fonts/basis/basis-grotesque-regular-pro.ttf";
 
 export const MAX_WIDTH = '120rem';
 export const MOBILE_PADDING = '3rem';
@@ -16,16 +24,6 @@ export const Container = (props) => {
         <ColoredContainer {...props} $backgroundColor={backgroundColor} $textColor={textColor}/>
     </>;
 };
-
-import FontBasis from "./fonts/basis/basis-grotesque-medium-pro.eot";
-import FontBasisWoff2 from "./fonts/basis/basis-grotesque-medium-pro.woff2";
-import FontBasisWoff from "./fonts/basis/basis-grotesque-medium-pro.woff";
-import FontBasisTtf from "./fonts/basis/basis-grotesque-medium-pro.ttf";
-
-import FontBasisRegular from "./fonts/basis/basis-grotesque-regular-pro.eot";
-import FontBasisWoff2Regular from "./fonts/basis/basis-grotesque-regular-pro.woff2";
-import FontBasisWoffRegular from "./fonts/basis/basis-grotesque-regular-pro.woff";
-import FontBasisTtfRegular from "./fonts/basis/basis-grotesque-regular-pro.ttf";
 
 const GlobalStyle = createGlobalStyle`
 
@@ -816,10 +814,9 @@ const EmptyAsidePadding = styled.aside`
     order: 1;
     display: flex;
 
-    @media screen and (min-width: 720px) {(`
+    @media screen and (min-width: 720px) {
   order: 0;
-`)}
-`;
+}`;
 
 const LayoutWrapper = styled.div`
     display: flex;
