@@ -16,7 +16,7 @@ import './index.css';
 import BrukeropplevelseIcon from '../components/icons/clave_ikon_brukeropplevelse.svg?react';
 import SystemutviklingIcon from '../components/icons/clave_ikon_systemutvikling.svg?react';
 import RaadgivningIcon from '../components/icons/clave_ikon_radgivning.svg?react';
-import { onDesktop, onMobile } from '../components/Breakpoints';
+import { onMobile } from '../components/Breakpoints';
 import { RightArrowLink } from '../components/ClaveLink';
 import JoinSection from '../components/JoinSection';
 import { Ingress } from '../components/Ingress';
@@ -175,7 +175,8 @@ const ScrollImage = styled.img`
   width: 100%;
   height: 100vh;
   margin-bottom: 0;
-  @media only screen and (max-width: 719px) {"height: 50vh")
+  @media only screen and (max-width: 719px) {
+    height: 50vh;
 }
 `
 
