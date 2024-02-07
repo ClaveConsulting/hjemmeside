@@ -35,7 +35,7 @@ const imageStyle = `
   margin: 0;
   
   @media screen and (min-width: 720px) {
-    width: 80%;
+    width: 100%;
     margin-left: auto;
   }
 `;
