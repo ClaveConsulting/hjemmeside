@@ -14,7 +14,7 @@ const MidSplitLayout = props => {
     <Wrapper>
       <Content>
       <Left>
-        <img alt="" width="833" height="566" src={image} />
+          <StyledMidSplitLayoutImage alt="" src={image} />
       </Left>
       <Right>{props.children}</Right>
       </Content>
@@ -26,7 +26,23 @@ const Wrapper = styled.div`
 
   background-color: ${COLOR_CLAVE_PEACH};
   color: ${COLOR_CLAVE_GREEN};
-`
+`;
+
+const imageStyle = `
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  
+  @media screen and (min-width: 720px) {
+    width: 80%;
+    margin-left: auto;
+  }
+`;
+
+const StyledMidSplitLayoutImage = styled.img`
+    ${imageStyle}
+`;
 
 const Content = styled.div`
   display: grid;
