@@ -1,16 +1,8 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { Logo } from './Header';
-import { onDesktop } from './Breakpoints';
 import FooterLink from './FooterLink';
-import {
-  MOBILE_PADDING,
-  Section,
-  Aside,
-  Container,
-  ColorContext,
-  DESKTOP_PADDING,
-} from './Layout';
+import { Aside, ColorContext, Container, DESKTOP_PADDING, MOBILE_PADDING, Section, } from './Layout';
 
 const FooterElement = styled.footer``;
 const FooterList = styled.ul`

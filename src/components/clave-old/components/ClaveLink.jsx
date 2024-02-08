@@ -1,8 +1,7 @@
 import React, { useContext } from 'react';
-import styled, { keyframes, css } from 'styled-components';
-import { COLOR_CLAVE_PINK, COLOR_CLAVE_GREEN, COLOR_CLAVE_YELLOW } from '../colors';
+import styled, { css, keyframes } from 'styled-components';
+import { COLOR_CLAVE_GREEN, COLOR_CLAVE_PINK, COLOR_CLAVE_YELLOW } from '../colors';
 import { ColorContext } from './Layout';
-import { onMobile, onDesktop } from './Breakpoints';
 
 export const ignoreStyle = styles => '';
 

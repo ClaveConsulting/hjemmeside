@@ -1,7 +1,6 @@
 import React from 'react';
 import Layout, { ColorContext, Container } from './Layout';
 import styled from 'styled-components';
-import Seo from './Seo';
 import Header from './Header';
 import PageHeader from './PageHeader';
 

@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { COLOR_CLAVE_BLUE, COLOR_CLAVE_LIGHTBLUE } from '../colors';
 import Layout, { ColorContext } from './Layout';
 import { Gallery, GalleryImage } from './Gallery';
-import { onMobile } from './Breakpoints';
 import bildeKarine from '../images/190920_Clave_lowres_5.jpg';
 import bildeAnniken from '../images/190920_Clave_lowres_12.jpg';
 

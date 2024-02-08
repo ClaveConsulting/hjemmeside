@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { onMobile } from './Breakpoints';
 
 export const Ingress = styled.p`
     &,

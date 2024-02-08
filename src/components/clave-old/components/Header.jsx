@@ -4,13 +4,7 @@ import styled, { css } from 'styled-components';
 import ClaveLink from './ClaveLink';
 import ClaveLogo from './icons/clave-logo.svg?react';
 import hamburgerIcon from './icons/hamburgermeny_ikon.svg?react';
-import {
-  ColorContext,
-  Container,
-  DESKTOP_PADDING,
-  MOBILE_PADDING,
-} from './Layout';
-import { onDesktop, onMobile } from './Breakpoints';
+import { ColorContext, Container, DESKTOP_PADDING, MOBILE_PADDING, } from './Layout';
 import HamburgerMenuLink from './HamburgerMenuLink';
 
 const Header = ({
