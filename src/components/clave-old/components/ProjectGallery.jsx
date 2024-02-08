@@ -1,12 +1,13 @@
 import React, { useRef, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Container } from './Layout';
-import { onDesktop } from './Breakpoints';
 
 const GalleryImageWithSubtext = ({ image, children, alt }) => {
   return (
     <GalleryImageContainer>
-      <ImageWrapper alt={alt} width="833" height="566" src={image}/>
+      <ImageWrapper>
+          <ProjectGalleryImage alt={alt} width="833" height="566" src={image} />
+      </ImageWrapper>
       {children}
     </GalleryImageContainer>
   );
@@ -105,11 +106,18 @@ const FirstImage = styled.div`
   }
 `;
 const SecondImage = ({ children, desktopTopMargin }) => {
+    const SectionStyle = styled.div`
+        @media screen and (min-width: 720px) {
+            width: 60%;
+            position: relative;
+            float: right;
+            margin-top: ${desktopTopMargin}px
+        }`;
 
   return <SectionStyle $desktopMargin={desktopTopMargin}>{children}</SectionStyle>;
 };
 
-const ImageWrapper = styled.img`
+const ImageWrapper = styled.div`
     padding-bottom: 60px;
   `;
 const ContainerPadding = styled.div`
@@ -119,10 +127,14 @@ const ContainerPadding = styled.div`
       padding-bottom: 64px;
   `;
 
-const SectionStyle = styled.div`
-      @media screen and (min-width: 720px) {
-  width: 60%;
-  position: relative;
-  float: right;
-  margin-top: ${props => props.$desktopTopMargin}px
-  }`;
+
+const imageStyleProjectGalleryImage = `
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+`;
+
+const ProjectGalleryImage = styled.img`
+  ${imageStyleProjectGalleryImage}
+`;
