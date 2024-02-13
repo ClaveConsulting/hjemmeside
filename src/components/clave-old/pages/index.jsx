@@ -35,6 +35,7 @@ const IndexPage = () => {
 
 	const scoverlayElement = useRef();
 
+	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	useEffect(() => {
 		const scrollY = () => (inBrowser ? window.scrollY : 0);
 
@@ -230,6 +231,7 @@ const PrescrollContent = styled(ScrollContent)`
 const PostsrollContent = styled(ScrollContent)`
   background-color: ${COLOR_CLAVE_PEACH};
   clip-path: ${
+		// biome-ignore lint/style/noUnusedTemplateLiteral: <explanation>
 		IsLandscapeScreen() ? `circle(45vw at 85% 70%)` : `circle(25vh at 85% 85%);`
 	}
 `;
