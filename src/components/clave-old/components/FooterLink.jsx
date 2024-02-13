@@ -1,16 +1,21 @@
-import React, { useContext } from 'react';
-import styled from 'styled-components';
-import { COLOR_CLAVE_PINK, COLOR_CLAVE_GREEN } from '../colors';
-import { ColorContext } from './Layout';
+import React, { useContext } from "react";
+import styled from "styled-components";
+import { COLOR_CLAVE_PINK, COLOR_CLAVE_GREEN } from "../colors";
+import { ColorContext } from "./Layout";
 
 const FooterLink = ({ href: href, children, className, ...props }) => {
-  const { textColor } = useContext(ColorContext);
+	const { textColor } = useContext(ColorContext);
 
-  return (
-    <ColoredLink className={className} href={href} {...props} $textColor={textColor}>
-      {children}
-    </ColoredLink>
-  );
+	return (
+		<ColoredLink
+			className={className}
+			href={href}
+			{...props}
+			$textColor={textColor}
+		>
+			{children}
+		</ColoredLink>
+	);
 };
 
 const ANCHOR_STYLES = `
@@ -30,7 +35,7 @@ const StyledLink = styled.a`
 `;
 
 const ColoredLink = styled(StyledAnchor)`
-    color: ${props => props.$textColor || COLOR_CLAVE_GREEN};
+    color: ${(props) => props.$textColor || COLOR_CLAVE_GREEN};
   `;
 
 export default FooterLink;

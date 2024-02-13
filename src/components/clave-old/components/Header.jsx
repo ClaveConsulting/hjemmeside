@@ -1,105 +1,113 @@
-import React, { useContext, useState } from 'react';
-import { COLOR_CLAVE_GREEN, COLOR_CLAVE_PEACH } from '../colors';
-import styled, { css } from 'styled-components';
-import ClaveLink from './ClaveLink';
-import ClaveLogo from './icons/clave-logo.svg?react';
-import hamburgerIcon from './icons/hamburgermeny_ikon.svg?react';
-import { ColorContext, Container, DESKTOP_PADDING, MOBILE_PADDING, } from './Layout';
-import HamburgerMenuLink from './HamburgerMenuLink';
+import React, { useContext, useState } from "react";
+import { COLOR_CLAVE_GREEN, COLOR_CLAVE_PEACH } from "../colors";
+import styled, { css } from "styled-components";
+import ClaveLink from "./ClaveLink";
+import ClaveLogo from "./icons/clave-logo.svg?react";
+import hamburgerIcon from "./icons/hamburgermeny_ikon.svg?react";
+import {
+	ColorContext,
+	Container,
+	DESKTOP_PADDING,
+	MOBILE_PADDING,
+} from "./Layout";
+import HamburgerMenuLink from "./HamburgerMenuLink";
 
 const Header = ({
-  frontPage,
-  useSkinColoredHamburgerMenu,
-  uri,
-  textColor = COLOR_CLAVE_PEACH,
+	frontPage,
+	useSkinColoredHamburgerMenu,
+	uri,
+	textColor = COLOR_CLAVE_PEACH,
 }) => {
+	const [menuExpanded, setMenuExpanded] = useState(false);
 
-  const [menuExpanded, setMenuExpanded] = useState(false);
+	const HamburgerMenyOptions = () => {
+		const menuLinks = [
+			{
+				label: "Se hva vi gjør",
+				href: "/hva-vi-gjor",
+			},
+			{
+				label: "Se hvem vi er",
+				href: "/hvem-vi-er",
+			},
+			{
+				label: "Kontakt oss",
+				href: "/kontakt-oss",
+			},
+		];
 
-  const HamburgerMenyOptions = () => {
-    const menuLinks = [
-      {
-        label: 'Se hva vi gjør',
-        href: '/hva-vi-gjor',
-      },
-      {
-        label: 'Se hvem vi er',
-        href: '/hvem-vi-er',
-      },
-      {
-        label: 'Kontakt oss',
-        href: '/kontakt-oss',
-      },
-    ];
+		return menuExpanded ? (
+			<HamburgerDiv>
+				{menuLinks.map(({ label, href }) => (
+					<HamburgerMenuLink key={label} href={href} active={href === uri}>
+						{label}
+					</HamburgerMenuLink>
+				))}
+			</HamburgerDiv>
+		) : null;
+	};
 
-    return menuExpanded ? (
-      <HamburgerDiv>
-        {menuLinks.map(({ label, href }) => (
-          <HamburgerMenuLink key={label} href={href} active={href === uri}>
-            {label}
-          </HamburgerMenuLink>
-        ))}
-      </HamburgerDiv>
-    ) : null;
-  };
+	const HamburgerButton = () => {
+		const ButtonComponent = useSkinColoredHamburgerMenu
+			? SkinColorHamburgerButton
+			: GreenColorHamburgerButton;
+		return (
+			<ButtonComponent
+				aria-label="Meny"
+				onClick={() => setMenuExpanded(!menuExpanded)}
+			>
+				<StyledHamburgerIcon />
+			</ButtonComponent>
+		);
+	};
 
-  const HamburgerButton = () => {
-    const ButtonComponent = useSkinColoredHamburgerMenu
-      ? SkinColorHamburgerButton
-      : GreenColorHamburgerButton;
-    return (
-      <ButtonComponent
-        aria-label="Meny"
-        onClick={() => setMenuExpanded(!menuExpanded)}
-      >
-        <StyledHamburgerIcon />
-      </ButtonComponent>
-    );
-  };
+	const colorContext = useContext(ColorContext);
 
-  const colorContext = useContext(ColorContext);
+	const newColorContext = frontPage
+		? {
+				backgroundColor: "none",
+				textColor: textColor,
+		  }
+		: colorContext;
 
-  const newColorContext = frontPage
-    ? {
-        backgroundColor: 'none',
-        textColor: textColor,
-      }
-    : colorContext;
-
-  return (
-    <ColorContext.Provider value={newColorContext}>
-      <header>
-        <Container>
-          <Container.Content>
-            <StyledHeader>
-              <WrapperComponent $backgroundColor={newColorContext.backgroundColor}>
-                <a aria-label="Forsiden til Clave.no" href="/">
-                  <Logo />
-                </a>
-                <InlineWrapper>
-                  <LinkComponent href="/hva-vi-gjor">
-                    Se hva vi gjør
-                  </LinkComponent>
-                  <LinkComponent href="/hvem-vi-er">Se hvem vi er</LinkComponent>
-                  <LinkComponent href="/kontakt-oss">Kontakt oss</LinkComponent>
-                </InlineWrapper>
-                <HamburgerButton />
-              </WrapperComponent>
-              <HamburgerMenyOptions />
-            </StyledHeader>
-          </Container.Content>
-        </Container>
-      </header>
-    </ColorContext.Provider>
-  );
+	return (
+		<ColorContext.Provider value={newColorContext}>
+			<header>
+				<Container>
+					<Container.Content>
+						<StyledHeader>
+							<WrapperComponent
+								$backgroundColor={newColorContext.backgroundColor}
+							>
+								<a aria-label="Forsiden til Clave.no" href="/">
+									<Logo />
+								</a>
+								<InlineWrapper>
+									<LinkComponent href="/hva-vi-gjor">
+										Se hva vi gjør
+									</LinkComponent>
+									<LinkComponent href="/hvem-vi-er">
+										Se hvem vi er
+									</LinkComponent>
+									<LinkComponent href="/kontakt-oss">Kontakt oss</LinkComponent>
+								</InlineWrapper>
+								<HamburgerButton />
+							</WrapperComponent>
+							<HamburgerMenyOptions />
+						</StyledHeader>
+					</Container.Content>
+				</Container>
+			</header>
+		</ColorContext.Provider>
+	);
 };
 
-const PADDING_TOP_DESKTOP = '4rem';
-const PADDING_TOP_MOBILE = '1.5rem';
+const PADDING_TOP_DESKTOP = "4rem";
+const PADDING_TOP_MOBILE = "1.5rem";
 
 export const Logo = (props) => {
-  const { textColor } = useContext(ColorContext);
-  return <ColoredLogo {...props} $width={props.width} $textColor={textColor} />;
+	const { textColor } = useContext(ColorContext);
+	return <ColoredLogo {...props} $width={props.width} $textColor={textColor} />;
 };
 
 const HamburgerButton = styled.button`
@@ -116,12 +124,12 @@ const HamburgerButton = styled.button`
   }`;
 
 const StyledHeader = styled.header(
-  (props) => css`
+	(props) => css`
     padding: 0 ${MOBILE_PADDING};
     @media screen and (min-width: 720px) {
       padding: 0 ${DESKTOP_PADDING};
     }
-  `
+  `,
 );
 
 const SkinColorHamburgerButton = styled(HamburgerButton)`
@@ -164,13 +172,13 @@ const LinkComponent = styled(ClaveLink)`
   `;
 
 const WrapperComponent = styled(Wrapper)`
-    background: ${props => props.$backgroundColor || COLOR_CLAVE_PEACH};
+    background: ${(props) => props.$backgroundColor || COLOR_CLAVE_PEACH};
   `;
 
 const ColoredLogo = styled(ClaveLogo)`
-  width: ${props => props.$width || '5rem'};
+  width: ${(props) => props.$width || "5rem"};
   height: auto;
-  fill: ${props  => props.$textColor || COLOR_CLAVE_GREEN};
+  fill: ${(props) => props.$textColor || COLOR_CLAVE_GREEN};
   `;
 
 const HamburgerDiv = styled.div`

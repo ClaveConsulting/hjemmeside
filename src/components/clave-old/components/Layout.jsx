@@ -1,7 +1,7 @@
-import './layout.css';
-import React, { useContext } from 'react';
-import styled, { createGlobalStyle } from 'styled-components';
-import { COLOR_CLAVE_GREEN, COLOR_CLAVE_PEACH } from '../colors';
+import "./layout.css";
+import React, { useContext } from "react";
+import styled, { createGlobalStyle } from "styled-components";
+import { COLOR_CLAVE_GREEN, COLOR_CLAVE_PEACH } from "../colors";
 import FontBasis from "./fonts/basis/basis-grotesque-medium-pro.eot";
 import FontBasisWoff2 from "./fonts/basis/basis-grotesque-medium-pro.woff2";
 import FontBasisWoff from "./fonts/basis/basis-grotesque-medium-pro.woff";
@@ -12,17 +12,23 @@ import FontBasisWoff2Regular from "./fonts/basis/basis-grotesque-regular-pro.wof
 import FontBasisWoffRegular from "./fonts/basis/basis-grotesque-regular-pro.woff";
 import FontBasisTtfRegular from "./fonts/basis/basis-grotesque-regular-pro.ttf";
 
-export const MAX_WIDTH = '120rem';
-export const MOBILE_PADDING = '3rem';
-export const DESKTOP_PADDING = '6rem';
+export const MAX_WIDTH = "120rem";
+export const MOBILE_PADDING = "3rem";
+export const DESKTOP_PADDING = "6rem";
 
 export const Container = (props) => {
-    const { backgroundColor, textColor } = useContext(ColorContext);
+	const { backgroundColor, textColor } = useContext(ColorContext);
 
-    return <>
-        <GlobalStyle/>
-        <ColoredContainer {...props} $backgroundColor={backgroundColor} $textColor={textColor}/>
-    </>;
+	return (
+		<>
+			<GlobalStyle />
+			<ColoredContainer
+				{...props}
+				$backgroundColor={backgroundColor}
+				$textColor={textColor}
+			/>
+		</>
+	);
 };
 
 const GlobalStyle = createGlobalStyle`
@@ -783,7 +789,6 @@ const GlobalStyle = createGlobalStyle`
     
 `;
 
-
 Container.Content = styled.div`
     margin: 0 auto;
     max-width: ${MAX_WIDTH};
@@ -830,33 +835,33 @@ const LayoutWrapper = styled.div`
 `;
 
 export const ColorContext = React.createContext({
-    backgroundColor: COLOR_CLAVE_PEACH,
-    textColor: COLOR_CLAVE_GREEN,
+	backgroundColor: COLOR_CLAVE_PEACH,
+	textColor: COLOR_CLAVE_GREEN,
 });
 
 export function ContentColumn({ asideContent, children, className }) {
-    const AsideWrapper = asideContent ? Aside : EmptyAsidePadding;
-    return (
-        <LayoutWrapper className={className}>
-            <AsideWrapper>{asideContent}</AsideWrapper>
-            <Section>{children}</Section>
-        </LayoutWrapper>
-    );
+	const AsideWrapper = asideContent ? Aside : EmptyAsidePadding;
+	return (
+		<LayoutWrapper className={className}>
+			<AsideWrapper>{asideContent}</AsideWrapper>
+			<Section>{children}</Section>
+		</LayoutWrapper>
+	);
 }
 
 const Layout = ({ asideContent, children, className }) => {
-    return (
-        <Container className={className}>
-            <Container.Content>
-                <ContentColumn asideContent={asideContent}>{children}</ContentColumn>
-            </Container.Content>
-        </Container>
-    );
+	return (
+		<Container className={className}>
+			<Container.Content>
+				<ContentColumn asideContent={asideContent}>{children}</ContentColumn>
+			</Container.Content>
+		</Container>
+	);
 };
 
 const ColoredContainer = styled.div`
-    background-color: ${props => props.$backgroundColor};
-    color: ${props => props.$textColor};
+    background-color: ${(props) => props.$backgroundColor};
+    color: ${(props) => props.$textColor};
 `;
 
 export default Layout;

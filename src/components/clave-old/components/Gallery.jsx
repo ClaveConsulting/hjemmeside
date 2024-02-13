@@ -1,33 +1,33 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 export const Gallery = ({ children, ...props }) => (
-  <Container>
-    <Content {...props}>
-      {
-        children.reduce(
-          ({ kids, prev }, child) => {
-            const width = parseFloat(child.props.width);
-            return {
-              kids: [
-                ...kids,
-                React.cloneElement(child, {
-                  key: child.props.src || child.props.alt,
-                  ...child.props,
-                  style: {
-                    ...child.props.style,
-                    width: prev ? `${((100 * width) / prev) * 1.2}%` : null,
-                  },
-                }),
-              ],
-              prev: width,
-            };
-          },
-          { kids: [] },
-        ).kids
-      }
-    </Content>
-  </Container>
+	<Container>
+		<Content {...props}>
+			{
+				children.reduce(
+					({ kids, prev }, child) => {
+						const width = parseFloat(child.props.width);
+						return {
+							kids: [
+								...kids,
+								React.cloneElement(child, {
+									key: child.props.src || child.props.alt,
+									...child.props,
+									style: {
+										...child.props.style,
+										width: prev ? `${((100 * width) / prev) * 1.2}%` : null,
+									},
+								}),
+							],
+							prev: width,
+						};
+					},
+					{ kids: [] },
+				).kids
+			}
+		</Content>
+	</Container>
 );
 
 const Container = styled.div`

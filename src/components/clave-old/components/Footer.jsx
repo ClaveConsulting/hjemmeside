@@ -1,8 +1,15 @@
-import React, { useContext } from 'react';
-import styled from 'styled-components';
-import { Logo } from './Header';
-import FooterLink from './FooterLink';
-import { Aside, ColorContext, Container, DESKTOP_PADDING, MOBILE_PADDING, Section, } from './Layout';
+import React, { useContext } from "react";
+import styled from "styled-components";
+import { Logo } from "./Header";
+import FooterLink from "./FooterLink";
+import {
+	Aside,
+	ColorContext,
+	Container,
+	DESKTOP_PADDING,
+	MOBILE_PADDING,
+	Section,
+} from "./Layout";
 
 const FooterElement = styled.footer``;
 const FooterList = styled.ul`
@@ -24,7 +31,7 @@ const FooterContentContainer = styled(Container.Content)`
   }`;
 
 const FooterLogoWrapper = styled(({ children, ...props }) => (
-  <Aside {...props}>{children}</Aside>
+	<Aside {...props}>{children}</Aside>
 ))`
   order: 0;
 `;
@@ -43,99 +50,99 @@ const NoWrapText = styled.span`
 `;
 
 const Footer = (props) => {
-  const colorContext = useContext(ColorContext);
+	const colorContext = useContext(ColorContext);
 
-  const textColor = props.textColor || colorContext.textColor;
-  const backgroundColor = props.backgroundColor || colorContext.backgroundColor;
+	const textColor = props.textColor || colorContext.textColor;
+	const backgroundColor = props.backgroundColor || colorContext.backgroundColor;
 
-  return (
-    <FooterElement>
-      <ColorContext.Provider value={{ textColor, backgroundColor }}>
-        <Container>
-          <FooterContentContainer>
-            <FooterLogoWrapper>
-              <a href="/" aria-label='Forsiden til Clave.no'>
-                <Logo width="100px" />
-              </a>
-            </FooterLogoWrapper>
-            <FooterContent>
-              <FooterList>
-                <FooterListItem>
-                  <FooterLink href="/hva-vi-gjor">
-                    <NoWrapText>Se hva vi gjør</NoWrapText>
-                  </FooterLink>
-                </FooterListItem>
-                <FooterListItem>
-                  <FooterLink href="/hvem-vi-er">
-                    <NoWrapText>Se hvem vi er</NoWrapText>
-                  </FooterLink>
-                </FooterListItem>
-                <FooterListItem>
-                  <FooterLink href="/kontakt-oss">
-                    <NoWrapText>Bli en av oss</NoWrapText>
-                  </FooterLink>
-                </FooterListItem>
-              </FooterList>
-              <FooterList>
-                <FooterListItem>
-                  <FooterLink href="mailto:post@clave.no">
-                    <NoWrapText>post@clave.no</NoWrapText>
-                  </FooterLink>
-                </FooterListItem>
-                <FooterListItem>
-                  <NoWrapText>Kongens gate 12</NoWrapText>
-                </FooterListItem>
-                <FooterListItem>
-                  <NoWrapText>0153 Oslo</NoWrapText>
-                </FooterListItem>
-              </FooterList>
-              <FooterList>
-                <FooterListItem>
-                  <FooterLink
-                    href="https://www.facebook.com/ClaveConsulting/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Facebook
-                  </FooterLink>
-                </FooterListItem>
-                <FooterListItem>
-                  <FooterLink
-                    href="https://www.instagram.com/claveconsulting/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Instagram
-                  </FooterLink>
-                </FooterListItem>
-                <FooterListItem>
-                  <FooterLink
-                    href="https://www.linkedin.com/company/clave-consulting-as/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    LinkedIn
-                  </FooterLink>
-                </FooterListItem>
-                <FooterListItem>
-                  <div style={{ width: '16px' }}>
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href="https://storewebclaveplatformer.z16.web.core.windows.net/"
-                      aria-label="Claveplatformer"
-                    >
-                      <ClaveTriangle $textColor={textColor}/>
-                    </a>
-                  </div>
-                </FooterListItem>
-              </FooterList>
-            </FooterContent>
-          </FooterContentContainer>
-        </Container>
-      </ColorContext.Provider>
-    </FooterElement>
-  );
+	return (
+		<FooterElement>
+			<ColorContext.Provider value={{ textColor, backgroundColor }}>
+				<Container>
+					<FooterContentContainer>
+						<FooterLogoWrapper>
+							<a href="/" aria-label="Forsiden til Clave.no">
+								<Logo width="100px" />
+							</a>
+						</FooterLogoWrapper>
+						<FooterContent>
+							<FooterList>
+								<FooterListItem>
+									<FooterLink href="/hva-vi-gjor">
+										<NoWrapText>Se hva vi gjør</NoWrapText>
+									</FooterLink>
+								</FooterListItem>
+								<FooterListItem>
+									<FooterLink href="/hvem-vi-er">
+										<NoWrapText>Se hvem vi er</NoWrapText>
+									</FooterLink>
+								</FooterListItem>
+								<FooterListItem>
+									<FooterLink href="/kontakt-oss">
+										<NoWrapText>Bli en av oss</NoWrapText>
+									</FooterLink>
+								</FooterListItem>
+							</FooterList>
+							<FooterList>
+								<FooterListItem>
+									<FooterLink href="mailto:post@clave.no">
+										<NoWrapText>post@clave.no</NoWrapText>
+									</FooterLink>
+								</FooterListItem>
+								<FooterListItem>
+									<NoWrapText>Kongens gate 12</NoWrapText>
+								</FooterListItem>
+								<FooterListItem>
+									<NoWrapText>0153 Oslo</NoWrapText>
+								</FooterListItem>
+							</FooterList>
+							<FooterList>
+								<FooterListItem>
+									<FooterLink
+										href="https://www.facebook.com/ClaveConsulting/"
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										Facebook
+									</FooterLink>
+								</FooterListItem>
+								<FooterListItem>
+									<FooterLink
+										href="https://www.instagram.com/claveconsulting/"
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										Instagram
+									</FooterLink>
+								</FooterListItem>
+								<FooterListItem>
+									<FooterLink
+										href="https://www.linkedin.com/company/clave-consulting-as/"
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										LinkedIn
+									</FooterLink>
+								</FooterListItem>
+								<FooterListItem>
+									<div style={{ width: "16px" }}>
+										<a
+											target="_blank"
+											rel="noopener noreferrer"
+											href="https://storewebclaveplatformer.z16.web.core.windows.net/"
+											aria-label="Claveplatformer"
+										>
+											<ClaveTriangle $textColor={textColor} />
+										</a>
+									</div>
+								</FooterListItem>
+							</FooterList>
+						</FooterContent>
+					</FooterContentContainer>
+				</Container>
+			</ColorContext.Provider>
+		</FooterElement>
+	);
 };
 
 const ClaveTriangle = styled.div`
@@ -144,7 +151,7 @@ const ClaveTriangle = styled.div`
     height: 0;
     border-left: 8px solid transparent;
     border-right: 8px solid transparent;
-    border-bottom: 16px solid ${props => props.$textColor};
+    border-bottom: 16px solid ${(props) => props.$textColor};
   `;
 
 export default Footer;

@@ -1,20 +1,36 @@
-import React, { useContext } from 'react';
-import styled, { css, keyframes } from 'styled-components';
-import { COLOR_CLAVE_GREEN, COLOR_CLAVE_PINK, COLOR_CLAVE_YELLOW } from '../colors';
-import { ColorContext } from './Layout';
+import React, { useContext } from "react";
+import styled, { css, keyframes } from "styled-components";
+import {
+	COLOR_CLAVE_GREEN,
+	COLOR_CLAVE_PINK,
+	COLOR_CLAVE_YELLOW,
+} from "../colors";
+import { ColorContext } from "./Layout";
 
-export const ignoreStyle = styles => '';
+export const ignoreStyle = (styles) => "";
 
-const ClaveLink = ({ href: href, children, className, showOnMobile, ...props }) => {
-  const { textColor } = useContext(ColorContext);
+const ClaveLink = ({
+	href: href,
+	children,
+	className,
+	showOnMobile,
+	...props
+}) => {
+	const { textColor } = useContext(ColorContext);
 
-  return (
-    <Underline $showOnMobile={showOnMobile}>
-      <ColoredLink className={className} href={href} $textColor={textColor} $showOnMobile={showOnMobile} {...props}>
-        {children}
-      </ColoredLink>
-    </Underline>
-  );
+	return (
+		<Underline $showOnMobile={showOnMobile}>
+			<ColoredLink
+				className={className}
+				href={href}
+				$textColor={textColor}
+				$showOnMobile={showOnMobile}
+				{...props}
+			>
+				{children}
+			</ColoredLink>
+		</Underline>
+	);
 };
 
 const hoverKeyframes = keyframes`
@@ -60,7 +76,7 @@ const Underline = styled.div`
   }
 
   @media only screen and (max-width: 719px) {
-    display: ${props => props.$showOnMobile ? "block" : "none"};
+    display: ${(props) => (props.$showOnMobile ? "block" : "none")};
   }
 `;
 export const RightArrowLink = styled(ClaveLink)`
@@ -101,39 +117,39 @@ export const RightArrowLink = styled(ClaveLink)`
 `;
 
 export const LeftArrowLink = styled(ClaveLink)`
-  display: flex;
-  font-size: 24px;
-  margin: 20px 0px -3px -40px;
-  
-  &:before {
-    content: '';
-    width: 40px;
-    height: 0;
-    display: block;
-    border-top: 15px solid transparent;
-    border-bottom: 15px solid transparent;
-    border-left: 20px solid transparent;
-  }
+	display: flex;
+	font-size: 24px;
+	margin: 20px 0 -3px -40px;
 
-  &:hover:before {
-    content: '';
-    width: 0;
-    height: 0;
-    margin: -2px 20px -20px 0;
-    display: block;
-    border-top: 15px solid transparent;
-    border-bottom: 15px solid transparent;
-    border-left: 20px solid ${COLOR_CLAVE_GREEN};
-    transform: scaleX(-0.6) scaleY(0.6);
-  }
+	&:before {
+		content: '';
+		width: 40px;
+		height: 0;
+		display: block;
+		border-top: 15px solid transparent;
+		border-bottom: 15px solid transparent;
+		border-left: 20px solid transparent;
+	}
 
-  @media screen and (min-width: 720px) {
-  font-size: 32px;
+	&:hover:before {
+		content: '';
+		width: 0;
+		height: 0;
+		margin: -2px 20px -20px 0;
+		display: block;
+		border-top: 15px solid transparent;
+		border-bottom: 15px solid transparent;
+		border-left: 20px solid ${COLOR_CLAVE_GREEN};
+		transform: scaleX(-0.6) scaleY(0.6);
+	}
 
-  &:hover:before {
-    margin-top: 5px;
-    }  
-  }
+	@media screen and (min-width: 720px) {
+		font-size: 32px;
+
+		&:hover:before {
+			margin-top: 5px;
+		}
+	}
 `;
 
 const ANCHOR_STYLES = css`
@@ -145,9 +161,9 @@ const StyledAnchor = styled.a`
 `;
 
 const ColoredLink = styled(StyledAnchor)`
-    color: ${props => props.$textColor || COLOR_CLAVE_GREEN};
+    color: ${(props) => props.$textColor || COLOR_CLAVE_GREEN};
     @media only screen and (max-width: 719px) {
-      display: ${props => props.$showOnMobile ? "flex" : "none"};  
+      display: ${(props) => (props.$showOnMobile ? "flex" : "none")};  
     }`;
 
 export default ClaveLink;

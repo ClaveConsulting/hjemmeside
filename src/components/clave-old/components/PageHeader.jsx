@@ -1,25 +1,23 @@
-import React from 'react';
-import styled from 'styled-components';
-import { MOBILE_PADDING, Container, ContentColumn } from './Layout';
-import { Ingress } from './Ingress';
-
-
+import React from "react";
+import styled from "styled-components";
+import { MOBILE_PADDING, Container, ContentColumn } from "./Layout";
+import { Ingress } from "./Ingress";
 
 //write file without styled components
 
 //
 const PageHeader = ({ title, ingress = undefined, imageProps }) => {
-  return (
-    <Container>
-      <PageHeaderWrapper>
-        <PageHeaderContent>
-          <PageHeaderTitle>{title}</PageHeaderTitle>
-          {ingress ? <Ingress>{ingress}</Ingress> : null}
-        </PageHeaderContent>
-        <PageHeaderImage {...imageProps} />
-      </PageHeaderWrapper>
-    </Container>
-  );
+	return (
+		<Container>
+			<PageHeaderWrapper>
+				<PageHeaderContent>
+					<PageHeaderTitle>{title}</PageHeaderTitle>
+					{ingress ? <Ingress>{ingress}</Ingress> : null}
+				</PageHeaderContent>
+				<PageHeaderImage {...imageProps} />
+			</PageHeaderWrapper>
+		</Container>
+	);
 };
 
 const PageHeaderContent = styled(ContentColumn)`
@@ -37,13 +35,13 @@ const PageHeaderWrapper = styled(Container.Content)`
     }`;
 
 const PageHeaderImage = ({ fluidImage, src, ...props }) => (
-  <div>
-    {fluidImage ? (
-      <PageHeaderLoadedImage fluidImage={fluidImage} {...props} />
-    ) : (
-      <PageHeaderImageImg src={src} {...props} />
-    )}
-  </div>
+	<div>
+		{fluidImage ? (
+			<PageHeaderLoadedImage fluidImage={fluidImage} {...props} />
+		) : (
+			<PageHeaderImageImg src={src} {...props} />
+		)}
+	</div>
 );
 
 const imageStyle = `

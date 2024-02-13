@@ -1,146 +1,154 @@
-import React, { useRef, useEffect } from 'react';
-import styled, { css } from 'styled-components';
+import React, { useRef, useEffect } from "react";
+import styled, { css } from "styled-components";
 
-import { COLOR_CLAVE_GREEN, COLOR_CLAVE_PEACH } from '../colors';
-import Header from '../components/Header';
-import Title from '../components/Title';
+import { COLOR_CLAVE_GREEN, COLOR_CLAVE_PEACH } from "../colors";
+import Header from "../components/Header";
+import Title from "../components/Title";
 import Layout, {
-  ColorContext,
-  Container,
-  DESKTOP_PADDING,
-  MOBILE_PADDING,
-} from '../components/Layout';
-import Footer from '../components/Footer';
+	ColorContext,
+	Container,
+	DESKTOP_PADDING,
+	MOBILE_PADDING,
+} from "../components/Layout";
+import Footer from "../components/Footer";
 
-import './index.css';
-import BrukeropplevelseIcon from '../components/icons/clave_ikon_brukeropplevelse.svg?react';
-import SystemutviklingIcon from '../components/icons/clave_ikon_systemutvikling.svg?react';
-import RaadgivningIcon from '../components/icons/clave_ikon_radgivning.svg?react';
-import { onMobile } from '../components/Breakpoints';
-import { RightArrowLink } from '../components/ClaveLink';
-import JoinSection from '../components/JoinSection';
-import { Ingress } from '../components/Ingress';
+import "./index.css";
+import BrukeropplevelseIcon from "../components/icons/clave_ikon_brukeropplevelse.svg?react";
+import SystemutviklingIcon from "../components/icons/clave_ikon_systemutvikling.svg?react";
+import RaadgivningIcon from "../components/icons/clave_ikon_radgivning.svg?react";
+import { onMobile } from "../components/Breakpoints";
+import { RightArrowLink } from "../components/ClaveLink";
+import JoinSection from "../components/JoinSection";
+import { Ingress } from "../components/Ingress";
 
-const inBrowser = typeof window !== 'undefined';
-import headerBilde from '../images/frontpage1.png';
+const inBrowser = typeof window !== "undefined";
+import headerBilde from "../images/frontpage1.png";
 
-const IsLandscapeScreen = () => inBrowser ? window.innerWidth >= window.innerHeight : false;
+const IsLandscapeScreen = () =>
+	inBrowser ? window.innerWidth >= window.innerHeight : false;
 
 const IndexPage = () => {
+	const GREEN_BACKGROUND = {
+		backgroundColor: COLOR_CLAVE_GREEN,
+		textColor: COLOR_CLAVE_PEACH,
+	};
 
-  const GREEN_BACKGROUND = {
-    backgroundColor: COLOR_CLAVE_GREEN,
-    textColor: COLOR_CLAVE_PEACH,
-  };
+	const scoverlayElement = useRef();
 
-  const scoverlayElement = useRef();
+	useEffect(() => {
+		const scrollY = () => (inBrowser ? window.scrollY : 0);
 
-  useEffect(() => {
-    const scrollY = () => inBrowser ? window.scrollY : 0;
+		const setClipPath = () => {
+			if (scoverlayElement.current == null) return;
+			scoverlayElement.current.style.clipPath = IsLandscapeScreen()
+				? `circle(calc(${1.5 * scrollY()}px + min(45vh, 45vw)) at 85% 70%)`
+				: `circle(calc(${1 * scrollY()}px + 25vh) at 85% 85%)`;
+		};
+		setClipPath();
+		window.addEventListener("scroll", setClipPath);
+		return () => {
+			window.removeEventListener("scroll", setClipPath);
+		};
+	}, [scoverlayElement]);
 
-    const setClipPath = () => {
-      if(scoverlayElement.current == null) return;
-      scoverlayElement.current.style.clipPath = IsLandscapeScreen() ?
-          `circle(calc(${1.5 * scrollY()}px + min(45vh, 45vw)) at 85% 70%)` :
-          `circle(calc(${1 * scrollY()}px + 25vh) at 85% 85%)`
-    }
-    setClipPath();
-    window.addEventListener('scroll', setClipPath)
-    return () => { window.removeEventListener('scroll', setClipPath) };
-  }, [scoverlayElement])
-
-  return (
-      <>
-        <main>
-          <ColorContext.Provider value={GREEN_BACKGROUND}>
-            <StyledFirstSection>
-              <StickyScrollBox >
-                <PrescrollContent>
-                  <Header frontPage useSkinColoredHamburgerMenu={true} />
-                  <StyledTextPanel>
-                    <TitleWrapper>
-                      <Title color={COLOR_CLAVE_PEACH}>
-                        Vi er en gjeng flinke designere og utviklere med stort
-                        engasjement for det vi driver med
-                      </Title>
-                    </TitleWrapper>
-                  </StyledTextPanel>
-                </PrescrollContent>
-                <PostsrollContent ref={scoverlayElement}>
-                  <Header frontPage useSkinColoredHamburgerMenu={false} textColor={COLOR_CLAVE_GREEN} />
-                  <StyledTextPanel>
-                    <TitleWrapper>
-                      <Title color={COLOR_CLAVE_GREEN}>
-                        Vi er en gjeng flinke designere og utviklere med stort
-                        engasjement for det vi driver med
-                      </Title>
-                    </TitleWrapper>
-                  </StyledTextPanel>
-                  <StyledBackgroundImage>
-                    <ScrollImage src={headerBilde.src} />
-                  </StyledBackgroundImage>
-                </PostsrollContent>
-              </StickyScrollBox>
-            </StyledFirstSection>
-          </ColorContext.Provider>
-          <Layout>
-            <FrontPageTextContent>
-              <Ingress>
-                Vi brenner for teknologi, innovasjon og å lage de aller beste
-                løsningene for menneskene som skal bruke dem. Vi er stolte av
-                jobbene vi gjør og enda stoltere av relasjonene vi bygger med
-                kundene våre.
-              </Ingress>
-            </FrontPageTextContent>
-          </Layout>
-          <Container>
-            <Container.Content>
-              <WideWrapper>
-                <h2>Vi liker å drive med</h2>
-                <InfoFlexbox>
-                  <InfoBox>
-                    <BrukeropplevelseLogo />
-                    <h3>Brukeropplevelse og UX-design</h3>
-                    <p>
-                      De beste løsningene lager vi når vi forstår brukerne og deres
-                      behov. Vi gjennomfører alt fra behovskartlegging,
-                      brukertesting og større tjenestedesignprosjekter.
-                    </p>
-                  </InfoBox>
-                  <InfoBox>
-                    <SystemutviklingLogo />
-                    <h3>Systemutvikling</h3>
-                    <p>
-                      Vi lager intuitive og innovative løsninger som virker. Vi kan
-                      hele tjenestestacken: arkitektur, database, frontend,
-                      apputvikling, infrastruktur, nettverk og skytjenester.
-                    </p>
-                  </InfoBox>
-                  <InfoBox>
-                    <RaadgivningLogo />
-                    <h3>Rådgivning og prosjektledelse</h3>
-                    <p>
-                      Vi har lang erfaring med rådgivning innenfor teknologi,
-                      prosess og arkitektur. I samarbeid med kunden kommer vi frem
-                      til gode løsninger på komplekse problemer.
-                    </p>
-                  </InfoBox>
-                </InfoFlexbox>
-                <RightArrowLink href="/hva-vi-gjor">Se mer om hva vi gjør</RightArrowLink>
-              </WideWrapper>
-            </Container.Content>
-          </Container>
-          <JoinSection />
-        </main>
-        <ColorContext.Provider value={GREEN_BACKGROUND}>
-          <Footer />
-        </ColorContext.Provider>
-      </>
-  );
+	return (
+		<>
+			<main>
+				<ColorContext.Provider value={GREEN_BACKGROUND}>
+					<StyledFirstSection>
+						<StickyScrollBox>
+							<PrescrollContent>
+								<Header frontPage useSkinColoredHamburgerMenu={true} />
+								<StyledTextPanel>
+									<TitleWrapper>
+										<Title color={COLOR_CLAVE_PEACH}>
+											Vi er en gjeng flinke designere og utviklere med stort
+											engasjement for det vi driver med
+										</Title>
+									</TitleWrapper>
+								</StyledTextPanel>
+							</PrescrollContent>
+							<PostsrollContent ref={scoverlayElement}>
+								<Header
+									frontPage
+									useSkinColoredHamburgerMenu={false}
+									textColor={COLOR_CLAVE_GREEN}
+								/>
+								<StyledTextPanel>
+									<TitleWrapper>
+										<Title color={COLOR_CLAVE_GREEN}>
+											Vi er en gjeng flinke designere og utviklere med stort
+											engasjement for det vi driver med
+										</Title>
+									</TitleWrapper>
+								</StyledTextPanel>
+								<StyledBackgroundImage>
+									<ScrollImage src={headerBilde.src} />
+								</StyledBackgroundImage>
+							</PostsrollContent>
+						</StickyScrollBox>
+					</StyledFirstSection>
+				</ColorContext.Provider>
+				<Layout>
+					<FrontPageTextContent>
+						<Ingress>
+							Vi brenner for teknologi, innovasjon og å lage de aller beste
+							løsningene for menneskene som skal bruke dem. Vi er stolte av
+							jobbene vi gjør og enda stoltere av relasjonene vi bygger med
+							kundene våre.
+						</Ingress>
+					</FrontPageTextContent>
+				</Layout>
+				<Container>
+					<Container.Content>
+						<WideWrapper>
+							<h2>Vi liker å drive med</h2>
+							<InfoFlexbox>
+								<InfoBox>
+									<BrukeropplevelseLogo />
+									<h3>Brukeropplevelse og UX-design</h3>
+									<p>
+										De beste løsningene lager vi når vi forstår brukerne og
+										deres behov. Vi gjennomfører alt fra behovskartlegging,
+										brukertesting og større tjenestedesignprosjekter.
+									</p>
+								</InfoBox>
+								<InfoBox>
+									<SystemutviklingLogo />
+									<h3>Systemutvikling</h3>
+									<p>
+										Vi lager intuitive og innovative løsninger som virker. Vi
+										kan hele tjenestestacken: arkitektur, database, frontend,
+										apputvikling, infrastruktur, nettverk og skytjenester.
+									</p>
+								</InfoBox>
+								<InfoBox>
+									<RaadgivningLogo />
+									<h3>Rådgivning og prosjektledelse</h3>
+									<p>
+										Vi har lang erfaring med rådgivning innenfor teknologi,
+										prosess og arkitektur. I samarbeid med kunden kommer vi frem
+										til gode løsninger på komplekse problemer.
+									</p>
+								</InfoBox>
+							</InfoFlexbox>
+							<RightArrowLink href="/hva-vi-gjor">
+								Se mer om hva vi gjør
+							</RightArrowLink>
+						</WideWrapper>
+					</Container.Content>
+				</Container>
+				<JoinSection />
+			</main>
+			<ColorContext.Provider value={GREEN_BACKGROUND}>
+				<Footer />
+			</ColorContext.Provider>
+		</>
+	);
 };
 
-const PADDING_TOP_DESKTOP = '6rem';
-const PADDING_TOP_MOBILE = '4.75rem';
+const PADDING_TOP_DESKTOP = "6rem";
+const PADDING_TOP_MOBILE = "4.75rem";
 
 const FrontPageTextContent = styled.div`
   padding-top: 3rem;
@@ -178,7 +186,7 @@ const ScrollImage = styled.img`
   @media only screen and (max-width: 719px) {
     height: 50vh;
 }
-`
+`;
 
 const StyledTextPanel = styled.div`
   display: flex;
@@ -221,16 +229,16 @@ const PrescrollContent = styled(ScrollContent)`
 
 const PostsrollContent = styled(ScrollContent)`
   background-color: ${COLOR_CLAVE_PEACH};
-  clip-path: ${IsLandscapeScreen() ?
-    `circle(45vw at 85% 70%)` :
-    `circle(25vh at 85% 85%);`}
+  clip-path: ${
+		IsLandscapeScreen() ? `circle(45vw at 85% 70%)` : `circle(25vh at 85% 85%);`
+	}
 `;
 
 const LogoStyles = css`
   width: 15rem;
   height: auto;
   margin-bottom: 20px;  
-`
+`;
 
 const BrukeropplevelseLogo = styled(BrukeropplevelseIcon)`${LogoStyles}`;
 
@@ -241,12 +249,10 @@ const RaadgivningLogo = styled(RaadgivningIcon)`${LogoStyles}`;
 const WideWrapper = styled.div`
     padding: 0 6rem 8rem;
 
-    ${
-    onMobile(`
+    ${onMobile(`
       padding: 0 3rem 4rem;
-      `)
-}
-`
+      `)}
+`;
 
 const InfoBox = styled.div`
   max-width: 25rem;
@@ -259,14 +265,12 @@ const InfoBox = styled.div`
     min-height: 98px;
   }
 
-  ${
-    onMobile(`
+  ${onMobile(`
       width: auto;
       h3 {
         min-height: auto;
       }
-    `)
-}
+    `)}
 `;
 
 const InfoFlexbox = styled.div`

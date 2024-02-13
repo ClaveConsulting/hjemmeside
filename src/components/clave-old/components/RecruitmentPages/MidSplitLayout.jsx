@@ -1,26 +1,26 @@
-import '../layout.css';
+import "../layout.css";
 import React from "react";
-import styled from 'styled-components';
-import { COLOR_CLAVE_GREEN, COLOR_CLAVE_PEACH } from '../../colors';
+import styled from "styled-components";
+import { COLOR_CLAVE_GREEN, COLOR_CLAVE_PEACH } from "../../colors";
 
-export const MAX_WIDTH = '120rem';
-export const MOBILE_PADDING = '3rem';
-export const DESKTOP_PADDING = '6rem';
+export const MAX_WIDTH = "120rem";
+export const MOBILE_PADDING = "3rem";
+export const DESKTOP_PADDING = "6rem";
 
-const MidSplitLayout = props => {
-  const { image } = props;
+const MidSplitLayout = (props) => {
+	const { image } = props;
 
-  return (
-    <Wrapper>
-      <Content>
-      <Left>
-          <StyledMidSplitLayoutImage alt="" src={image} />
-      </Left>
-      <Right>{props.children}</Right>
-      </Content>
-    </Wrapper>
-  )
-}
+	return (
+		<Wrapper>
+			<Content>
+				<Left>
+					<StyledMidSplitLayoutImage alt="" src={image} />
+				</Left>
+				<Right>{props.children}</Right>
+			</Content>
+		</Wrapper>
+	);
+};
 
 const Wrapper = styled.div`
 
@@ -52,7 +52,7 @@ const Content = styled.div`
 
   @media screen and (min-width: 720px) {
     grid-template-columns: 1fr 1fr;
-  }`
+  }`;
 
 const Left = styled.div`
   height: 400px;
@@ -63,6 +63,6 @@ padding: ${MOBILE_PADDING};
 
 @media screen and (min-width: 720px) {
   padding: 0 ${DESKTOP_PADDING} 0 6rem;
-}`
+}`;
 
 export default MidSplitLayout;
