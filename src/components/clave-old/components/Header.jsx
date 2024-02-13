@@ -1,16 +1,17 @@
 import React, { useContext, useState } from "react";
-import { COLOR_CLAVE_GREEN, COLOR_CLAVE_PEACH } from "../colors";
 import styled, { css } from "styled-components";
+import { COLOR_CLAVE_GREEN, COLOR_CLAVE_PEACH } from "../colors";
+import { onDesktop, onMobile } from "./Breakpoints.jsx";
 import ClaveLink from "./ClaveLink";
-import ClaveLogo from "./icons/clave-logo.svg?react";
-import hamburgerIcon from "./icons/hamburgermeny_ikon.svg?react";
+import HamburgerMenuLink from "./HamburgerMenuLink";
 import {
 	ColorContext,
 	Container,
 	DESKTOP_PADDING,
 	MOBILE_PADDING,
 } from "./Layout";
-import HamburgerMenuLink from "./HamburgerMenuLink";
+import ClaveLogo from "./icons/clave-logo.svg?react";
+import hamburgerIcon from "./icons/hamburgermeny_ikon.svg?react";
 
 const Header = ({
 	frontPage,
@@ -119,17 +120,17 @@ const HamburgerButton = styled.button`
   cursor: pointer;
   outline: inherit;
 
-  @media screen and (min-width: 720px) {
+  ${onDesktop(`
     display: none;
-  }`;
+  `)}
+`;
 
 const StyledHeader = styled.header(
 	(props) => css`
     padding: 0 ${MOBILE_PADDING};
-    @media screen and (min-width: 720px) {
+     ${onDesktop(`
       padding: 0 ${DESKTOP_PADDING};
-    }
-  `,
+   `)}`,
 );
 
 const SkinColorHamburgerButton = styled(HamburgerButton)`
@@ -144,12 +145,12 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  @media screen and (min-width: 720px) {
-  padding-top: ${PADDING_TOP_DESKTOP};
-  };
-  @media only screen and (max-width: 719px) {
-  padding-top: ${PADDING_TOP_MOBILE};
-  }`;
+${onDesktop(`
+padding-top: ${PADDING_TOP_DESKTOP};
+`)}
+${onMobile(`
+padding-top: ${PADDING_TOP_MOBILE};
+`)}`;
 
 const InlineWrapper = styled.div`
   display: inline-flex;
@@ -183,8 +184,8 @@ const ColoredLogo = styled(ClaveLogo)`
 
 const HamburgerDiv = styled.div`
     padding-bottom: 2rem;
-    @media screen and (min-width: 720px) {
+    ${onDesktop(`
       display: none;
-    }`;
+    `)}`;
 
 export default Header;
