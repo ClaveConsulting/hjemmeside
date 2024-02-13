@@ -1,12 +1,12 @@
 import React from "react";
-import Layout, { ColorContext } from "../Layout";
-import Header from "../Header";
-import Footer from "../Footer";
 import { COLOR_CLAVE_GREEN, COLOR_CLAVE_PEACH } from "../../colors";
+import { BackLink } from "../BackLink";
+import Footer from "../Footer";
+import Header from "../Header";
+import Layout, { ColorContext } from "../Layout";
 import ClaveInfo from "./ClaveInfo";
 import ContactInfo from "./ContactInfo";
 import SearchingForBanner from "./SearchingForBanner";
-import { BackLink } from "../BackLink";
 
 const RecruitmentTemplate = (props) => {
 	const { positions, title } = props;

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { onMobile } from "../Breakpoints";
 import { COLOR_CLAVE_BLUE, COLOR_CLAVE_LIGHTBLUE } from "../../colors";
+import { onMobile } from "../Breakpoints";
 import Layout from "../Layout";
 
 const SearchingForBanner = ({ positions }) => {

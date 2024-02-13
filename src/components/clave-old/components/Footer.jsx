@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
-import { Logo } from "./Header";
 import FooterLink from "./FooterLink";
+import { Logo } from "./Header";
 import {
 	Aside,
 	ColorContext,

@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
-import { COLOR_CLAVE_PINK, COLOR_CLAVE_GREEN } from "../colors";
+import { COLOR_CLAVE_GREEN, COLOR_CLAVE_PINK } from "../colors";
 import { ColorContext } from "./Layout";
 
-const FooterLink = ({ href: href, children, className, ...props }) => {
+const FooterLink = ({ href, children, className, ...props }) => {
 	const { textColor } = useContext(ColorContext);
 
 	return (

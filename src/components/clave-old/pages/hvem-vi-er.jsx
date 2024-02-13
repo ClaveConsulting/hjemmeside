@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 
-import Layout from "../components/Layout";
+import { COLOR_CLAVE_PEACH } from "../colors";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import Layout from "../components/Layout";
 import PageHeader from "../components/PageHeader";
-import { COLOR_CLAVE_PEACH } from "../colors";
 import headerBilde from "../images/190920_Clave_lowres_11.jpg";
 
 const HvemViErPage = (props) => {

@@ -1,5 +1,5 @@
+import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 import React from "react";
-import { GoogleMap, Marker, LoadScript } from "@react-google-maps/api";
 
 const API_KEY = import.meta.env.GATSBY_GOOGLE_MAPS_API_KEY;
 

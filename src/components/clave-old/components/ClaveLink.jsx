@@ -9,13 +9,7 @@ import { ColorContext } from "./Layout";
 
 export const ignoreStyle = (styles) => "";
 
-const ClaveLink = ({
-	href: href,
-	children,
-	className,
-	showOnMobile,
-	...props
-}) => {
+const ClaveLink = ({ href, children, className, showOnMobile, ...props }) => {
 	const { textColor } = useContext(ColorContext);
 
 	return (

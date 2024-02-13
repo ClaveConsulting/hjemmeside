@@ -1,9 +1,9 @@
 import React from "react";
-import { ProjectPageTemplate } from "../../components/ProjectTemplate";
 import { COLOR_CLAVE_GREEN, COLOR_CLAVE_SUNNY } from "../../colors";
-import mainBilde from "../../images/190920_Clave_lowres_8.jpg";
-import leftBilde from "../../images/190920_Clave_lowres_7.jpg";
+import { ProjectPageTemplate } from "../../components/ProjectTemplate";
 import rightBilde from "../../images/190920_Clave_lowres_3.jpg";
+import leftBilde from "../../images/190920_Clave_lowres_7.jpg";
+import mainBilde from "../../images/190920_Clave_lowres_8.jpg";
 
 const ProjectPage = () => {
 	return (

@@ -1,11 +1,11 @@
 import React from "react";
-import Layout, { ColorContext, Container } from "./Layout";
 import styled from "styled-components";
 import Header from "./Header";
+import Layout, { ColorContext, Container } from "./Layout";
 import PageHeader from "./PageHeader";
 
-import { ProjectGallery } from "./ProjectGallery";
 import Footer from "./Footer";
+import { ProjectGallery } from "./ProjectGallery";
 
 const TitleWrapper = styled.div.attrs(({ backgroundColor = "peach" }) => ({
 	backgroundColor,

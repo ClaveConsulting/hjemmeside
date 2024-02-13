@@ -1,19 +1,13 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 import {
-	COLOR_CLAVE_PINK,
 	COLOR_CLAVE_GREEN,
+	COLOR_CLAVE_PINK,
 	COLOR_CLAVE_YELLOW,
 } from "../colors";
 import { ColorContext } from "./Layout";
 
-const HamburgerMenuLink = ({
-	href: href,
-	children,
-	className,
-	active,
-	...props
-}) => {
+const HamburgerMenuLink = ({ href, children, className, active, ...props }) => {
 	const { textColor } = useContext(ColorContext);
 
 	return (

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { MOBILE_PADDING, Container, ContentColumn } from "./Layout";
 import { Ingress } from "./Ingress";
+import { Container, ContentColumn, MOBILE_PADDING } from "./Layout";
 
 //write file without styled components
 

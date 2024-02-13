@@ -1,16 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 
-import Layout from "../components/Layout";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
-import PageHeader from "../components/PageHeader";
-import { Gallery, GalleryImage } from "../components/Gallery";
 import { COLOR_CLAVE_PEACH } from "../colors";
+import Footer from "../components/Footer";
+import { Gallery, GalleryImage } from "../components/Gallery";
+import Header from "../components/Header";
+import Layout from "../components/Layout";
+import PageHeader from "../components/PageHeader";
 import { Projects } from "../components/ProjectList";
 import headerBilde from "../images/190920_Clave_lowres_2.jpg";
-import larsPetterBilde from "../images/190920_Clave_lowres_14.jpg";
 import pointingBilde from "../images/190920_Clave_lowres_9.jpg";
+import larsPetterBilde from "../images/190920_Clave_lowres_14.jpg";
 import laptopBilde from "../images/190920_Clave_lowres_16.jpg";
 
 const HvaViGjorPage = (props) => {

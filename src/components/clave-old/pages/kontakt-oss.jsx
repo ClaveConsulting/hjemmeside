@@ -1,13 +1,13 @@
 import React from "react";
-import Form from "../components/Form/Form";
 import styled from "styled-components";
+import Form from "../components/Form/Form";
 
-import Layout, { ColorContext } from "../components/Layout";
+import { COLOR_CLAVE_GREEN, COLOR_CLAVE_PEACH } from "../colors";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import { COLOR_CLAVE_GREEN, COLOR_CLAVE_PEACH } from "../colors";
-import MyMapComponent from "../components/Map";
 import JoinSection from "../components/JoinSection";
+import Layout, { ColorContext } from "../components/Layout";
+import MyMapComponent from "../components/Map";
 
 const PADDING_TOP_DESKTOP = "6rem";
 const PADDING_TOP_MOBILE = "4.75rem";

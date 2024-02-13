@@ -1,16 +1,16 @@
-import "./layout.css";
 import React, { useContext } from "react";
 import styled, { createGlobalStyle } from "styled-components";
 import { COLOR_CLAVE_GREEN, COLOR_CLAVE_PEACH } from "../colors";
 import FontBasis from "./fonts/basis/basis-grotesque-medium-pro.eot";
-import FontBasisWoff2 from "./fonts/basis/basis-grotesque-medium-pro.woff2";
-import FontBasisWoff from "./fonts/basis/basis-grotesque-medium-pro.woff";
 import FontBasisTtf from "./fonts/basis/basis-grotesque-medium-pro.ttf";
+import FontBasisWoff from "./fonts/basis/basis-grotesque-medium-pro.woff";
+import FontBasisWoff2 from "./fonts/basis/basis-grotesque-medium-pro.woff2";
+import "./layout.css";
 
 import FontBasisRegular from "./fonts/basis/basis-grotesque-regular-pro.eot";
-import FontBasisWoff2Regular from "./fonts/basis/basis-grotesque-regular-pro.woff2";
-import FontBasisWoffRegular from "./fonts/basis/basis-grotesque-regular-pro.woff";
 import FontBasisTtfRegular from "./fonts/basis/basis-grotesque-regular-pro.ttf";
+import FontBasisWoffRegular from "./fonts/basis/basis-grotesque-regular-pro.woff";
+import FontBasisWoff2Regular from "./fonts/basis/basis-grotesque-regular-pro.woff2";
 
 export const MAX_WIDTH = "120rem";
 export const MOBILE_PADDING = "3rem";

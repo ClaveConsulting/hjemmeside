@@ -1,6 +1,6 @@
 import React from "react";
-import { ProjectPageTemplate } from "../../components/ProjectTemplate";
 import { COLOR_CLAVE_GREEN, COLOR_CLAVE_SUNNY } from "../../colors";
+import { ProjectPageTemplate } from "../../components/ProjectTemplate";
 import mainBilde from "../../images/190920_Clave_lowres_6.jpg";
 import leftBilde from "../../images/190920_Clave_lowres_13.jpg";
 import rightBilde from "../../images/190920_Clave_lowres_18.jpg";

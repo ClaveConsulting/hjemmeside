@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import { Ingress } from "../components/Ingress";
 import Layout from "../components/Layout";
 import MidSplitLayout from "../components/RecruitmentPages/MidSplitLayout";
 import RecruitmentTemplate from "../components/RecruitmentPages/RecruitmentTemplate";
-import { Ingress } from "../components/Ingress";
 import piaBilde from "../images/190920_Clave_lowres_7.jpg";
 
 const positions = [

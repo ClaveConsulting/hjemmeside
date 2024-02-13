@@ -1,7 +1,7 @@
 import React from "react";
-import Layout from "../Layout";
-import { Ingress } from "../Ingress";
 import styled from "styled-components";
+import { Ingress } from "../Ingress";
+import Layout from "../Layout";
 
 const Phone = styled.span`
   white-space: nowrap;

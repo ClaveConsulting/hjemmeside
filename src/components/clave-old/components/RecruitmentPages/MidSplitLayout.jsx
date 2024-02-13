@@ -1,7 +1,7 @@
-import "../layout.css";
 import React from "react";
 import styled from "styled-components";
 import { COLOR_CLAVE_GREEN, COLOR_CLAVE_PEACH } from "../../colors";
+import "../layout.css";
 
 export const MAX_WIDTH = "120rem";
 export const MOBILE_PADDING = "3rem";

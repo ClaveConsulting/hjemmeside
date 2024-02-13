@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { onMobile } from "./Breakpoints";
 import { COLOR_CLAVE_MUSTARD } from "../colors";
+import { onMobile } from "./Breakpoints";
 import { RightArrowLink } from "./ClaveLink";
 
 export const Projects = () => {

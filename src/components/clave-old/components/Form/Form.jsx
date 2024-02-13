@@ -73,21 +73,21 @@ class Form extends Component {
 	}
 
 	changeNamePlaceholder() {
-		let nameValid = this.state.nameValid;
+		const nameValid = this.state.nameValid;
 		if (!nameValid) {
 			this.setState({ namePlaceholder: "Vi må vite hvem du er" });
 		}
 	}
 
 	changeMessagePlaceholder() {
-		let messageValid = this.state.messageValid;
+		const messageValid = this.state.messageValid;
 		if (!messageValid) {
 			this.setState({ messagePlaceholder: "Hva er du nysgjerrig på?" });
 		}
 	}
 
 	changeEmailPlaceholder() {
-		let emailValid = this.state.emailValid;
+		const emailValid = this.state.emailValid;
 		if (!emailValid) {
 			this.setState({
 				emailPlaceholder: "Vi trenger eposten din for å svare deg",
