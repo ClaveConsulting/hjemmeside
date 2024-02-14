@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
+import { onDesktop } from "./Breakpoints.jsx";
 import FooterLink from "./FooterLink";
 import { Logo } from "./Header";
 import {
@@ -25,10 +26,10 @@ const FooterContentContainer = styled(Container.Content)`
   flex-direction: column;
   padding: 6rem ${MOBILE_PADDING} 9rem;
 
-  @media screen and (min-width: 720px) {
+	${onDesktop(`
     padding: 6rem ${DESKTOP_PADDING} 9rem;
     flex-direction: row;
-  }`;
+  `)}`;
 
 const FooterLogoWrapper = styled(({ children, ...props }) => (
 	<Aside {...props}>{children}</Aside>
@@ -41,9 +42,9 @@ const FooterContent = styled(Section)`
   flex-direction: column;
   justify-content: space-between;
 
-  @media screen and (min-width: 720px) {
-      flex-direction: row;  
-  }`;
+	${onDesktop(`
+		flex-direction: row;
+  `)}`;
 
 const NoWrapText = styled.span`
   white-space: nowrap;
