@@ -42,6 +42,7 @@ export const ProjectGallery = ({
 	const [firstSectionHeight, setFirstSectionHeight] = useState(0);
 	const firstSectionRef = useRef(null);
 
+	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	useEffect(() => {
 		const onResize = (_) =>
 			setFirstSectionHeight(firstSectionRef.current.clientHeight);

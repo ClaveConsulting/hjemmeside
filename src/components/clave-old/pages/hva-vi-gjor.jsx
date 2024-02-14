@@ -21,13 +21,9 @@ const HvaViGjorPage = (props) => {
 				<TitleWrapper>
 					<PageHeader
 						title="Se hva vi gjør"
-						ingress={
-							<>
-								Brukeropplevelse, systemutvikling og rådgivning er
+						ingress={`Brukeropplevelse, systemutvikling og rådgivning er
 								spesialitetene våre. Vi er stolte av jobbene vi gjør og enda
-								stoltere av relasjonene vi bygger med kundene våre.
-							</>
-						}
+								stoltere av relasjonene vi bygger med kundene våre.`}
 						imageProps={{
 							src: headerBilde.src,
 							width: 1227,

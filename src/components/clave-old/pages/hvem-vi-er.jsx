@@ -16,12 +16,9 @@ const HvemViErPage = (props) => {
 				<TitleWrapper>
 					<PageHeader
 						title="Se hvem vi er"
-						ingress={
-							<>
+						ingress={`
 								Vi mener at det er godt og litt annerledes å være en Claver. Vi
-								føler en tilhørighet både til selskapet og til kollegaene våre.
-							</>
-						}
+								føler en tilhørighet både til selskapet og til kollegaene våre.`}
 						imageProps={{
 							src: headerBilde.src,
 							width: 1227,
