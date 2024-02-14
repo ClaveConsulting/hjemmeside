@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { onDesktop } from "./Breakpoints.jsx";
 
 export const Gallery = ({ children, ...props }) => (
 	<Container>
@@ -42,10 +43,11 @@ const Content = styled.div`
   position: relative;
   left: 1rem;
 
-  @media screen and (min-width: 720px) {
-    width: 100%;
-    position: static;  
-  }`;
+	${onDesktop(`
+		width: 100%;
+    position: static;
+  `)};
+`;
 
 const galleryImgStyles = `
     display: block;
