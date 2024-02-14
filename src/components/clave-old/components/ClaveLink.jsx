@@ -157,7 +157,7 @@ const StyledAnchor = styled.a`
 
 const ColoredLink = styled(StyledAnchor)`
     color: ${(props) => props.$textColor || COLOR_CLAVE_GREEN};
-	${onDesktop(`
+	${onMobile(`
 		display: ${(props) => (props.$showOnMobile ? "flex" : "none")};
   `)};
 `;
