@@ -12,7 +12,7 @@ import Layout, {
 } from "../components/Layout";
 import Title from "../components/Title";
 
-import { onMobile } from "../components/Breakpoints";
+import { onDesktop, onMobile } from "../components/Breakpoints";
 import { RightArrowLink } from "../components/ClaveLink";
 import { Ingress } from "../components/Ingress";
 import JoinSection from "../components/JoinSection";
@@ -156,14 +156,15 @@ const FrontPageTextContent = styled.div`
 `;
 
 const TitleWrapper = styled.div`
-  @media screen and (min-width: 720px) {
-    padding-top: ${PADDING_TOP_DESKTOP};
+	${onDesktop(`
+		padding-top: ${PADDING_TOP_DESKTOP};
     padding-left: ${DESKTOP_PADDING};
-  };
-  @media only screen and (max-width: 719px) {
-    padding-top: ${PADDING_TOP_MOBILE};
+  `)};
+	${onMobile(`
+		padding-top: ${PADDING_TOP_MOBILE};
     padding-left: ${MOBILE_PADDING};
-  }`;
+  `)} 
+`;
 
 const StyledFirstSection = styled.section`
   width: 100%;
@@ -184,9 +185,9 @@ const ScrollImage = styled.img`
   width: 100%;
   height: 100vh;
   margin-bottom: 0;
-  @media only screen and (max-width: 719px) {
-    height: 50vh;
-}
+	${onMobile(`
+		height: 50vh;
+  `)};
 `;
 
 const StyledTextPanel = styled.div`
@@ -196,10 +197,10 @@ const StyledTextPanel = styled.div`
   max-width: 45em;
   flex-direction: column;
   justify-content: space-around;
-  @media screen and (min-width: 720px) {
-    height: 80vh;
+	${onDesktop(`
+		height: 80vh;
     width: 55%;
-  }
+  `)};
 `;
 
 const StyledBackgroundImage = styled.div`
@@ -208,10 +209,10 @@ const StyledBackgroundImage = styled.div`
   right: 0;
   z-index: -1;
   width: 90%;
-  @media screen and (min-width: 720px) {
-    width: 65%;
-    max-width: 150vh;  
-  }
+	${onDesktop(`
+		width: 65%;
+    max-width: 150vh;
+  `)};
 `;
 
 const ScrollContent = styled.div`
@@ -282,9 +283,9 @@ const InfoFlexbox = styled.div`
   flex-direction: column;
   gap: 40px;
 
-
-  @media screen and (min-width: 720px) {
-    flex-direction: row;  
-  }`;
+	${onDesktop(`
+		flex-direction: row;
+  `)}
+`;
 
 export default IndexPage;
