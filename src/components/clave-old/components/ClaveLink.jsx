@@ -5,6 +5,7 @@ import {
 	COLOR_CLAVE_PINK,
 	COLOR_CLAVE_YELLOW,
 } from "../colors";
+import { onDesktop, onMobile } from "./Breakpoints.jsx";
 import { ColorContext } from "./Layout";
 
 export const ignoreStyle = (styles) => "";
@@ -69,9 +70,9 @@ const Underline = styled.div`
     animation-fill-mode: forwards;
   }
 
-  @media only screen and (max-width: 719px) {
-    display: ${(props) => (props.$showOnMobile ? "block" : "none")};
-  }
+	${onMobile(`
+		display: ${(props) => (props.$showOnMobile ? "block" : "none")};
+  `)};
 `;
 export const RightArrowLink = styled(ClaveLink)`
   display: flex;
@@ -101,13 +102,13 @@ export const RightArrowLink = styled(ClaveLink)`
     transform: scaleX(0.6) scaleY(0.6);
   }
 
-  @media screen and (min-width: 720px) {
-      font-size: 32px;
+	${onDesktop(`
+		font-size: 32px;
 
       &:hover:after {
           margin-top: 5px;
       }
-  }
+  `)};
 `;
 
 export const LeftArrowLink = styled(ClaveLink)`
@@ -137,13 +138,13 @@ export const LeftArrowLink = styled(ClaveLink)`
 		transform: scaleX(-0.6) scaleY(0.6);
 	}
 
-	@media screen and (min-width: 720px) {
+	${onDesktop(`
 		font-size: 32px;
 
 		&:hover:before {
 			margin-top: 5px;
 		}
-	}
+  `)};
 `;
 
 const ANCHOR_STYLES = css`
@@ -156,8 +157,9 @@ const StyledAnchor = styled.a`
 
 const ColoredLink = styled(StyledAnchor)`
     color: ${(props) => props.$textColor || COLOR_CLAVE_GREEN};
-    @media only screen and (max-width: 719px) {
-      display: ${(props) => (props.$showOnMobile ? "flex" : "none")};  
-    }`;
+	${onDesktop(`
+		display: ${(props) => (props.$showOnMobile ? "flex" : "none")};
+  `)};
+`;
 
 export default ClaveLink;
