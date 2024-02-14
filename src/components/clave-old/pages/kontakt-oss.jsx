@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Form from "../components/Form/Form";
 
 import { COLOR_CLAVE_GREEN, COLOR_CLAVE_PEACH } from "../colors";
+import { onDesktop, onMobile } from "../components/Breakpoints.jsx";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import JoinSection from "../components/JoinSection";
@@ -82,11 +83,12 @@ const KontaktOssPage = (props) => {
 
 const TitleWrapper = styled.div`
     background-color: ${COLOR_CLAVE_GREEN};
-    @media screen and (min-width: 720px) {
-  padding-top: ${PADDING_TOP_DESKTOP};
-    };
-    @media only screen and (max-width: 719px) {
-  padding-top: ${PADDING_TOP_MOBILE};}
+	${onDesktop(`
+	padding-top: ${PADDING_TOP_DESKTOP};
+  `)};
+	${onMobile(`
+	padding-top: ${PADDING_TOP_MOBILE};}
+  `)};
 `;
 
 const AsideContentLow = styled.span`
@@ -100,14 +102,16 @@ const ContactInfo = styled.div`
     flex-direction: column;
     padding-left: 0;
 
-    @media screen and (min-width: 720px) {
-  flex-direction: row;  
-    }`;
+	${onDesktop(`
+	flex-direction: row;
+  `)};
+`;
 
 const Contact1 = styled.div`
-	@media screen and (min-width: 720px) {
+	${onDesktop(`
 		flex: 1 1 50%;
 		padding: 1rem 0 0;
-	}`;
+  	`)};
+`;
 
 export default KontaktOssPage;
