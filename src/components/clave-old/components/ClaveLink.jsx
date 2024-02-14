@@ -157,9 +157,8 @@ const StyledAnchor = styled.a`
 
 const ColoredLink = styled(StyledAnchor)`
     color: ${(props) => props.$textColor || COLOR_CLAVE_GREEN};
-	${onMobile(`
+	@media only screen and (max-width: 719px) {
 		display: ${(props) => (props.$showOnMobile ? "flex" : "none")};
-  `)};
-`;
+	}`;
 
 export default ClaveLink;
