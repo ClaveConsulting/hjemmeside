@@ -1,7 +1,7 @@
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 import React from "react";
 
-const API_KEY = import.meta.env.GATSBY_GOOGLE_MAPS_API_KEY;
+const API_KEY = import.meta.env.PROD ? import.meta.env.PROD.GATSBY_GOOGLE_MAPS_API_KEY : "NO_GOOGLE_KEY";
 
 const containerStyle = {
 	height: "400px",
