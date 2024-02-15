@@ -8,7 +8,6 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import JoinSection from "../components/JoinSection";
 import Layout, { ColorContext } from "../components/Layout";
-import MyMapComponent from "../components/Map";
 
 const PADDING_TOP_DESKTOP = "6rem";
 const PADDING_TOP_MOBILE = "4.75rem";
@@ -60,9 +59,6 @@ const KontaktOssPage = (props) => {
 							</div>
 						}
 					>
-						<div className="mapouter">
-							<MyMapComponent />
-						</div>
 					</Layout>
 					<Layout>
 						<h2>Send oss gjerne en melding</h2>
