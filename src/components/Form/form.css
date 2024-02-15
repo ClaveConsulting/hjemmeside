@@ -1,8 +1,0 @@
-form input.error::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: #FA9691;
-    opacity: 1; /* Firefox */
-}
-
-form input.pointer {
-    cursor: pointer;
-}

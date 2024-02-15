@@ -1,55 +1,29 @@
 {
-  "name": "gatsby-starter-default",
-  "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "name": "squealing-spiral",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "lint": "npx @biomejs/biome check --apply ./src"
+  },
   "dependencies": {
+    "@astrojs/check": "^0.4.1",
+    "@astrojs/react": "^3.0.9",
     "@react-google-maps/api": "^2.19.2",
-    "babel-plugin-styled-components": "^2.1.4",
-    "gatsby": "^5.11.0",
-    "gatsby-plugin-alias-imports": "^1.0.5",
-    "gatsby-plugin-image": "^3.11.0",
-    "gatsby-plugin-manifest": "^5.11.0",
-    "gatsby-plugin-react-svg": "^3.3.0",
-    "gatsby-plugin-sharp": "^5.11.0",
-    "gatsby-plugin-styled-components": "^6.11.0",
-    "gatsby-source-filesystem": "^5.11.0",
-    "gatsby-transformer-sharp": "^5.11.0",
-    "prop-types": "^15.8.1",
+    "@types/react": "^18.2.48",
+    "@types/react-dom": "^18.2.18",
+    "astro": "^4.1.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "styled-components": "^6.0.6"
+    "styled-components": "^6.1.8",
+    "typescript": "^5.3.3"
   },
   "devDependencies": {
-    "gatsby-plugin-simple-analytics": "^1.0.4",
-    "prettier": "^3.0.0"
-  },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
-  },
-  "overrides": {
-    "gatsby-plugin-react-svg": {
-      "svg-react-loader": {
-        "loader-utils": "^1.4.2"
-      }
-    }
+    "@biomejs/biome": "1.5.3",
+    "vite-plugin-svgr": "^4.2.0"
   }
 }
