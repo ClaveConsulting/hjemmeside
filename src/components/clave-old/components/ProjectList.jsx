@@ -23,6 +23,9 @@ export const Projects = () => {
 			<RightArrowLink showOnMobile href={"/prosjekter/komplett"}>
 				Komplett
 			</RightArrowLink>
+			<RightArrowLink showOnMobile href={"/prosjekter/eika"}>
+				Eika
+			</RightArrowLink>
 		</ProjectList>
 	);
 };
