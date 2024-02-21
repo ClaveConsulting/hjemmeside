@@ -13,7 +13,7 @@ const ProjectPage = () => {
 			secondImg={rightBilde.src}
 			title="Eika"
 			ingress="Hos Eika jobber vi med flere spennende prosjekter. Blant annet utvikler vi ny mobilbank, ny nettbank, løsninger for å forhindre hvitvasking av penger, og rådgiververktøy for salg av pensjonssparing. Alle disse tjenestene tilbyr Eika til over 50 lokale banker rundt om i landet."
-			keywords={["Oppstart i 2019", "Java-utviklere og .NET-utviklere"]}
+			keywords={["Oppstart i 2019", "Java-, frontend- og native-utviklere"]}
 			methodology="Scrum. Autonome produktteam"
 			technology="Kotlin, JavaScript, React.js, Redux, Prometheus, Grafana, React Native"
 			backgroundColor={COLOR_CLAVE_SUNNY}
