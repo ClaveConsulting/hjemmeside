@@ -1,0 +1,48 @@
+---
+import { Image } from "astro:assets";
+import "../../styles/global.css"
+
+const { ansatt } = Astro.props;
+const imagesPath = "./bilder/"
+const images = import.meta.glob("./bilder/*.jpg");
+
+const getRandomIntBetween = (max: number) => Math.floor(Math.random() * max);
+
+const getImage = (name: string) => {
+    if (images.hasOwnProperty(imagesPath + name + ".jpg")){
+        return images[imagesPath + name + ".jpg"]();
+    }
+
+    // Remove these when done
+    let defaultNumber = getRandomIntBetween(4);
+    let imagePath = imagesPath + "Default" + defaultNumber + ".jpg";
+    return images[imagePath]();
+}
+
+---
+
+<style>
+    .employee-card { 
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    img {
+        width: 280px;
+        height: 280px;
+        /* margin: 0 auto 1.75rem auto; */
+        object-fit: cover;
+    }
+    .name {
+        font-weight: bold;
+    }
+    .employee-position { }
+    .funfact { }
+</style>
+
+<div class="employee-card ">
+    <Image src={getImage(ansatt.navn)} alt={ansatt.navn} />
+    <span class="name">{ansatt.navn}</span>
+    <span class="employee-position">{ansatt.stilling}</span>
+    {ansatt.funfact && <span class="funfact">{ansatt.funfact}</span>}
+</div>

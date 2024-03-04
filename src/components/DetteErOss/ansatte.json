@@ -1,0 +1,224 @@
+{
+    "ansatte": [
+      {
+        "navn": "Steinar Sveen",
+        "stilling": "Daglig leder",
+        "funfact": "[fun fact]"
+      },
+      {
+        "navn": "Terje Aasgaard",
+        "stilling": "Salg",
+        "funfact": "[fun fact]"
+      },
+      {
+        "navn": "Svein Helge Grinden",
+        "stilling": "Utvikling",
+        "funfact": "[fun fact]"
+      },
+      {
+        "navn": "Andreas Brustad",
+        "stilling": "Utvikling",
+        "funfact": "[fun fact]"
+      },
+      {
+        "navn": "Marius Gundersen",
+        "stilling": "Utvikling",
+        "funfact": "[fun fact]"
+      },
+      {
+        "navn": "Per Kristian Helland",
+        "stilling": "Utvikling",
+        "funfact": "[fun fact]"
+      },
+      {
+        "navn": "Ine Lofthus Arnesen",
+        "stilling": "Utvikling",
+        "funfact": "[fun fact]"
+      },
+      {
+        "navn": "Vetle Harnes",
+        "stilling": "Utvikling",
+        "funfact": "[fun fact]"
+      },
+      {
+        "navn": "William Østensen",
+        "stilling": "Utvikling",
+        "funfact": "[fun fact]"
+      },
+      {
+        "navn": "Lars Petter Bjørkeng",
+        "stilling": "Utvikling",
+        "funfact": "[fun fact]"
+      },
+      {
+        "navn": "Henning Lundvall Lundheim",
+        "stilling": "Utvikling",
+        "funfact": "[fun fact]"
+      },
+      {
+        "navn": "Kai Jeu Chiem",
+        "stilling": "Utvikling",
+        "funfact": "[fun fact]"
+      },
+      {
+        "navn": "Jakob Westermoen",
+        "stilling": "Utvikling",
+        "funfact": "[fun fact]"
+      },
+      {
+        "navn": "Mathias Aarseth Pedersen",
+        "stilling": "Utvikling",
+        "funfact": "[fun fact]"
+      },
+      {
+        "navn": "Charlotte Sjøthun",
+        "stilling": "Utvikling",
+        "funfact": "[fun fact]"
+      },
+      {
+        "navn": "Michael Johansen",
+        "stilling": "Utvikling",
+        "funfact": "[fun fact]"
+      },
+      {
+        "navn": "Eirik Vipponen",
+        "stilling": "Utvikling",
+        "funfact": "[fun fact]"
+      },
+      {
+        "navn": "Pia Steinsland",
+        "stilling": "Utvikling",
+        "funfact": "[fun fact]"
+      },
+      {
+        "navn": "Tina Mordal",
+        "stilling": "Design",
+        "funfact": "[fun fact]"
+      },
+      {
+        "navn": "Ragnhild Vinsvold",
+        "stilling": "Posjektledelse",
+        "funfact": "[fun fact]"
+      },
+      {
+        "navn": "Olivia Danielsson",
+        "stilling": "Design",
+        "funfact": "[fun fact]"
+      },
+      {
+        "navn": "Jan Willem Kopperud",
+        "stilling": "Prosjektledelse",
+        "funfact": "[fun fact]"
+      },
+      {
+        "navn": "Jon Lavold",
+        "stilling": "Prosjektledelse",
+        "funfact": "[fun fact]"
+      },
+      {
+        "navn": "Ulf Klemp",
+        "stilling": "Prosjektledelse",
+        "funfact": "[fun fact]"
+      },
+      {
+        "navn": "Lill Reyes",
+        "stilling": "Design",
+        "funfact": "[fun fact]"
+      },
+      {
+        "navn": "Morten Tangen",
+        "stilling": "Utvikling",
+        "funfact": "[fun fact]"
+      },
+      {
+        "navn": "Karine Småstuen",
+        "stilling": "Design",
+        "funfact": "[fun fact]"
+      },
+      {
+        "navn": "Yngve Svalestuen",
+        "stilling": "Utvikling",
+        "funfact": "Taco 🌮"
+      },
+      {
+        "navn": "Mariel Herland",
+        "stilling": "Design",
+        "funfact": "[fun fact]"
+      },
+      {
+        "navn": "Samson Valland",
+        "stilling": "Utvikling",
+        "funfact": "[fun fact]"
+      },
+      {
+        "navn": "Bent Kristiansen",
+        "stilling": "Design",
+        "funfact": "[fun fact]"
+      },
+      {
+        "navn": "Leni Torvbråten",
+        "stilling": "Design",
+        "funfact": "[fun fact]"
+      },
+      {
+        "navn": "Jonas Strand Aasberg",
+        "stilling": "Utvikling",
+        "funfact": "[fun fact]"
+      },
+      {
+        "navn": "Håkon Lia",
+        "stilling": "Utvikling",
+        "funfact": "[fun fact]"
+      },
+      {
+        "navn": "Petter Busterud",
+        "stilling": "Utvikling",
+        "funfact": "[fun fact]"
+      },
+      {
+        "navn": "Kim Skildheim",
+        "stilling": "Utvikling",
+        "funfact": "[fun fact]"
+      },
+      {
+        "navn": "Anniken Josephsen",
+        "stilling": "Design",
+        "funfact": "[fun fact]"
+      },
+      {
+        "navn": "Dan Wiik",
+        "stilling": "Design",
+        "funfact": "[fun fact]"
+      },
+      {
+        "navn": "Peter Adreas Breunig",
+        "stilling": "Utvikling",
+        "funfact": "[fun fact]"
+      },
+      {
+        "navn": "Torstein Jensen",
+        "stilling": "Utvikling",
+        "funfact": "[fun fact]"
+      },
+      {
+        "navn": "Øyvind Bjerke",
+        "stilling": "Utvikling",
+        "funfact": "[fun fact]"
+      },
+      {
+        "navn": "Simon Sandvoll",
+        "stilling": "Utvikling",
+        "funfact": "[fun fact]"
+      },
+      {
+        "navn": "Odd-Tørres Lunde",
+        "stilling": "Utvikling",
+        "funfact": "[fun fact]"
+      },
+      {
+        "navn": "Morten Sund",
+        "stilling": "Utvikling",
+        "funfact": "[fun fact]"
+      }
+    ]
+  }
