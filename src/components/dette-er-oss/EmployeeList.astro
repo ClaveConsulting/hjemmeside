@@ -10,7 +10,7 @@ import "../../styles/global.css";
 import EmployeeCard from "./EmployeeCard.astro";
 ---
 
-<style define:vars={{COLOR_CLAVE_GREEN, COLOR_CLAVE_PEACH}}>
+<style define:vars={{ COLOR_CLAVE_GREEN, COLOR_CLAVE_PEACH }}>
     .this-is-us {
         background-color: var(--COLOR_CLAVE_PEACH);
         color: var(--COLOR_CLAVE_GREEN);
@@ -20,16 +20,16 @@ import EmployeeCard from "./EmployeeCard.astro";
         display: flex; 
         justify-content: center;
         max-width: 120rem;
-        padding: 3rem 6rem;
+        padding: 4rem 6rem;
         margin: 0 auto;
     }
     .employee-cards {
         display: grid;
         justify-content: center;
         max-width: 120rem;
-        grid-template-columns: repeat(auto-fit, minmax(250px, max-content));
-        gap: 4rem 8rem;
-        padding: 0 3rem;
+        grid-template-columns: repeat(auto-fit, minmax(280px, max-content));
+        gap: 4rem 6rem;
+        padding: 0 6rem;
         margin: 0 auto;
     }
 </style>

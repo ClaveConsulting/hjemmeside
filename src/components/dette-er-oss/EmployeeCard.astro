@@ -25,12 +25,11 @@ const getImageSrc = (name: string): Promise<{default: ImageMetadata}> => {
     .employee-card { 
         display: flex;
         flex-direction: column;
+        margin: auto;
         gap: 8px;
     }
-    .employee-image {
-        width: 280px;
-        height: 280px;
-        object-fit: cover;
+    .employee-picture {
+        object-fit: contain;
     }
     .name {
         font-weight: bold;
@@ -40,7 +39,7 @@ const getImageSrc = (name: string): Promise<{default: ImageMetadata}> => {
 </style>
 
 <div class="employee-card ">
-    <Image class="employee-image" src={getImageSrc(ansatt.navn)} alt={ansatt.navn} />
+    <Image class="employee-picture" src={getImageSrc(ansatt.navn)} alt={ansatt.navn} />
     <span class="name">{ansatt.navn}</span>
     <span class="employee-position">{ansatt.stilling}</span>
     {ansatt.funfact && <span class="funfact">{ansatt.funfact}</span>}
