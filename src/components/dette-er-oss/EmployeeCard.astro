@@ -1,5 +1,6 @@
 ---
 import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
 import "../../styles/global.css"
 
 const { ansatt } = Astro.props;
@@ -8,17 +9,16 @@ const images = import.meta.glob("./bilder/*.jpg");
 
 const getRandomIntBetween = (max: number) => Math.floor(Math.random() * max);
 
-const getImage = (name: string) => {
+const getImageSrc = (name: string): Promise<{default: ImageMetadata}> => {
     if (images.hasOwnProperty(imagesPath + name + ".jpg")){
-        return images[imagesPath + name + ".jpg"]();
+        return images[imagesPath + name + ".jpg"]() as Promise<{default: ImageMetadata}>;
     }
 
-    // Remove these when done
+    // Remove these when images are added.
     let defaultNumber = getRandomIntBetween(4);
     let imagePath = imagesPath + "Default" + defaultNumber + ".jpg";
-    return images[imagePath]();
+    return images[imagePath]() as Promise<{default: ImageMetadata}>;
 }
-
 ---
 
 <style>
@@ -27,10 +27,9 @@ const getImage = (name: string) => {
         flex-direction: column;
         gap: 8px;
     }
-    img {
+    .employee-image {
         width: 280px;
         height: 280px;
-        /* margin: 0 auto 1.75rem auto; */
         object-fit: cover;
     }
     .name {
@@ -41,7 +40,7 @@ const getImage = (name: string) => {
 </style>
 
 <div class="employee-card ">
-    <Image src={getImage(ansatt.navn)} alt={ansatt.navn} />
+    <Image class="employee-image" src={getImageSrc(ansatt.navn)} alt={ansatt.navn} />
     <span class="name">{ansatt.navn}</span>
     <span class="employee-position">{ansatt.stilling}</span>
     {ansatt.funfact && <span class="funfact">{ansatt.funfact}</span>}
