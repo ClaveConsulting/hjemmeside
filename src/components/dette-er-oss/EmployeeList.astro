@@ -1,0 +1,46 @@
+---
+import { ansatte } from "./ansatte.json";
+
+import {
+    COLOR_CLAVE_PEACH,
+    COLOR_CLAVE_GREEN,
+} from "../clave-old/colors";
+
+import "../../styles/global.css";
+import EmployeeCard from "./EmployeeCard.astro";
+---
+
+<style define:vars={{ COLOR_CLAVE_GREEN, COLOR_CLAVE_PEACH }}>
+    .this-is-us {
+        background-color: var(--COLOR_CLAVE_PEACH);
+        color: var(--COLOR_CLAVE_GREEN);
+        padding-bottom: 9rem;
+    }
+    .title {
+        display: flex; 
+        justify-content: center;
+        max-width: 120rem;
+        padding: 4rem 6rem;
+        margin: 0 auto;
+    }
+    .employee-cards {
+        display: grid;
+        justify-content: center;
+        max-width: 120rem;
+        grid-template-columns: repeat(auto-fit, minmax(280px, max-content));
+        gap: 4rem 6rem;
+        padding: 0 6rem;
+        margin: 0 auto;
+    }
+</style>
+
+<div class="this-is-us">
+    <div class="title">
+        <h2>Dette er oss</h2>
+    </div>
+    <div class="employee-cards">
+        {ansatte.map(ansatt => <EmployeeCard ansatt={ansatt} />)}
+    </div>
+</div>
+
+

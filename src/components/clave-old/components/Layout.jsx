@@ -849,7 +849,8 @@ export function ContentColumn({ asideContent, children, className }) {
 	);
 }
 
-const Layout = ({ asideContent, children, className }) => {
+const Layout = (props) => {
+    const { asideContent, children, className } = props;
 	return (
 		<Container className={className}>
 			<Container.Content>

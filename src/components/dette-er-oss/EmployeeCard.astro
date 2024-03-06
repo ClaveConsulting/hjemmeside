@@ -1,0 +1,49 @@
+---
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+import "../../styles/global.css"
+
+const { ansatt } = Astro.props;
+const imagesPath = "./bilder/"
+const images = import.meta.glob("./bilder/*.jpg");
+const defaultImages = import.meta.glob("./bilder/*.svg");
+
+const DEFAULT_IMAGE_COUNT = 8;
+
+const getRandomIntBetween = (max: number) => Math.floor(Math.random() * max);
+
+const getImageSrc = (name: string) => {
+    if (images.hasOwnProperty(imagesPath + name + ".jpg")){
+        return images[imagesPath + name + ".jpg"]() as Promise<{default: ImageMetadata}>;
+    }
+
+    // Remove these when images are added.
+    let defaultNumber = getRandomIntBetween(DEFAULT_IMAGE_COUNT);
+    let imagePath = imagesPath + "Default" + defaultNumber + ".svg";
+    return defaultImages[imagePath]()  as Promise<{default: ImageMetadata}>;
+}
+---
+
+<style>
+    .employee-card { 
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        gap: 8px;
+    }
+    .employee-picture {
+        object-fit: contain;
+    }
+    .name {
+        font-weight: bold;
+    }
+    .employee-position { }
+    .funfact { }
+</style>
+
+<div class="employee-card ">
+    <Image class="employee-picture" src={getImageSrc(ansatt.navn)} alt={ansatt.navn} />
+    <span class="name">{ansatt.navn}</span>
+    <span class="employee-position">{ansatt.stilling}</span>
+    {ansatt.funfact && <span class="funfact">{ansatt.funfact}</span>}
+</div>

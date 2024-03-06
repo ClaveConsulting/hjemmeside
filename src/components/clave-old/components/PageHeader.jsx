@@ -7,7 +7,7 @@ import { Container, ContentColumn, MOBILE_PADDING } from "./Layout";
 //write file without styled components
 
 //
-const PageHeader = ({ title, ingress = undefined, imageProps }) => {
+const PageHeader = ({ title, ingress, imageProps }) => {
 	return (
 		<Container>
 			<PageHeaderWrapper>
