@@ -1,0 +1,54 @@
+---
+import pdf from "../assets/apenhetsloven/Åpenhetsloven Clave Consulting AS.pdf";
+import Header from "../components/clave-old/components/Header";
+import {
+  COLOR_CLAVE_PEACH,
+  COLOR_CLAVE_GREEN
+} from "../components/clave-old/colors";
+import "../styles/global.css";
+const props = Astro.props;
+---
+
+<style define:vars={{ COLOR_CLAVE_GREEN, COLOR_CLAVE_PEACH }}>
+    .apenhetsloven-body {
+        background-color: var(--COLOR_CLAVE_PEACH);
+        color: var(--COLOR_CLAVE_GREEN);
+
+    }
+
+    .title {
+        display: flex;
+        justify-content: center;
+        max-width: 120rem;
+        padding: 9rem 6rem;
+        margin: 0 auto;
+    }
+
+    .pdf-links {
+        display: flex;
+        justify-content: center;
+        max-width: 120rem;
+        padding: 3rem 6rem;
+        margin: 0 auto 100%;
+
+    }
+
+</style>
+
+<html lang="nb">
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" type="image/svg+xml" href="/clave-icon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Åpenhetsloven | clave</title>
+</head>
+<body class="apenhetsloven-body">
+<Header client:only="react" />
+<div class="title">
+  <h1>Redegjørelse etter åpenhetsloven</h1>
+</div>
+<div class="pdf-links">
+  <a href={pdf} download>Åpenhetsloven 2024</a>
+</div>
+</body>
+</html>

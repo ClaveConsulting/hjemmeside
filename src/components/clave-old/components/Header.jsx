@@ -13,12 +13,14 @@ import {
 import ClaveLogo from "./icons/clave-logo.svg?react";
 import hamburgerIcon from "./icons/hamburgermeny_ikon.svg?react";
 
-const Header = ({
-	frontPage,
-	useSkinColoredHamburgerMenu,
-	uri,
-	textColor = COLOR_CLAVE_PEACH,
-}) => {
+const Header = (props) => {
+	const {
+		frontPage,
+		useSkinColoredHamburgerMenu,
+		uri,
+		textColor = COLOR_CLAVE_PEACH,
+		client
+	} = props;
 	const [menuExpanded, setMenuExpanded] = useState(false);
 
 	const HamburgerMenyOptions = () => {
