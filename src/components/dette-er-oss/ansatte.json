@@ -1,184 +1,180 @@
 {
-    "ansatte": [
-      {
-        "navn": "Steinar Sveen",
-        "stilling": "Daglig leder"
-      },
-      {
-        "navn": "Terje Aasgaard",
-        "stilling": "Salg"
-      },
-      {
-        "navn": "Svein Helge Grinden",
-        "stilling": "Utvikling"
-      },
-      {
-        "navn": "Andreas Brustad",
-        "stilling": "Utvikling"
-      },
-      {
-        "navn": "Marius Gundersen",
-        "stilling": "Utvikling"
-      },
-      {
-        "navn": "Per Kristian Helland",
-        "stilling": "Utvikling"
-      },
-      {
-        "navn": "Ine Lofthus Arnesen",
-        "stilling": "Utvikling"
-      },
-      {
-        "navn": "Vetle Harnes",
-        "stilling": "Utvikling"
-      },
-      {
-        "navn": "William Østensen",
-        "stilling": "Utvikling"
-      },
-      {
-        "navn": "Lars Petter Bjørkeng",
-        "stilling": "Utvikling"
-      },
-      {
-        "navn": "Henning Lundvall Lundheim",
-        "stilling": "Utvikling"
-      },
-      {
-        "navn": "Kai Jeu Chiem",
-        "stilling": "Utvikling"
-      },
-      {
-        "navn": "Jakob Westermoen",
-        "stilling": "Utvikling"
-      },
-      {
-        "navn": "Mathias Aarseth Pedersen",
-        "stilling": "Utvikling"
-      },
-      {
-        "navn": "Charlotte Sjøthun",
-        "stilling": "Utvikling"
-      },
-      {
-        "navn": "Michael Johansen",
-        "stilling": "Utvikling"
-      },
-      {
-        "navn": "Eirik Vipponen",
-        "stilling": "Utvikling"
-      },
-      {
-        "navn": "Pia Steinsland",
-        "stilling": "Utvikling"
-      },
-      {
-        "navn": "Tina Mordal",
-        "stilling": "Design"
-      },
-      {
-        "navn": "Ragnhild Vinsvold",
-        "stilling": "Posjektledelse"
-      },
-      {
-        "navn": "Olivia Danielsson",
-        "stilling": "Design"
-      },
-      {
-        "navn": "Jan Willem Kopperud",
-        "stilling": "Prosjektledelse"
-
-      },
-      {
-        "navn": "Jon Lavold",
-        "stilling": "Prosjektledelse"
-      },
-      {
-        "navn": "Ulf Klemp",
-        "stilling": "Prosjektledelse"
-      },
-      {
-        "navn": "Lill Reyes",
-        "stilling": "Design"
-      },
-      {
-        "navn": "Morten Tangen",
-        "stilling": "Utvikling"
-      },
-      {
-        "navn": "Karine Småstuen",
-        "stilling": "Design"
-      },
-      {
-        "navn": "Yngve Svalestuen",
-        "stilling": "Utvikling",
-        "funfact": "Taco 🌮"
-      },
-      {
-        "navn": "Mariel Herland",
-        "stilling": "Design"
-      },
-      {
-        "navn": "Samson Valland",
-        "stilling": "Utvikling"
-
-      },
-      {
-        "navn": "Bent Kristiansen",
-        "stilling": "Design"
-
-      },
-      {
-        "navn": "Leni Torvbråten",
-        "stilling": "Design"
-      },
-      {
-        "navn": "Jonas Strand Aasberg",
-        "stilling": "Utvikling"
-      },
-      {
-        "navn": "Håkon Lia",
-        "stilling": "Utvikling"
-      },
-      {
-        "navn": "Petter Busterud",
-        "stilling": "Utvikling"
-      },
-      {
-        "navn": "Kim Skildheim",
-        "stilling": "Utvikling"
-      },
-      {
-        "navn": "Anniken Josephsen",
-        "stilling": "Design"
-      },
-      {
-        "navn": "Dan Wiik",
-        "stilling": "Design"
-      },
-      {
-        "navn": "Peter Adreas Breunig",
-        "stilling": "Utvikling"
-      },
-      {
-        "navn": "Torstein Jensen",
-        "stilling": "Utvikling"
-      },
-      {
-        "navn": "Øyvind Bjerke",
-        "stilling": "Utvikling"
-      },
-      {
-        "navn": "Simon Sandvoll",
-        "stilling": "Utvikling"
-      },
-      {
-        "navn": "Odd-Tørres Lunde",
-        "stilling": "Utvikling"
-      },
-      {
-        "navn": "Morten Sund",
-        "stilling": "Utvikling"
-      }
-    ]
-  }
+  "ansatte": [
+    {
+      "navn": "Steinar Sveen",
+      "stilling": "Daglig leder"
+    },
+    {
+      "navn": "Terje Aasgaard",
+      "stilling": "Salg"
+    },
+    {
+      "navn": "Svein Helge Grinden",
+      "stilling": "Systemutvikling"
+    },
+    {
+      "navn": "Andreas Brustad",
+      "stilling": "Systemutvikling"
+    },
+    {
+      "navn": "Marius Gundersen",
+      "stilling": "Systemutvikling"
+    },
+    {
+      "navn": "Per Kristian Helland",
+      "stilling": "Systemutvikling"
+    },
+    {
+      "navn": "Ine Lofthus Arnesen",
+      "stilling": "Systemutvikling"
+    },
+    {
+      "navn": "Vetle Harnes",
+      "stilling": "Systemutvikling"
+    },
+    {
+      "navn": "William Østensen",
+      "stilling": "Systemutvikling"
+    },
+    {
+      "navn": "Lars Petter Bjørkeng",
+      "stilling": "Systemutvikling"
+    },
+    {
+      "navn": "Henning Lundvall Lundheim",
+      "stilling": "Brukeropplevelse og UX-design"
+    },
+    {
+      "navn": "Kai Jeu Chiem",
+      "stilling": "Systemutvikling"
+    },
+    {
+      "navn": "Jakob Westermoen",
+      "stilling": "Systemutvikling"
+    },
+    {
+      "navn": "Mathias Aarseth Pedersen",
+      "stilling": "Systemutvikling"
+    },
+    {
+      "navn": "Charlotte Sjøthun",
+      "stilling": "Systemutvikling"
+    },
+    {
+      "navn": "Michael Johansen",
+      "stilling": "Systemutvikling"
+    },
+    {
+      "navn": "Eirik Vilpponen",
+      "stilling": "Systemutvikling"
+    },
+    {
+      "navn": "Pia Steinsland",
+      "stilling": "Systemutvikling"
+    },
+    {
+      "navn": "Tina Mordal",
+      "stilling": "Brukeropplevelse og UX-design"
+    },
+    {
+      "navn": "Ragnhild Vinsvold",
+      "stilling": "Rådgivning og prosjektledelse"
+    },
+    {
+      "navn": "Olivia Danielsson",
+      "stilling": "Brukeropplevelse og UX-design"
+    },
+    {
+      "navn": "Jan Willem Kopperud",
+      "stilling": "Rådgivning og prosjektledelse"
+    },
+    {
+      "navn": "John Lavold",
+      "stilling": "Rådgivning og prosjektledelse"
+    },
+    {
+      "navn": "Lill Reyes",
+      "stilling": "Brukeropplevelse og UX-design"
+    },
+    {
+      "navn": "Morten Tangen",
+      "stilling": "Systemutvikling"
+    },
+    {
+      "navn": "Karine Småstuen",
+      "stilling": "Rådgivning og prosjektledelse"
+    },
+    {
+      "navn": "Yngve Svalestuen",
+      "stilling": "Systemutvikling"
+    },
+    {
+      "navn": "Samson Valland",
+      "stilling": "Systemutvikling"
+    },
+    {
+      "navn": "Bent Kristiansen",
+      "stilling": "Brukeropplevelse og UX-design"
+    },
+    {
+      "navn": "Leni Torvbråten",
+      "stilling": "Brukeropplevelse og UX-design"
+    },
+    {
+      "navn": "Jonas Strand Aasberg",
+      "stilling": "Systemutvikling"
+    },
+    {
+      "navn": "Håkon Lia",
+      "stilling": "Systemutvikling"
+    },
+    {
+      "navn": "Petter Busterud",
+      "stilling": "Systemutvikling"
+    },
+    {
+      "navn": "Kim Skildheim",
+      "stilling": "Systemutvikling"
+    },
+    {
+      "navn": "Geir Egil Grønvold",
+      "stilling": "Systemutvikling"
+    },
+    {
+      "navn": "Dan Wiik",
+      "stilling": "Brukeropplevelse og UX-design"
+    },
+    {
+      "navn": "Peter Andreas Breunig",
+      "stilling": "Systemutvikling"
+    },
+    {
+      "navn": "Torstein Jensen",
+      "stilling": "Systemutvikling"
+    },
+    {
+      "navn": "Simon Sandvoll",
+      "stilling": "Systemutvikling"
+    },
+    {
+      "navn": "Odd-Tørres Lunde",
+      "stilling": "Systemutvikling"
+    },
+    {
+      "navn": "Morten Sund",
+      "stilling": "Systemutvikling"
+    },
+    {
+      "navn": "Lars Holter",
+      "stilling": "Systemutvikling"
+    },
+    {
+      "navn": "Ingrid Marie Wølneberg",
+      "stilling": "Systemutvikling"
+    },
+    {
+      "navn": "Erik Martinsen",
+      "stilling": "Systemutvikling"
+    }
+  ]
+}
