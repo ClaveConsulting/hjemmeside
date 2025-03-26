@@ -17,6 +17,10 @@ const getImageSrc = (name: string) => {
         return images[imagesPath + name + ".jpg"]() as Promise<{default: ImageMetadata}>;
     }
 
+    if (defaultImages.hasOwnProperty(imagesPath + name + ".svg")){
+        return defaultImages[imagesPath + name + ".svg"]() as Promise<{default: ImageMetadata}>;
+    }
+
     // Remove these when images are added.
     let defaultNumber = getRandomIntBetween(DEFAULT_IMAGE_COUNT + 1);
     let imagePath = imagesPath + "Default" + defaultNumber + ".svg";
@@ -25,7 +29,7 @@ const getImageSrc = (name: string) => {
 ---
 
 <style>
-    .employee-card { 
+    .employee-card {
         display: flex;
         flex-direction: column;
         margin: 0 auto;
