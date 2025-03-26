@@ -1,0 +1,180 @@
+{
+  "ansatte": [
+    {
+      "navn": "Steinar Sveen",
+      "stilling": "Daglig leder"
+    },
+    {
+      "navn": "Terje Aasgaard",
+      "stilling": "Salg"
+    },
+    {
+      "navn": "Svein Helge Grinden",
+      "stilling": "Systemutvikling"
+    },
+    {
+      "navn": "Andreas Brustad",
+      "stilling": "Systemutvikling"
+    },
+    {
+      "navn": "Marius Gundersen",
+      "stilling": "Systemutvikling"
+    },
+    {
+      "navn": "Per Kristian Helland",
+      "stilling": "Systemutvikling"
+    },
+    {
+      "navn": "Ine Lofthus Arnesen",
+      "stilling": "Systemutvikling"
+    },
+    {
+      "navn": "Vetle Harnes",
+      "stilling": "Systemutvikling"
+    },
+    {
+      "navn": "William Østensen",
+      "stilling": "Systemutvikling"
+    },
+    {
+      "navn": "Lars Petter Bjørkeng",
+      "stilling": "Systemutvikling"
+    },
+    {
+      "navn": "Henning Lundvall Lundheim",
+      "stilling": "Brukeropplevelse og UX-design"
+    },
+    {
+      "navn": "Kai Jeu Chiem",
+      "stilling": "Systemutvikling"
+    },
+    {
+      "navn": "Jakob Westermoen",
+      "stilling": "Systemutvikling"
+    },
+    {
+      "navn": "Mathias Aarseth Pedersen",
+      "stilling": "Systemutvikling"
+    },
+    {
+      "navn": "Charlotte Sjøthun",
+      "stilling": "Systemutvikling"
+    },
+    {
+      "navn": "Michael Johansen",
+      "stilling": "Systemutvikling"
+    },
+    {
+      "navn": "Eirik Vilpponen",
+      "stilling": "Systemutvikling"
+    },
+    {
+      "navn": "Pia Steinsland",
+      "stilling": "Systemutvikling"
+    },
+    {
+      "navn": "Tina Mordal",
+      "stilling": "Brukeropplevelse og UX-design"
+    },
+    {
+      "navn": "Ragnhild Vinsvold",
+      "stilling": "Rådgivning og prosjektledelse"
+    },
+    {
+      "navn": "Olivia Danielsson",
+      "stilling": "Brukeropplevelse og UX-design"
+    },
+    {
+      "navn": "Jan Willem Kopperud",
+      "stilling": "Rådgivning og prosjektledelse"
+    },
+    {
+      "navn": "John Lavold",
+      "stilling": "Rådgivning og prosjektledelse"
+    },
+    {
+      "navn": "Lill Reyes",
+      "stilling": "Brukeropplevelse og UX-design"
+    },
+    {
+      "navn": "Morten Tangen",
+      "stilling": "Systemutvikling"
+    },
+    {
+      "navn": "Karine Småstuen",
+      "stilling": "Rådgivning og prosjektledelse"
+    },
+    {
+      "navn": "Yngve Svalestuen",
+      "stilling": "Systemutvikling"
+    },
+    {
+      "navn": "Samson Valland",
+      "stilling": "Systemutvikling"
+    },
+    {
+      "navn": "Bent Kristiansen",
+      "stilling": "Brukeropplevelse og UX-design"
+    },
+    {
+      "navn": "Leni Torvbråten",
+      "stilling": "Brukeropplevelse og UX-design"
+    },
+    {
+      "navn": "Jonas Strand Aasberg",
+      "stilling": "Systemutvikling"
+    },
+    {
+      "navn": "Håkon Lia",
+      "stilling": "Systemutvikling"
+    },
+    {
+      "navn": "Petter Busterud",
+      "stilling": "Systemutvikling"
+    },
+    {
+      "navn": "Kim Skildheim",
+      "stilling": "Systemutvikling"
+    },
+    {
+      "navn": "Geir Egil Grønvold",
+      "stilling": "Systemutvikling"
+    },
+    {
+      "navn": "Dan Wiik",
+      "stilling": "Brukeropplevelse og UX-design"
+    },
+    {
+      "navn": "Peter Andreas Breunig",
+      "stilling": "Systemutvikling"
+    },
+    {
+      "navn": "Torstein Jensen",
+      "stilling": "Systemutvikling"
+    },
+    {
+      "navn": "Simon Sandvoll",
+      "stilling": "Systemutvikling"
+    },
+    {
+      "navn": "Odd-Tørres Lunde",
+      "stilling": "Systemutvikling"
+    },
+    {
+      "navn": "Morten Sund",
+      "stilling": "Systemutvikling"
+    },
+    {
+      "navn": "Lars Holter",
+      "stilling": "Systemutvikling"
+    },
+    {
+      "navn": "Ingrid Marie Wølneberg",
+      "stilling": "Systemutvikling"
+    },
+    {
+      "navn": "Erik Martinsen",
+      "stilling": "Systemutvikling"
+    }
+  ]
+}

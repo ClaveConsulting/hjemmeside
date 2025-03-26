@@ -8,6 +8,8 @@ import Layout from "../components/Layout";
 import PageHeader from "../components/PageHeader";
 import headerBilde from "../images/190920_Clave_lowres_11.jpg";
 
+import EmployeeList from "../../EmployeeList.astro";
+
 const HvemViErPage = (props) => {
 	return (
 		<>
@@ -54,6 +56,7 @@ const HvemViErPage = (props) => {
 						både for kundene våre og oss selv.
 					</p>
 				</Layout>
+				<EmployeeList />
 			</main>
 			<Footer />
 		</>
