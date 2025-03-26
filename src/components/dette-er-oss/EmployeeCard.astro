@@ -18,7 +18,7 @@ const getImageSrc = (name: string) => {
     }
 
     // Remove these when images are added.
-    let defaultNumber = getRandomIntBetween(DEFAULT_IMAGE_COUNT);
+    let defaultNumber = getRandomIntBetween(DEFAULT_IMAGE_COUNT + 1);
     let imagePath = imagesPath + "Default" + defaultNumber + ".svg";
     return defaultImages[imagePath]()  as Promise<{default: ImageMetadata}>;
 }
