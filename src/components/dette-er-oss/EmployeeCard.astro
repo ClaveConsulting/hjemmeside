@@ -13,15 +13,16 @@ const DEFAULT_IMAGE_COUNT = 9;
 const getRandomIntBetween = (max: number) => Math.floor(Math.random() * max);
 
 const getImageSrc = (name: string) => {
+    //if employee has a real picture with jpg-format, use it
     if (images.hasOwnProperty(imagesPath + name + ".jpg")){
         return images[imagesPath + name + ".jpg"]() as Promise<{default: ImageMetadata}>;
     }
-
+    //if employee has a preferred default picture with svg-format, use it
     if (defaultImages.hasOwnProperty(imagesPath + name + ".svg")){
         return defaultImages[imagesPath + name + ".svg"]() as Promise<{default: ImageMetadata}>;
     }
 
-    // Remove these when images are added.
+    // if no preferred default picture is found, use a random default picture
     let defaultNumber = getRandomIntBetween(DEFAULT_IMAGE_COUNT);
     let imagePath = imagesPath + "Default" + defaultNumber + ".svg";
     return defaultImages[imagePath]()  as Promise<{default: ImageMetadata}>;
