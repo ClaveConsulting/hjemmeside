@@ -19,14 +19,17 @@ const props = Astro.props;
     .title {
         display: flex;
         justify-content: center;
-        max-width: 120rem;
+        flex-direction: column;
         padding: 9rem 6rem;
         margin: 0 auto;
+        max-width: fit-content;
+
     }
 
     .pdf-links {
         display: flex;
         justify-content: center;
+        flex-direction: column;
         max-width: 120rem;
         padding: 3rem 6rem;
         margin: 0 auto 100%;
@@ -46,9 +49,10 @@ const props = Astro.props;
 <Header client:only="react" />
 <div class="title">
   <h1>Redegjørelse etter åpenhetsloven</h1>
-</div>
-<div class="pdf-links">
-  <a href={pdf} download>Åpenhetsloven redegjørelse for året 2023</a>
+  <ul class="pdf-links">
+    <li>Redegjørelse for året 2024 - Ikke pliktig</li>
+    <li><a href={pdf} download>Åpenhetsloven redegjørelse for året 2023</a></li>
+  </ul>
 </div>
 </body>
 </html>
