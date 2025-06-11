@@ -8,7 +8,7 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import JoinSection from "../components/JoinSection";
 import Layout, { ColorContext } from "../components/Layout";
-import MyMapComponent from "../components/Map";
+import Map from "../components/Map";
 
 const PADDING_TOP_DESKTOP = "6rem";
 const PADDING_TOP_MOBILE = "4.75rem";
@@ -52,16 +52,21 @@ const KontaktOssPage = (props) => {
 							<div>
 								<AsideContentLow>
 									<h3>Kom innom</h3>
-									<p className="CustomParagraph">
-										Kongens gate 12 <br />
-										0153 OSLO
+									<p>
+										Grunnet byggearbeid i Kongens gate 12 har vi flyttet inn hos Rebel<br />
+										Dette gjelder fra juni og ut november 2025
 									</p>
+									<Address>
+										Rebel<br />
+										Universitetsgata 2<br />
+										0164 OSLO<br />
+									</Address>
 								</AsideContentLow>
 							</div>
 						}
 					>
 						<div className="mapouter">
-							<MyMapComponent />
+							<Map />
 						</div>
 					</Layout>
 					<Layout>
@@ -112,6 +117,11 @@ const Contact1 = styled.div`
 		flex: 1 1 50%;
 		padding: 1rem 0 0;
   	`)};
+`;
+
+const Address = styled.address`
+	font-style: normal;
+	font-size: 1.5rem;
 `;
 
 export default KontaktOssPage;
