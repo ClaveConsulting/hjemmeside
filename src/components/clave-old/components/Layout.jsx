@@ -782,11 +782,6 @@ const GlobalStyle = createGlobalStyle`
             line-height: 1.5625rem;
         }
     }
-
-    .CustomParagraph{
-        margin-bottom: 0;
-    }
-    
 `;
 
 Container.Content = styled.div`

@@ -7,21 +7,23 @@ const containerStyle = {
 	height: "400px",
 };
 
-const center = { lat: 59.9104989, lng: 10.7421957 };
+const kongensGate = { lat: 59.9104989, lng: 10.7421957 };
+const rebel = { lat: 59.9173786, lng: 10.7375431};
+const office = rebel;
 
-function MyComponent() {
+function Map() {
 	return (
 		<LoadScript googleMapsApiKey={API_KEY}>
 			<GoogleMap
 				mapContainerStyle={containerStyle}
-				center={center}
+				center={office}
 				zoom={15}
 				options={{}}
 			>
-				<Marker position={center} />
+				<Marker position={office} />
 			</GoogleMap>
 		</LoadScript>
 	);
 }
 
-export default React.memo(MyComponent);
+export default React.memo(Map);
