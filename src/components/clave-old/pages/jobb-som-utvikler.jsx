@@ -8,14 +8,19 @@ import yngveBilde from "../images/190920_Clave_lowres_13.jpg";
 
 const positions = [
 	{
-		text: "Senior Utvikler",
+		text: "Senior utvikler",
 		active: true,
 		url: "https://clave.homerun.co/senior-full-stack-developer-2/no",
 	},
 	{
-		text: "Sommerjobb som utvikler",
+		text: "Nyutdannet utvikler 2026",
 		active: true,
-		url: "https://clave.homerun.co/sommerjobb-hos-clave-2025/no",
+		url: "https://clave.homerun.co/nyutdannede-utviklere-til-clave-2026/no",
+	},
+	{
+		text: "Sommerjobb som utvikler 2026",
+		active: true,
+		url: "https://clave.homerun.co/sommerjobb-hos-clave-2026/no",
 	},
 ];
 

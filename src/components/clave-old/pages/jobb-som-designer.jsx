@@ -8,19 +8,9 @@ import piaBilde from "../images/190920_Clave_lowres_7.jpg";
 
 const positions = [
 	{
-		text: "Sommerjobb hos Clave 2023",
-		active: false,
-		url: "https://clave.homerun.co/sommerjobb-hos-clave-2023/no",
-	},
-	{
-		text: "Deltid- og sommerjobb som UX-designer",
-		active: false,
-		url: "https://clave.homerun.co/deltid-og-sommerjobb-som-ux-designer",
-	},
-	{
-        text: "Sommerjobb som designer",
+        text: "Sommerjobb som designer 2026",
         active: true,
-        url: "https://clave.homerun.co/sommerjobb-hos-clave-2025/no",
+        url: "https://clave.homerun.co/sommerjobb-hos-clave-2026/no",
     },
 ];
 
