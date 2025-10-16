@@ -177,7 +177,7 @@ const WrapperComponent = styled(Wrapper)`
   `;
 
 const ColoredLogo = styled(ClaveLogo)`
-  width: ${(props) => props.$width || "5rem"};
+  width: ${(props) => props.$width || "10rem"};
   height: auto;
   fill: ${(props) => props.$textColor || COLOR_CLAVE_GREEN};
   `;
