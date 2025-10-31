@@ -11,17 +11,7 @@ const positions = [
 		text: "Senior utvikler",
 		active: true,
 		url: "https://clave.homerun.co/senior-full-stack-developer-2/no",
-	},
-	{
-		text: "Nyutdannet utvikler 2026",
-		active: true,
-		url: "https://clave.homerun.co/nyutdannede-utviklere-til-clave-2026/no",
-	},
-	{
-		text: "Sommerjobb som utvikler 2026",
-		active: true,
-		url: "https://clave.homerun.co/sommerjobb-hos-clave-2026/no",
-	},
+	}
 ];
 
 const JobbSomUtviklerPage = (props) => {
