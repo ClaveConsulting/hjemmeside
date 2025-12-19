@@ -8,19 +8,17 @@ const containerStyle = {
 };
 
 const kongensGate = { lat: 59.9104989, lng: 10.7421957 };
-const rebel = { lat: 59.9173786, lng: 10.7375431};
-const office = rebel;
 
 function Map() {
 	return (
 		<LoadScript googleMapsApiKey={API_KEY}>
 			<GoogleMap
 				mapContainerStyle={containerStyle}
-				center={office}
+				center={kongensGate}
 				zoom={15}
 				options={{}}
 			>
-				<Marker position={office} />
+				<Marker position={kongensGate} />
 			</GoogleMap>
 		</LoadScript>
 	);

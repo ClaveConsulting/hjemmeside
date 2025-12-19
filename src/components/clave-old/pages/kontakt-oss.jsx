@@ -52,14 +52,9 @@ const KontaktOssPage = (props) => {
 							<div>
 								<AsideContentLow>
 									<h3>Kom innom</h3>
-									<p>
-										Grunnet byggearbeid i Kongens gate 12 har vi flyttet inn hos Rebel<br />
-										Dette gjelder fra juni og ut november 2025
-									</p>
 									<Address>
-										Rebel<br />
-										Universitetsgata 2<br />
-										0164 OSLO<br />
+										Kongens gate 12<br />
+										0153 OSLO<br />
 									</Address>
 								</AsideContentLow>
 							</div>

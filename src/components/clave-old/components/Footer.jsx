@@ -91,10 +91,10 @@ const Footer = (props) => {
 									</FooterLink>
 								</FooterListItem>
 								<FooterListItem>
-									<NoWrapText>Universitetsgata 2</NoWrapText>
+									<NoWrapText>Kongens gate 12</NoWrapText>
 								</FooterListItem>
 								<FooterListItem>
-									<NoWrapText>0164 Oslo</NoWrapText>
+									<NoWrapText>0153 Oslo</NoWrapText>
 								</FooterListItem>
 							</FooterList>
 							<FooterList>
