@@ -32,17 +32,17 @@ const KontaktOssPage = (props) => {
 					<Layout>
 						<ContactInfo>
 							<Contact1>
-								<h3>Steinar</h3>
+								<h3>Terje</h3>
 								<p>
-									Sveen | CEO <br /> + 47 908 86 980 <br />
-									steinar.sveen@clave.no
+									Aasgaard | CEO <br />+47 975 37 841 <br />
+									terje.aasgaard@clave.no
 								</p>
 							</Contact1>
 							<Contact1>
-								<h3>Terje</h3>
+								<h3>Karine</h3>
 								<p>
-									Aasgaard | Salgssjef <br />+ 47 975 37 841 <br />
-									terje.aasgaard@clave.no
+									Småstuen | COO <br />+47 913 23 235 <br />
+									karine.smastuen@clave.no
 								</p>
 							</Contact1>
 						</ContactInfo>

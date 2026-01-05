@@ -1,12 +1,12 @@
 {
   "ansatte": [
     {
-      "navn": "Steinar Sveen",
+      "navn": "Terje Aasgaard",
       "stilling": "Daglig leder"
     },
     {
-      "navn": "Terje Aasgaard",
-      "stilling": "Salg"
+      "navn": "Karine Småstuen",
+      "stilling": "Ansvarlig for folk og fag"
     },
     {
       "navn": "Svein Helge Grinden",
@@ -95,10 +95,6 @@
     {
       "navn": "Morten Tangen",
       "stilling": "Systemutvikling"
-    },
-    {
-      "navn": "Karine Småstuen",
-      "stilling": "Rådgivning og prosjektledelse"
     },
     {
       "navn": "Yngve Svalestuen",
