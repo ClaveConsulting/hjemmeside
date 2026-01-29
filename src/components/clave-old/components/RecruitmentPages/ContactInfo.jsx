@@ -11,8 +11,8 @@ const ContactInfo = () => {
 	return (
 		<Layout>
 			<Ingress>
-				Ønsker du å stille oss flere spørsmål? <br /> Ring Terje på{" "}
-				<Phone>+47 975 37 841</Phone> eller send oss en{" "}
+				Ønsker du å stille oss flere spørsmål? <br /> Ring Karine på{" "}
+				<Phone>+47 913 23 235</Phone> eller send oss en{" "}
 				<a href="mailto:jobb@clave.no">mail</a>.
 			</Ingress>
 		</Layout>

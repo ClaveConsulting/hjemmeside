@@ -33,6 +33,15 @@ const JoinSection = () => {
 						<br />
 						<PLink href="/jobb-som-designer">Få svaret her</PLink>
 					</p>
+					<br />
+					<br />
+					<h3>Sommerjobb som designer 2026</h3>
+					<p>
+						Ønsker du deg en spennende sommerjobb som gir deg verdifull arbeidserfaring?
+						<br />
+						<br />
+						<PLink href={"https://clave.homerun.co/ux-designer-til-sommerjobb-hos-clave-2026"}>Søk her</PLink>
+					</p>
 				</AsideDiv>
 			</ColorContext.Provider>
 		);
