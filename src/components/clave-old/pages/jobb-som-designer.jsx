@@ -6,13 +6,7 @@ import MidSplitLayout from "../components/RecruitmentPages/MidSplitLayout";
 import RecruitmentTemplate from "../components/RecruitmentPages/RecruitmentTemplate";
 import piaBilde from "../images/190920_Clave_lowres_7.jpg";
 
-const positions = [
-	{
-		text: "UX-designer til sommerjobb hos Clave 2026",
-		active: true,
-		url: "https://clave.homerun.co/ux-designer-til-sommerjobb-hos-clave-2026",
-	}
-];
+const positions = [];
 
 const JobbSomDesignerPage = (props) => {
 	return (
