@@ -52,7 +52,7 @@ const KontaktOssPage = (props) => {
                 <p>
                   Godø | CCO <br />
                   +47 401 05 730 <br />
-                  inga.godø@clave.no
+                  inga.godo@clave.no
                 </p>
               </Contact1>
             </ContactInfo>
