@@ -115,15 +115,17 @@ const ContactInfo = styled.div`
   padding-left: 0;
 
   ${onDesktop(`
-	flex-direction: row;
+    gap: 1.5rem;
+  	flex-direction: row;
+    flex-wrap: wrap;
   `)};
 `;
 
 const Contact1 = styled.div`
   ${onDesktop(`
-		flex: 1 1 50%;
+		flex: 1 1;
 		padding: 1rem 0 0;
-  	`)};
+  `)};
 `;
 
 const Address = styled.address`
