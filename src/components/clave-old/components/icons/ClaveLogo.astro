@@ -1,13 +1,16 @@
 ---
 interface Props {
   class?: string;
+  style?: string;
 }
 
-const { class: className } = Astro.props;
+const { class: className, style } = Astro.props;
+
 ---
 
 <svg
   class={className}
+  style={style}
   width="150"
   height="71"
   viewBox="0 0 150 71"
@@ -32,3 +35,9 @@ const { class: className } = Astro.props;
     </clipPath>
   </defs>
 </svg>
+
+<style>
+  svg {
+    fill: var(--clave-text, #005550);
+  }
+</style>

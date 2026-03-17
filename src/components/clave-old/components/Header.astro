@@ -28,7 +28,7 @@ const hamburgerFill = useSkinColoredHamburgerMenu ? "#FFE6CD" : "#005550";
     <div class="styled-header">
       <div class="wrapper" class:list={{ "front-page": frontPage }}>
         <a aria-label="Forsiden til Clave.no" href="/">
-          <ClaveLogo class="logo" />
+          <ClaveLogo style="width: 10rem; height: auto;" />
         </a>
 
         <nav class="inline-nav">
@@ -84,12 +84,6 @@ const hamburgerFill = useSkinColoredHamburgerMenu ? "#FFE6CD" : "#005550";
 
   .wrapper.front-page {
     background: none;
-  }
-
-  .logo {
-    width: 10rem;
-    height: auto;
-    fill: var(--clave-text, #005550);
   }
 
   /* Desktop nav */
