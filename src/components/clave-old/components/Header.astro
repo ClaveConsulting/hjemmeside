@@ -44,13 +44,13 @@ const hamburgerFill = useSkinColoredHamburgerMenu ? "#FFE6CD" : "#005550";
           data-hamburger-toggle
           aria-label="Meny"
           style={`fill: ${hamburgerFill};`}
-          onclick="this.classList.toggle('is-open'); this.closest('header')?.querySelector('[data-hamburger-menu]')?.toggleAttribute('hidden');"
+          onclick="this.classList.toggle('is-open'); this.closest('header')?.querySelector('[data-hamburger-menu]')?.classList.toggle('is-open');"
         >
           <HamburgerIcon class="hamburger-icon" />
         </button>
       </div>
 
-      <div class="hamburger-menu" data-hamburger-menu hidden>
+      <div class="hamburger-menu" data-hamburger-menu>
         {menuLinks.map(({ label, href }) => (
           <a
             class:list={["hamburger-link", { active: href === uri }]}
@@ -166,12 +166,21 @@ const hamburgerFill = useSkinColoredHamburgerMenu ? "#FFE6CD" : "#005550";
   .hamburger-menu {
     display: flex;
     flex-direction: column;
-    gap: 0;
-    padding-bottom: 2rem;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-0.5rem);
+    transition:
+      max-height 0.3s ease,
+      opacity    0.3s ease,
+      transform  0.3s ease;
   }
 
-  .hamburger-menu[hidden] {
-    display: none;
+  .hamburger-menu.is-open {
+    max-height: 20rem;
+    opacity: 1;
+    transform: translateY(0);
+    padding-bottom: 2rem;
   }
 
   .hamburger-link {
@@ -205,7 +214,7 @@ const hamburgerFill = useSkinColoredHamburgerMenu ? "#FFE6CD" : "#005550";
     }
 
     .hamburger-menu {
-      display: none !important;
+      display: none;
     }
   }
 </style>
