@@ -2,9 +2,9 @@
 import { COLOR_CLAVE_GREEN, COLOR_CLAVE_PEACH } from '../components/clave-old/colors.js';
 import Container from '../components/clave-old/components/Container.astro';
 import Layout from '../components/clave-old/components/Layout.astro';
-import Header from '../components/clave-old/components/Header';
+import HeaderWithContext from '../components/clave-old/components/HeaderWithContext';
 import Footer from '../components/clave-old/components/Footer';
-import JoinSection from '../components/clave-old/components/JoinSection';
+import JoinSectionWithContext from '../components/clave-old/components/JoinSectionWithContext';
 import Map from '../components/clave-old/components/Map';
 import Form from '../components/clave-old/components/Form/Form';
 import '../components/clave-old/pages/kontakt-oss.css';
@@ -19,7 +19,7 @@ import '../components/clave-old/pages/kontakt-oss.css';
 <body>
   <Container backgroundColor={COLOR_CLAVE_GREEN} textColor={COLOR_CLAVE_PEACH}>
     <main>
-      <Header client:only="react" useSkinColoredHamburgerMenu={true} />
+      <HeaderWithContext client:only="react" backgroundColor={COLOR_CLAVE_GREEN} textColor={COLOR_CLAVE_PEACH} useSkinColoredHamburgerMenu={true} />
       <Layout backgroundColor={COLOR_CLAVE_GREEN} textColor={COLOR_CLAVE_PEACH}>
         <div class="title-wrapper">
           <h1>Kontakt oss</h1>
@@ -75,9 +75,9 @@ import '../components/clave-old/pages/kontakt-oss.css';
         </p>
         <Form client:only="react" />
       </Layout>
-      <JoinSection client:only="react" />
+      <JoinSectionWithContext client:only="react" backgroundColor={COLOR_CLAVE_GREEN} textColor={COLOR_CLAVE_PEACH}/>
     </main>
-    <Footer client:only="react" />
+    <Footer client:only="react" backgroundColor={COLOR_CLAVE_GREEN} textColor={COLOR_CLAVE_PEACH} />
   </Container>
 </body>
 </html>
