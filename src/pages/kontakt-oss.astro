@@ -2,7 +2,7 @@
 import { COLOR_CLAVE_GREEN, COLOR_CLAVE_PEACH } from '../components/clave-old/colors.js';
 import Container from '../components/clave-old/components/Container.astro';
 import Layout from '../components/clave-old/components/Layout.astro';
-import HeaderWithContext from '../components/clave-old/components/HeaderWithContext';
+import Header from '../components/clave-old/components/Header.astro';
 import Footer from '../components/clave-old/components/Footer';
 import JoinSectionWithContext from '../components/clave-old/components/JoinSectionWithContext';
 import Map from '../components/clave-old/components/Map';
@@ -19,7 +19,7 @@ import '../components/clave-old/pages/kontakt-oss.css';
 <body>
   <Container backgroundColor={COLOR_CLAVE_GREEN} textColor={COLOR_CLAVE_PEACH}>
     <main>
-      <HeaderWithContext client:only="react" backgroundColor={COLOR_CLAVE_GREEN} textColor={COLOR_CLAVE_PEACH} useSkinColoredHamburgerMenu={true} />
+      <Header useSkinColoredHamburgerMenu={true} uri="/kontakt-oss" />
       <Layout backgroundColor={COLOR_CLAVE_GREEN} textColor={COLOR_CLAVE_PEACH}>
         <div class="title-wrapper">
           <h1>Kontakt oss</h1>
