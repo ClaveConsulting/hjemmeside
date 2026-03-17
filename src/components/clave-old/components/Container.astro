@@ -1,0 +1,22 @@
+---
+import { COLOR_CLAVE_PEACH, COLOR_CLAVE_GREEN } from "../colors.js";
+
+interface Props {
+  backgroundColor?: string;
+  textColor?: string;
+  class?: string;
+}
+
+const {
+  backgroundColor = COLOR_CLAVE_PEACH,
+  textColor = COLOR_CLAVE_GREEN,
+  class: className,
+} = Astro.props;
+---
+
+<div
+  class:list={["container", className]}
+  style={`background-color: ${backgroundColor}; color: ${textColor}; --clave-bg: ${backgroundColor}; --clave-text: ${textColor};`}
+>
+  <slot />
+</div>

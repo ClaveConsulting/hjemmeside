@@ -1,5 +1,13 @@
 ---
-import KontaktOssPage from '../components/clave-old/pages/kontakt-oss';
+import { COLOR_CLAVE_GREEN, COLOR_CLAVE_PEACH } from '../components/clave-old/colors.js';
+import Container from '../components/clave-old/components/Container.astro';
+import Layout from '../components/clave-old/components/Layout.astro';
+import Header from '../components/clave-old/components/Header';
+import Footer from '../components/clave-old/components/Footer';
+import JoinSection from '../components/clave-old/components/JoinSection';
+import Map from '../components/clave-old/components/Map';
+import Form from '../components/clave-old/components/Form/Form';
+import '../components/clave-old/pages/kontakt-oss.css';
 ---
 <html lang="nb">
 <head>
@@ -8,5 +16,68 @@ import KontaktOssPage from '../components/clave-old/pages/kontakt-oss';
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Kontakt oss | clave</title>
 </head>
-<KontaktOssPage client:only="react" />
+<body>
+  <Container backgroundColor={COLOR_CLAVE_GREEN} textColor={COLOR_CLAVE_PEACH}>
+    <main>
+      <Header client:only="react" useSkinColoredHamburgerMenu={true} />
+      <Layout backgroundColor={COLOR_CLAVE_GREEN} textColor={COLOR_CLAVE_PEACH}>
+        <div class="title-wrapper">
+          <h1>Kontakt oss</h1>
+        </div>
+      </Layout>
+      <Layout backgroundColor={COLOR_CLAVE_GREEN} textColor={COLOR_CLAVE_PEACH}>
+        <div class="contact-info">
+          <div class="contact-card">
+            <h3>Terje</h3>
+            <p>
+              Aasgaard | CEO <br />
+              +47 975 37 841 <br />
+              terje.aasgaard@clave.no
+            </p>
+          </div>
+          <div class="contact-card">
+            <h3>Karine</h3>
+            <p>
+              Småstuen | COO <br />
+              +47 913 23 235 <br />
+              karine.smastuen@clave.no
+            </p>
+          </div>
+          <div class="contact-card">
+            <h3>Inga</h3>
+            <p>
+              Godø | CCO <br />
+              +47 401 05 730 <br />
+              inga.godo@clave.no
+            </p>
+          </div>
+        </div>
+      </Layout>
+      <Layout backgroundColor={COLOR_CLAVE_GREEN} textColor={COLOR_CLAVE_PEACH}>
+        <div slot="aside">
+          <span class="aside-content-low">
+            <h3>Kom innom</h3>
+            <address class="address">
+              Kongens gate 12<br />
+              0153 OSLO<br />
+            </address>
+          </span>
+        </div>
+        <div class="mapouter">
+          <Map client:only="react" />
+        </div>
+      </Layout>
+      <Layout backgroundColor={COLOR_CLAVE_GREEN} textColor={COLOR_CLAVE_PEACH}>
+        <h2>Send oss gjerne en melding</h2>
+        <p>
+          Trenger du hjelp til noe, ønsker å vite mer om hvordan det er å
+          jobbe hos oss eller rett og slett bare er litt nysgjerrig?
+        </p>
+        <Form client:only="react" />
+      </Layout>
+      <JoinSection client:only="react" />
+    </main>
+    <Footer client:only="react" />
+  </Container>
+</body>
 </html>
