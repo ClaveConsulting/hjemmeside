@@ -1,17 +1,13 @@
 import React from "react";
-import styled from "styled-components";
 import Form from "../components/Form/Form";
 
 import { COLOR_CLAVE_GREEN, COLOR_CLAVE_PEACH } from "../colors";
-import { onDesktop, onMobile } from "../components/Breakpoints.jsx";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import JoinSection from "../components/JoinSection";
 import Layout, { ColorContext } from "../components/Layout";
 import Map from "../components/Map";
-
-const PADDING_TOP_DESKTOP = "6rem";
-const PADDING_TOP_MOBILE = "4.75rem";
+import "./kontakt-oss.css";
 
 const KontaktOssPage = (props) => {
   return (
@@ -25,50 +21,50 @@ const KontaktOssPage = (props) => {
         <main>
           <Header {...props} useSkinColoredHamburgerMenu={true} />
           <Layout>
-            <TitleWrapper>
+            <div className="title-wrapper">
               <h1>Kontakt oss</h1>
-            </TitleWrapper>
+            </div>
           </Layout>
           <Layout>
-            <ContactInfo>
-              <Contact1>
+            <div className="contact-info">
+              <div className="contact-card">
                 <h3>Terje</h3>
                 <p>
                   Aasgaard | CEO <br />
                   +47 975 37 841 <br />
                   terje.aasgaard@clave.no
                 </p>
-              </Contact1>
-              <Contact1>
+              </div>
+              <div className="contact-card">
                 <h3>Karine</h3>
                 <p>
                   Småstuen | COO <br />
                   +47 913 23 235 <br />
                   karine.smastuen@clave.no
                 </p>
-              </Contact1>
-              <Contact1>
+              </div>
+              <div className="contact-card">
                 <h3>Inga</h3>
                 <p>
                   Godø | CCO <br />
                   +47 401 05 730 <br />
                   inga.godo@clave.no
                 </p>
-              </Contact1>
-            </ContactInfo>
+              </div>
+            </div>
           </Layout>
           <Layout
             asideContent={
               <div>
-                <AsideContentLow>
+                <span className="aside-content-low">
                   <h3>Kom innom</h3>
-                  <Address>
+                  <address className="address">
                     Kongens gate 12
                     <br />
                     0153 OSLO
                     <br />
-                  </Address>
-                </AsideContentLow>
+                  </address>
+                </span>
               </div>
             }
           >
@@ -92,45 +88,5 @@ const KontaktOssPage = (props) => {
     </ColorContext.Provider>
   );
 };
-
-const TitleWrapper = styled.div`
-  background-color: ${COLOR_CLAVE_GREEN};
-  ${onDesktop(`
-	padding-top: ${PADDING_TOP_DESKTOP};
-  `)};
-  ${onMobile(`
-	padding-top: ${PADDING_TOP_MOBILE};}
-  `)};
-`;
-
-const AsideContentLow = styled.span`
-  display: inline-block;
-  align-self: flex-end;
-`;
-
-const ContactInfo = styled.div`
-  max-width: 1280px;
-  display: flex;
-  flex-direction: column;
-  padding-left: 0;
-
-  ${onDesktop(`
-    gap: 1.5rem;
-  	flex-direction: row;
-    flex-wrap: wrap;
-  `)};
-`;
-
-const Contact1 = styled.div`
-  ${onDesktop(`
-		flex: 1 1;
-		padding: 1rem 0 0;
-  `)};
-`;
-
-const Address = styled.address`
-  font-style: normal;
-  font-size: 1.5rem;
-`;
 
 export default KontaktOssPage;
