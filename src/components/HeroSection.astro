@@ -1,0 +1,164 @@
+---
+import Header from "./layout/Header.astro";
+import { COLOR_CLAVE_GREEN, COLOR_CLAVE_PEACH } from "./clave-old/colors.js";
+import frontpageImage from "./clave-old/images/frontpage1.png";
+---
+
+<section class="first-section">
+  <div class="sticky-scroll-box">
+    <div
+      class="scroll-content prescroll"
+      style={`--clave-bg: ${COLOR_CLAVE_GREEN}; --clave-text: ${COLOR_CLAVE_PEACH};`}
+    >
+      <Header frontPage={true} useSkinColoredHamburgerMenu={true} />
+      <div class="text-panel">
+        <div class="title-wrapper">
+          <h1 style={`color: ${COLOR_CLAVE_PEACH};`}>
+            Vi er en gjeng flinke designere og utviklere med stort
+            engasjement for det vi driver med
+          </h1>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="scroll-overlay"
+      class="scroll-content postscroll"
+      style={`--clave-bg: ${COLOR_CLAVE_PEACH}; --clave-text: ${COLOR_CLAVE_GREEN};`}
+    >
+      <Header frontPage={true} useSkinColoredHamburgerMenu={false} />
+      <div class="text-panel">
+        <div class="title-wrapper">
+          <h1 style={`color: ${COLOR_CLAVE_GREEN};`}>
+            Vi er en gjeng flinke designere og utviklere med stort
+            engasjement for det vi driver med
+          </h1>
+        </div>
+      </div>
+      <div class="bg-image">
+        <img src={frontpageImage.src} alt="" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const overlay = document.getElementById("scroll-overlay");
+  const isLandscape = () => window.innerWidth >= window.innerHeight;
+
+  const setClipPath = () => {
+    if (!overlay) return;
+    const scrollY = window.scrollY;
+    overlay.style.clipPath = isLandscape()
+      ? `circle(calc(${1.5 * scrollY}px + min(45vh, 45vw)) at 85% 70%)`
+      : `circle(calc(${scrollY}px + 25vh) at 85% 85%)`;
+  };
+
+  setClipPath();
+  window.addEventListener("scroll", setClipPath);
+</script>
+
+<style>
+  .first-section {
+    width: 100%;
+    height: max(180vh, 90vw);
+  }
+
+  .sticky-scroll-box {
+    position: sticky;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  .scroll-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .prescroll {
+    background-color: #005550;
+  }
+
+  .postscroll {
+    background-color: #ffe6cd;
+    clip-path: circle(25vh at 85% 85%);
+  }
+
+  .text-panel {
+    display: flex;
+    height: 60vh;
+    width: 90%;
+    max-width: 45em;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  @media (min-width: 720px) {
+    .text-panel {
+      height: 80vh;
+      width: 55%;
+    }
+  }
+
+  .title-wrapper {
+    padding-top: 4.75rem;
+    padding-left: 3rem;
+  }
+
+  @media (min-width: 720px) {
+    .title-wrapper {
+      padding-top: 6rem;
+      padding-left: 6rem;
+    }
+  }
+
+  .title-wrapper h1 {
+    margin: 0;
+    font-size: 2.25rem;
+    line-height: 3rem;
+  }
+
+  @media (min-width: 720px) {
+    .title-wrapper h1 {
+      font-size: 3.75rem;
+      line-height: 1.2;
+    }
+  }
+
+  .bg-image {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    width: 90%;
+  }
+
+  @media (min-width: 720px) {
+    .bg-image {
+      width: 65%;
+      max-width: 150vh;
+    }
+  }
+
+  .bg-image img {
+    display: block;
+    width: 100%;
+    height: 100vh;
+    margin-bottom: 0;
+    object-fit: cover;
+  }
+
+  @media (max-width: 720px) {
+    .bg-image img {
+      height: 50vh;
+    }
+  }
+</style>
