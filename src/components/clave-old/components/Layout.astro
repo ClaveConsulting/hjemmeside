@@ -23,9 +23,7 @@ const hasAside = Astro.slots.has("aside");
   <div class="content">
     <div class="layout-wrapper">
       {hasAside ? (
-        <aside class="aside">
-          <slot name="aside" />
-        </aside>
+        <slot name="aside" />
       ) : (
         <aside class="aside aside--empty" />
       )}

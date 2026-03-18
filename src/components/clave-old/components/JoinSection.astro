@@ -1,0 +1,129 @@
+---
+import Layout from "./Layout.astro";
+import bildeKarine from "../images/190920_Clave_lowres_5.jpg";
+import bildeAnniken from "../images/190920_Clave_lowres_12.jpg";
+import { COLOR_CLAVE_LIGHTBLUE, COLOR_CLAVE_BLUE } from "../colors.js";
+import Aside from "./Aside.astro";
+
+interface Props {
+  backgroundColor?: string;
+  textColor?: string;
+  asideBackgroundColor?: string;
+  asideTextColor?: string;
+}
+
+const {
+  backgroundColor,
+  textColor,
+  asideBackgroundColor = COLOR_CLAVE_LIGHTBLUE,
+  asideTextColor = COLOR_CLAVE_BLUE,
+} = Astro.props;
+---
+
+<Layout backgroundColor={backgroundColor} textColor={textColor}>
+  <Aside slot="aside">
+    <div class="aside-div">
+      <h2>Bli en av oss!</h2>
+      <h3>Jobbe som utvikler</h3>
+      <p>
+        Som utvikler i Clave får du jobbe med det siste nye innen teknologi.
+        <br />
+        <br />
+        <a class="plink" href="/jobb-som-utvikler">Finn ut mer om det her</a>
+      </p>
+      <br />
+      <br />
+      <h3>Jobbe som designer</h3>
+      <p>
+        Nysgjerrig på hvordan det er å jobbe som designer i Clave?
+        <br />
+        <br />
+        <a class="plink" href="/jobb-som-designer">Få svaret her</a>
+      </p>
+    </div>
+  </Aside>
+
+  <div class="gallery-wrapper">
+    <div class="gallery-container">
+      <div class="gallery-content">
+        <img alt="Anniken" src={bildeAnniken.src} class="gallery-img" />
+        <img alt="Karine" src={bildeKarine.src} class="gallery-img" style="width: 56.75%" />
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style define:vars={{ colorLightblue: asideBackgroundColor, colorBlue: asideTextColor }}>
+  /* AsideDiv */
+  .aside-div {
+    background-color: var(--colorLightblue);
+    color: var(--colorBlue);
+    padding: 96px 80% 96px 143px;
+    margin: 0 -110% 0 -96px;
+  }
+  @media only screen and (max-width: 719px) {
+    .aside-div {
+      padding: 3rem;
+      margin: 3rem -3rem 0;
+    }
+  }
+
+  /* PLink */
+  .plink {
+    color: var(--colorBlue);
+    text-decoration: underline;
+    font-size: 1.5rem;
+    line-height: 2.0625rem;
+    cursor: pointer;
+  }
+  @media only screen and (max-width: 719px) {
+    .plink {
+      font-size: 1.125rem;
+      line-height: 1.5625rem;
+    }
+  }
+
+  /* GalleryWrapper */
+  .gallery-wrapper {
+    display: grid;
+    max-width: 600px;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    margin: auto;
+  }
+
+  /* Gallery Container */
+  .gallery-container {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+  }
+
+  /* Gallery Content */
+  .gallery-content {
+    flex: 1 1 auto;
+    margin-top: 1rem;
+    position: relative;
+    left: 1rem;
+  }
+  @media (min-width: 720px) {
+    .gallery-content {
+      width: 100%;
+      position: static;
+    }
+  }
+
+  /* GalleryImage */
+  .gallery-img {
+    display: block;
+    margin: 0;
+    width: 100%;
+    height: auto;
+  }
+  .gallery-img:nth-child(2) {
+    margin-right: 11%;
+    margin-left: auto;
+    margin-top: -20%;
+  }
+</style>
