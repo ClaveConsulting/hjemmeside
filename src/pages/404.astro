@@ -1,0 +1,53 @@
+---
+import { COLOR_CLAVE_GREEN, COLOR_CLAVE_PEACH } from '../colors.js';
+import Container from '../components/layout/Container.astro';
+import Header from '../components/layout/Header.astro';
+import Layout from '../components/layout/Layout.astro';
+import Footer from '../components/layout/Footer.astro';
+import '../styles/global.css';
+---
+
+<html lang="nb">
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" type="image/svg+xml" href="/clave-icon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>404 | clave</title>
+</head>
+<body>
+  <Container backgroundColor={COLOR_CLAVE_PEACH} textColor={COLOR_CLAVE_GREEN}>
+    <main>
+      <Header />
+      <Layout backgroundColor={COLOR_CLAVE_PEACH} textColor={COLOR_CLAVE_GREEN}>
+        <div slot="aside">
+          <h1>404</h1>
+          <p>Siden du leter etter finnes ikke... Så trist.</p>
+          <a href="/">Gå til forsiden</a>
+        </div>
+      </Layout>
+    </main>
+    <Footer backgroundColor={COLOR_CLAVE_PEACH} textColor={COLOR_CLAVE_GREEN} />
+  </Container>
+</body>
+
+<style>
+  html, body {
+    height: 100%;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  body > :global(.container) {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1;
+  }
+</style>
+</html>
