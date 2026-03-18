@@ -1,0 +1,134 @@
+---
+import Aside from "./Aside.astro";
+import ClaveLogo from "./icons/ClaveLogo.astro";
+import {
+  COLOR_CLAVE_GREEN,
+  COLOR_CLAVE_PEACH,
+  COLOR_CLAVE_PINK,
+} from "../colors.js";
+import { MAX_WIDTH, MOBILE_PADDING, DESKTOP_PADDING } from "../layouts.js";
+import Container from "./Container.astro";
+import Section from "./Section.astro";
+
+interface Props {
+  textColor?: string;
+  backgroundColor?: string;
+}
+
+const {
+  textColor = COLOR_CLAVE_GREEN,
+  backgroundColor = COLOR_CLAVE_PEACH,
+} = Astro.props;
+---
+
+<footer>
+  <Container backgroundColor={backgroundColor} textColor={textColor}>
+    <div class="footer-content-container">
+      <Aside class="footer-logo-wrapper">
+        <a href="/" aria-label="Forsiden til Clave.no">
+          <ClaveLogo style="width: 100px; height: auto;" />
+        </a>
+      </Aside>
+      <Section class="footer-content">
+        <ul class="footer-list">
+          <li><a class="footer-link" href="/hva-vi-gjor"><span class="nowrap">Se hva vi gjør</span></a></li>
+          <li><a class="footer-link" href="/hvem-vi-er"><span class="nowrap">Se hvem vi er</span></a></li>
+          <li><a class="footer-link" href="/kontakt-oss"><span class="nowrap">Bli en av oss</span></a></li>
+        </ul>
+        <ul class="footer-list">
+          <li><a class="footer-link" href="mailto:post@clave.no"><span class="nowrap">post@clave.no</span></a></li>
+          <li><span class="nowrap">Kongens gate 12</span></li>
+          <li><span class="nowrap">0153 Oslo</span></li>
+        </ul>
+        <ul class="footer-list">
+          <li>
+            <a class="footer-link" href="https://www.facebook.com/ClaveConsulting/" target="_blank" rel="noopener noreferrer">Facebook</a>
+          </li>
+          <li>
+            <a class="footer-link" href="https://www.instagram.com/claveconsulting/" target="_blank" rel="noopener noreferrer">Instagram</a>
+          </li>
+          <li>
+            <a class="footer-link" href="https://www.linkedin.com/company/clave-consulting-as/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </li>
+          <li>
+            <div style="width: 16px;">
+              <a
+                class="footer-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://storewebclaveplatformer.z16.web.core.windows.net/"
+                aria-label="Claveplatformer"
+              >
+                <div class="clave-triangle"></div>
+              </a>
+            </div>
+          </li>
+        </ul>
+      </Section>
+    </div>
+  </Container>
+</footer>
+
+<style define:vars={{ colorPink: COLOR_CLAVE_PINK, textColor, maxWidth: MAX_WIDTH, mobilePadding: MOBILE_PADDING, desktopPadding: DESKTOP_PADDING }}>
+  .footer-content-container {
+    display: flex;
+    flex-direction: column;
+    padding: 6rem var(--mobilePadding) 9rem;
+  }
+
+  @media (min-width: 720px) {
+    .footer-content-container {
+      padding: 6rem var(--desktopPadding) 9rem;
+      flex-direction: row;
+    }
+  }
+
+  .footer-logo-wrapper {
+    order: 0;
+  }
+
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  @media (min-width: 720px) {
+    .footer-content {
+      flex-direction: row;
+    }
+  }
+
+  .footer-list {
+    margin: 0 1rem 1rem 0;
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .footer-list li {
+    padding: 0;
+  }
+
+  .footer-link {
+    color: var(--textColor);
+    text-decoration: none;
+  }
+
+  .footer-link:hover {
+    text-decoration: underline;
+    color: var(--colorPink);
+  }
+
+  .nowrap {
+    white-space: nowrap;
+  }
+
+  .clave-triangle {
+    margin: 20px 0;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 16px solid currentColor;
+  }
+</style>

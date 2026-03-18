@@ -1,5 +1,8 @@
 ---
 import "./layout.css";
+import Container from "./Container.astro";
+import ContentColumn from "./ContentColumn.astro";
+import { COLOR_CLAVE_PEACH, COLOR_CLAVE_GREEN } from "../colors.js";
 
 interface Props {
   backgroundColor?: string;
@@ -8,85 +11,24 @@ interface Props {
 }
 
 const {
-  backgroundColor = "#FFE6CD",
-  textColor = "#005550",
+  backgroundColor = COLOR_CLAVE_PEACH,
+  textColor = COLOR_CLAVE_GREEN,
   class: className,
 } = Astro.props;
-
-const hasAside = Astro.slots.has("aside");
 ---
 
-<div
-  class:list={["container", className]}
-  style={`background-color: ${backgroundColor}; color: ${textColor};`}
->
+<Container backgroundColor={backgroundColor} textColor={textColor} class={className}>
   <div class="content">
-    <div class="layout-wrapper">
-      {hasAside ? (
-        <slot name="aside" />
-      ) : (
-        <aside class="aside aside--empty" />
-      )}
-      <section class="section">
-        <slot />
-      </section>
-    </div>
+    <ContentColumn>
+      <slot name="aside" slot="aside" />
+      <slot />
+    </ContentColumn>
   </div>
-</div>
+</Container>
 
 <style>
   .content {
     margin: 0 auto;
     max-width: 120rem;
-  }
-
-  .layout-wrapper {
-    display: flex;
-    flex-direction: column;
-    padding: 3rem;
-  }
-
-  @media screen and (min-width: 720px) {
-    .layout-wrapper {
-      padding: 6rem;
-      flex-direction: row;
-    }
-  }
-
-  .aside {
-    flex: 1 0 40%;
-    order: 1;
-    display: flex;
-    padding: 3rem 0;
-  }
-
-  @media screen and (min-width: 720px) {
-    .aside {
-      order: 0;
-      padding: 0 6rem 0 0;
-    }
-  }
-
-  .aside--empty {
-    flex: 1 0 40%;
-    order: 1;
-    display: flex;
-    padding: 0;
-  }
-
-  @media screen and (min-width: 720px) {
-    .aside--empty {
-      order: 0;
-    }
-  }
-
-  .section {
-    max-width: 1280px;
-  }
-
-  @media screen and (min-width: 720px) {
-    .section {
-      flex: 1 1 1280px;
-    }
   }
 </style>

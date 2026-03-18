@@ -1,4 +1,6 @@
 ---
+import Aside from "./Aside.astro";
+
 interface Props {
   class?: string;
 }
@@ -10,11 +12,11 @@ const hasAside = Astro.slots.has("aside");
 
 <div class:list={["layout-wrapper", className]}>
   {hasAside ? (
-    <aside class="aside">
+    <Aside>
       <slot name="aside" />
-    </aside>
+    </Aside>
   ) : (
-    <aside class="aside aside--empty" />
+    <Aside class="aside--empty" />
   )}
   <section class="section">
     <slot />
@@ -35,31 +37,8 @@ const hasAside = Astro.slots.has("aside");
     }
   }
 
-  .aside {
-    flex: 1 0 40%;
-    order: 1;
-    display: flex;
-    padding: 3rem 0;
-  }
-
-  @media screen and (min-width: 720px) {
-    .aside {
-      order: 0;
-      padding: 0 6rem 0 0;
-    }
-  }
-
   .aside--empty {
-    flex: 1 0 40%;
-    order: 1;
-    display: flex;
     padding: 0;
-  }
-
-  @media screen and (min-width: 720px) {
-    .aside--empty {
-      order: 0;
-    }
   }
 
   .section {

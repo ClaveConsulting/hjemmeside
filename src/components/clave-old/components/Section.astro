@@ -12,12 +12,16 @@ const { class: className } = Astro.props;
 
 <style>
   .section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     max-width: 1280px;
   }
 
   @media screen and (min-width: 720px) {
     .section {
       flex: 1 1 1280px;
+      flex-direction: row;
     }
   }
 </style>

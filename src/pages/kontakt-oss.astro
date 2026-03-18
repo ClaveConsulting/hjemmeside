@@ -3,7 +3,7 @@ import { COLOR_CLAVE_GREEN, COLOR_CLAVE_PEACH } from '../components/clave-old/co
 import Container from '../components/clave-old/components/Container.astro';
 import Layout from '../components/clave-old/components/Layout.astro';
 import Header from '../components/clave-old/components/Header.astro';
-import Footer from '../components/clave-old/components/Footer';
+import Footer from '../components/clave-old/components/Footer.astro';
 import JoinSection from '../components/clave-old/components/JoinSection.astro';
 import Map from '../components/clave-old/components/Map';
 import Form from '../components/clave-old/components/Form/Form';
@@ -77,7 +77,7 @@ import '../components/clave-old/pages/kontakt-oss.css';
       </Layout>
       <JoinSection backgroundColor={COLOR_CLAVE_GREEN} textColor={COLOR_CLAVE_PEACH} />
     </main>
-    <Footer client:only="react" backgroundColor={COLOR_CLAVE_GREEN} textColor={COLOR_CLAVE_PEACH} />
+    <Footer backgroundColor={COLOR_CLAVE_GREEN} textColor={COLOR_CLAVE_PEACH} />
   </Container>
 </body>
 </html>
