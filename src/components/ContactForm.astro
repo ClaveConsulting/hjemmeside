@@ -1,0 +1,133 @@
+---
+---
+
+<form name="message" method="POST" data-netlify="true">
+  <input type="hidden" name="form-name" value="message" />
+  <input
+    id="navn"
+    name="navn"
+    type="text"
+    placeholder="Navn"
+    class="form-input"
+  />
+  <br />
+  <input
+    id="Epost"
+    name="Epost"
+    type="text"
+    placeholder="Epost"
+    class="form-input"
+  />
+  <br />
+  <input
+    id="Melding"
+    name="Melding"
+    type="text"
+    placeholder="Melding"
+    class="form-input"
+  />
+  <br />
+  <input
+    id="submit"
+    value="Send"
+    type="submit"
+    class="form-submit"
+    disabled
+  />
+</form>
+
+<script>
+  const navnInput = document.getElementById("navn") as HTMLInputElement;
+  const epostInput = document.getElementById("Epost") as HTMLInputElement;
+  const meldingInput = document.getElementById("Melding") as HTMLInputElement;
+  const submitBtn = document.getElementById("submit") as HTMLInputElement;
+
+  let nameChanged = false;
+  let emailChanged = false;
+  let messageChanged = false;
+  let nameValid = false;
+  let emailValid = false;
+  let messageValid = false;
+
+  function updateSubmit() {
+    const formValid = nameValid && emailValid && messageValid;
+    submitBtn.disabled = !formValid;
+    submitBtn.classList.toggle("pointer", formValid);
+  }
+
+  navnInput.addEventListener("input", () => {
+    nameChanged = true;
+    nameValid = navnInput.value.length > 0;
+    navnInput.classList.toggle("error", nameChanged && !nameValid);
+    updateSubmit();
+  });
+
+  navnInput.addEventListener("blur", () => {
+    if (!nameValid) navnInput.placeholder = "Vi må vite hvem du er";
+  });
+
+  epostInput.addEventListener("input", () => {
+    emailChanged = true;
+    emailValid =
+      epostInput.value.length > 0 && !!epostInput.value.match(/.+@.+/);
+    epostInput.classList.toggle("error", emailChanged && !emailValid);
+    updateSubmit();
+  });
+
+  epostInput.addEventListener("blur", () => {
+    if (!emailValid) {
+      epostInput.placeholder = "Vi trenger eposten din for å svare deg";
+      epostInput.value = "";
+    }
+  });
+
+  meldingInput.addEventListener("input", () => {
+    messageChanged = true;
+    messageValid = meldingInput.value.length > 0;
+    meldingInput.classList.toggle("error", messageChanged && !messageValid);
+    updateSubmit();
+  });
+
+  meldingInput.addEventListener("blur", () => {
+    if (!messageValid) meldingInput.placeholder = "Hva er du nysgjerrig på?";
+  });
+</script>
+
+<style>
+  .form-input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    color: #ffe6cd;
+    box-sizing: border-box;
+    font-size: 18px;
+    height: 50px;
+    padding: 10px 0;
+    position: relative;
+    top: 50%;
+    width: 100%;
+  }
+
+  .form-submit {
+    margin-top: 1rem;
+    background-color: transparent;
+    border: none;
+    border-bottom: 0.1em solid #ccc;
+    color: #ffe6cd;
+    box-sizing: border-box;
+    font-size: 23px;
+    height: 50px;
+    padding: 1rem 0 0 0;
+    position: relative;
+    top: 50%;
+  }
+
+  .form-input.error::placeholder {
+    color: #fa9691;
+    opacity: 1;
+  }
+
+  .form-submit.pointer {
+    cursor: pointer;
+  }
+</style>
