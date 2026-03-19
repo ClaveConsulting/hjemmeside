@@ -1,22 +1,21 @@
 ---
 import Aside from "./Aside.astro";
+import type { HTMLAttributes } from "astro/types";
 
-interface Props {
-  class?: string;
+interface Props extends HTMLAttributes<"div"> {
+  hasAside?: boolean;
 }
 
-const { class: className } = Astro.props;
-
-const hasAside = Astro.slots.has("aside");
+const { class: className, hasAside = Astro.slots.has("aside"), ...rest } = Astro.props;
 ---
 
-<div class:list={["layout-wrapper", className]}>
+<div class:list={["layout-wrapper", className]} {...rest}>
   {hasAside ? (
     <Aside>
-      <slot name="aside" />
+      <slot name="aside" slot="aside"/>
     </Aside>
   ) : (
-    <Aside class="aside--empty" />
+    <aside class="aside-empty" />
   )}
   <section class="section">
     <slot />
@@ -28,17 +27,27 @@ const hasAside = Astro.slots.has("aside");
     display: flex;
     flex-direction: column;
     padding: 3rem;
+    padding-bottom: var(--column-padding-bottom, 3rem);
   }
 
   @media screen and (min-width: 720px) {
     .layout-wrapper {
       padding: 6rem;
+      padding-bottom: var(--column-padding-bottom, 6rem);
       flex-direction: row;
     }
   }
 
-  .aside--empty {
-    padding: 0;
+  .aside-empty {
+    flex: 1 0 40%;
+    order: 1;
+    display: flex;
+  }
+
+  @media screen and (min-width: 720px) {
+    .aside-empty {
+      order: 0;
+    }
   }
 
   .section {

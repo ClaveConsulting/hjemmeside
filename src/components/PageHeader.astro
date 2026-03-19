@@ -14,20 +14,24 @@ interface Props {
 
 const { title, ingress, imageSrc, imageWidth, imageHeight, imageAlt = "" } = Astro.props;
 ---
-<Container class="page-header-wrapper">
-    <ContentColumn class="page-header-content">
-      <h1 class="page-header-title">{title}</h1>
-      {ingress && <Ingress>{ingress}</Ingress>}
-    </ContentColumn>
+<Container>
+  <div class="page-header-wrapper">
     <div class="page-header-image-wrapper">
-      <img
-        class="page-header-image"
-        src={imageSrc}
-        width={imageWidth}
-        height={imageHeight}
-        alt={imageAlt}
-      />
-    </div>
+      <ContentColumn style="--column-padding-bottom: 2rem">
+        <div class="page-header-content">
+          <h1 class="page-header-title">{title}</h1>
+          {ingress && <Ingress>{ingress}</Ingress>}
+        </div>
+      </ContentColumn>
+        <img
+          class="page-header-image"
+          src={imageSrc}
+          width={imageWidth}
+          height={imageHeight}
+          alt={imageAlt}
+        />
+      </div>
+  </div>
 </Container>
 
 <style>
@@ -45,11 +49,7 @@ const { title, ingress, imageSrc, imageWidth, imageHeight, imageAlt = "" } = Ast
     }
   }
 
-  .page-header-content {
-    padding-bottom: 2rem;
-  }
-
-  .page-header-title {
+.page-header-title {
     margin-bottom: 1.5rem;
   }
 
