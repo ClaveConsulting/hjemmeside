@@ -1,17 +1,11 @@
 ---
-import styled from "styled-components";
-import { COLOR_CLAVE_PEACH } from "../colors.js";
-import Footer from "../components/clave-old/components/Footer";
-import Header from "../components/clave-old/components/Header";
-import Layout from "../components/clave-old/components/Layout";
-import PageHeader from "../components/clave-old/components/PageHeader";
-import headerBilde from "../components/clave-old/images/190920_Clave_lowres_11.jpg";
-import EmployeeList from "../components/dette-er-oss/EmployeeList.astro";
-
-const TitleWrapper = styled.div`
-    background-color: ${COLOR_CLAVE_PEACH};
-`;
-
+import Container from '../components/layout/Container.astro';
+import Layout from '../components/layout/Layout.astro';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import PageHeader from '../components/PageHeader.astro';
+import EmployeeList from '../components/dette-er-oss/EmployeeList.astro';
+import headerBilde from '../components/clave-old/images/190920_Clave_lowres_11.jpg';
 ---
 <html lang="nb">
 <head>
@@ -20,52 +14,47 @@ const TitleWrapper = styled.div`
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Se hvem vi er | clave</title>
 </head>
-
-<main>
-    <Header client:only="react" />
-    <TitleWrapper>
+<body>
+  <Container>
+    <main>
+      <Header uri="/hvem-vi-er" />
         <PageHeader
             title="Se hvem vi er"
-            ingress={`
-                    Vi mener at det er godt og litt annerledes å være en Claver. Vi
-                    føler en tilhørighet både til selskapet og til kollegaene våre.`}
-            imageProps={{
-                src: headerBilde.src,
-                width: 1227,
-                height: 728,
-            }}
-            client:only="react"
+            ingress="Vi mener at det er godt og litt annerledes å være en Claver. Vi føler en tilhørighet både til selskapet og til kollegaene våre."
+            imageSrc={headerBilde.src}
+            imageWidth={1227}
+            imageHeight={728}
         />
-    </TitleWrapper>
-    <Layout client:only="react">
+      <Layout>
         <p>
-            Det er flest hverdager i året, og i denne hverdagen setter vi
-            trivsel og trygghet høyt. Vi har det morsomt på jobb. Tverrfaglig
-            samarbeid gjør oss sterke i møtet med faglige utfordringer. Lagånd,
-            positivitet og omsorg for kollegaene våre gjør oss trygge på
-            hverandre. Da kan vi lage de aller beste løsningene.
+          Det er flest hverdager i året, og i denne hverdagen setter vi
+          trivsel og trygghet høyt. Vi har det morsomt på jobb. Tverrfaglig
+          samarbeid gjør oss sterke i møtet med faglige utfordringer. Lagånd,
+          positivitet og omsorg for kollegaene våre gjør oss trygge på
+          hverandre. Da kan vi lage de aller beste løsningene.
         </p>
         <p>
-            Det er smart å ta avgjørelser sammen. Åpenhet gjør at vi vet hva som
-            rører seg i selskapet, og da er det enkelt å påvirke hvilken retning
-            vi skal gå.
-        </p>
-
-        <p>
-            Sammen reiser vi ut i verden på jakt etter inspirasjon. Faglig
-            utvikling er viktig for oss - både som team og for hver enkelt. Vi
-            har innedager vi fyller med prosjekter og hobbyer. Sammen skaper vi
-            et kreativt felleskap hvor vi får mulighet til å ta i bruk mange -
-            og kanskje nye sider - av oss selv.
+          Det er smart å ta avgjørelser sammen. Åpenhet gjør at vi vet hva som
+          rører seg i selskapet, og da er det enkelt å påvirke hvilken retning
+          vi skal gå.
         </p>
         <p>
-            Teknologi og brukeropplevelse er det beste vi vet. Når vi lærer nye
-            ting, inspireres av hverandre og føler engasjement skaper vi verdi
-            både for kundene våre og oss selv.
+          Sammen reiser vi ut i verden på jakt etter inspirasjon. Faglig
+          utvikling er viktig for oss - både som team og for hver enkelt. Vi
+          har innedager vi fyller med prosjekter og hobbyer. Sammen skaper vi
+          et kreativt felleskap hvor vi får mulighet til å ta i bruk mange -
+          og kanskje nye sider - av oss selv.
         </p>
-    </Layout>
-    <EmployeeList />
-</main>
-<Footer client:only="react"/>
-
+        <p>
+          Teknologi og brukeropplevelse er det beste vi vet. Når vi lærer nye
+          ting, inspireres av hverandre og føler engasjement skaper vi verdi
+          både for kundene våre og oss selv.
+        </p>
+      </Layout>
+      <EmployeeList />
+    </main>
+    <Footer />
+  </Container>
+</body>
 </html>
+

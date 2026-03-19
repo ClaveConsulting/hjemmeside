@@ -1,0 +1,79 @@
+---
+import Container from './layout/Container.astro';
+import ContentColumn from './layout/ContentColumn.astro';
+import Ingress from './Ingress.astro';
+
+interface Props {
+  title: string;
+  ingress?: string;
+  imageSrc: string;
+  imageWidth: number;
+  imageHeight: number;
+  imageAlt?: string;
+}
+
+const { title, ingress, imageSrc, imageWidth, imageHeight, imageAlt = "" } = Astro.props;
+---
+<Container class="page-header-wrapper">
+    <ContentColumn class="page-header-content">
+      <h1 class="page-header-title">{title}</h1>
+      {ingress && <Ingress>{ingress}</Ingress>}
+    </ContentColumn>
+    <div class="page-header-image-wrapper">
+      <img
+        class="page-header-image"
+        src={imageSrc}
+        width={imageWidth}
+        height={imageHeight}
+        alt={imageAlt}
+      />
+    </div>
+</Container>
+
+<style>
+  .page-header-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 0 3rem;
+  }
+
+  @media (min-width: 720px) {
+    .page-header-wrapper {
+      flex-direction: row;
+      padding-left: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  .page-header-content {
+    padding-bottom: 2rem;
+  }
+
+  .page-header-title {
+    margin-bottom: 1.5rem;
+  }
+
+  @media (min-width: 720px) {
+    .page-header-title {
+      margin-bottom: 4rem;
+    }
+  }
+
+.page-header-image-wrapper {
+    flex-shrink: 0;
+  }
+
+  .page-header-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
+
+  @media (min-width: 720px) {
+    .page-header-image {
+      width: 80%;
+      margin-left: auto;
+    }
+  }
+</style>

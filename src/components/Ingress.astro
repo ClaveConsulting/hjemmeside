@@ -1,0 +1,30 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<p class:list={["ingress", className]}>
+  <slot />
+</p>
+
+<style>
+  .ingress,
+  .ingress span,
+  .ingress a {
+    font-size: 2.5rem;
+    line-height: 3rem;
+    font-weight: 400;
+  }
+
+  @media (max-width: 719px) {
+    .ingress,
+    .ingress span,
+    .ingress a {
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+  }
+</style>
