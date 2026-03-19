@@ -4,6 +4,7 @@ import bildeKarine from "../clave-old/images/190920_Clave_lowres_5.jpg";
 import bildeAnniken from "../clave-old/images/190920_Clave_lowres_12.jpg";
 import { COLOR_CLAVE_LIGHTBLUE, COLOR_CLAVE_BLUE } from "../../colors.js";
 import Aside from "./Aside.astro";
+import Gallery from "../Gallery.astro";
 
 interface Props {
   backgroundColor?: string;
@@ -44,12 +45,10 @@ const {
   </Aside>
 
   <div class="gallery-wrapper">
-    <div class="gallery-container">
-      <div class="gallery-content">
-        <img alt="Anniken" src={bildeAnniken.src} class="gallery-img" />
-        <img alt="Karine" src={bildeKarine.src} class="gallery-img" style="width: 56.75%" />
-      </div>
-    </div>
+    <Gallery images={[
+      { src: bildeAnniken.src, width: 406, height: 206, alt: "Anniken" },
+      { src: bildeKarine.src, width: 192, height: 261, alt: "Karine" },
+    ]} />
   </div>
 </Layout>
 
@@ -90,40 +89,5 @@ const {
     height: 100%;
     width: 100%;
     align-items: center;
-    margin: auto;
-  }
-
-  /* Gallery Container */
-  .gallery-container {
-    display: flex;
-    flex: 1;
-    overflow: hidden;
-  }
-
-  /* Gallery Content */
-  .gallery-content {
-    flex: 1 1 auto;
-    margin-top: 1rem;
-    position: relative;
-    left: 1rem;
-  }
-  @media (min-width: 720px) {
-    .gallery-content {
-      width: 100%;
-      position: static;
-    }
-  }
-
-  /* GalleryImage */
-  .gallery-img {
-    display: block;
-    margin: 0;
-    width: 100%;
-    height: auto;
-  }
-  .gallery-img:nth-child(2) {
-    margin-right: 11%;
-    margin-left: auto;
-    margin-top: -20%;
   }
 </style>
