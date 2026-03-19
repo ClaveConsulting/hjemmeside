@@ -1,0 +1,60 @@
+---
+interface Props {
+  image: string;
+  imageAlt?: string;
+}
+
+const { image, imageAlt = "" } = Astro.props;
+---
+
+<div class="wrapper">
+  <div class="content">
+    <div class="left">
+      <img class="image" src={image} alt={imageAlt} />
+    </div>
+    <div class="right">
+      <slot />
+    </div>
+  </div>
+</div>
+
+<style>
+  .wrapper {
+    background-color: #FFE6CD;
+    color: #005550;
+  }
+
+  .content {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 120rem;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 720px) {
+    .content {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .left {
+    height: 400px;
+  }
+
+  .image {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
+
+  .right {
+    padding: 3rem;
+  }
+
+  @media (min-width: 720px) {
+    .right {
+      padding: 0 6rem 0 6rem;
+    }
+  }
+</style>
