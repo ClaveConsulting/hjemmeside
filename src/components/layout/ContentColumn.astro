@@ -12,7 +12,7 @@ const { class: className, hasAside = Astro.slots.has("aside"), ...rest } = Astro
 <div class:list={["layout-wrapper", className]} {...rest}>
   {hasAside ? (
     <Aside>
-      <slot name="aside" slot="aside"/>
+      <slot name="aside" />
     </Aside>
   ) : (
     <aside class="aside-empty" />

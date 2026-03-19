@@ -2,6 +2,7 @@
 import Container from './layout/Container.astro';
 import ContentColumn from './layout/ContentColumn.astro';
 import Ingress from './Ingress.astro';
+import { MOBILE_PADDING } from '../layouts';
 
 interface Props {
   title: string;
@@ -23,22 +24,23 @@ const { title, ingress, imageSrc, imageWidth, imageHeight, imageAlt = "" } = Ast
           {ingress && <Ingress>{ingress}</Ingress>}
         </div>
       </ContentColumn>
-        <img
-          class="page-header-image"
-          src={imageSrc}
-          width={imageWidth}
-          height={imageHeight}
-          alt={imageAlt}
-        />
+      <img
+        class="page-header-image"
+        src={imageSrc}
+        width={imageWidth}
+        height={imageHeight}
+        alt={imageAlt}
+      />
       </div>
   </div>
 </Container>
 
-<style>
+<style define:vars={{mobilePadding: MOBILE_PADDING}}>
   .page-header-wrapper {
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    padding: 0 0 0 3rem;
+    padding: 0 0 0 var(--mobilePadding);
   }
 
   @media (min-width: 720px) {
@@ -49,7 +51,7 @@ const { title, ingress, imageSrc, imageWidth, imageHeight, imageAlt = "" } = Ast
     }
   }
 
-.page-header-title {
+  .page-header-title {
     margin-bottom: 1.5rem;
   }
 
@@ -57,10 +59,6 @@ const { title, ingress, imageSrc, imageWidth, imageHeight, imageAlt = "" } = Ast
     .page-header-title {
       margin-bottom: 4rem;
     }
-  }
-
-.page-header-image-wrapper {
-    flex-shrink: 0;
   }
 
   .page-header-image {
