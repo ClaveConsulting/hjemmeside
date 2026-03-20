@@ -3,9 +3,10 @@ import Layout from '../components/layout/Layout.astro';
 import Ingress from '../components/Ingress.astro';
 import MidSplitLayout from '../components/MidSplitLayout.astro';
 import RecruitmentTemplate from '../components/RecruitmentTemplate.astro';
+import type { Position } from '../types';
 import yngveBilde from '../components/clave-old/images/190920_Clave_lowres_13.jpg';
 
-const positions = [
+const positions: Position[] = [
   {
     text: "Senior utvikler",
     active: true,
