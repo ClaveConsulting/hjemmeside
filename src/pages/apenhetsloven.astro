@@ -1,12 +1,11 @@
 ---
 import pdf from "../assets/apenhetsloven/Åpenhetsloven Clave Consulting AS.pdf";
-import Header from "../components/clave-old/components/Header";
+import Header from "../components/layout/Header.astro";
 import {
   COLOR_CLAVE_PEACH,
   COLOR_CLAVE_GREEN
 } from "../colors.js";
 import "../styles/global.css";
-const props = Astro.props;
 ---
 
 <style define:vars={{ COLOR_CLAVE_GREEN, COLOR_CLAVE_PEACH }}>
@@ -46,7 +45,7 @@ const props = Astro.props;
   <title>Åpenhetsloven | clave</title>
 </head>
 <body class="apenhetsloven-body">
-<Header client:only="react" />
+<Header uri="/apenhetsloven" />
 <div class="title">
   <h1>Redegjørelse etter åpenhetsloven</h1>
   <ul class="pdf-links">
