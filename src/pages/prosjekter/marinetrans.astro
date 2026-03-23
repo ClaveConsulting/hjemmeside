@@ -1,0 +1,46 @@
+---
+import ProjectTemplate from '../../components/ProjectTemplate.astro';
+import { COLOR_CLAVE_GREEN, COLOR_CLAVE_SUNNY } from '../../colors.js';
+import BaseLayout from '../../components/layout/BaseLayout.astro';
+import mainBilde from '../../assets/190920_Clave_lowres_5.jpg';
+import leftBilde from '../../assets/190920_Clave_lowres_9.jpg';
+import rightBilde from '../../assets/190920_Clave_lowres_16.jpg';
+---
+<BaseLayout title="Marinetrans | clave">
+  <ProjectTemplate
+    mainImg={mainBilde}
+    firstImg={leftBilde}
+    secondImg={rightBilde}
+    title="Marinetrans"
+    ingress="Sammen med Marinetrans, en del av AIT Worldwide Logistics, har vi i Clave bygget eSea – en skreddersydd løsning som håndterer alt fra transportlogistikk og fakturering til økonomisk rapportering på tvers av landegrenser og tidssoner."
+    keywords={["UX'ere, fullstack utviklere, leveranseleder"]}
+    methodology="Smidig methodikk"
+    technology="MS SQL Server, .NET Core, Azure, Javascript, CSS, HTML, React, Confluence, Azure Repos, Azure DevOps"
+    finalText="Marinetrans er en del av AIT Worldwide Logistics og er en ledende aktør innen internasjonal fraktlogistikk. De spesialiserer seg på transport av prosjektlast, tunglast og spesialgods til havs og land – med operasjoner på tvers av kontinenter og tidssoner."
+    backgroundColor={COLOR_CLAVE_SUNNY}
+    textColor={COLOR_CLAVE_GREEN}
+    uri="/prosjekter/marinetrans"
+  >
+    <p>
+      Da Marinetrans innså at de trengte en ny og fremtidsrettet applikasjonsplattform, ble vi valgt som partner fra dag én. 
+      Sammen kartla vi behov, identifiserte utfordringer og definerte hva den nye løsningen måtte løse 
+      – før vi tok ansvar for hele reisen videre: fra tidlig oppdagelse og konseptualisering, via systemarkitektur og funksjonelt design, til utvikling, prosjektledelse og kvalitetssikring.
+    </p>
+    <p>
+      Prosjektet har vi gjennomført i tett samarbeid med vår samarbeidspartner Fabres i Polen, og utviklingsteamet har bestått av 
+      syv fullstack-utviklere fra Clave, Fabres og Marinetrans. At hele teamet jobber fullstack er ganske unikt, og har gitt oss 
+      fleksibilitet og tempo gjennom hele prosjektet.
+    </p>
+    <p>
+      En av de største utfordringene i prosjektet var å migrere over 20 år med forretningskritiske data inn i den nye løsningen. 
+      Kundeportalen gikk live i mars 2022 etter en lang periode med grundig testing og verifisering, 
+      noe som tok bort en del av risikoen ved det som i praksis var en big-bang release.
+    </p>
+    <p>
+      Siden den gang har vi fortsatt å videreutvikle løsningen i takt med at Marinetrans vokser. 
+      Å forstå hvordan Marinetrans opererer globalt har vært helt sentralt for å lykkes. 
+      Vi har gravd oss dypt inn i arbeidsprosessene deres for å sikre at eSea faktisk fungerer som et sømløst verktøy i hverdagen 
+      – og det fortsetter vi med.
+    </p>
+  </ProjectTemplate>
+</BaseLayout>
