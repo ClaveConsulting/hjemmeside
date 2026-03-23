@@ -1,0 +1,100 @@
+---
+import Container from './layout/Container.astro';
+import Layout from './layout/Layout.astro';
+import Header from './layout/Header.astro';
+import Footer from './layout/Footer.astro';
+import ClaveInfo from './ClaveInfo.astro';
+import SearchingForBanner from './SearchingForBanner.astro';
+import ContactInfo from './ContactInfo.astro';
+import { COLOR_CLAVE_GREEN, COLOR_CLAVE_PEACH } from '../colors.js';
+import type { Position } from '../types';
+
+interface Props {
+  positions: Position[];
+  uri?: string;
+}
+
+const { positions, uri } = Astro.props;
+---
+
+<Container>
+  <main>
+    <Header uri={uri} />
+    <slot />
+    <ClaveInfo />
+    <SearchingForBanner positions={positions} />
+    <ContactInfo />
+    <Layout>
+      <div slot="aside" class="back-link-wrapper">
+        <a class="back-link" href="/">Tilbake</a>
+      </div>
+    </Layout>
+  </main>
+</Container>
+<Footer backgroundColor={COLOR_CLAVE_GREEN} textColor={COLOR_CLAVE_PEACH} />
+
+<style>
+  .back-link-wrapper {
+    padding-left: 40px;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+  }
+
+  .back-link-wrapper::after {
+    content: '';
+    margin-top: 5px;
+    display: block;
+    height: 2px;
+    background: #FA9691;
+  }
+
+  .back-link-wrapper:hover::after {
+    animation: link-hover 0.5s forwards;
+  }
+
+  @keyframes link-hover {
+    0%   { background: #FA9691; transform: scaleX(1); }
+    50%  { background: #FA9691; transform: scaleX(0); }
+    51%  { background: #FFBE2D; transform: scaleX(0); }
+    100% { background: #FFBE2D; transform: scaleX(1); }
+  }
+
+  .back-link {
+    display: flex;
+    font-size: 24px;
+    margin: 20px 0 -3px -40px;
+    text-decoration: none;
+    color: #005550;
+  }
+
+  .back-link::before {
+    content: '';
+    width: 40px;
+    height: 0;
+    display: block;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 20px solid transparent;
+  }
+
+  .back-link:hover::before {
+    width: 0;
+    height: 0;
+    margin: -2px 20px -20px 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 20px solid #005550;
+    transform: scaleX(-0.6) scaleY(0.6);
+  }
+
+  @media (min-width: 720px) {
+    .back-link {
+      font-size: 32px;
+    }
+
+    .back-link:hover::before {
+      margin-top: 5px;
+    }
+  }
+</style>

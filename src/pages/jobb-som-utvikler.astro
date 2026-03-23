@@ -1,12 +1,71 @@
 ---
-import JobbSomUtviklerPage from "../components/clave-old/pages/jobb-som-utvikler";
+import Layout from '../components/layout/Layout.astro';
+import Ingress from '../components/Ingress.astro';
+import MidSplitLayout from '../components/MidSplitLayout.astro';
+import RecruitmentTemplate from '../components/RecruitmentTemplate.astro';
+import type { Position } from '../types';
+import yngveBilde from '../assets/190920_Clave_lowres_13.jpg';
+
+const positions: Position[] = [
+  {
+    text: "Senior utvikler",
+    active: true,
+    url: "https://clave.homerun.co/senior-full-stack-developer-2/no",
+  },
+];
 ---
 <html lang="nb">
 <head>
-    <meta charset="utf-8">
-    <link rel="icon" type="image/svg+xml" href="/clave-icon.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Jobbe som utvikler | clave</title>
+  <meta charset="utf-8">
+  <link rel="icon" type="image/svg+xml" href="/clave-icon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jobbe som utvikler | clave</title>
 </head>
-<JobbSomUtviklerPage client:only="react" />
+<body>
+  <RecruitmentTemplate positions={positions} uri="/jobb-som-utvikler">
+    <Layout>
+      <h1>Jobbe som utvikler</h1>
+      <Ingress>
+        Kjernen i alt vi driver med er folk som brenner for faget sitt og som
+        er i kontinuerlig faglig utvikling. Clave ønsker å levere det beste
+        innen systemutvikling, og mener at veien dit er en bedriftskultur som
+        er tuftet på lagånd, åpenhet og kunnskapsdeling.
+      </Ingress>
+    </Layout>
+    <MidSplitLayout image={yngveBilde.src} imageAlt="Yngve">
+      <h2>Er dette deg?</h2>
+      <p>
+        Er dette deg? I Clave liker vi folk som har et stort engasjement for
+        jobben de gjør og som ønsker å gi det lille ekstra. Utviklere som har
+        erfaring med frontend eller backend-utvikling med Java eller .NET
+        passer godt inn hos oss.
+      </p>
+      <p>
+        Vi liker at du er i stand til å diskutere ulike forslag og slik bidra
+        til at vi sammen kommer fram til de optimale løsningene.
+      </p>
+      <p>Det skader ikke om du også:</p>
+      <ul class="list">
+        <li>
+          engasjeres av teknologi og ønsker å utvikle deg selv og dine
+          kolleger
+        </li>
+        <li>
+          trives i et sosialt arbeidsmiljø og kommuniserer godt med andre
+        </li>
+        <li>
+          er selvgående og har evne til å argumentere for det du mener er
+          den beste løsningen
+        </li>
+        <li>har relevant utdannelse fra universitet eller høgskole</li>
+      </ul>
+    </MidSplitLayout>
+  </RecruitmentTemplate>
+</body>
 </html>
+
+<style>
+  .list {
+    margin: 20px 40px;
+  }
+</style>

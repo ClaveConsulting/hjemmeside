@@ -1,0 +1,53 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<svg
+  class={className}
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 50 50"
+  width="32px"
+  height="32px"
+>
+  <path class="bar bar-top"    d="M 0 24 L 50 24 L 50 26 L 0 26 Z"/>
+  <path class="bar bar-mid"    d="M 0 24 L 50 24 L 50 26 L 0 26 Z"/>
+  <path class="bar bar-bottom" d="M 0 24 L 50 24 L 50 26 L 0 26 Z"/>
+</svg>
+
+<style>
+  /*
+   * All bars are drawn at the SVG center (Y=24–26).
+   * transform-box: view-box makes percentages relative to the 50×50 viewport,
+   * so translateY(±30%) = ±15 SVG units regardless of rendered size.
+   * transform-origin: center = (25, 25) — the SVG center.
+   */
+  .bar {
+    transform-box: view-box;
+    transform-origin: center center;
+    transition:
+      transform 0.3s ease,
+      opacity   0.3s ease;
+  }
+
+  /* Default: spread bars to hamburger positions */
+  .bar-top    { transform: translateY(-30%); }
+  .bar-bottom { transform: translateY( 30%); }
+
+  /* Active: collapse to X */
+  :global([data-hamburger-toggle].is-open) .bar-top {
+    transform: rotate(45deg);
+  }
+
+  :global([data-hamburger-toggle].is-open) .bar-mid {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+
+  :global([data-hamburger-toggle].is-open) .bar-bottom {
+    transform: rotate(-45deg);
+  }
+</style>

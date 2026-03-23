@@ -1,0 +1,117 @@
+---
+---
+
+<ul class="project-list">
+  <h2>Sjekk ut hva vi gjør hos kundene våre</h2>
+  <p>
+    Det er stort sett alltid flere Clavere ute hos de forskjellige kundene
+    våre, og gjerne en blanding av UX-designere, prosjektledere og
+    utviklere. Vi jobber innenfor mange ulike felt: Nettbutikk, spa, post,
+    bil, offentlig forvaltning og humanitært arbeid.
+  </p>
+  <li class="link-item">
+    <div class="link-wrapper">
+      <a class="right-arrow-link" href="/prosjekter/naf">NAF</a>
+    </div>
+  </li>
+  <li class="link-item">
+    <div class="link-wrapper">
+      <a class="right-arrow-link" href="/prosjekter/the-well">The Well</a>
+    </div>
+  </li>
+  <li class="link-item">
+    <div class="link-wrapper">
+      <a class="right-arrow-link" href="/prosjekter/komplett">Komplett</a>
+    </div>
+  </li>
+  <li class="link-item">
+    <div class="link-wrapper">
+      <a class="right-arrow-link" href="/prosjekter/eika">Eika</a>
+    </div>
+  </li>
+</ul>
+
+<style>
+  .project-list {
+    margin: -70px -96px -90px -70px;
+    padding: 70px 96px 120px 70px;
+    list-style: none;
+    flex: 1 0 auto;
+    background-color: #FFD678;
+  }
+
+  @media (max-width: 719px) {
+    .project-list {
+      margin: -70px -47px -90px;
+      padding: 70px 47px 120px;
+    }
+  }
+
+  .link-item {
+    margin-bottom: 0;
+  }
+
+  .link-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+  }
+
+  .link-wrapper::after {
+    content: '';
+    margin-top: 5px;
+    display: block;
+    height: 2px;
+    background: #FA9691;
+  }
+
+  .link-wrapper:hover::after {
+    animation: link-hover 0.5s forwards;
+  }
+
+  @keyframes link-hover {
+    0%   { background: #FA9691; transform: scaleX(1); }
+    50%  { background: #FA9691; transform: scaleX(0); }
+    51%  { background: #FFBE2D; transform: scaleX(0); }
+    100% { background: #FFBE2D; transform: scaleX(1); }
+  }
+
+  .right-arrow-link {
+    display: flex;
+    font-size: 24px;
+    margin: 20px -15px -3px 0;
+    text-decoration: none;
+    color: #005550;
+  }
+
+  .right-arrow-link::after {
+    content: '';
+    width: 0;
+    height: 0;
+    display: block;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 20px solid transparent;
+  }
+
+  .right-arrow-link:hover::after {
+    width: 0;
+    height: 0;
+    margin-left: 20px;
+    margin-top: -2px;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 20px solid #005550;
+    transform: scaleX(0.6) scaleY(0.6);
+  }
+
+  @media (min-width: 720px) {
+    .right-arrow-link {
+      font-size: 32px;
+    }
+
+    .right-arrow-link:hover::after {
+      margin-top: 5px;
+    }
+  }
+</style>

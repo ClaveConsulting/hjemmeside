@@ -1,0 +1,49 @@
+---
+import Layout from './layout/Layout.astro';
+import type { Position } from '../types';
+
+interface Props {
+  positions: Position[];
+}
+
+const { positions } = Astro.props;
+const activePositions = positions.filter((p) => p.active);
+---
+
+<Layout>
+  <div class="wrapper">
+    <h2>Akkurat nå søker vi etter</h2>
+    {activePositions.length === 0 ? (
+      <p>...dyktige folk som ønsker å sende oss en åpen søknad.</p>
+    ) : (
+      <ul>
+        {activePositions.map((p) => (
+          <li><a href={p.url}>{p.text}</a></li>
+        ))}
+      </ul>
+    )}
+  </div>
+</Layout>
+
+<style>
+  .wrapper {
+    background-color: #B4D7E1;
+    color: #002850;
+    margin: -3rem -6rem -3rem 15%;
+    padding: 3rem;
+  }
+
+  .wrapper a {
+    color: #002850;
+  }
+
+  .wrapper a:visited {
+    color: #002850;
+  }
+
+  @media (max-width: 719px) {
+    .wrapper {
+      margin: 0 -3rem;
+    }
+  }
+</style>

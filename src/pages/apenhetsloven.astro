@@ -1,42 +1,10 @@
 ---
 import pdf from "../assets/apenhetsloven/Åpenhetsloven Clave Consulting AS.pdf";
-import Header from "../components/clave-old/components/Header";
-import {
-  COLOR_CLAVE_PEACH,
-  COLOR_CLAVE_GREEN
-} from "../components/clave-old/colors";
+import Header from "../components/layout/Header.astro";
+import Container from "../components/layout/Container.astro";
+import { COLOR_CLAVE_PEACH, COLOR_CLAVE_GREEN } from "../colors.js";
 import "../styles/global.css";
-const props = Astro.props;
 ---
-
-<style define:vars={{ COLOR_CLAVE_GREEN, COLOR_CLAVE_PEACH }}>
-    .apenhetsloven-body {
-        background-color: var(--COLOR_CLAVE_PEACH);
-        color: var(--COLOR_CLAVE_GREEN);
-
-    }
-
-    .title {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        padding: 9rem 6rem;
-        margin: 0 auto;
-        max-width: fit-content;
-
-    }
-
-    .pdf-links {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        max-width: 120rem;
-        padding: 3rem 6rem;
-        margin: 0 auto 100%;
-
-    }
-
-</style>
 
 <html lang="nb">
 <head>
@@ -45,14 +13,36 @@ const props = Astro.props;
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Åpenhetsloven | clave</title>
 </head>
-<body class="apenhetsloven-body">
-<Header client:only="react" />
-<div class="title">
-  <h1>Redegjørelse etter åpenhetsloven</h1>
-  <ul class="pdf-links">
-    <li>Redegjørelse for året 2024 - Ikke pliktig</li>
-    <li><a href={pdf} download>Åpenhetsloven redegjørelse for året 2023</a></li>
-  </ul>
-</div>
+<body>
+  <Container backgroundColor={COLOR_CLAVE_PEACH} textColor={COLOR_CLAVE_GREEN}>
+    <Header uri="/apenhetsloven" />
+    <div class="title">
+      <h1>Redegjørelse etter åpenhetsloven</h1>
+      <ul class="pdf-links">
+        <li>Redegjørelse for året 2024 - Ikke pliktig</li>
+        <li><a href={pdf} download>Åpenhetsloven redegjørelse for året 2023</a></li>
+      </ul>
+    </div>
+  </Container>
 </body>
 </html>
+
+<style>
+  .title {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 9rem 6rem;
+    margin: 0 auto;
+    max-width: fit-content;
+  }
+
+  .pdf-links {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 120rem;
+    padding: 3rem 6rem;
+    margin: 0 auto 100%;
+  }
+</style>

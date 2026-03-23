@@ -1,0 +1,72 @@
+---
+import Container from './layout/Container.astro';
+import Layout from './layout/Layout.astro';
+import Header from './layout/Header.astro';
+import Footer from './layout/Footer.astro';
+import PageHeader from './PageHeader.astro';
+import ProjectKeywords from './ProjectKeywords.astro';
+import ProjectGallery from './ProjectGallery.astro';
+import { COLOR_CLAVE_GREEN, COLOR_CLAVE_PEACH } from '../colors.js';
+
+interface Props {
+  mainImg: string;
+  firstImg: string;
+  secondImg: string;
+  title: string;
+  ingress: string;
+  keywords?: string[];
+  methodology?: string | null;
+  technology?: string | null;
+  finalText?: string | null;
+  backgroundColor?: string;
+  textColor?: string;
+  uri?: string;
+}
+
+const {
+  mainImg,
+  firstImg,
+  secondImg,
+  title,
+  ingress,
+  keywords = [],
+  methodology = null,
+  technology = null,
+  finalText = null,
+  backgroundColor = COLOR_CLAVE_PEACH,
+  textColor = COLOR_CLAVE_GREEN,
+  uri,
+} = Astro.props;
+---
+
+<Container backgroundColor={backgroundColor} textColor={textColor}>
+  <main>
+    <Header uri={uri} />
+    <PageHeader
+      title={title}
+      ingress={ingress}
+      imageSrc={mainImg}
+      imageWidth={1227}
+      imageHeight={728}
+      backgroundColor={backgroundColor}
+      textColor={textColor}
+    />
+    <Layout backgroundColor={backgroundColor} textColor={textColor}>
+      {keywords.length > 0 && (
+        <ProjectKeywords slot="aside" keywords={keywords} />
+      )}
+      <slot />
+    </Layout>
+    <Container backgroundColor={backgroundColor} textColor={textColor}>
+      <ProjectGallery
+        leftImg={firstImg}
+        rightImg={secondImg}
+        methodology={methodology}
+        technology={technology}
+        finalText={finalText}
+        imageSpacing={400}
+      />
+    </Container>
+  </main>
+</Container>
+<Footer backgroundColor={backgroundColor} textColor={textColor} />

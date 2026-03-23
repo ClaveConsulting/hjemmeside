@@ -1,0 +1,69 @@
+---
+interface ImageData {
+  src: string;
+  width: number;
+  height: number;
+  alt: string;
+}
+
+interface Props {
+  images: ImageData[];
+}
+
+const { images } = Astro.props;
+
+const imagesWithWidths = images.map((img, i) => ({
+  ...img,
+  computedWidth: i > 0 ? `${((100 * img.width) / images[i - 1].width) * 1.2}%` : undefined,
+}));
+---
+
+<div class="gallery-container">
+  <div class="gallery-content">
+    {imagesWithWidths.map((img) => (
+      <img
+        class="gallery-image"
+        src={img.src}
+        width={img.width}
+        height={img.height}
+        alt={img.alt}
+        style={img.computedWidth ? `width: ${img.computedWidth}` : undefined}
+      />
+    ))}
+  </div>
+</div>
+
+<style>
+  .gallery-container {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+  }
+
+  .gallery-content {
+    flex: 1 1 auto;
+    margin-top: 1rem;
+    position: relative;
+    left: 1rem;
+  }
+
+  @media (min-width: 720px) {
+    .gallery-content {
+      width: 100%;
+      position: static;
+    }
+  }
+
+  .gallery-image {
+    display: block;
+    margin: 0;
+    width: 100%;
+    height: auto;
+  }
+
+  .gallery-image:nth-child(2) {
+    margin-right: 11%;
+    margin-left: auto;
+    margin-top: -20%;
+  }
+</style>

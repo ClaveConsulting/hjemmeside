@@ -1,17 +1,157 @@
 ---
-import IndexPage from '../components/clave-old/pages/index';
-import '../styles/global.css'
+import { COLOR_CLAVE_GREEN, COLOR_CLAVE_PEACH } from '../colors.js';
+import HeroSection from '../components/HeroSection.astro';
+import Layout from '../components/layout/Layout.astro';
+import Container from '../components/layout/Container.astro';
+import JoinSection from '../components/layout/JoinSection.astro';
+import Footer from '../components/layout/Footer.astro';
+
+import brukeropplevelseIcon from '../assets/icons/clave_ikon_brukeropplevelse.svg?url';
+import systemutviklingIcon from '../assets/icons/clave_ikon_systemutvikling.svg?url';
+import raadgivningIcon from '../assets/icons/clave_ikon_radgivning.svg?url';
+
+import '../styles/global.css';
 ---
+
 <html lang="nb">
 <head>
-    <meta charset="utf-8">
-    <link rel="icon" type="image/svg+xml" href="/clave-icon.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Forside | clave</title>
+  <meta charset="utf-8">
+  <link rel="icon" type="image/svg+xml" href="/clave-icon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Forside | clave</title>
 </head>
 <body>
-    <IndexPage client:only="react" />
-    <!-- Simple Analytics - 100% privacy-first analytics -->
-    <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+  <main>
+    <HeroSection />
+
+    <Layout>
+      <div class="ingress-wrapper">
+        <p class="ingress">
+          Vi brenner for teknologi, innovasjon og å lage de aller beste
+          løsningene for menneskene som skal bruke dem. Vi er stolte av
+          jobbene vi gjør og enda stoltere av relasjonene vi bygger med
+          kundene våre.
+        </p>
+      </div>
+    </Layout>
+
+    <Container>
+      <div class="services-content">
+        <div class="wide-wrapper">
+          <h2>Vi liker å drive med</h2>
+          <div class="info-flexbox">
+            <div class="info-box">
+              <img src={brukeropplevelseIcon} class="service-icon" alt="" />
+              <h3>Brukeropplevelse og UX-design</h3>
+              <p>
+                De beste løsningene lager vi når vi forstår brukerne og
+                deres behov. Vi gjennomfører alt fra behovskartlegging,
+                brukertesting og større tjenestedesignprosjekter.
+              </p>
+            </div>
+            <div class="info-box">
+              <img src={systemutviklingIcon} class="service-icon" alt="" />
+              <h3>Systemutvikling</h3>
+              <p>
+                Vi lager intuitive og innovative løsninger som virker. Vi
+                kan hele tjenestestacken: arkitektur, database, frontend,
+                apputvikling, infrastruktur, nettverk og skytjenester.
+              </p>
+            </div>
+            <div class="info-box">
+              <img src={raadgivningIcon} class="service-icon" alt="" />
+              <h3>Rådgivning og prosjektledelse</h3>
+              <p>
+                Vi har lang erfaring med rådgivning innenfor teknologi,
+                prosess og arkitektur. I samarbeid med kunden kommer vi frem
+                til gode løsninger på komplekse problemer.
+              </p>
+            </div>
+          </div>
+          <a class="arrow-link" href="/hva-vi-gjor">Se mer om hva vi gjør →</a>
+        </div>
+      </div>
+    </Container>
+
+    <JoinSection />
+  </main>
+
+  <Footer backgroundColor={COLOR_CLAVE_GREEN} textColor={COLOR_CLAVE_PEACH} />
+
+  <!-- Simple Analytics - 100% privacy-first analytics -->
+  <script is:inline async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
 </body>
 </html>
+
+<style>
+  .ingress-wrapper {
+    padding-top: 3rem;
+  }
+
+  .services-content {
+    max-width: 120rem;
+    margin: 0 auto;
+  }
+
+  .wide-wrapper {
+    padding: 0 3rem 4rem;
+  }
+
+  @media (min-width: 720px) {
+    .wide-wrapper {
+      padding: 0 6rem 8rem;
+    }
+  }
+
+  .info-flexbox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  @media (min-width: 720px) {
+    .info-flexbox {
+      flex-direction: row;
+    }
+  }
+
+  .info-box {
+    max-width: 25rem;
+    min-width: 20rem;
+    margin-top: 30px;
+    flex-shrink: 1;
+    width: 30%;
+  }
+
+  .info-box h3 {
+    min-height: 98px;
+  }
+
+  @media (max-width: 720px) {
+    .info-box {
+      width: auto;
+    }
+
+    .info-box h3 {
+      min-height: auto;
+    }
+  }
+
+  .service-icon {
+    width: 15rem;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .arrow-link {
+    color: #005550;
+    text-decoration: none;
+    font-size: 1.125rem;
+  }
+
+  .arrow-link:hover {
+    text-decoration: underline;
+  }
+</style>

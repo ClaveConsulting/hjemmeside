@@ -1,0 +1,214 @@
+---
+import ClaveLogo from "../icons/ClaveLogo.astro";
+import HamburgerIcon from "../icons/HamburgerIcon.astro";
+
+interface Props {
+  frontPage?: boolean;
+  useSkinColoredHamburgerMenu?: boolean;
+  uri?: string;
+}
+
+const {
+  frontPage = false,
+  useSkinColoredHamburgerMenu = false,
+  uri = "",
+} = Astro.props;
+
+const menuLinks = [
+  { label: "Se hva vi gjør", href: "/hva-vi-gjor" },
+  { label: "Se hvem vi er", href: "/hvem-vi-er" },
+  { label: "Kontakt oss", href: "/kontakt-oss" },
+];
+
+const hamburgerFill = useSkinColoredHamburgerMenu ? "#FFE6CD" : "#005550";
+---
+
+<header>
+  <div class="container-content">
+    <div class="styled-header">
+      <div class="wrapper" class:list={{ "front-page": frontPage }}>
+        <a aria-label="Forsiden til Clave.no" href="/">
+          <ClaveLogo style="width: 10rem; height: auto;" />
+        </a>
+
+        <nav class="inline-nav">
+          {menuLinks.map(({ label, href }) => (
+            <div class="nav-link-wrapper">
+              <a class="nav-link" href={href}>{label}</a>
+            </div>
+          ))}
+        </nav>
+
+        <button
+          class="hamburger-btn"
+          data-hamburger-toggle
+          aria-label="Meny"
+          style={`fill: ${hamburgerFill};`}
+          onclick="this.classList.toggle('is-open'); this.closest('header')?.querySelector('[data-hamburger-menu]')?.classList.toggle('is-open');"
+        >
+          <HamburgerIcon class="hamburger-icon" />
+        </button>
+      </div>
+
+      <div class="hamburger-menu" data-hamburger-menu>
+        {menuLinks.map(({ label, href }) => (
+          <a
+            class:list={["hamburger-link", { active: href === uri }]}
+            href={href}
+          >
+            {label}
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+</header>
+
+<style>
+  .container-content {
+    margin: 0 auto;
+    max-width: 120rem;
+  }
+
+  .styled-header {
+    padding: 0 3rem;
+  }
+
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--clave-bg, #FFE6CD);
+    padding-top: 1.5rem;
+  }
+
+  .wrapper.front-page {
+    background: none;
+  }
+
+  /* Desktop nav */
+  .inline-nav {
+    display: none;
+    justify-content: space-around;
+    width: 75%;
+  }
+
+  .nav-link-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+  }
+
+  .nav-link-wrapper::after {
+    content: '';
+    margin-top: 5px;
+    display: block;
+    height: 2px;
+    background: #FA9691;
+  }
+
+  .nav-link-wrapper:hover::after {
+    animation: link-hover 0.5s forwards;
+  }
+
+  @keyframes link-hover {
+    0% {
+      background: #FA9691;
+      transform: scaleX(1);
+    }
+    50% {
+      background: #FA9691;
+      transform: scaleX(0);
+    }
+    51% {
+      background: #FFBE2D;
+      transform: scaleX(0);
+    }
+    100% {
+      background: #FFBE2D;
+      transform: scaleX(1);
+    }
+  }
+
+  .nav-link {
+    color: var(--clave-text, #005550);
+    text-decoration: none;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
+  .nav-link:hover {
+    -webkit-text-stroke-width: 1px;
+  }
+
+  /* Hamburger button */
+  .hamburger-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+  }
+
+  .hamburger-icon {
+    width: 2rem;
+    height: auto;
+  }
+
+  /* Hamburger menu */
+  .hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-0.5rem);
+    transition:
+      max-height 0.3s ease,
+      opacity    0.3s ease,
+      transform  0.3s ease;
+  }
+
+  .hamburger-menu.is-open {
+    max-height: 20rem;
+    opacity: 1;
+    transform: translateY(0);
+    padding-bottom: 2rem;
+  }
+
+  .hamburger-link {
+    color: var(--clave-text, #005550);
+    text-decoration: none;
+    border-bottom: 1px solid #FA9691;
+    display: table;
+    padding: 0.5rem 0;
+  }
+
+  .hamburger-link.active {
+    border-bottom-color: #FFBE2D;
+  }
+
+  /* Responsive */
+  @media (min-width: 720px) {
+    .styled-header {
+      padding: 0 6rem;
+    }
+
+    .wrapper {
+      padding-top: 4rem;
+    }
+
+    .inline-nav {
+      display: inline-flex;
+    }
+
+    .hamburger-btn {
+      display: none;
+    }
+
+    .hamburger-menu {
+      display: none;
+    }
+  }
+</style>

@@ -1,0 +1,150 @@
+---
+interface Props {
+  leftImg: string;
+  rightImg: string;
+  methodology?: string | null;
+  technology?: string | null;
+  finalText?: string | null;
+  imageSpacing?: number;
+}
+
+const {
+  leftImg,
+  rightImg,
+  methodology,
+  technology,
+  finalText,
+  imageSpacing = 300,
+} = Astro.props;
+---
+
+<div class="container-padding" data-image-spacing={imageSpacing}>
+  <div class="first-image" id="pg-first">
+    <div class="gallery-image-container">
+      <div class="image-wrapper">
+        <img class="gallery-img" src={leftImg} width={833} height={566} alt="" />
+      </div>
+      <div class="left-text-wrapper">
+        {methodology && (
+          <div class="left-text-item">
+            <h2>Metodologi</h2>
+            <p>{methodology}</p>
+          </div>
+        )}
+        {technology && (
+          <div class="left-text-item">
+            <h2>Teknologi</h2>
+            <p>{technology}</p>
+          </div>
+        )}
+      </div>
+    </div>
+  </div>
+  <div class="second-image" id="pg-second">
+    <div class="gallery-image-container">
+      <div class="image-wrapper">
+        <img class="gallery-img" src={rightImg} width={833} height={566} alt="" />
+      </div>
+      {finalText && (
+        <div class="right-text-wrapper">
+          <p>{finalText}</p>
+        </div>
+      )}
+    </div>
+  </div>
+</div>
+
+<script>
+  const first = document.getElementById("pg-first");
+  const second = document.getElementById("pg-second");
+  const spacing = parseInt(
+    (first?.closest("[data-image-spacing]") as HTMLElement)?.dataset.imageSpacing ?? "300"
+  );
+
+  function updateMargin() {
+    if (!first || !second) return;
+    if (window.innerWidth >= 720) {
+      const margin = -Math.max(0, first.clientHeight - spacing);
+      second.style.marginTop = `${margin}px`;
+    } else {
+      second.style.marginTop = "";
+    }
+  }
+
+  updateMargin();
+  window.addEventListener("resize", updateMargin);
+</script>
+
+<style>
+  .container-padding {
+    padding-left: 64px;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 64px;
+  }
+
+  .first-image {
+    width: 95%;
+  }
+
+  @media (min-width: 720px) {
+    .first-image {
+      width: 62%;
+      position: relative;
+      float: left;
+    }
+  }
+
+  .second-image {
+    width: 95%;
+  }
+
+  @media (min-width: 720px) {
+    .second-image {
+      width: 60%;
+      position: relative;
+      float: right;
+    }
+  }
+
+  .gallery-image-container {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+  }
+
+  .image-wrapper {
+    padding-bottom: 60px;
+  }
+
+  .gallery-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
+
+  .left-text-wrapper {
+    width: 95%;
+  }
+
+  @media (min-width: 720px) {
+    .left-text-wrapper {
+      width: 50%;
+    }
+  }
+
+  .left-text-item {
+    padding-bottom: 20px;
+  }
+
+  .right-text-wrapper {
+    width: 95%;
+  }
+
+  @media (min-width: 720px) {
+    .right-text-wrapper {
+      width: 80%;
+    }
+  }
+</style>
