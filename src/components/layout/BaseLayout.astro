@@ -3,11 +3,9 @@ import '../../styles/global.css';
 
 interface Props {
   title: string;
-  backgroundColor: string;
-  bodyStyle?: string;
 }
 
-const { title, backgroundColor, bodyStyle } = Astro.props;
+const { title } = Astro.props;
 ---
 <html lang="nb">
 <head>
@@ -16,7 +14,7 @@ const { title, backgroundColor, bodyStyle } = Astro.props;
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{title}</title>
 </head>
-<body style={`background-color: ${backgroundColor};${bodyStyle ? ' ' + bodyStyle : ''}`}>
+<body>
   <slot />
 </body>
 </html>

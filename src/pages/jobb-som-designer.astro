@@ -4,13 +4,12 @@ import Ingress from '../components/Ingress.astro';
 import MidSplitLayout from '../components/MidSplitLayout.astro';
 import RecruitmentTemplate from '../components/RecruitmentTemplate.astro';
 import BaseLayout from '../components/layout/BaseLayout.astro';
-import { COLOR_CLAVE_PEACH } from '../colors.js';
 import type { Position } from '../types';
 import piaBilde from '../assets/190920_Clave_lowres_7.jpg';
 
 const positions: Position[] = [];
 ---
-<BaseLayout title="Jobbe som designer | clave" backgroundColor={COLOR_CLAVE_PEACH}>
+<BaseLayout title="Jobbe som designer | clave">
   <RecruitmentTemplate positions={positions} uri="/jobb-som-designer">
     <Layout>
       <h1>Jobbe som designer</h1>

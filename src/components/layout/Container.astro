@@ -14,9 +14,13 @@ const {
 } = Astro.props;
 ---
 
-<div
-  class:list={["container", className]}
-  style={`background-color: ${backgroundColor}; color: ${textColor}; --clave-bg: ${backgroundColor}; --clave-text: ${textColor};`}
->
+<div class:list={["container", className]}>
   <slot />
 </div>
+
+<style define:vars={{ 'clave-bg': backgroundColor, 'clave-text': textColor }}>
+  .container {
+    background-color: var(--clave-bg);
+    color: var(--clave-text);
+  }
+</style>

@@ -3,11 +3,10 @@ import pdf from "../assets/apenhetsloven/Åpenhetsloven Clave Consulting AS.pdf"
 import Header from "../components/layout/Header.astro";
 import Container from "../components/layout/Container.astro";
 import BaseLayout from "../components/layout/BaseLayout.astro";
-import { COLOR_CLAVE_PEACH, COLOR_CLAVE_GREEN } from "../colors.js";
 ---
 
-<BaseLayout title="Åpenhetsloven | clave" backgroundColor={COLOR_CLAVE_PEACH}>
-  <Container backgroundColor={COLOR_CLAVE_PEACH} textColor={COLOR_CLAVE_GREEN}>
+<BaseLayout title="Åpenhetsloven | clave">
+  <Container>
     <Header uri="/apenhetsloven" />
     <div class="title">
       <h1>Redegjørelse etter åpenhetsloven</h1>

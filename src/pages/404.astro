@@ -7,8 +7,8 @@ import Footer from '../components/layout/Footer.astro';
 import BaseLayout from '../components/layout/BaseLayout.astro';
 ---
 
-<BaseLayout title="404 | clave" backgroundColor={COLOR_CLAVE_PEACH} bodyStyle="height: 100%; display: flex; flex-direction: column;">
-  <Container backgroundColor={COLOR_CLAVE_PEACH} textColor={COLOR_CLAVE_GREEN}>
+<BaseLayout title="404 | clave">
+  <Container>
     <main>
       <Header />
       <Layout backgroundColor={COLOR_CLAVE_PEACH} textColor={COLOR_CLAVE_GREEN}>
@@ -24,8 +24,14 @@ import BaseLayout from '../components/layout/BaseLayout.astro';
 </BaseLayout>
 
 <style>
-  :global(html) {
+  :global(html),
+  :global(body) {
     height: 100%;
+  }
+
+  :global(body) {
+    display: flex;
+    flex-direction: column;
   }
 
   :global(body) > :global(.container) {
