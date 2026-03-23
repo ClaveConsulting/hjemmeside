@@ -43,19 +43,32 @@ import frontpageImage from "../assets/frontpage1.png";
 </section>
 
 <script>
-  const overlay = document.getElementById("scroll-overlay");
-  const isLandscape = () => window.innerWidth >= window.innerHeight;
+  let currentHandler: (() => void) | null = null;
 
-  const setClipPath = () => {
+  function initScrollAnimation() {
+    if (currentHandler) {
+      window.removeEventListener("scroll", currentHandler);
+      currentHandler = null;
+    }
+
+    const overlay = document.getElementById("scroll-overlay");
     if (!overlay) return;
-    const scrollY = window.scrollY;
-    overlay.style.clipPath = isLandscape()
-      ? `circle(calc(${1.5 * scrollY}px + min(45vh, 45vw)) at 85% 70%)`
-      : `circle(calc(${scrollY}px + 25vh) at 85% 85%)`;
-  };
 
-  setClipPath();
-  window.addEventListener("scroll", setClipPath);
+    const isLandscape = () => window.innerWidth >= window.innerHeight;
+
+    const setClipPath = () => {
+      const scrollY = window.scrollY;
+      overlay.style.clipPath = isLandscape()
+        ? `circle(calc(${1.5 * scrollY}px + min(45vh, 45vw)) at 85% 70%)`
+        : `circle(calc(${scrollY}px + 25vh) at 85% 85%)`;
+    };
+
+    setClipPath();
+    window.addEventListener("scroll", setClipPath);
+    currentHandler = setClipPath;
+  }
+
+  document.addEventListener("astro:page-load", initScrollAnimation);
 </script>
 
 <style>

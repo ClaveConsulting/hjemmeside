@@ -1,0 +1,24 @@
+---
+import { ClientRouter } from 'astro:transitions';
+import '../../styles/global.css';
+
+interface Props {
+  title: string;
+  backgroundColor: string;
+  bodyStyle?: string;
+}
+
+const { title, backgroundColor, bodyStyle } = Astro.props;
+---
+<html lang="nb">
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" type="image/svg+xml" href="/clave-icon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{title}</title>
+  <ClientRouter />
+</head>
+<body style={`background-color: ${backgroundColor};${bodyStyle ? ' ' + bodyStyle : ''}`}>
+  <slot />
+</body>
+</html>

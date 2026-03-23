@@ -1,18 +1,12 @@
 ---
 import ProjectTemplate from '../../components/ProjectTemplate.astro';
 import { COLOR_CLAVE_GREEN, COLOR_CLAVE_SUNNY } from '../../colors.js';
+import BaseLayout from '../../components/layout/BaseLayout.astro';
 import mainBilde from '../../assets/190920_Clave_lowres_8.jpg';
 import leftBilde from '../../assets/190920_Clave_lowres_7.jpg';
 import rightBilde from '../../assets/190920_Clave_lowres_3.jpg';
 ---
-<html lang="nb">
-<head>
-  <meta charset="utf-8">
-  <link rel="icon" type="image/svg+xml" href="/clave-icon.png" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Komplett Group | clave</title>
-</head>
-<body>
+<BaseLayout title="Komplett Group | clave" backgroundColor={COLOR_CLAVE_SUNNY}>
   <ProjectTemplate
     mainImg={mainBilde.src}
     firstImg={leftBilde.src}
@@ -53,5 +47,4 @@ import rightBilde from '../../assets/190920_Clave_lowres_3.jpg';
       som har hatt kort vei fra tegnebord til produksjon.
     </p>
   </ProjectTemplate>
-</body>
-</html>
+</BaseLayout>
