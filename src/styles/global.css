@@ -1,3 +1,7 @@
+@view-transition {
+  navigation: auto;
+}
+
 @font-face {
     font-family: 'basis-grotesque-medium-pro';
     src: url('/fonts/basis/basis-grotesque-medium-pro.eot');
