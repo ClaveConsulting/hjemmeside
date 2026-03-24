@@ -33,18 +33,18 @@
 @font-face {
   font-family: "basis-grotesque-regular-pro-fallback";
   src: local("Arial");
-  size-adjust: 100%;
+  size-adjust: 105%;
   ascent-override: 90%;
-  descent-override: 22%;
+  descent-override: 30%;
   line-gap-override: 0%;
 }
 
 @font-face {
   font-family: "basis-grotesque-medium-pro-fallback";
   src: local("Arial");
-  size-adjust: 100%;
+  size-adjust: 105%;
   ascent-override: 90%;
-  descent-override: 22%;
+  descent-override: 30%;
   line-gap-override: 0%;
 }
 
