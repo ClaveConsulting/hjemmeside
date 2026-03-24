@@ -1,16 +1,18 @@
 ---
 interface Props {
-  image: string;
+  imageSrc: string;
+  imageHeight: number;
+  imageWidth: number;
   imageAlt?: string;
 }
 
-const { image, imageAlt = "" } = Astro.props;
+const { imageSrc, imageHeight, imageWidth, imageAlt = "" } = Astro.props;
 ---
 
 <div class="wrapper">
   <div class="content">
     <div class="left">
-      <img class="image" src={image} alt={imageAlt} />
+      <img class="image" src={imageSrc} height={imageHeight} width={imageWidth} alt={imageAlt} />
     </div>
     <div class="right">
       <slot />
