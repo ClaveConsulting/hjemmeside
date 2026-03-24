@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
+import { MAX_WIDTH, MOBILE_PADDING } from '../layouts';
 
 interface Props {
   image: ImageMetadata;
@@ -23,7 +24,7 @@ const { image, imageHeight, imageWidth, imageAlt = "" } = Astro.props;
   </div>
 </div>
 
-<style>
+<style define:vars={{maxWidth: MAX_WIDTH}}>
   .wrapper {
     background-color: #FFE6CD;
     color: #005550;
@@ -32,7 +33,7 @@ const { image, imageHeight, imageWidth, imageAlt = "" } = Astro.props;
   .content {
     display: grid;
     grid-template-columns: 1fr;
-    max-width: 120rem;
+    max-width: var(--maxWidth);
     margin: 0 auto;
   }
 

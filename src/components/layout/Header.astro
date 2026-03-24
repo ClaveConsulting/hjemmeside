@@ -1,6 +1,9 @@
 ---
+import { COLOR_CLAVE_PINK, COLOR_CLAVE_YELLOW } from "../../colors";
+import { MAX_WIDTH } from "../../layouts";
 import ClaveLogo from "../icons/ClaveLogo.astro";
 import HamburgerIcon from "../icons/HamburgerIcon.astro";
+import ContainerContent from "./ContainerContent.astro";
 
 interface Props {
   frontPage?: boolean;
@@ -24,7 +27,7 @@ const hamburgerFill = useSkinColoredHamburgerMenu ? "#FFE6CD" : "#005550";
 ---
 
 <header>
-  <div class="container-content">
+  <ContainerContent>
     <div class="styled-header">
       <div class="wrapper" class:list={{ "front-page": frontPage }}>
         <a aria-label="Forsiden til Clave.no" href="/">
@@ -61,14 +64,10 @@ const hamburgerFill = useSkinColoredHamburgerMenu ? "#FFE6CD" : "#005550";
         ))}
       </div>
     </div>
-  </div>
+  </ContainerContent>
 </header>
 
-<style>
-  .container-content {
-    margin: 0 auto;
-    max-width: 120rem;
-  }
+<style define:vars={{COLOR_CLAVE_PINK, COLOR_CLAVE_YELLOW, maxWidth: MAX_WIDTH}}>
 
   .styled-header {
     padding: 0 3rem;
@@ -104,7 +103,7 @@ const hamburgerFill = useSkinColoredHamburgerMenu ? "#FFE6CD" : "#005550";
     margin-top: 5px;
     display: block;
     height: 2px;
-    background: #FA9691;
+    background: var(--COLOR_CLAVE_PINK);
   }
 
   .nav-link-wrapper:hover::after {
@@ -113,19 +112,19 @@ const hamburgerFill = useSkinColoredHamburgerMenu ? "#FFE6CD" : "#005550";
 
   @keyframes link-hover {
     0% {
-      background: #FA9691;
+      background: var(--COLOR_CLAVE_PINK);
       transform: scaleX(1);
     }
     50% {
-      background: #FA9691;
+      background: var(--COLOR_CLAVE_PINK);
       transform: scaleX(0);
     }
     51% {
-      background: #FFBE2D;
+      background: var(--COLOR_CLAVE_YELLOW);
       transform: scaleX(0);
     }
     100% {
-      background: #FFBE2D;
+      background: var(--COLOR_CLAVE_YELLOW);
       transform: scaleX(1);
     }
   }
@@ -180,13 +179,13 @@ const hamburgerFill = useSkinColoredHamburgerMenu ? "#FFE6CD" : "#005550";
   .hamburger-link {
     color: var(--clave-text, #005550);
     text-decoration: none;
-    border-bottom: 1px solid #FA9691;
+    border-bottom: 1px solid var(--COLOR_CLAVE_PINK);
     display: table;
     padding: 0.5rem 0;
   }
 
   .hamburger-link.active {
-    border-bottom-color: #FFBE2D;
+    border-bottom-color: var(--COLOR_CLAVE_YELLOW);
   }
 
   /* Responsive */

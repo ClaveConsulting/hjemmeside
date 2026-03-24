@@ -3,7 +3,7 @@ import "../../styles/global.css";
 import Container from "./Container.astro";
 import ContentColumn from "./ContentColumn.astro";
 import { COLOR_CLAVE_PEACH, COLOR_CLAVE_GREEN } from "../../colors.js";
-import { MAX_WIDTH } from "../../layouts";
+import ContainerContent from "./ContainerContent.astro";
 
 interface Props {
   backgroundColor?: string;
@@ -21,17 +21,10 @@ const hasAside = Astro.slots.has("aside");
 ---
 
 <Container backgroundColor={backgroundColor} textColor={textColor} class={className}>
-  <div class="content">
+  <ContainerContent>
     <ContentColumn hasAside={hasAside}>
       {hasAside && <slot name="aside" slot="aside" />}
       <slot />
     </ContentColumn>
-  </div>
+  </ContainerContent>
 </Container>
-
-<style define:vars={{maxWidth: MAX_WIDTH}}>
-  .content {
-    margin: 0 auto;
-    max-width: var(--maxWidth);
-  }
-</style>

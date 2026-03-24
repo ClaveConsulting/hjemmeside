@@ -6,6 +6,8 @@ import ContentColumn from './layout/ContentColumn.astro';
 import Ingress from './Ingress.astro';
 import { MOBILE_PADDING } from '../layouts';
 import { COLOR_CLAVE_PEACH, COLOR_CLAVE_GREEN } from '../colors.js';
+import Layout from './layout/Layout.astro';
+import ContainerContent from './layout/ContainerContent.astro';
 
 interface Props {
   title: string;
@@ -30,38 +32,33 @@ const {
 } = Astro.props;
 ---
 <Container backgroundColor={backgroundColor} textColor={textColor}>
-  <div class="page-header-wrapper">
-    <div class="page-header-image-wrapper">
-      <ContentColumn style="--column-padding-bottom: 2rem">
-        <div class="page-header-content">
-          <h1 class="page-header-title">{title}</h1>
-          {ingress && <Ingress>{ingress}</Ingress>}
-        </div>
-      </ContentColumn>
-      <Image
-        class="page-header-image"
-        src={image}
-        width={imageWidth}
-        height={imageHeight}
-        alt={imageAlt}
-      />
+  <div class="page-header-content-wrapper">
+
+  <ContainerContent>
+    <ContentColumn style="--column-padding-bottom: 2rem">
+      <div class="page-header-content">
+        <h1 class="page-header-title">{title}</h1>
+        {ingress && <Ingress>{ingress}</Ingress>}
       </div>
+    </ContentColumn>
+    <Image
+    class="page-header-image"
+    src={image}
+    width={imageWidth}
+    height={imageHeight}
+    alt={imageAlt}
+    />
+  </ContainerContent>
   </div>
 </Container>
 
 <style define:vars={{mobilePadding: MOBILE_PADDING}}>
-  .page-header-wrapper {
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
+  .page-header-content-wrapper {
     padding: 0 0 0 var(--mobilePadding);
   }
-
   @media (min-width: 720px) {
-    .page-header-wrapper {
-      flex-direction: row;
-      padding-left: 0;
-      margin-bottom: 0;
+    .page-header-content-wrapper {
+      padding: 0;
     }
   }
 

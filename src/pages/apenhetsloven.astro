@@ -3,6 +3,7 @@ import pdf from "../assets/apenhetsloven/Åpenhetsloven Clave Consulting AS.pdf"
 import Header from "../components/layout/Header.astro";
 import Container from "../components/layout/Container.astro";
 import BaseLayout from "../components/layout/BaseLayout.astro";
+import { MAX_WIDTH } from "../layouts";
 ---
 
 <BaseLayout title="Åpenhetsloven | clave">
@@ -18,7 +19,7 @@ import BaseLayout from "../components/layout/BaseLayout.astro";
   </Container>
 </BaseLayout>
 
-<style>
+<style define:vars={{maxWidth: MAX_WIDTH}}>
   .title {
     display: flex;
     justify-content: center;
@@ -32,7 +33,7 @@ import BaseLayout from "../components/layout/BaseLayout.astro";
     display: flex;
     justify-content: center;
     flex-direction: column;
-    max-width: 120rem;
+    max-width: var(--maxWidth);
     padding: 3rem 6rem;
     margin: 0 auto 100%;
   }
