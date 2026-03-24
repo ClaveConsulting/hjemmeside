@@ -1,18 +1,21 @@
 ---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
 interface Props {
-  imageSrc: string;
-  imageHeight: number;
-  imageWidth: number;
+  image: ImageMetadata;
+  imageHeight?: number;
+  imageWidth?: number;
   imageAlt?: string;
 }
 
-const { imageSrc, imageHeight, imageWidth, imageAlt = "" } = Astro.props;
+const { image, imageHeight, imageWidth, imageAlt = "" } = Astro.props;
 ---
 
 <div class="wrapper">
   <div class="content">
     <div class="left">
-      <img class="image" src={imageSrc} height={imageHeight} width={imageWidth} alt={imageAlt} />
+      <Image class="image" src={image} height={imageHeight ?? image.height} width={imageWidth ?? image.height} alt={imageAlt} />
     </div>
     <div class="right">
       <slot />

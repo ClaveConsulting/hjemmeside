@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import Container from '../components/layout/Container.astro';
 import Layout from '../components/layout/Layout.astro';
 import Header from '../components/layout/Header.astro';
@@ -19,7 +20,7 @@ import BaseLayout from '../components/layout/BaseLayout.astro';
       <PageHeader
         title="Se hva vi gjør"
         ingress="Brukeropplevelse, systemutvikling og rådgivning er spesialitetene våre. Vi er stolte av jobbene vi gjør og enda stoltere av relasjonene vi bygger med kundene våre."
-        imageSrc={headerBilde.src}
+        image={headerBilde}
         imageWidth={1227}
         imageHeight={728}
       />
@@ -66,9 +67,9 @@ import BaseLayout from '../components/layout/BaseLayout.astro';
             brukertestet løsningene sine. Kontakt oss hvis du ønsker å høre
             mer om brukertesting og tjenesten vi leverer.
           </p>
-          <img
+          <Image
             class="aside-image"
-            src={laptopBilde.src}
+            src={laptopBilde}
             width={387}
             height={279}
             alt="Brukertesting"
@@ -76,8 +77,8 @@ import BaseLayout from '../components/layout/BaseLayout.astro';
         </div>
         <Projects />
         <Gallery images={[
-          { src: larsPetterBilde.src, width: 681, height: 470, alt: "Lars-Petter og Yngve" },
-          { src: pointingBilde.src, width: 306, height: 368, alt: "Pekefinger" },
+          { src: larsPetterBilde, width: 681, height: 470, alt: "Lars-Petter og Yngve" },
+          { src: pointingBilde, width: 306, height: 368, alt: "Pekefinger" },
         ]} />
       </Layout>
     </main>
