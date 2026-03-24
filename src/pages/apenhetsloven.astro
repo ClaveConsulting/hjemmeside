@@ -2,19 +2,11 @@
 import pdf from "../assets/apenhetsloven/Åpenhetsloven Clave Consulting AS.pdf";
 import Header from "../components/layout/Header.astro";
 import Container from "../components/layout/Container.astro";
-import { COLOR_CLAVE_PEACH, COLOR_CLAVE_GREEN } from "../colors.js";
-import "../styles/global.css";
+import BaseLayout from "../components/layout/BaseLayout.astro";
 ---
 
-<html lang="nb">
-<head>
-  <meta charset="utf-8">
-  <link rel="icon" type="image/svg+xml" href="/clave-icon.png" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Åpenhetsloven | clave</title>
-</head>
-<body>
-  <Container backgroundColor={COLOR_CLAVE_PEACH} textColor={COLOR_CLAVE_GREEN}>
+<BaseLayout title="Åpenhetsloven | clave">
+  <Container>
     <Header uri="/apenhetsloven" />
     <div class="title">
       <h1>Redegjørelse etter åpenhetsloven</h1>
@@ -24,8 +16,7 @@ import "../styles/global.css";
       </ul>
     </div>
   </Container>
-</body>
-</html>
+</BaseLayout>
 
 <style>
   .title {

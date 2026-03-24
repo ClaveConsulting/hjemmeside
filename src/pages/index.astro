@@ -5,22 +5,14 @@ import Layout from '../components/layout/Layout.astro';
 import Container from '../components/layout/Container.astro';
 import JoinSection from '../components/layout/JoinSection.astro';
 import Footer from '../components/layout/Footer.astro';
+import BaseLayout from '../components/layout/BaseLayout.astro';
 
 import brukeropplevelseIcon from '../assets/icons/clave_ikon_brukeropplevelse.svg?url';
 import systemutviklingIcon from '../assets/icons/clave_ikon_systemutvikling.svg?url';
 import raadgivningIcon from '../assets/icons/clave_ikon_radgivning.svg?url';
-
-import '../styles/global.css';
 ---
 
-<html lang="nb">
-<head>
-  <meta charset="utf-8">
-  <link rel="icon" type="image/svg+xml" href="/clave-icon.png" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Forside | clave</title>
-</head>
-<body>
+<BaseLayout title="Forside | clave">
   <main>
     <HeroSection />
 
@@ -80,8 +72,7 @@ import '../styles/global.css';
 
   <!-- Simple Analytics - 100% privacy-first analytics -->
   <script is:inline async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
-</body>
-</html>
+</BaseLayout>
 
 <style>
   .ingress-wrapper {

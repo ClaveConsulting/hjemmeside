@@ -10,15 +10,9 @@ import headerBilde from '../assets/190920_Clave_lowres_2.jpg';
 import pointingBilde from '../assets/190920_Clave_lowres_9.jpg';
 import larsPetterBilde from '../assets/190920_Clave_lowres_14.jpg';
 import laptopBilde from '../assets/190920_Clave_lowres_16.jpg';
+import BaseLayout from '../components/layout/BaseLayout.astro';
 ---
-<html lang="nb">
-<head>
-  <meta charset="utf-8">
-  <link rel="icon" type="image/svg+xml" href="/clave-icon.png" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Se hva vi gjør | clave</title>
-</head>
-<body>
+<BaseLayout title="Se hva vi gjør | clave">
   <Container>
     <main>
       <Header uri="/hva-vi-gjor" />
@@ -89,8 +83,7 @@ import laptopBilde from '../assets/190920_Clave_lowres_16.jpg';
     </main>
     <Footer />
   </Container>
-</body>
-</html>
+</BaseLayout>
 
 <style>
   .user-testing-block {

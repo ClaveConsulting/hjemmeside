@@ -1,3 +1,7 @@
+@view-transition {
+  navigation: auto;
+}
+
 @font-face {
     font-family: 'basis-grotesque-medium-pro';
     src: url('/fonts/basis/basis-grotesque-medium-pro.eot');
@@ -25,6 +29,7 @@ html {
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
     font-size: 16px;
+    background-color: inherit;
 }
 
 body {

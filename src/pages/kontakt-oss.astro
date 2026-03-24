@@ -7,16 +7,10 @@ import Footer from '../components/layout/Footer.astro';
 import JoinSection from '../components/layout/JoinSection.astro';
 import Map from '../components/Map';
 import ContactForm from '../components/ContactForm.astro';
+import BaseLayout from '../components/layout/BaseLayout.astro';
 import '../styles/kontakt-oss.css';
 ---
-<html lang="nb">
-<head>
-    <meta charset="utf-8">
-    <link rel="icon" type="image/svg+xml" href="/clave-icon.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Kontakt oss | clave</title>
-</head>
-<body>
+<BaseLayout title="Kontakt oss | clave">
   <Container backgroundColor={COLOR_CLAVE_GREEN} textColor={COLOR_CLAVE_PEACH}>
     <main>
       <Header useSkinColoredHamburgerMenu={true} uri="/kontakt-oss" />
@@ -79,5 +73,4 @@ import '../styles/kontakt-oss.css';
     </main>
     <Footer backgroundColor={COLOR_CLAVE_GREEN} textColor={COLOR_CLAVE_PEACH} />
   </Container>
-</body>
-</html>
+</BaseLayout>

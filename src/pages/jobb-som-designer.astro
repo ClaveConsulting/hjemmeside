@@ -3,19 +3,13 @@ import Layout from '../components/layout/Layout.astro';
 import Ingress from '../components/Ingress.astro';
 import MidSplitLayout from '../components/MidSplitLayout.astro';
 import RecruitmentTemplate from '../components/RecruitmentTemplate.astro';
+import BaseLayout from '../components/layout/BaseLayout.astro';
 import type { Position } from '../types';
 import piaBilde from '../assets/190920_Clave_lowres_7.jpg';
 
 const positions: Position[] = [];
 ---
-<html lang="nb">
-<head>
-  <meta charset="utf-8">
-  <link rel="icon" type="image/svg+xml" href="/clave-icon.png" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Jobbe som designer | clave</title>
-</head>
-<body>
+<BaseLayout title="Jobbe som designer | clave">
   <RecruitmentTemplate positions={positions} uri="/jobb-som-designer">
     <Layout>
       <h1>Jobbe som designer</h1>
@@ -55,8 +49,7 @@ const positions: Position[] = [];
       </ul>
     </MidSplitLayout>
   </RecruitmentTemplate>
-</body>
-</html>
+</BaseLayout>
 
 <style>
   .list {
