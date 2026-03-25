@@ -1,4 +1,6 @@
 ---
+import { MAX_WIDTH } from '../../layouts';
+
 interface Props {
   class?: string;
 }
@@ -10,9 +12,9 @@ const { class: className } = Astro.props;
   <slot />
 </div>
 
-<style>
+<style define:vars={{maxWidth: MAX_WIDTH}}>
   .container-content {
     margin: 0 auto;
-    max-width: 120rem;
+    max-width: var(--maxWidth);
   }
 </style>
