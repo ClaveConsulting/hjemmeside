@@ -8,6 +8,7 @@ import PageHeader from './PageHeader.astro';
 import ProjectKeywords from './ProjectKeywords.astro';
 import ProjectGallery from './ProjectGallery.astro';
 import { COLOR_CLAVE_GREEN, COLOR_CLAVE_PEACH } from '../colors.js';
+import ContainerContent from './layout/ContainerContent.astro';
 
 interface Props {
   mainImg: ImageMetadata;
@@ -52,22 +53,24 @@ const {
       backgroundColor={backgroundColor}
       textColor={textColor}
     />
-    <Layout backgroundColor={backgroundColor} textColor={textColor}>
-      {keywords.length > 0 && (
-        <ProjectKeywords slot="aside" keywords={keywords} />
-      )}
-      <slot />
-    </Layout>
-    <Container backgroundColor={backgroundColor} textColor={textColor}>
-      <ProjectGallery
-        leftImg={firstImg}
-        rightImg={secondImg}
-        methodology={methodology}
-        technology={technology}
-        finalText={finalText}
-        imageSpacing={400}
-      />
-    </Container>
+    <ContainerContent>
+      <Layout backgroundColor={backgroundColor} textColor={textColor}>
+        {keywords.length > 0 && (
+          <ProjectKeywords slot="aside" keywords={keywords} />
+        )}
+        <slot />
+      </Layout>
+      <Container backgroundColor={backgroundColor} textColor={textColor}>
+        <ProjectGallery
+          leftImg={firstImg}
+          rightImg={secondImg}
+          methodology={methodology}
+          technology={technology}
+          finalText={finalText}
+          imageSpacing={400}
+        />
+      </Container>
+    </ContainerContent>
   </main>
 </Container>
 <Footer backgroundColor={backgroundColor} textColor={textColor} />
