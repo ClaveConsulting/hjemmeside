@@ -8,7 +8,7 @@ import JoinSection from '../components/layout/JoinSection.astro';
 import Map from '../components/Map';
 import ContactForm from '../components/ContactForm.astro';
 import BaseLayout from '../components/layout/BaseLayout.astro';
-import '../styles/kontakt-oss.css';
+import { MAX_WIDTH } from '../layouts.js';
 ---
 <BaseLayout title="Kontakt oss | clave">
   <Container backgroundColor={COLOR_CLAVE_GREEN} textColor={COLOR_CLAVE_PEACH}>
@@ -74,3 +74,48 @@ import '../styles/kontakt-oss.css';
     <Footer backgroundColor={COLOR_CLAVE_GREEN} textColor={COLOR_CLAVE_PEACH} />
   </Container>
 </BaseLayout>
+
+<style define:vars={{ colorGreen: COLOR_CLAVE_GREEN, maxWidth: MAX_WIDTH }}>
+  .title-wrapper {
+    background-color: var(--colorGreen);
+    padding-top: 4.75rem;
+  }
+
+  @media screen and (min-width: 720px) {
+    .title-wrapper {
+      padding-top: 6rem;
+    }
+  }
+
+  .contact-info {
+    max-width: var(--maxWidth);
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+  }
+
+  @media screen and (min-width: 720px) {
+    .contact-info {
+      gap: 1.5rem;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+
+  @media screen and (min-width: 720px) {
+    .contact-card {
+      flex: 1 1;
+      padding: 1rem 0 0;
+    }
+  }
+
+  .aside-content-low {
+    display: inline-block;
+    align-self: flex-end;
+  }
+
+  .address {
+    font-style: normal;
+    font-size: 1.5rem;
+  }
+</style>
