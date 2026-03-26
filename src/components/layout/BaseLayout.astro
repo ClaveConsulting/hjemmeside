@@ -3,9 +3,10 @@ import '../../styles/global.css';
 
 interface Props {
   title: string;
+  description?: string;
 }
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 ---
 <html lang="nb">
 <head>
@@ -13,6 +14,7 @@ const { title } = Astro.props;
   <link rel="icon" type="image/svg+xml" href="/clave-icon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{title}</title>
+  {description && <meta name="description" content={description} />}
   <link rel="preload" href="/fonts/basis/basis-grotesque-regular-pro.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/fonts/basis/basis-grotesque-medium-pro.woff2" as="font" type="font/woff2" crossorigin />
 </head>

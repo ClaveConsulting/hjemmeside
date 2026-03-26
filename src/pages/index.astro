@@ -3,6 +3,7 @@ import { COLOR_CLAVE_GREEN, COLOR_CLAVE_PEACH } from '../colors.js';
 import HeroSection from '../components/HeroSection.astro';
 import Layout from '../components/layout/Layout.astro';
 import Container from '../components/layout/Container.astro';
+import ContainerContent from '../components/layout/ContainerContent.astro';
 import JoinSection from '../components/layout/JoinSection.astro';
 import Footer from '../components/layout/Footer.astro';
 import BaseLayout from '../components/layout/BaseLayout.astro';
@@ -11,24 +12,23 @@ import brukeropplevelseIcon from '../assets/icons/clave_ikon_brukeropplevelse.sv
 import systemutviklingIcon from '../assets/icons/clave_ikon_systemutvikling.svg?url';
 import raadgivningIcon from '../assets/icons/clave_ikon_radgivning.svg?url';
 import { MAX_WIDTH } from '../layouts';
+import Ingress from '../components/Ingress.astro';
 ---
 
-<BaseLayout title="Forside | clave">
+<BaseLayout title="Forside | clave" description="Vi brenner for teknologi, innovasjon og å lage de aller beste løsningene for menneskene som skal bruke dem.">
   <HeroSection />
   <main>
     <Layout>
-      <div class="ingress-wrapper">
-        <p class="ingress">
-          Vi brenner for teknologi, innovasjon og å lage de aller beste
-          løsningene for menneskene som skal bruke dem. Vi er stolte av
-          jobbene vi gjør og enda stoltere av relasjonene vi bygger med
-          kundene våre.
-        </p>
-      </div>
+      <Ingress>
+        Vi brenner for teknologi, innovasjon og å lage de aller beste
+        løsningene for menneskene som skal bruke dem. Vi er stolte av
+        jobbene vi gjør og enda stoltere av relasjonene vi bygger med
+        kundene våre.
+      </Ingress>
     </Layout>
 
     <Container>
-      <div class="services-content">
+      <ContainerContent>
         <div class="wide-wrapper">
           <h2>Vi liker å drive med</h2>
           <div class="info-flexbox">
@@ -62,7 +62,7 @@ import { MAX_WIDTH } from '../layouts';
           </div>
           <a class="arrow-link" href="/hva-vi-gjor">Se mer om hva vi gjør →</a>
         </div>
-      </div>
+      </ContainerContent>
     </Container>
 
     <JoinSection />
@@ -75,14 +75,6 @@ import { MAX_WIDTH } from '../layouts';
 </BaseLayout>
 
 <style define:vars={{maxWidth: MAX_WIDTH}}>
-  .ingress-wrapper {
-    padding-top: 3rem;
-  }
-
-  .services-content {
-    max-width: var(--maxWidth);
-    margin: 0 auto;
-  }
 
   .wide-wrapper {
     padding: 0 3rem 4rem;
