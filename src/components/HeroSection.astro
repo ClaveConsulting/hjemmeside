@@ -37,7 +37,13 @@ import frontpageImage from "../assets/frontpage1.png";
         </div>
       </div>
       <div class="bg-image">
-        <Image src={frontpageImage} alt="" fetchpriority="high" loading="eager" />
+        <Image
+          src={frontpageImage}
+          alt=""
+          fetchpriority="high"
+          loading="eager"
+          widths={[600, 900, 1200, 1800, 2400]}
+        />
       </div>
     </div>
   </div>

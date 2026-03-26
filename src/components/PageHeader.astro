@@ -6,15 +6,12 @@ import ContentColumn from './layout/ContentColumn.astro';
 import Ingress from './Ingress.astro';
 import { MOBILE_PADDING } from '../layouts';
 import { COLOR_CLAVE_PEACH, COLOR_CLAVE_GREEN } from '../colors.js';
-import Layout from './layout/Layout.astro';
 import ContainerContent from './layout/ContainerContent.astro';
 
 interface Props {
   title: string;
   ingress?: string;
   image: ImageMetadata;
-  imageWidth?: number;
-  imageHeight?: number;
   imageAlt?: string;
   backgroundColor?: string;
   textColor?: string;
@@ -24,8 +21,6 @@ const {
   title,
   ingress,
   image,
-  imageWidth,
-  imageHeight,
   imageAlt = "",
   backgroundColor = COLOR_CLAVE_PEACH,
   textColor = COLOR_CLAVE_GREEN,
@@ -42,13 +37,12 @@ const {
       </div>
     </ContentColumn>
     <Image
-    class="page-header-image"
-    src={image}
-    width={imageWidth}
-    height={imageHeight}
-    alt={imageAlt}
-    fetchpriority="high"
-    loading="eager"
+      class="page-header-image"
+      src={image}
+      alt={imageAlt}
+      fetchpriority="high"
+      loading="eager"
+      widths={[600, 900, 1200, 1800]}
     />
   </ContainerContent>
   </div>

@@ -27,8 +27,6 @@ const imagesWithWidths = images.map((img, i) => ({
       <Image
         class="gallery-image"
         src={img.src}
-        width={img.width}
-        height={img.height}
         alt={img.alt}
         style={img.computedWidth ? `width: ${img.computedWidth}` : undefined}
       />
