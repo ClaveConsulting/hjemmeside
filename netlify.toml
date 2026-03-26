@@ -9,3 +9,24 @@
 # path "root/project/dist"
 
 publish = "dist/"
+
+# Astro outputs all built images, JS and CSS to /_astro/ with content-hash
+# filenames (e.g. frontpage1.Ck3xP9aB.webp). The hash changes when content
+# changes, so it is safe to cache forever with immutable.
+[[headers]]
+  for = "/_astro/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Font files never change after deploy, so they can also be cached for a year.
+[[headers]]
+  for = "/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# HTML files are not hashed and must always revalidate so new deploys
+# are picked up immediately.
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
