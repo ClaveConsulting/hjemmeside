@@ -16,7 +16,14 @@ const { image, imageHeight, imageWidth, imageAlt = "" } = Astro.props;
 <div class="wrapper">
   <div class="content">
     <div class="left">
-      <Image class="image" src={image} height={imageHeight ?? image.height} width={imageWidth ?? image.height} alt={imageAlt} />
+      <Image 
+        class="image" 
+        src={image} 
+        height={imageHeight ?? image.height} 
+        width={imageWidth ?? image.height} 
+        alt={imageAlt} 
+        fetchpriority="high" 
+        loading="eager" />
     </div>
     <div class="right">
       <slot />
