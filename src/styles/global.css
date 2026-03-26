@@ -1,5 +1,5 @@
 @view-transition {
-  navigation: optional;
+  navigation: auto;
 }
 
 @font-face {
@@ -13,7 +13,7 @@
     url("/fonts/basis/basis-grotesque-medium-pro.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
-  font-display: swap;
+  font-display: optional;
 }
 
 @font-face {
@@ -27,7 +27,7 @@
     url("/fonts/basis/basis-grotesque-regular-pro.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
-  font-display: swap;
+  font-display: optional;
 }
 
 @font-face {
