@@ -1,7 +1,7 @@
 ---
 ---
 
-<ul class="project-list">
+<div class="project-container">
   <h2>Sjekk ut hva vi gjør hos kundene våre</h2>
   <p>
     Det er stort sett alltid flere Clavere ute hos de forskjellige kundene
@@ -9,42 +9,49 @@
     utviklere. Vi jobber innenfor mange ulike felt: Nettbutikk, spa, post,
     bil, offentlig forvaltning og humanitært arbeid.
   </p>
-  <li class="link-item">
-    <div class="link-wrapper">
-      <a class="right-arrow-link" href="/prosjekter/naf">NAF</a>
-    </div>
-  </li>
-  <li class="link-item">
-    <div class="link-wrapper">
-      <a class="right-arrow-link" href="/prosjekter/the-well">The Well</a>
-    </div>
-  </li>
-  <li class="link-item">
-    <div class="link-wrapper">
-      <a class="right-arrow-link" href="/prosjekter/komplett">Komplett</a>
-    </div>
-  </li>
-  <li class="link-item">
-    <div class="link-wrapper">
-      <a class="right-arrow-link" href="/prosjekter/eika">Eika</a>
-    </div>
-  </li>
-</ul>
+  <ul class="project-list">
+    <li class="link-item">
+      <div class="link-wrapper">
+        <a class="right-arrow-link" href="/prosjekter/naf">NAF</a>
+      </div>
+    </li>
+    <li class="link-item">
+      <div class="link-wrapper">
+        <a class="right-arrow-link" href="/prosjekter/the-well">The Well</a>
+      </div>
+    </li>
+    <li class="link-item">
+      <div class="link-wrapper">
+        <a class="right-arrow-link" href="/prosjekter/komplett">Komplett</a>
+      </div>
+    </li>
+    <li class="link-item">
+      <div class="link-wrapper">
+        <a class="right-arrow-link" href="/prosjekter/eika">Eika</a>
+      </div>
+    </li>
+  </ul>
+</div>
+
 
 <style>
-  .project-list {
+  .project-container {
     margin: -70px -96px -90px -70px;
     padding: 70px 96px 120px 70px;
-    list-style: none;
-    flex: 1 0 auto;
     background-color: #FFD678;
   }
 
   @media (max-width: 719px) {
-    .project-list {
+    .project-container {
       margin: -70px -47px -90px;
       padding: 70px 47px 120px;
     }
+  }
+  
+  .project-list {
+    margin: 0;
+    list-style: none;
+    flex: 1 0 auto;
   }
 
   .link-item {

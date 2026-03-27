@@ -58,6 +58,11 @@ import ContainerContent from '../components/layout/ContainerContent.astro';
           </p>
         </Layout>
         <Layout>
+          <Projects />
+          <Gallery images={[
+            { src: larsPetterBilde, width: 681, height: 470, alt: "Lars-Petter og Yngve" },
+            { src: pointingBilde, width: 306, height: 368, alt: "Pekefinger" },
+          ]} />
           <div slot="aside" class="user-testing-block">
             <h4>Brukertesting er viktig!</h4>
             <p class="user-testing-text">
@@ -73,11 +78,6 @@ import ContainerContent from '../components/layout/ContainerContent.astro';
               alt="Brukertesting"
             />
           </div>
-          <Projects />
-          <Gallery images={[
-            { src: larsPetterBilde, width: 681, height: 470, alt: "Lars-Petter og Yngve" },
-            { src: pointingBilde, width: 306, height: 368, alt: "Pekefinger" },
-          ]} />
         </Layout>
       </ContainerContent>
     </main>
