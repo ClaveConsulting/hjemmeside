@@ -26,14 +26,14 @@ const { class: className, hasAside = Astro.slots.has("aside"), ...rest } = Astro
   .layout-wrapper {
     display: flex;
     flex-direction: column;
-    padding: 3rem;
-    padding-bottom: var(--column-padding-bottom, 3rem);
+    padding: var(--mobile-padding);
+    padding-bottom: var(--column-padding-bottom, var(--mobile-padding));
   }
 
   @media screen and (min-width: 720px) {
     .layout-wrapper {
-      padding: 6rem;
-      padding-bottom: var(--column-padding-bottom, 6rem);
+      padding: var(--desktop-padding);
+      padding-bottom: var(--column-padding-bottom, var(--desktop-padding));
       flex-direction: row;
     }
   }

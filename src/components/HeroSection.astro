@@ -91,11 +91,11 @@ import frontpageImage from "../assets/frontpage1.png";
   }
 
   .prescroll {
-    background-color: #005550;
+    background-color: var(--clave-green);
   }
 
   .postscroll {
-    background-color: #ffe6cd;
+    background-color: var(--clave-peach);
     clip-path: circle(25vh at 85% 85%);
   }
 
@@ -117,13 +117,13 @@ import frontpageImage from "../assets/frontpage1.png";
 
   .title-wrapper {
     padding-top: 4.75rem;
-    padding-left: 3rem;
+    padding-left: var(--mobile-padding);
   }
 
   @media (min-width: 720px) {
     .title-wrapper {
-      padding-top: 6rem;
-      padding-left: 6rem;
+      padding-top: var(--desktop-padding);
+      padding-left: var(--desktop-padding);
     }
   }
 

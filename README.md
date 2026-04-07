@@ -31,9 +31,8 @@
 │   │   │   └── ...
 │   │   └── ...
 │   ├── styles/
-│   │   └── global.css
-│   ├── colors.js                # Fargekonstanter (COLOR_CLAVE_*)
-│   ├── layouts.js               # Layout-konstanter (MAX_WIDTH, MOBILE_PADDING)
+│   │   └── global.css           # Globale stiler og CSS-variabler (farger, layout)
+│   ├── colors.js                # Fargekonstanter (COLOR_CLAVE_*) – brukes i JS/props
 │   └── types.ts
 └── package.json
 ```

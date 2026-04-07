@@ -46,7 +46,7 @@ const { positions, uri } = Astro.props;
     /* margin-top: 5px; */
     display: block;
     height: 2px;
-    background: #FA9691;
+    background: var(--clave-pink);
   }
 
   .back-link-wrapper:hover::after {
@@ -54,10 +54,10 @@ const { positions, uri } = Astro.props;
   }
 
   @keyframes link-hover {
-    0%   { background: #FA9691; transform: scaleX(1); }
-    50%  { background: #FA9691; transform: scaleX(0); }
-    51%  { background: #FFBE2D; transform: scaleX(0); }
-    100% { background: #FFBE2D; transform: scaleX(1); }
+    0%   { background: var(--clave-pink); transform: scaleX(1); }
+    50%  { background: var(--clave-pink); transform: scaleX(0); }
+    51%  { background: var(--clave-yellow); transform: scaleX(0); }
+    100% { background: var(--clave-yellow); transform: scaleX(1); }
   }
 
   .back-link {
@@ -65,7 +65,7 @@ const { positions, uri } = Astro.props;
     font-size: 24px;
     margin: 20px 0 -3px -40px;
     text-decoration: none;
-    color: #005550;
+    color: var(--clave-green);
   }
 
   .back-link::before {
@@ -84,7 +84,7 @@ const { positions, uri } = Astro.props;
     margin: -2px 20px -20px 0;
     border-top: 15px solid transparent;
     border-bottom: 15px solid transparent;
-    border-left: 20px solid #005550;
+    border-left: 20px solid var(--clave-green);
     transform: scaleX(-0.6) scaleY(0.6);
   }
 

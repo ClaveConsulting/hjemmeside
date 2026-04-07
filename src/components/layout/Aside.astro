@@ -1,6 +1,4 @@
 ---
-import { MOBILE_PADDING, DESKTOP_PADDING } from "../../layouts.js";
-
 interface Props {
   class?: string;
 }
@@ -12,18 +10,18 @@ const { class: className } = Astro.props;
   <slot />
 </aside>
 
-<style define:vars={{ mobilePadding: MOBILE_PADDING, desktopPadding: DESKTOP_PADDING }}>
+<style>
   .aside {
     flex: 1 0 40%;
     order: 1;
     display: flex;
-    padding: var(--mobilePadding) 0;
+    padding: var(--mobile-padding) 0;
   }
 
   @media screen and (min-width: 720px) {
     .aside {
       order: 0;
-      padding: 0 var(--desktopPadding) 0 0;
+      padding: 0 var(--desktop-padding) 0 0;
     }
   }
 </style>

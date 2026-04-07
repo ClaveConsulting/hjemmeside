@@ -2,6 +2,23 @@
   navigation: auto;
 }
 
+:root {
+  /* Colors */
+  --clave-peach: #FFE6CD;
+  --clave-green: #005550;
+  --clave-pink: #FA9691;
+  --clave-yellow: #FFBE2D;
+  --clave-lightblue: #B4D7E1;
+  --clave-mustard: #FFD678;
+  --clave-blue: #002850;
+  --clave-sunny: #FFE099;
+
+  /* Layout */
+  --max-width: 120rem;
+  --mobile-padding: 3rem;
+  --desktop-padding: 6rem;
+}
+
 @font-face {
   font-family: "basis-grotesque-medium-pro";
   src: url("/fonts/basis/basis-grotesque-medium-pro.eot");

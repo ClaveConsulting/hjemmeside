@@ -27,7 +27,7 @@ import Ingress from './Ingress.astro';
     margin-top: -0.2rem;
     display: block;
     height: 0.2rem;
-    background: #FA9691;
+    background: var(--clave-pink);
   }
 
   .underline:hover::after {
@@ -35,9 +35,9 @@ import Ingress from './Ingress.astro';
   }
 
   @keyframes hover {
-    0%   { background: #FA9691; transform: scaleX(1); }
-    50%  { background: #FA9691; transform: scaleX(0); }
-    51%  { background: #FFBE2D; transform: scaleX(0); }
-    100% { background: #FFBE2D; transform: scaleX(1); }
+    0%   { background: var(--clave-pink); transform: scaleX(1); }
+    50%  { background: var(--clave-pink); transform: scaleX(0); }
+    51%  { background: var(--clave-yellow); transform: scaleX(0); }
+    100% { background: var(--clave-yellow); transform: scaleX(1); }
   }
 </style>
