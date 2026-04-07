@@ -38,7 +38,7 @@
   .project-container {
     margin: -70px -96px -90px -70px;
     padding: 70px 96px 120px 70px;
-    background-color: #FFD678;
+    background-color: var(--clave-mustard);
   }
 
   @media (max-width: 719px) {
@@ -69,7 +69,7 @@
     margin-top: 5px;
     display: block;
     height: 2px;
-    background: #FA9691;
+    background: var(--clave-pink);
   }
 
   .link-wrapper:hover::after {
@@ -77,10 +77,10 @@
   }
 
   @keyframes link-hover {
-    0%   { background: #FA9691; transform: scaleX(1); }
-    50%  { background: #FA9691; transform: scaleX(0); }
-    51%  { background: #FFBE2D; transform: scaleX(0); }
-    100% { background: #FFBE2D; transform: scaleX(1); }
+    0%   { background: var(--clave-pink); transform: scaleX(1); }
+    50%  { background: var(--clave-pink); transform: scaleX(0); }
+    51%  { background: var(--clave-yellow); transform: scaleX(0); }
+    100% { background: var(--clave-yellow); transform: scaleX(1); }
   }
 
   .right-arrow-link {
@@ -88,7 +88,7 @@
     font-size: 24px;
     margin: 20px -15px -3px 0;
     text-decoration: none;
-    color: #005550;
+    color: var(--clave-green);
   }
 
   .right-arrow-link::after {
@@ -108,7 +108,7 @@
     margin-top: -2px;
     border-top: 15px solid transparent;
     border-bottom: 15px solid transparent;
-    border-left: 20px solid #005550;
+    border-left: 20px solid var(--clave-green);
     transform: scaleX(0.6) scaleY(0.6);
   }
 

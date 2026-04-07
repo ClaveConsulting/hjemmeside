@@ -1,36 +1,30 @@
 ---
 import { ansatte } from "./ansatte.json";
 
-import {
-    COLOR_CLAVE_PEACH,
-    COLOR_CLAVE_GREEN,
-} from "../../colors.js";
-
 import "../../styles/global.css";
 import EmployeeCard from "./EmployeeCard.astro";
-import { MAX_WIDTH } from "../../layouts";
 ---
 
-<style define:vars={{ COLOR_CLAVE_GREEN, COLOR_CLAVE_PEACH, maxWidth: MAX_WIDTH }}>
+<style>
     .this-is-us {
-        background-color: var(--COLOR_CLAVE_PEACH);
-        color: var(--COLOR_CLAVE_GREEN);
+        background-color: var(--clave-peach);
+        color: var(--clave-green);
         padding-bottom: 9rem;
     }
     .title {
         display: flex; 
         justify-content: center;
-        max-width: var(--maxWidth);
-        padding: 4rem 6rem;
+        max-width: var(--max-width);
+        padding: 4rem var(--desktop-padding);
         margin: 0 auto;
     }
     .employee-cards {
         display: grid;
         justify-content: center;
-        max-width: var(--maxWidth);
+        max-width: var(--max-width);
         grid-template-columns: repeat(auto-fit, minmax(280px, max-content));
-        gap: 4rem 6rem;
-        padding: 0 6rem;
+        gap: 4rem var(--desktop-padding);
+        padding: 0 var(--desktop-padding);
         margin: 0 auto;
     }
 </style>

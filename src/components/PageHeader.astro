@@ -4,7 +4,6 @@ import type { ImageMetadata } from 'astro';
 import Container from './layout/Container.astro';
 import ContentColumn from './layout/ContentColumn.astro';
 import Ingress from './Ingress.astro';
-import { MOBILE_PADDING } from '../layouts';
 import { COLOR_CLAVE_PEACH, COLOR_CLAVE_GREEN } from '../colors.js';
 import ContainerContent from './layout/ContainerContent.astro';
 
@@ -48,9 +47,9 @@ const {
   </div>
 </Container>
 
-<style define:vars={{mobilePadding: MOBILE_PADDING}}>
+<style>
   .page-header-content-wrapper {
-    padding: 0 0 0 var(--mobilePadding);
+    padding: 0 0 0 var(--mobile-padding);
   }
   @media (min-width: 720px) {
     .page-header-content-wrapper {

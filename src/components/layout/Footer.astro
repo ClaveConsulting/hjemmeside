@@ -4,9 +4,7 @@ import ClaveLogo from "../icons/ClaveLogo.astro";
 import {
   COLOR_CLAVE_GREEN,
   COLOR_CLAVE_PEACH,
-  COLOR_CLAVE_PINK,
 } from "../../colors.js";
-import { MAX_WIDTH, MOBILE_PADDING, DESKTOP_PADDING } from "../../layouts.js";
 import Container from "./Container.astro";
 import Section from "./Section.astro";
 
@@ -69,19 +67,19 @@ const {
   </Container>
 </footer>
 
-<style define:vars={{ colorPink: COLOR_CLAVE_PINK, textColor, maxWidth: MAX_WIDTH, mobilePadding: MOBILE_PADDING, desktopPadding: DESKTOP_PADDING }}>
+<style define:vars={{ textColor }}>
   .footer-content-container {
     display: flex;
     flex-direction: column-reverse;
-    padding: 6rem var(--mobilePadding) 9rem;
+    padding: 6rem var(--mobile-padding) 9rem;
   }
 
   @media (min-width: 720px) {
     .footer-content-container {
-      padding: 6rem var(--desktopPadding) 9rem;
+      padding: 6rem var(--desktop-padding) 9rem;
       flex-direction: row;
       margin: 0 auto;
-      max-width: var(--maxWidth);
+      max-width: var(--max-width);
     }
   }
 
@@ -118,7 +116,7 @@ const {
 
   .footer-link:hover {
     text-decoration: underline;
-    color: var(--colorPink);
+    color: var(--clave-pink);
   }
 
   .nowrap {

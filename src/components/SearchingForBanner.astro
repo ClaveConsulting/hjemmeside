@@ -1,7 +1,6 @@
 ---
 import Layout from './layout/Layout.astro';
 import type { Position } from '../types';
-
 interface Props {
   positions: Position[];
 }
@@ -27,18 +26,18 @@ const activePositions = positions.filter((p) => p.active);
 
 <style>
   .wrapper {
-    background-color: #B4D7E1;
-    color: #002850;
-    margin: -3rem -6rem -3rem 15%;
-    padding: 3rem;
+    background-color: var(--clave-lightblue);
+    color: var(--clave-blue);
+    margin: calc(-1 * var(--mobile-padding)) calc(-1 * var(--desktop-padding)) calc(-1 * var(--mobile-padding)) 15%;
+    padding: var(--mobile-padding);
   }
 
   .wrapper a {
-    color: #002850;
+    color: var(--clave-blue);
   }
 
   .wrapper a:visited {
-    color: #002850;
+    color: var(--clave-blue);
   }
   .wrapper ul {
     margin: 0;
@@ -47,7 +46,7 @@ const activePositions = positions.filter((p) => p.active);
 
   @media (max-width: 719px) {
     .wrapper {
-      margin: 0 -3rem;
+      margin: 0 calc(-1 * var(--mobile-padding));
     }
   }
 </style>

@@ -1,6 +1,5 @@
 ---
-import { COLOR_CLAVE_PINK, COLOR_CLAVE_YELLOW } from "../../colors";
-import { MAX_WIDTH } from "../../layouts";
+import { COLOR_CLAVE_PEACH, COLOR_CLAVE_GREEN } from "../../colors";
 import ClaveLogo from "../icons/ClaveLogo.astro";
 import HamburgerIcon from "../icons/HamburgerIcon.astro";
 import ContainerContent from "./ContainerContent.astro";
@@ -23,7 +22,7 @@ const menuLinks = [
   { label: "Kontakt oss", href: "/kontakt-oss" },
 ];
 
-const hamburgerFill = useSkinColoredHamburgerMenu ? "#FFE6CD" : "#005550";
+const hamburgerFill = useSkinColoredHamburgerMenu ? COLOR_CLAVE_PEACH : COLOR_CLAVE_GREEN;
 ---
 
 <header>
@@ -67,17 +66,17 @@ const hamburgerFill = useSkinColoredHamburgerMenu ? "#FFE6CD" : "#005550";
   </ContainerContent>
 </header>
 
-<style define:vars={{COLOR_CLAVE_PINK, COLOR_CLAVE_YELLOW, maxWidth: MAX_WIDTH}}>
+<style>
 
   .styled-header {
-    padding: 0 3rem;
+    padding: 0 var(--mobile-padding);
   }
 
   .wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: var(--clave-bg, #FFE6CD);
+    background: var(--clave-bg, var(--clave-peach));
     padding-top: 1.5rem;
   }
 
@@ -103,7 +102,7 @@ const hamburgerFill = useSkinColoredHamburgerMenu ? "#FFE6CD" : "#005550";
     margin-top: 5px;
     display: block;
     height: 2px;
-    background: var(--COLOR_CLAVE_PINK);
+    background: var(--clave-pink);
   }
 
   .nav-link-wrapper:hover::after {
@@ -112,25 +111,25 @@ const hamburgerFill = useSkinColoredHamburgerMenu ? "#FFE6CD" : "#005550";
 
   @keyframes link-hover {
     0% {
-      background: var(--COLOR_CLAVE_PINK);
+      background: var(--clave-pink);
       transform: scaleX(1);
     }
     50% {
-      background: var(--COLOR_CLAVE_PINK);
+      background: var(--clave-pink);
       transform: scaleX(0);
     }
     51% {
-      background: var(--COLOR_CLAVE_YELLOW);
+      background: var(--clave-yellow);
       transform: scaleX(0);
     }
     100% {
-      background: var(--COLOR_CLAVE_YELLOW);
+      background: var(--clave-yellow);
       transform: scaleX(1);
     }
   }
 
   .nav-link {
-    color: var(--clave-text, #005550);
+    color: var(--clave-text, var(--clave-green));
     text-decoration: none;
     margin-left: 0.5rem;
     margin-right: 0.5rem;
@@ -175,21 +174,21 @@ const hamburgerFill = useSkinColoredHamburgerMenu ? "#FFE6CD" : "#005550";
   }
 
   .hamburger-link {
-    color: var(--clave-text, #005550);
+    color: var(--clave-text, var(--clave-green));
     text-decoration: none;
-    border-bottom: 1px solid var(--COLOR_CLAVE_PINK);
+    border-bottom: 1px solid var(--clave-pink);
     display: table;
     padding: 0.5rem 0;
   }
 
   .hamburger-link.active {
-    border-bottom-color: var(--COLOR_CLAVE_YELLOW);
+    border-bottom-color: var(--clave-yellow);
   }
 
   /* Responsive */
   @media (min-width: 720px) {
     .styled-header {
-      padding: 0 6rem;
+      padding: 0 var(--desktop-padding);
     }
 
     .wrapper {
