@@ -19,7 +19,7 @@ const { image, imageHeight, imageWidth, imageAlt = "" } = Astro.props;
         class="image" 
         src={image} 
         height={imageHeight ?? image.height} 
-        width={imageWidth ?? image.height} 
+        width={imageWidth ?? image.width}
         alt={imageAlt} 
         fetchpriority="high" 
         loading="eager" />
