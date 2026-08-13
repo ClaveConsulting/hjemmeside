@@ -7,7 +7,13 @@ import BaseLayout from '../components/layout/BaseLayout.astro';
 import type { Position } from '../types';
 import piaBilde from '../assets/190920_Clave_lowres_7.jpg';
 
-const positions: Position[] = [];
+const positions: Position[] = [
+  {
+    text: "Strategisk designer",
+    active: true,
+    url: "https://clave.homerun.co/strategisk-designer/no",
+  },
+];
 ---
 <BaseLayout title="Jobbe som designer | clave" description="Vi omskaper gode ideer til fungerende løsninger ved hjelp av dialog, faglig tyngde og grundige designprosesser.">
   <RecruitmentTemplate positions={positions} uri="/jobb-som-designer">
