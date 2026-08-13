@@ -1,7 +1,7 @@
 {
-  "name": "squealing-spiral",
+  "name": "clave-hjemmeside",
   "type": "module",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -11,12 +11,12 @@
     "lint": "npx @biomejs/biome check --apply ./src"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.4",
-    "@astrojs/react": "^4.2.2",
+    "@astrojs/check": "^0.9.10",
+    "@astrojs/react": "^6.0.2",
     "@react-google-maps/api": "^2.19.2",
     "@types/react": "^18.2.48",
     "@types/react-dom": "^18.2.18",
-    "astro": "^5.5.5",
+    "astro": "^7.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "styled-components": "^6.1.8",
