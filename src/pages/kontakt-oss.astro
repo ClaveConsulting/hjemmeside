@@ -5,7 +5,7 @@ import Layout from '../components/layout/Layout.astro';
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
 import JoinSection from '../components/layout/JoinSection.astro';
-import Map from '../components/Map.astro';
+import Map from '../components/Map';
 import ContactForm from '../components/ContactForm.astro';
 import BaseLayout from '../components/layout/BaseLayout.astro';
 ---
@@ -57,7 +57,7 @@ import BaseLayout from '../components/layout/BaseLayout.astro';
           </span>
         </div>
         <div class="mapouter">
-          <Map />
+          <Map client:only="react" />
         </div>
       </Layout>
       <Layout backgroundColor={COLOR_CLAVE_GREEN} textColor={COLOR_CLAVE_PEACH}>
