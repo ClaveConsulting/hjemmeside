@@ -16,7 +16,6 @@
     "typescript": "^5.3.3"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.5.3",
-    "vite-plugin-svgr": "^4.2.0"
+    "@biomejs/biome": "1.5.3"
   }
 }
