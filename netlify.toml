@@ -10,6 +10,8 @@
 
 publish = "dist/"
 
+# Node version for the build is read from .nvmrc
+
 # Astro outputs all built images, JS and CSS to /_astro/ with content-hash
 # filenames (e.g. frontpage1.Ck3xP9aB.webp). The hash changes when content
 # changes, so it is safe to cache forever with immutable.
