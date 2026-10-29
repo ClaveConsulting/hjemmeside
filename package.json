@@ -11,8 +11,8 @@
     "lint": "npx @biomejs/biome check --apply ./src"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.10",
-    "astro": "^7.2.1",
+    "@astrojs/check": "^0.9.12",
+    "astro": "^7.4.4",
     "typescript": "^5.3.3"
   },
   "devDependencies": {
